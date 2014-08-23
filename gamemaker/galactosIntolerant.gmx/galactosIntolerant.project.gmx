@@ -14,6 +14,10 @@
     <sprite>sprites\spr_planet5</sprite>
     <sprite>sprites\spr_planet6</sprite>
     <sprite>sprites\spr_testBtn</sprite>
+    <sprite>sprites\spr_left</sprite>
+    <sprite>sprites\spr_right</sprite>
+    <sprite>sprites\spr_down</sprite>
+    <sprite>sprites\spr_up</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -23,7 +27,6 @@
     <font>fonts\fnt_HUD</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_static</object>
     <object>objects\obj_sun</object>
     <object>objects\obj_global</object>
     <object>objects\obj_planet_base</object>
@@ -35,12 +38,16 @@
     <object>objects\obj_planet_05</object>
     <object>objects\obj_solver</object>
     <object>objects\obj_testBtn</object>
+    <object>objects\obj_arrow_left</object>
+    <object>objects\obj_arrow_right</object>
+    <object>objects\obj_arrow_down</object>
+    <object>objects\obj_arrow_up</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_control</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41874.8177341319</constant>
+    <constant name="GM_build_date">41874.8893794792</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
