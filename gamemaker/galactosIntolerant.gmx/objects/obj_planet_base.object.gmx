@@ -28,10 +28,11 @@
             <string>//Init all variables
 
 // mechanics
-var self.step  = -1;
-var self.orbit = -1;
-var self.rate  = -1;
-var self.turn  =  0;
+self.step  = -1;
+self.orbit = -1;
+self.rate  = -1;
+self.turn  =  0;
+
 </string>
           </argument>
         </arguments>
@@ -58,6 +59,8 @@ var self.turn  =  0;
 //show_debug_message("     " +string(self.turn));
 if (global.turn == self.turn)
 {
+    show_debug_message(object_get_name(id.object_index)+" is moving "+string(self.turn)+" vs "+string(global.turn));
+
     self.turn += 1;
     self.step += self.rate
     var degrees = global.orbit_deg_arr[self.orbit] * self.step
@@ -66,12 +69,17 @@ if (global.turn == self.turn)
     self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
 }
 
+/*
+self.array = 0;
+self.array[0] = 1;
+show_debug_message("printing array stuff!: "+string(self.array[0]));
+*/
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -88,11 +96,20 @@ if (global.turn == self.turn)
         <arguments>
           <argument>
             <kind>1</kind>
+
             <string>self.step += self.rate
 var degrees = global.orbit_deg_arr[self.orbit] * self.step
 var radius = global.sun_radius + (self.orbit * global.orb_width)
 self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
 self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
+
+//show_debug_message(string(self.last_x)+" "+string(self.last_y));
+//show_debug_message(string(mouse_x)+" " +string(mouse_y));
+
+instance_create( x-sprite_width/2, y, obj_arrow_left );
+instance_create( x+sprite_width/2, y, obj_arrow_right );
+instance_create( x, y-sprite_height/2, obj_arrow_up );
+instance_create( x, y+sprite_height/2, obj_arrow_down );
 </string>
           </argument>
         </arguments>
