@@ -26,21 +26,19 @@
     <object>objects\obj_static</object>
     <object>objects\obj_sun</object>
     <object>objects\obj_global</object>
-    <object>objects\obj_planets</object>
-    <object>objects\obj_planet1</object>
-    <object>objects\obj_planet2</object>
-    <object>objects\obj_planet3</object>
-    <object>objects\obj_planet5</object>
-    <object>objects\obj_planet6</object>
-    <object>objects\obj_planet4</object>
-    <object>objects\obj_solver</object>
-    <object>objects\obj_testBtn</object>
+    <object>objects\obj_planet_base</object>
+    <object>objects\obj_planet_00</object>
+    <object>objects\obj_planet_01</object>
+    <object>objects\obj_planet_02</object>
+    <object>objects\obj_planet_03</object>
+    <object>objects\obj_planet_04</object>
+    <object>objects\obj_planet_05</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_control</room>
+    <room>rooms\rm_control</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41874.7496047338</constant>
+    <constant name="GM_build_date">41874.7637112384</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
