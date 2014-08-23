@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var self.step  = 0;
-var self.orbit = 0;
-var self.rate  = 3;
-var self.turn  = 0;
+            <string>self.step  = 0;
+self.orbit = 0;
+self.rate  = 3;
+self.turn  = 0;
+self.go_left = 0;
 </string>
           </argument>
         </arguments>

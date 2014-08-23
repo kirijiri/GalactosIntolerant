@@ -32,6 +32,7 @@ self.step  = -1;
 self.orbit = -1;
 self.rate  = -1;
 self.turn  =  0;
+self.go_left = 0;
 
 </string>
           </argument>
@@ -70,6 +71,14 @@ self.array = 0;
 self.array[0] = 1;
 show_debug_message("printing array stuff!: "+string(self.array[0]));
 */
+
+show_debug_message(self.go_left);
+
+if(self.go_left)
+{
+    show_debug_message(object_get_name(id.object_index)+" is going left");
+    self.go_left = 0;
+}
 </string>
           </argument>
         </arguments>
