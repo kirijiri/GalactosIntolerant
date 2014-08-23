@@ -53,7 +53,7 @@ var self.rate  = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.x +=1;
+            <string>show_debug_message(object_get_name(self.id.object_index));
 </string>
           </argument>
         </arguments>
@@ -76,7 +76,10 @@ var self.rate  = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.y = 521 - (self.orbit * global.orbit_width)
+            <string>// Init Position
+self.x = 512
+show_debug_message(global.orbit_width)
+self.y = 512 - ((self.orbit +1 ) * global.orbit_width)
 </string>
           </argument>
         </arguments>

@@ -52,9 +52,13 @@
   </views>
   <instances>
     <instance objName="obj_sun" x="512" y="384" name="inst_D67F725A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_planet_02" x="512" y="160" name="inst_A2BCC560" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_planet_00" x="512" y="256" name="inst_5773CDC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_global" x="0" y="0" name="inst_20B6BBE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_planet_00" x="32" y="32" name="inst_24805206" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_planet_01" x="32" y="96" name="inst_5B83B957" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_planet_02" x="32" y="160" name="inst_6C5DC18B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_planet_03" x="32" y="224" name="inst_14D77D74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_planet_04" x="32" y="288" name="inst_9983CC4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_planet_05" x="32" y="352" name="inst_A06DB568" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
