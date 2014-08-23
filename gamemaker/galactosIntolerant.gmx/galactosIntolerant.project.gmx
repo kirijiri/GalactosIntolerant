@@ -13,11 +13,15 @@
     <sprite>sprites\spr_planet4</sprite>
     <sprite>sprites\spr_planet5</sprite>
     <sprite>sprites\spr_planet6</sprite>
+    <sprite>sprites\spr_testBtn</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\fnt_HUD</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_static</object>
     <object>objects\obj_sun</object>
@@ -29,12 +33,14 @@
     <object>objects\obj_planet5</object>
     <object>objects\obj_planet6</object>
     <object>objects\obj_planet4</object>
+    <object>objects\obj_solver</object>
+    <object>objects\obj_testBtn</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_control</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41874.6885628472</constant>
+    <constant name="GM_build_date">41874.7496047338</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
