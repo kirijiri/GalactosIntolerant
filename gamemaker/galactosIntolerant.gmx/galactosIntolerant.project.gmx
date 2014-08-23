@@ -33,6 +33,8 @@
     <object>objects\obj_planet_03</object>
     <object>objects\obj_planet_04</object>
     <object>objects\obj_planet_05</object>
+    <object>objects\obj_solver</object>
+    <object>objects\obj_testBtn</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_control</room>

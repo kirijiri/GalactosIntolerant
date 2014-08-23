@@ -27,7 +27,18 @@
             <kind>1</kind>
             <string>show_debug_message("global initialised!!!");
 
+// turn
 globalvar global.turn = 0;
+
+// orbit values
+globalvar global.orbit_width = 50;
+
+globalvar global.orbit_0_steps = 8;
+globalvar global.orbit_1_steps = 16;
+globalvar global.orbit_2_steps = 32;
+globalvar global.orbit_3_steps = 64;
+globalvar global.orbit_4_steps = 128;
+globalvar global.orbit_5_steps = 248;
 </string>
           </argument>
         </arguments>
@@ -53,15 +64,6 @@ globalvar global.turn = 0;
             <string>draw_set_colour(c_white);
 draw_set_font(fnt_HUD);
 draw_text(200, 200, "turn:"+string(global.turn) );
-            <string>// orbit values
-globalvar global.orbit_width = 50;
-
-globalvar global.orbit_0_steps = 8;
-globalvar global.orbit_1_steps = 16;
-globalvar global.orbit_2_steps = 32;
-globalvar global.orbit_3_steps = 64;
-globalvar global.orbit_4_steps = 128;
-globalvar global.orbit_5_steps = 248;
 </string>
           </argument>
         </arguments>
