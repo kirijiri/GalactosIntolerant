@@ -58,12 +58,16 @@ self.go_left = 0;
             <kind>1</kind>
             <string>//show_debug_message(object_get_name(id.object_index));
 //show_debug_message("     " +string(self.turn));
-
-
 if (global.turn == self.turn)
 {
     show_debug_message(object_get_name(id.object_index)+" is moving "+string(self.turn)+" vs "+string(global.turn));
+
     self.turn += 1;
+    self.step += self.rate
+    var degrees = global.orbit_deg_arr[self.orbit] * self.step
+    var radius = global.sun_radius + (self.orbit * global.orb_width)
+    self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
+    self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
 }
 
 /*
@@ -101,7 +105,14 @@ if(self.go_left)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//show_debug_message(string(self.last_x)+" "+string(self.last_y));
+
+            <string>self.step += self.rate
+var degrees = global.orbit_deg_arr[self.orbit] * self.step
+var radius = global.sun_radius + (self.orbit * global.orb_width)
+self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
+self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
+
+//show_debug_message(string(self.last_x)+" "+string(self.last_y));
 //show_debug_message(string(mouse_x)+" " +string(mouse_y));
 
 instance_create( x-sprite_width/2, y, obj_arrow_left );
@@ -130,10 +141,10 @@ instance_create( x, y+sprite_height/2, obj_arrow_down );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Init Position
-self.x = 512
-show_debug_message(global.orbit_width)
-self.y = 512 - ((self.orbit +1 ) * global.orbit_width)
+            <string>var degrees = global.orbit_deg_arr[self.orbit] * self.step
+var radius = global.sun_radius + (self.orbit * global.orb_width)
+self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
+self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
 </string>
           </argument>
         </arguments>
