@@ -19,21 +19,22 @@
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\obj_planet1</object>
     <object>objects\obj_static</object>
-    <object>objects\obj_planet2</object>
-    <object>objects\obj_planet3</object>
-    <object>objects\obj_planet4</object>
-    <object>objects\obj_planet5</object>
-    <object>objects\obj_planet6</object>
     <object>objects\obj_sun</object>
     <object>objects\obj_global</object>
+    <object>objects\obj_planets</object>
+    <object>objects\obj_planet1</object>
+    <object>objects\obj_planet2</object>
+    <object>objects\obj_planet3</object>
+    <object>objects\obj_planet5</object>
+    <object>objects\obj_planet6</object>
+    <object>objects\obj_planet4</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_control</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41874.6390099074</constant>
+    <constant name="GM_build_date">41874.6885628472</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
