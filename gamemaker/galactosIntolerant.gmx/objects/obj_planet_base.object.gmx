@@ -31,6 +31,40 @@
 var self.step  = -1;
 var self.orbit = -1;
 var self.rate  = -1;
+var self.turn  =  0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//show_debug_message(object_get_name(id.object_index));
+//show_debug_message("     " +string(self.turn));
+
+
+if (global.turn == self.turn)
+{
+    //show_debug_message(object_get_name(id.object_index));
+    //show_debug_message("moving "+string(self.turn)+" vs "+string(global.turn));
+    self.turn += 1;
+}
+
 </string>
           </argument>
         </arguments>
