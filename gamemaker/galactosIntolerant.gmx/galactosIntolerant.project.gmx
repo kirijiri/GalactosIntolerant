@@ -27,8 +27,9 @@
     <font>fonts\fnt_HUD</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_sun</object>
+    <object>objects\obj_testBtn</object>
     <object>objects\obj_global</object>
+    <object>objects\obj_solver</object>
     <object>objects\obj_planet_base</object>
     <object>objects\obj_planet_00</object>
     <object>objects\obj_planet_01</object>
@@ -36,8 +37,8 @@
     <object>objects\obj_planet_03</object>
     <object>objects\obj_planet_04</object>
     <object>objects\obj_planet_05</object>
-    <object>objects\obj_solver</object>
-    <object>objects\obj_testBtn</object>
+    <object>objects\obj_sun</object>
+    <object>objects\obj_arrow</object>
     <object>objects\obj_arrow_left</object>
     <object>objects\obj_arrow_right</object>
     <object>objects\obj_arrow_down</object>
@@ -47,7 +48,7 @@
     <room>rooms\rm_control</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41874.8893794792</constant>
+    <constant name="GM_build_date">41874.893243206</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
