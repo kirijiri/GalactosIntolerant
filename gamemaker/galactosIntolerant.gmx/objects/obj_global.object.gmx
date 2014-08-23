@@ -27,18 +27,33 @@
             <kind>1</kind>
             <string>show_debug_message("global initialised!!!");
 
+array[0] = 0;
+show_debug_message("THIS IS A THING 11111" + string(array[0]))
+
 // turn
 globalvar global.turn = 0;
 
 // orbit values
-globalvar global.orbit_width = 50;
+globalvar global.sun_radius = 75;
+globalvar global.orb_width = 75;
+// steps
+s_arr[0] = 8;
+s_arr[1] = 16;
+s_arr[2] = 32;
+s_arr[3] = 64;
+s_arr[4] = 128;
+s_arr[5] = 248;
+globalvar global.orb_step_arr = s_arr;
 
-globalvar global.orbit_0_steps = 8;
-globalvar global.orbit_1_steps = 16;
-globalvar global.orbit_2_steps = 32;
-globalvar global.orbit_3_steps = 64;
-globalvar global.orbit_4_steps = 128;
-globalvar global.orbit_5_steps = 248;
+//degree array
+d_arr[0] = 45;
+d_arr[1] = 22.5;
+d_arr[2] = 11.25;
+d_arr[3] = 5.625;
+d_arr[4] = 2.8125;
+d_arr[5] = 1.4062;
+globalvar global.orbit_deg_arr = d_arr;
+
 </string>
           </argument>
         </arguments>

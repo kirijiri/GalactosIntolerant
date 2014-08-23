@@ -28,6 +28,7 @@
             <string>var self.step  = 0;
 var self.orbit = 2;
 var self.rate  = 7;
+var self.turn  = 0;
 </string>
           </argument>
         </arguments>

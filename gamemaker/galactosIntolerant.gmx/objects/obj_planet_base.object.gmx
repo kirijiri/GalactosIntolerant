@@ -56,13 +56,14 @@ var self.turn  =  0;
             <kind>1</kind>
             <string>//show_debug_message(object_get_name(id.object_index));
 //show_debug_message("     " +string(self.turn));
-
-
 if (global.turn == self.turn)
 {
-    //show_debug_message(object_get_name(id.object_index));
-    //show_debug_message("moving "+string(self.turn)+" vs "+string(global.turn));
     self.turn += 1;
+    self.step += self.rate
+    var degrees = global.orbit_deg_arr[self.orbit] * self.step
+    var radius = global.sun_radius + (self.orbit * global.orb_width)
+    self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
+    self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
 }
 
 </string>
@@ -87,7 +88,11 @@ if (global.turn == self.turn)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message(object_get_name(self.id.object_index));
+            <string>self.step += self.rate
+var degrees = global.orbit_deg_arr[self.orbit] * self.step
+var radius = global.sun_radius + (self.orbit * global.orb_width)
+self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
+self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
 </string>
           </argument>
         </arguments>
@@ -110,10 +115,10 @@ if (global.turn == self.turn)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Init Position
-self.x = 512
-show_debug_message(global.orbit_width)
-self.y = 512 - ((self.orbit +1 ) * global.orbit_width)
+            <string>var degrees = global.orbit_deg_arr[self.orbit] * self.step
+var radius = global.sun_radius + (self.orbit * global.orb_width)
+self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
+self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
 </string>
           </argument>
         </arguments>
