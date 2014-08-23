@@ -33,11 +33,7 @@
     <room>rooms\room_control</room>
   </rooms>
   <constants number="2">
-<<<<<<< HEAD
     <constant name="GM_build_date">41874.6390099074</constant>
-=======
-    <constant name="GM_build_date">41874.588527963</constant>
->>>>>>> origin/master
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
