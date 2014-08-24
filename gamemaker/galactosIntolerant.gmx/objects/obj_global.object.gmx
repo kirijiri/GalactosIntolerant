@@ -29,12 +29,15 @@
 globalvar global.turn = 0;
 globalvar global.anim_time = 20;
 globalvar global.offset = 90;
+globalvar global.swap_from = -1;
 
 //--------------------------------------------------FLAGS
 
 globalvar global.arrows_visible = 0; // movement arrows visibility
-globalvar global.turn_lock = 0; // pause for turn
-globalvar global.action_lock = 0; // pause for actions
+globalvar global.turn_lock = 0; // lock for turn
+globalvar global.action_lock = 0; // lock for actions
+globalvar global.swap_mode = 0; // lock for actions
+
 
 //--------------------------------------------------PLANETS
 

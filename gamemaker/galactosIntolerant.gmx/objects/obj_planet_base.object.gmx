@@ -35,7 +35,7 @@ else
 
 //--------------------------------------------------------- ACTIONS
 
-if(self.do_action != -1)
+if(self.do_action == 0 || self.do_action == 1)
 {
     //show_debug_message(string(id)+" doing its action "+string(self.do_action));
     
@@ -143,15 +143,12 @@ self.facing = point_direction(room_width/2, room_height/2, self.x, self.y);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// display arrows if there aren't any open already
+            <string>//--------------------------------------------------------- ARROW DISPLAY
+
+// display arrows if there aren't any open already
 // otherwise trigger planet swap
-
-
-if (global.arrows_visible == 0 &amp;&amp; global.action_lock == 0 &amp;&amp; global.turn_lock == 0) 
-{
-    //show_debug_message("sprite size: "+string(sprite_width)+" "+string(sprite_height));
-    //show_debug_message("pos: "+string(x)+" "+string(y));
-    
+if (global.arrows_visible == 0 &amp;&amp; global.swap_mode == 0 &amp;&amp; global.action_lock == 0 &amp;&amp; global.turn_lock == 0) 
+{  
     r = sprite_width * 0.5;
     ang = id.facing;
     
@@ -173,7 +170,7 @@ if (global.arrows_visible == 0 &amp;&amp; global.action_lock == 0 &amp;&amp; glo
         inst3.parentid = id;
         inst3.image_angle = ang-180;
         inst3.sprite_index = global.spr_arrow_arr[3];
-        inst3.type = 3; // down
+        inst3.type = 2; // down
     }
     
     inst0.parentid = id;
@@ -193,6 +190,55 @@ else
     show_debug_message("TODO: planet swap");
     // test if up/down arrow is activated -&gt; otherwise ignore?/close arrows?
 }
+
+//--------------------------------------------------------- SWAPPING 
+
+if (global.swap_mode == 1)
+{
+    //if (global.swap_from == self.id)
+    //    return
+    
+    show_debug_message("print swap from id   :   " + string(global.swap_from));
+    show_debug_message("print swap from orbit:   " + string(global.swap_from.orbit));
+        
+    my_orbit = self.orbit
+    my_step  = self.step
+    
+    self.orbit = global.swap_from.orbit;
+    self.step  = global.swap_from.step;
+    
+    global.swap_from.orbit = my_orbit;
+    global.swap_from.step  = my_step ;
+    
+    // swap self
+    degrees = global.orbit_deg_arr[self.orbit] * self.step;
+    radius = global.sun_radius + (self.orbit * global.orb_width);
+    self.x = (room_width/2) + (radius * (sin(degtorad(global.offset + degrees))));
+    self.y = (room_height/2) + (radius * (cos(degtorad(global.offset + degrees))));
+    
+    // swap remote
+    var degrees = global.orbit_deg_arr[global.swap_from.orbit] * global.swap_from.step;
+    var radius = global.sun_radius + (global.swap_from.orbit * global.orb_width);
+    global.swap_from.x = (room_width/2) + (radius * (sin(degtorad(global.offset + degrees))));
+    global.swap_from.y = (room_height/2) + (radius * (cos(degtorad(global.offset + degrees))));
+      
+    // cleanup
+    global.swap_mode = 0;
+    global.swap_from = -1;
+    global.action_lock = 0;
+    global.turn +=1;
+}
+
+
+
+
+
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>

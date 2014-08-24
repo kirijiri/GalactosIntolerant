@@ -80,7 +80,7 @@ if (!position_meeting(mouse_x, mouse_y, obj_arrow_base) &amp;&amp;
     instance_destroy();
 }
 
-if (global.action_lock)
+if (global.action_lock || global.turn_lock || global.swap_mode)
 {
     instance_destroy();
 }
@@ -106,8 +106,19 @@ if (global.action_lock)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// make the parent planet do something
-self.parentid.do_action = self.type;
+            <string>// make the parent planet swap
+if(self.type == 2)
+{
+    show_debug_message("initiate swap for: "+string(self.parentid));
+    global.swap_mode = 1;
+    global.swap_from = self.parentid;
+    global.action_lock = 1;  
+}
+else
+{
+    // make the parent planet move
+    self.parentid.do_action = self.type;
+}
 
 </string>
           </argument>
