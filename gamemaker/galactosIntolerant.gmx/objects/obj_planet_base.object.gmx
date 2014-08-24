@@ -31,15 +31,15 @@
 // move on turn
 if (global.turn == self.turn)
 {
-    show_debug_message(object_get_name(id.object_index)+" is moving "+string(self.turn)+" vs "+string(global.turn));
-
     self.turn += 1;
     self.step += self.rate
-    var degrees = global.orbit_deg_arr[self.orbit] * self.step
-    var radius = global.sun_radius + (self.orbit * global.orb_width)
+    degrees = global.orbit_deg_arr[self.orbit] * self.step
+    radius = global.sun_radius + (self.orbit * global.orb_width)
     self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
     self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
+    self.facing  = degrees+90;
 }
+
 
 /*
 self.array = 0;
