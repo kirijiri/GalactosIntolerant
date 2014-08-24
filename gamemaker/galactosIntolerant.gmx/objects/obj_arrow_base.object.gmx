@@ -79,6 +79,11 @@ if (!position_meeting(mouse_x, mouse_y, obj_arrow_base) &amp;&amp;
 {
     instance_destroy();
 }
+
+if (global.action_lock)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -103,9 +108,8 @@ if (!position_meeting(mouse_x, mouse_y, obj_arrow_base) &amp;&amp;
             <kind>1</kind>
             <string>show_debug_message("ARROW INSTANCE ID: "+string(instance_id)+" "+string(self.parentid));
 
-
-    //show_debug_message("move left "+string(self.parentid));
-    self.parentid.do_action = self.type;
+//show_debug_message("move left "+string(self.parentid));
+self.parentid.do_action = self.type;
 
 </string>
           </argument>

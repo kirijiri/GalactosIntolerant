@@ -25,21 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//--------------------------------------------------------- TURNS
-if (global.turn == self.turn)
+            <string>
+
+//--------------------------------------------------------- TURNS
+if (global.action_lock = 0 &amp;&amp; global.turn == self.turn)
 {
+    // work out the steps
     self.turn += 1;
     new_step = self.step + self.rate;
 
-    self.current_degrees = global.orbit_deg_arr[self.orbit] * self.step;
-    self.end_degrees = global.orbit_deg_arr[self.orbit] * new_step;
-    
-    self.move_deg  = end_degrees - current_degrees;
-    self.move_incr = move_deg / global.anim_time;
-    self.radius = global.sun_radius + (self.orbit * global.orb_width);
+    // run the calc script
+    return_arr = sci_calculateMove( self.orbit, self.step, new_step );
+    self.current_degrees = return_arr[0];
+    self.end_degrees = return_arr[1];
+    self.move_deg = return_arr[2];
+    self.move_incr = return_arr[3];
 
+    // store new step
     self.step = new_step;
-    global.animation_lock = 1;
+    global.turn_lock = 1;
 }
 
 // show info text on hover
@@ -52,28 +56,71 @@ else
 
 if(self.do_action != -1)
 {
-    show_debug_message(object_get_name(id.object_index)+" is going "+string(self.do_action));
-    self.do_action = -1;
+    if (self.do_action == 1) // move back
+    {
+        // work out the steps
+        new_step = self.step - self.rate;
+    
+        // run the calc script
+        return_arr = sci_calculateMove( self.orbit, self.step, new_step );
+        self.current_degrees = return_arr[0];
+        self.end_degrees = return_arr[1];
+        self.move_deg = return_arr[2];
+        self.move_incr = return_arr[3];
+
+        // store new step
+        self.step = new_step;
+        self.do_action = -1;
+        global.action_lock = 1;
+        global.arrows_visible = 0;
+        global.turn +=1;
+    }
+    else if (self.do_action == 2) // move foward
+    {
+        // work out the steps
+        new_step = self.step + self.rate;
+    
+        // run the calc script
+        return_arr = sci_calculateMove( self.orbit, self.step, new_step );
+        self.current_degrees = return_arr[0];
+        self.end_degrees = return_arr[1];
+        self.move_deg = return_arr[2];
+        self.move_incr = return_arr[3];
+    
+        // store new step
+        self.step = new_step;
+        self.do_action = -1;
+        global.action_lock = 1;
+        global.arrows_visible = 0;
+        global.turn +=1;
+    }
+    
 }
 
 //--------------------------------------------------------- ANIMATION
-if (self.move_deg &gt; 0)
+if (self.move_deg != 0)
 {
+    // Calculate degrees of movement for this step
     self.current_degrees += self.move_incr;
     self.move_deg -= self.move_incr;
     
-    self.x = (room_width/2)  + (self.radius * (sin(degtorad(self.current_degrees))));
-    self.y = (room_height/2) + (self.radius * (cos(degtorad(self.current_degrees))));
+    // get the current radius
+    self.radius = global.sun_radius + (self.orbit * global.orb_width);
+    
+    /// set the positions
+    self.x = (room_width/2)  + (self.radius * (sin(degtorad(global.offset + self.current_degrees))));
+    self.y = (room_height/2) + (self.radius * (cos(degtorad(global.offset + self.current_degrees))));
     
     //if this is the last step of animation, turn off the lock
     if self.move_deg == 0
     {
-        global.animation_lock = 0;
+        global.turn_lock = 0;
+        global.action_lock = 0;
     }
     
     // roate planet and set facing
     self.image_angle += self.day_cycle;
-    self.facing = self.current_degrees;
+    self.facing = self.current_degrees - 90;
     
 }
 
@@ -112,7 +159,9 @@ if (self.move_deg &gt; 0)
             <kind>1</kind>
             <string>// display arrows if there aren't any open already
 // otherwise trigger planet swap
-if (global.arrows_visible == 0) 
+
+
+if (global.arrows_visible == 0 &amp;&amp; global.action_lock == 0 &amp;&amp; global.turn_lock == 0) 
 {
     inst0 = instance_create( x, y, obj_arrow_base );
     inst1 = instance_create( x, y, obj_arrow_base );
@@ -168,8 +217,8 @@ else
             <kind>1</kind>
             <string>var degrees = global.orbit_deg_arr[self.orbit] * self.step
 var radius = global.sun_radius + (self.orbit * global.orb_width)
-self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
-self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
+self.x = (room_width/2) + (radius * (sin(degtorad(global.offset + degrees))))
+self.y = (room_height/2) + (radius * (cos(degtorad(global.offset + degrees))))
 
 // move/swap planet [-1-off; 0-left, 1-right, 2-up, 3-down]
 self.do_action = -1;
