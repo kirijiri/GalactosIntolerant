@@ -82,7 +82,7 @@
             <kind>1</kind>
             <string>if ( global.turn_lock == 0 &amp;&amp; global.action_lock == 0 )
 {
-    global.turn += 1;
+    //global.turn += 1;
 }
 </string>
           </argument>
