@@ -92,8 +92,8 @@ globalvar global.orbit_deg_arr = orbit_deg_arr;
 // arrow sprites
 spr_arrow_arr[0] = spr_left;
 spr_arrow_arr[1] = spr_right;
-spr_arrow_arr[2] = spr_down;
-spr_arrow_arr[3] = spr_up;
+spr_arrow_arr[2] = spr_up;
+spr_arrow_arr[3] = spr_down;
 globalvar global.spr_arrow_arr = spr_arrow_arr;
 
 
