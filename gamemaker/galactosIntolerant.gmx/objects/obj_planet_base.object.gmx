@@ -75,7 +75,7 @@ if(self.do_action != -1)
         global.arrows_visible = 0;
         global.turn +=1;
     }
-    else if (self.do_action == 2) // move foward
+    else if (self.do_action == 0) // move forward
     {
         // work out the steps
         new_step = self.step + self.rate;
@@ -163,12 +163,13 @@ if (self.move_deg != 0)
 
 if (global.arrows_visible == 0 &amp;&amp; global.action_lock == 0 &amp;&amp; global.turn_lock == 0) 
 {
-    show_debug_message("sprite size: "+string(sprite_width)+" "+string(sprite_height));
-    show_debug_message("pos: "+string(x)+" "+string(y));
+    //show_debug_message("sprite size: "+string(sprite_width)+" "+string(sprite_height));
+    //show_debug_message("pos: "+string(x)+" "+string(y));
     
     r = sprite_width * 0.5;
-    //ang = id.facing;
-    ang=0;
+    ang = id.facing;
+    //ang=0;
+    show_debug_message("angle: "+string(ang));
     
     inst0 = instance_create( x, y, obj_arrow_base );
     inst1 = instance_create( x, y, obj_arrow_base );
