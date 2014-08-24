@@ -106,9 +106,7 @@ if (global.action_lock)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("ARROW INSTANCE ID: "+string(instance_id)+" "+string(self.parentid));
-
-//show_debug_message("move left "+string(self.parentid));
+            <string>// make the parent planet do something
 self.parentid.do_action = self.type;
 
 </string>
