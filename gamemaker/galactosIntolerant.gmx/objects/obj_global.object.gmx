@@ -28,8 +28,13 @@
             <string>//--------------------------------------------------GLOBALS
 globalvar global.turn = 0;
 globalvar global.anim_time = 20;
-globalvar global.offset = 90;
+globalvar global.offset_rotation = 90;
 globalvar global.swap_from = -1;
+globalvar global.offset_x = 200;
+globalvar global.offset_y = 0;
+globalvar global.cardinal_count = 8;
+globalvar global.cardinal_threshold = 0.15;
+globalvar global.planet_count = 6;
 
 //--------------------------------------------------FLAGS
 
@@ -41,16 +46,24 @@ globalvar global.swap_mode = 0; // lock for actions
 
 //--------------------------------------------------PLANETS
 
-//rates
+// rates
+/*
 plnt_rates[0] = 3;
 plnt_rates[1] = 5;
 plnt_rates[2] = 7;
 plnt_rates[3] = 9;
 plnt_rates[4] = 11;
 plnt_rates[5] = 14;
+*/
+plnt_rates[0] = 1;
+plnt_rates[1] = 1;
+plnt_rates[2] = 1;
+plnt_rates[3] = 1;
+plnt_rates[4] = 1;
+plnt_rates[5] = 1;
 globalvar global.plnt_rates = plnt_rates;
 
-//sprites
+// sprites
 plnt_spr_arr[0] = spr_planet_00;
 plnt_spr_arr[1] = spr_planet_01;
 plnt_spr_arr[2] = spr_planet_02;
@@ -59,7 +72,7 @@ plnt_spr_arr[4] = spr_planet_04;
 plnt_spr_arr[5] = spr_planet_05;
 globalvar global.plnt_spr_arr = plnt_spr_arr;
 
-//day cycles
+// day cycles
 plnt_dayCycle_arr[0] = 20;
 plnt_dayCycle_arr[1] = 20;
 plnt_dayCycle_arr[2] = 20;
@@ -71,26 +84,34 @@ globalvar global.plnt_dayCycle_arr = plnt_dayCycle_arr;
 //--------------------------------------------------ORBITS
 
 // orbit values
-globalvar global.sun_radius = 75;
-globalvar global.orb_width = 75;
+globalvar global.sun_radius = 100;
+globalvar global.orb_width = 50;
 
 // steps - make these procedural????
-orb_step_arr[0] = 8;
+/*orb_step_arr[0] = 8;
 orb_step_arr[1] = 16;
 orb_step_arr[2] = 32;
 orb_step_arr[3] = 64;
 orb_step_arr[4] = 128;
 orb_step_arr[5] = 248;
+*/
+orb_step_arr[0] = 4;
+orb_step_arr[1] = 4;
+orb_step_arr[2] = 4;
+orb_step_arr[3] = 4;
+orb_step_arr[4] = 4;
+orb_step_arr[5] = 4;
 globalvar global.orb_step_arr = orb_step_arr;
 
 // degree array - make these procedural????
-orbit_deg_arr[0] = 45;
-orbit_deg_arr[1] = 22.5;
-orbit_deg_arr[2] = 11.25;
-orbit_deg_arr[3] = 5.625;
-orbit_deg_arr[4] = 2.8125;
-orbit_deg_arr[5] = 1.4062;
+orbit_deg_arr[0] = 360/orb_step_arr[0];
+orbit_deg_arr[1] = 360/orb_step_arr[1];
+orbit_deg_arr[2] = 360/orb_step_arr[2];
+orbit_deg_arr[3] = 360/orb_step_arr[3];
+orbit_deg_arr[4] = 360/orb_step_arr[4];
+orbit_deg_arr[5] = 360/orb_step_arr[5];
 globalvar global.orbit_deg_arr = orbit_deg_arr;
+
 
 //--------------------------------------------------ARROWS
 

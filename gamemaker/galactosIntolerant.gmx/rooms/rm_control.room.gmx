@@ -54,6 +54,7 @@
     <instance objName="obj_sun" x="512" y="384" name="inst_D67F725A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_global" x="0" y="0" name="inst_20B6BBE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_planet_init" x="32" y="0" name="inst_950A8CF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_solver" x="64" y="0" name="inst_7CBBFECA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

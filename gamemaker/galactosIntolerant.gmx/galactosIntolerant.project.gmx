@@ -24,6 +24,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\sci_calculateMove.gml</script>
+    <script>scripts\scr_list_max.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -40,7 +41,7 @@
     <room>rooms\rm_control</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41875.8283289005</constant>
+    <constant name="GM_build_date">41875.9066763426</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

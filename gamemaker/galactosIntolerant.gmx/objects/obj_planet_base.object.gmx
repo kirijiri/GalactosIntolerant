@@ -92,8 +92,8 @@ if (self.move_deg != 0)
     // get the current radius
     
     /// set the positions
-    self.x = (room_width/2)  + (self.radius * (sin(degtorad(global.offset + self.current_degrees))));
-    self.y = (room_height/2) + (self.radius * (cos(degtorad(global.offset + self.current_degrees))));
+    self.x = (room_width/2)+global.offset_x  + (self.radius * (sin(degtorad(global.offset_rotation + self.current_degrees))));
+    self.y = (room_height/2)+global.offset_y + (self.radius * (cos(degtorad(global.offset_rotation + self.current_degrees))));
     
     //if this is the last step of animation, turn off the lock
     if self.move_deg == 0
@@ -111,7 +111,7 @@ if (self.move_deg != 0)
 
 //--------------------------------------------------------- POST-ANIMA
 
-self.facing = point_direction(room_width/2, room_height/2, self.x, self.y);
+self.facing = point_direction(obj_sun.x, obj_sun.y, self.x, self.y);
 
 
 
@@ -213,14 +213,14 @@ if (global.swap_mode == 1)
     // swap self
     degrees = global.orbit_deg_arr[self.orbit] * self.step;
     radius = global.sun_radius + (self.orbit * global.orb_width);
-    self.x = (room_width/2) + (radius * (sin(degtorad(global.offset + degrees))));
-    self.y = (room_height/2) + (radius * (cos(degtorad(global.offset + degrees))));
+    self.x = (room_width/2)+global.offset_x + (radius * (sin(degtorad(global.offset_rotation + degrees))));
+    self.y = (room_height/2)+global.offset_y + (radius * (cos(degtorad(global.offset_rotation + degrees))));
     
     // swap remote
     var degrees = global.orbit_deg_arr[global.swap_from.orbit] * global.swap_from.step;
     var radius = global.sun_radius + (global.swap_from.orbit * global.orb_width);
-    global.swap_from.x = (room_width/2) + (radius * (sin(degtorad(global.offset + degrees))));
-    global.swap_from.y = (room_height/2) + (radius * (cos(degtorad(global.offset + degrees))));
+    global.swap_from.x = (room_width/2)+global.offset_x + (radius * (sin(degtorad(global.offset_rotation + degrees))));
+    global.swap_from.y = (room_height/2)+global.offset_y + (radius * (cos(degtorad(global.offset_rotation + degrees))));
       
     // cleanup
     global.swap_mode = 0;
@@ -263,8 +263,8 @@ if (global.swap_mode == 1)
             <kind>1</kind>
             <string>var degrees = global.orbit_deg_arr[self.orbit] * self.step
 var radius = global.sun_radius + (self.orbit * global.orb_width)
-self.x = (room_width/2) + (radius * (sin(degtorad(global.offset + degrees))))
-self.y = (room_height/2) + (radius * (cos(degtorad(global.offset + degrees))))
+self.x = (room_width/2)+global.offset_x + (radius * (sin(degtorad(global.offset_rotation + degrees))))
+self.y = (room_height/2)+global.offset_y + (radius * (cos(degtorad(global.offset_rotation + degrees))))
 
 // move/swap planet [-1-off; 0-left, 1-right, 2-up, 3-down]
 self.do_action = -1;

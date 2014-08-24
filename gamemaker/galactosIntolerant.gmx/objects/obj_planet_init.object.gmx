@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>{
 var i;
-for (i = 0; i &lt; 6; i += 1)
-   {
+for (i = 0; i &lt; global.planet_count; i += 1)
+{
    planet = instance_create(0,0,obj_planet_base);
    planet.planet_id = i
    planet.rate = global.plnt_rates[i]   //speed of movement around ring
@@ -42,6 +42,7 @@ for (i = 0; i &lt; 6; i += 1)
    planet.day_cycle = global.plnt_dayCycle_arr[i] //speed of planet rotation
    planet.current_degrees = 0;
    planet.end_degrees = 0;
+   global.plnts_arr[i] = planet;
    }
 }
 </string>
