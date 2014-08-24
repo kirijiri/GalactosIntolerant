@@ -31,14 +31,13 @@
     <object>objects\obj_planet_base</object>
     <object>objects\obj_planet_init</object>
     <object>objects\obj_sun</object>
-    <object>objects\obj_planet_init</object>
     <object>objects\obj_arrow_base</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_control</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41875.6378888426</constant>
+    <constant name="GM_build_date">41875.6473772917</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

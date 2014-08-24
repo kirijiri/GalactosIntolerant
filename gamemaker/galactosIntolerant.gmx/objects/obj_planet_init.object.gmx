@@ -40,6 +40,8 @@ for (i = 0; i &lt; 6; i += 1)
    planet.move_deg  = 0 // the amount the planet nees to move
    planet.move_incr = 0 // the increments per frame
    planet.day_cycle = global.plnt_dayCycle_arr[i] //speed of planet rotation
+   planet.current_degrees = 0;
+   planet.end_degrees = 0;
    }
 }
 </string>
