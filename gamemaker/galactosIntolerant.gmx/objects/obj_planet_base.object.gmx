@@ -152,9 +152,21 @@ if (global.arrows_visible == 0 &amp;&amp; global.swap_mode == 0 &amp;&amp; globa
     r = sprite_width * 0.5;
     ang = id.facing;
     
+    // forward
     inst0 = instance_create( x, y, obj_arrow_base );
-    inst1 = instance_create( x, y, obj_arrow_base );
+    inst0.parentid = id;
+    inst0.image_angle = ang+90;
+    inst0.sprite_index = global.spr_arrow_arr[0];
+    inst0.type = 0; // left
     
+    // back
+    inst1 = instance_create( x, y, obj_arrow_base );
+    inst1.parentid = id;
+    inst1.image_angle = ang-90;
+    inst1.sprite_index = global.spr_arrow_arr[1];
+    inst1.type = 1; // right
+    
+    // swapping
     if (id.orbit != 5)
     {
         inst2 = instance_create( x, y, obj_arrow_base );
@@ -172,18 +184,6 @@ if (global.arrows_visible == 0 &amp;&amp; global.swap_mode == 0 &amp;&amp; globa
         inst3.sprite_index = global.spr_arrow_arr[3];
         inst3.type = 2; // down
     }
-    
-    inst0.parentid = id;
-    inst1.parentid = id;
-    
-    inst0.image_angle = ang+90;
-    inst1.image_angle = ang-90;
-    
-    inst0.sprite_index = global.spr_arrow_arr[0];
-    inst1.sprite_index = global.spr_arrow_arr[1];
-
-    inst0.type = 0; // left
-    inst1.type = 1; // right
 }
 else
 {
