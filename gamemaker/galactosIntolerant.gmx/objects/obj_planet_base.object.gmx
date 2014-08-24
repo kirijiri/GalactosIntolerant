@@ -78,16 +78,30 @@ if(self.do_action != -1)
 // otherwise trigger planet swap
 if (global.arrows_visible == 0) 
 {
-    inst1 = instance_create( x-sprite_width/2, y, obj_arrow_left );
-    inst1.direction = image_angle;
-    inst2 = instance_create( x+sprite_width/2, y, obj_arrow_right );
-    inst3 = instance_create( x, y-sprite_height/2, obj_arrow_up );
-    inst4 = instance_create( x, y+sprite_height/2, obj_arrow_down );
+    inst0 = instance_create( x, y, obj_arrow_base );
+    inst1 = instance_create( x, y, obj_arrow_base );
+    inst2 = instance_create( x, y, obj_arrow_base );
+    inst3 = instance_create( x, y, obj_arrow_base );
     
+    inst0.parentid = id;
     inst1.parentid = id;
     inst2.parentid = id;
     inst3.parentid = id;
-    inst4.parentid = id;
+    
+    inst0.image_angle = id.facing-90;
+    inst1.image_angle = id.facing+90;
+    inst2.image_angle = id.facing;
+    inst3.image_angle = id.facing-180;
+    
+    inst0.sprite_index = global.spr_arrow_arr[0];
+    inst1.sprite_index = global.spr_arrow_arr[1];
+    inst2.sprite_index = global.spr_arrow_arr[2];
+    inst3.sprite_index = global.spr_arrow_arr[3];
+    
+    inst0.type = 0; // left
+    inst1.type = 1; // right
+    inst2.type = 2; // up 
+    inst3.type = 3; // down
 }
 else
 {

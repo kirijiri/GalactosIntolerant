@@ -53,7 +53,6 @@ spr_arr[4] = spr_planet_04;
 spr_arr[5] = spr_planet_05;
 globalvar global.spr_arr = spr_arr;
 
-
 //--------------------------------------------------ORBITS
 
 // orbit values
@@ -76,6 +75,15 @@ orbit_deg_arr[3] = 5.625;
 orbit_deg_arr[4] = 2.8125;
 orbit_deg_arr[5] = 1.4062;
 globalvar global.orbit_deg_arr = orbit_deg_arr;
+
+//--------------------------------------------------ARROWS
+
+// arrow sprites
+spr_arrow_arr[0] = spr_left;
+spr_arrow_arr[1] = spr_right;
+spr_arrow_arr[2] = spr_down;
+spr_arrow_arr[3] = spr_up;
+globalvar global.spr_arrow_arr = spr_arrow_arr;
 
 // movement arrows visibility
 globalvar global.arrows_visible = 0;
