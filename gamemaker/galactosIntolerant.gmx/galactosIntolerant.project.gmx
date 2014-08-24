@@ -29,19 +29,19 @@
     <object>objects\obj_global</object>
     <object>objects\obj_solver</object>
     <object>objects\obj_planet_base</object>
+    <object>objects\obj_planet_init</object>
     <object>objects\obj_sun</object>
     <object>objects\obj_arrow</object>
     <object>objects\obj_arrow_left</object>
     <object>objects\obj_arrow_right</object>
     <object>objects\obj_arrow_down</object>
     <object>objects\obj_arrow_up</object>
-    <object>objects\obj_planet_init</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_control</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41875.6117612847</constant>
+    <constant name="GM_build_date">41875.6375383912</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

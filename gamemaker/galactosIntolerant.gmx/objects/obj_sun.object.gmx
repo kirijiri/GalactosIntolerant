@@ -80,7 +80,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.turn += 1;
+            <string>if global.animation_lock ==0
+{
+    global.turn += 1;
+}
 </string>
           </argument>
         </arguments>

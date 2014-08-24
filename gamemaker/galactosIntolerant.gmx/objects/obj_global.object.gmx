@@ -25,14 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("global initialised!!!");
-
-array[0] = 0;
-show_debug_message("THIS IS A THING 11111" + string(array[0]))
-
-// turn
+            <string>//--------------------------------------------------GLOBALS
 globalvar global.turn = 0;
-globalvar global.anim_time = 50;
+globalvar global.anim_time = 20;
+
+//--------------------------------------------------FLAGS
+
+globalvar global.arrows_visible = 0; // movement arrows visibility
+globalvar global.animation_lock = 0; // pause fo animation
 
 //--------------------------------------------------PLANETS
 
@@ -52,15 +52,24 @@ plnt_spr_arr[2] = spr_planet_02;
 plnt_spr_arr[3] = spr_planet_03;
 plnt_spr_arr[4] = spr_planet_04;
 plnt_spr_arr[5] = spr_planet_05;
-globalvar global.plnt_spr_arr = spr_arr;
+globalvar global.plnt_spr_arr = plnt_spr_arr;
 
+//day cycles
+plnt_dayCycle_arr[0] = 20;
+plnt_dayCycle_arr[1] = 20;
+plnt_dayCycle_arr[2] = 20;
+plnt_dayCycle_arr[3] = 20;
+plnt_dayCycle_arr[4] = 20;
+plnt_dayCycle_arr[5] = 20;
+globalvar global.plnt_dayCycle_arr = plnt_dayCycle_arr;
 
 //--------------------------------------------------ORBITS
 
 // orbit values
 globalvar global.sun_radius = 75;
 globalvar global.orb_width = 75;
-// steps
+
+// steps - make these procedural????
 orb_step_arr[0] = 8;
 orb_step_arr[1] = 16;
 orb_step_arr[2] = 32;
@@ -69,7 +78,7 @@ orb_step_arr[4] = 128;
 orb_step_arr[5] = 248;
 globalvar global.orb_step_arr = orb_step_arr;
 
-// degree array
+// degree array - make these procedural????
 orbit_deg_arr[0] = 45;
 orbit_deg_arr[1] = 22.5;
 orbit_deg_arr[2] = 11.25;
@@ -78,8 +87,6 @@ orbit_deg_arr[4] = 2.8125;
 orbit_deg_arr[5] = 1.4062;
 globalvar global.orbit_deg_arr = orbit_deg_arr;
 
-// movement arrows visibility
-globalvar global.arrows_visible = 0;
 
 
 </string>

@@ -39,8 +39,7 @@ for (i = 0; i &lt; 6; i += 1)
    planet.facing = 0 // facing fo the arrows in radians
    planet.move_deg  = 0 // the amount the planet nees to move
    planet.move_incr = 0 // the increments per frame
-   //planet.curent_degrees = 0
-   //planet.end_degrees    = 0 
+   planet.day_cycle = global.plnt_dayCycle_arr[i] //speed of planet rotation
    }
 }
 </string>

@@ -25,29 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//show_debug_message(object_get_name(id.object_index));
-//show_debug_message("     " +string(self.turn));
-
-// move on turn
+            <string>//--------------------------------------------------------- TURNS
 if (global.turn == self.turn)
 {
     self.turn += 1;
-    new_step = self.step + self.rate
+    new_step = self.step + self.rate;
 
-    self.curent_degrees = global.orbit_deg_arr[self.orbit] * self.step
-    self.end_degrees = global.orbit_deg_arr[self.orbit] * new_step
+    self.curent_degrees = global.orbit_deg_arr[self.orbit] * self.step;
+    self.end_degrees = global.orbit_deg_arr[self.orbit] * new_step;
     
-    self.move_deg  = end_degrees - curent_degrees
-    self.move_incr = move_deg / global.anim_time
-    self.radius = global.sun_radius + (self.orbit * global.orb_width)
-    
-    /*
-    radius = global.sun_radius + (self.orbit * global.orb_width)
-    self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
-    self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
-    self.facing  = degrees+90;+
-    */
-    self.step = new_step
+    self.move_deg  = end_degrees - curent_degrees;
+    self.move_incr = move_deg / global.anim_time;
+    self.radius = global.sun_radius + (self.orbit * global.orb_width);
+
+    self.step = new_step;
+    global.animation_lock = 1;
 }
 
 // show info text on hover
@@ -56,23 +48,35 @@ if (position_meeting(mouse_x, mouse_y, id))
 else 
     showtext = 0; 
 
-//show_debug_message("do_move "+string(self.do_move));
+//--------------------------------------------------------- ACTIONS
+
 if(self.do_action != -1)
 {
     show_debug_message(object_get_name(id.object_index)+" is going "+string(self.do_action));
     self.do_action = -1;
 }
 
+//--------------------------------------------------------- ANIMATION
 if (self.move_deg &gt; 0)
 {
-    self.curent_degrees += self.move_incr
-    self.move_deg -= self.move_incr
+    self.curent_degrees += self.move_incr;
+    self.move_deg -= self.move_incr;
     
-    self.x = (room_width/2)  + (self.radius * (sin(degtorad(self.curent_degrees))))
-    self.y = (room_height/2) + (self.radius * (cos(degtorad(self.curent_degrees))))
+    self.x = (room_width/2)  + (self.radius * (sin(degtorad(self.curent_degrees))));
+    self.y = (room_height/2) + (self.radius * (cos(degtorad(self.curent_degrees))));
+    
+    //if this is the last step of animation, turn off the lock
+    if self.move_deg == 0
+    {
+        global.animation_lock = 0;
+    }
+    
+    // roate planet and set facing
+    self.image_angle += self.day_cycle;
+    self.facing = self.current_degrees;
 }
 
-
+//--------------------------------------------------------- POST-ANIMA
 
 
 
