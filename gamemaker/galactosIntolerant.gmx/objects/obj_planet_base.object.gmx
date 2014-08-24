@@ -37,7 +37,7 @@ else
 
 if(self.do_action != -1)
 {
-    show_debug_message(string(id)+" doing its action "+string(self.do_action));
+    //show_debug_message(string(id)+" doing its action "+string(self.do_action));
     
     // work out the steps
     if (self.do_action == 0) // move forward
@@ -59,15 +59,12 @@ if(self.do_action != -1)
     self.step = new_step;
     self.do_action = -1;
     global.action_lock = 1;
-    global.arrows_visible = 0;
-    
-    show_debug_message(string(global.action_lock)+" "+string(global.turn_lock)+" "+string(global.turn));
 }
 
 //--------------------------------------------------------- TURNS
 if (global.action_lock = 0 &amp;&amp; global.turn == self.turn)
 {
-    show_debug_message(string(id)+" moving its turn "+string(self.turn));
+    //show_debug_message(string(id)+" moving its turn "+string(self.turn));
     
     // work out the steps
     self.turn += 1;
@@ -105,13 +102,12 @@ if (self.move_deg != 0)
             global.turn +=1;
         
         global.turn_lock = 0;
-        global.action_lock = 0;
-        show_debug_message(string(id)+" is unlocking "+string(global.action_lock)+" "+string(global.turn_lock)+" "+string(global.turn));
-        
+        global.action_lock = 0;     
     }
     
     // roate planet and set facing
     self.image_angle += self.day_cycle;
+}
 
 //--------------------------------------------------------- POST-ANIMA
 
@@ -158,33 +154,39 @@ if (global.arrows_visible == 0 &amp;&amp; global.action_lock == 0 &amp;&amp; glo
     
     r = sprite_width * 0.5;
     ang = id.facing;
-    //ang=0;
-    show_debug_message("angle: "+string(ang));
     
     inst0 = instance_create( x, y, obj_arrow_base );
     inst1 = instance_create( x, y, obj_arrow_base );
-    inst2 = instance_create( x, y, obj_arrow_base );
-    inst3 = instance_create( x, y, obj_arrow_base );
+    
+    if (id.orbit != 5)
+    {
+        inst2 = instance_create( x, y, obj_arrow_base );
+        inst2.parentid = id;
+        inst2.image_angle = ang;
+        inst2.sprite_index = global.spr_arrow_arr[2];
+        inst2.type = 2; // up 
+    }
+    
+    if (id.orbit != 0)
+    {
+        inst3 = instance_create( x, y, obj_arrow_base );
+        inst3.parentid = id;
+        inst3.image_angle = ang-180;
+        inst3.sprite_index = global.spr_arrow_arr[3];
+        inst3.type = 3; // down
+    }
     
     inst0.parentid = id;
     inst1.parentid = id;
-    inst2.parentid = id;
-    inst3.parentid = id;
     
     inst0.image_angle = ang+90;
     inst1.image_angle = ang-90;
-    inst2.image_angle = ang;
-    inst3.image_angle = ang-180;
     
     inst0.sprite_index = global.spr_arrow_arr[0];
     inst1.sprite_index = global.spr_arrow_arr[1];
-    inst2.sprite_index = global.spr_arrow_arr[2];
-    inst3.sprite_index = global.spr_arrow_arr[3];
-    
+
     inst0.type = 0; // left
     inst1.type = 1; // right
-    inst2.type = 2; // up 
-    inst3.type = 3; // down
 }
 else
 {

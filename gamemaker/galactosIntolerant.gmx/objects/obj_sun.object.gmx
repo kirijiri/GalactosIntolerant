@@ -3,7 +3,7 @@
   <spriteName>spr_sun</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -80,9 +80,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ( global.turn_lock == 0 &amp;&amp; global.action_lock == 0 )
+            <string>show_debug_message( global.arrows_visible );
+
+if ( global.arrows_visible == 0 &amp;&amp; global.turn_lock == 0 &amp;&amp; global.action_lock == 0 )
 {
-    //global.turn += 1;
+    global.turn += 1;
 }
 </string>
           </argument>
