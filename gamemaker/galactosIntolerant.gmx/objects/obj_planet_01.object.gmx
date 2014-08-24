@@ -29,6 +29,7 @@
 var self.orbit = 1;
 var self.rate  = 5;
 var self.turn  = 0;
+
 </string>
           </argument>
         </arguments>

@@ -29,7 +29,7 @@
 self.orbit = 0;
 self.rate  = 3;
 self.turn  = 0;
-self.go_left = 0;
+
 </string>
           </argument>
         </arguments>

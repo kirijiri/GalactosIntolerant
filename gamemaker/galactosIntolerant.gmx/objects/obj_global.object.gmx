@@ -45,7 +45,7 @@ s_arr[4] = 128;
 s_arr[5] = 248;
 globalvar global.orb_step_arr = s_arr;
 
-//degree array
+// degree array
 d_arr[0] = 45;
 d_arr[1] = 22.5;
 d_arr[2] = 11.25;
@@ -53,6 +53,10 @@ d_arr[3] = 5.625;
 d_arr[4] = 2.8125;
 d_arr[5] = 1.4062;
 globalvar global.orbit_deg_arr = d_arr;
+
+// movement arrows visibility
+globalvar global.arrows_visible = 0;
+
 
 </string>
           </argument>

@@ -32,7 +32,8 @@ self.step  = -1;
 self.orbit = -1;
 self.rate  = -1;
 self.turn  =  0;
-self.go_left = 0;
+
+
 
 </string>
           </argument>
@@ -58,6 +59,8 @@ self.go_left = 0;
             <kind>1</kind>
             <string>//show_debug_message(object_get_name(id.object_index));
 //show_debug_message("     " +string(self.turn));
+
+// move on turn
 if (global.turn == self.turn)
 {
     show_debug_message(object_get_name(id.object_index)+" is moving "+string(self.turn)+" vs "+string(global.turn));
@@ -76,12 +79,17 @@ self.array[0] = 1;
 show_debug_message("printing array stuff!: "+string(self.array[0]));
 */
 
-show_debug_message(self.go_left);
+// show info text on hover
+if (position_meeting(mouse_x,mouse_y,id.object_index))
+    showtext = 1;
+else 
+    showtext = 0; 
 
-if(self.go_left)
+//show_debug_message("do_move "+string(self.do_move));
+if(self.do_move != -1)
 {
-    show_debug_message(object_get_name(id.object_index)+" is going left");
-    self.go_left = 0;
+    show_debug_message(object_get_name(id.object_index)+" is going "+string(self.do_move));
+    self.do_move = -1;
 }
 </string>
           </argument>
@@ -105,7 +113,6 @@ if(self.go_left)
         <arguments>
           <argument>
             <kind>1</kind>
-
             <string>self.step += self.rate
 var degrees = global.orbit_deg_arr[self.orbit] * self.step
 var radius = global.sun_radius + (self.orbit * global.orb_width)
@@ -115,10 +122,20 @@ self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
 //show_debug_message(string(self.last_x)+" "+string(self.last_y));
 //show_debug_message(string(mouse_x)+" " +string(mouse_y));
 
-instance_create( x-sprite_width/2, y, obj_arrow_left );
-instance_create( x+sprite_width/2, y, obj_arrow_right );
-instance_create( x, y-sprite_height/2, obj_arrow_up );
-instance_create( x, y+sprite_height/2, obj_arrow_down );
+// display arrows if there aren't any open already
+// otherwise trigger planet swap
+if (global.arrows_visible == 0) 
+{
+    instance_create( x-sprite_width/2, y, obj_arrow_left );
+    instance_create( x+sprite_width/2, y, obj_arrow_right );
+    instance_create( x, y-sprite_height/2, obj_arrow_up );
+    instance_create( x, y+sprite_height/2, obj_arrow_down );
+}
+else
+{
+    show_debug_message("TODO: planet swap");
+    // test if up/down arrow is activated -&gt; otherwise ignore?/close arrows?
+}
 </string>
           </argument>
         </arguments>
@@ -145,6 +162,40 @@ instance_create( x, y+sprite_height/2, obj_arrow_down );
 var radius = global.sun_radius + (self.orbit * global.orb_width)
 self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
 self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
+
+// move planet [-1-off; 0-left, 1-right, 2-up, 3-down]
+self.do_move = -1;
+
+// hover info text
+showtext = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+if (showtext == 1)
+{
+    draw_text(x, y-64, "Hi!#This is information for:#"+object_get_name(id.object_index));
+}
 </string>
           </argument>
         </arguments>

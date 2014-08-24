@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>show_debug_message("LEFT ARROW INSTANCE ID: "+string(instance_id));
+//show_debug_message(object_get_parent());
+</string>
           </argument>
         </arguments>
       </action>
