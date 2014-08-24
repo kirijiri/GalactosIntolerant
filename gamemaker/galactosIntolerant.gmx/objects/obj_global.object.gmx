@@ -32,7 +32,7 @@ globalvar global.anim_time = 20;
 //--------------------------------------------------FLAGS
 
 globalvar global.arrows_visible = 0; // movement arrows visibility
-globalvar global.animation_lock = 0; // pause fo animation
+globalvar global.animation_lock = 0; // pause for animation
 
 //--------------------------------------------------PLANETS
 
@@ -86,6 +86,15 @@ orbit_deg_arr[3] = 5.625;
 orbit_deg_arr[4] = 2.8125;
 orbit_deg_arr[5] = 1.4062;
 globalvar global.orbit_deg_arr = orbit_deg_arr;
+
+//--------------------------------------------------ARROWS
+
+// arrow sprites
+spr_arrow_arr[0] = spr_left;
+spr_arrow_arr[1] = spr_right;
+spr_arrow_arr[2] = spr_down;
+spr_arrow_arr[3] = spr_up;
+globalvar global.spr_arrow_arr = spr_arrow_arr;
 
 
 
