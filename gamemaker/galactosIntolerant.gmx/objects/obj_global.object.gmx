@@ -32,6 +32,7 @@ show_debug_message("THIS IS A THING 11111" + string(array[0]))
 
 // turn
 globalvar global.turn = 0;
+globalvar global.anim_time = 50;
 
 //--------------------------------------------------PLANETS
 
@@ -45,13 +46,13 @@ plnt_rates[5] = 14;
 globalvar global.plnt_rates = plnt_rates;
 
 //sprites
-spr_arr[0] = spr_planet_00;
-spr_arr[1] = spr_planet_01;
-spr_arr[2] = spr_planet_02;
-spr_arr[3] = spr_planet_03;
-spr_arr[4] = spr_planet_04;
-spr_arr[5] = spr_planet_05;
-globalvar global.spr_arr = spr_arr;
+plnt_spr_arr[0] = spr_planet_00;
+plnt_spr_arr[1] = spr_planet_01;
+plnt_spr_arr[2] = spr_planet_02;
+plnt_spr_arr[3] = spr_planet_03;
+plnt_spr_arr[4] = spr_planet_04;
+plnt_spr_arr[5] = spr_planet_05;
+globalvar global.plnt_spr_arr = spr_arr;
 
 //--------------------------------------------------ORBITS
 
