@@ -54,10 +54,10 @@ else
     showtext = 0; 
 
 //show_debug_message("do_move "+string(self.do_move));
-if(self.do_move != -1)
+if(self.do_action != -1)
 {
-    show_debug_message(object_get_name(id.object_index)+" is going "+string(self.do_move));
-    self.do_move = -1;
+    show_debug_message(object_get_name(id.object_index)+" is going "+string(self.do_action));
+    self.do_action = -1;
 }
 </string>
           </argument>
@@ -85,10 +85,15 @@ if(self.do_move != -1)
 // otherwise trigger planet swap
 if (global.arrows_visible == 0) 
 {
-    instance_create( x-sprite_width/2, y, obj_arrow_left );
-    instance_create( x+sprite_width/2, y, obj_arrow_right );
-    instance_create( x, y-sprite_height/2, obj_arrow_up );
-    instance_create( x, y+sprite_height/2, obj_arrow_down );
+    inst1 = instance_create( x-sprite_width/2, y, obj_arrow_left );
+    inst2 = instance_create( x+sprite_width/2, y, obj_arrow_right );
+    inst3 = instance_create( x, y-sprite_height/2, obj_arrow_up );
+    inst4 = instance_create( x, y+sprite_height/2, obj_arrow_down );
+    
+    inst1.parentid = id;
+    inst2.parentid = id;
+    inst3.parentid = id;
+    inst4.parentid = id;
 }
 else
 {
@@ -122,8 +127,8 @@ var radius = global.sun_radius + (self.orbit * global.orb_width)
 self.x = (room_width/2) + (radius * (sin(degtorad(degrees))))
 self.y = (room_height/2) + (radius * (cos(degtorad(degrees))))
 
-// move planet [-1-off; 0-left, 1-right, 2-up, 3-down]
-self.do_move = -1;
+// move/swap planet [-1-off; 0-left, 1-right, 2-up, 3-down]
+self.do_action = -1;
 
 // hover info text
 showtext = 0;
