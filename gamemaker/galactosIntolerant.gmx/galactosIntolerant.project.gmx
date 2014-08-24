@@ -13,7 +13,6 @@
     <sprite>sprites\spr_planet_03</sprite>
     <sprite>sprites\spr_planet_04</sprite>
     <sprite>sprites\spr_planet_05</sprite>
-    <sprite>sprites\spr_testBtn</sprite>
     <sprite>sprites\spr_left</sprite>
     <sprite>sprites\spr_right</sprite>
     <sprite>sprites\spr_down</sprite>
@@ -27,7 +26,6 @@
     <font>fonts\fnt_HUD</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_testBtn</object>
     <object>objects\obj_global</object>
     <object>objects\obj_solver</object>
     <object>objects\obj_planet_base</object>

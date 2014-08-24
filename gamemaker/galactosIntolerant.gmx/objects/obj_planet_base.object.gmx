@@ -40,15 +40,8 @@ if (global.turn == self.turn)
     self.facing  = degrees+90;
 }
 
-
-/*
-self.array = 0;
-self.array[0] = 1;
-show_debug_message("printing array stuff!: "+string(self.array[0]));
-*/
-
 // show info text on hover
-if (position_meeting(mouse_x,mouse_y,id.object_index))
+if (position_meeting(mouse_x, mouse_y, id))
     showtext = 1;
 else 
     showtext = 0; 
@@ -86,6 +79,7 @@ if(self.do_action != -1)
 if (global.arrows_visible == 0) 
 {
     inst1 = instance_create( x-sprite_width/2, y, obj_arrow_left );
+    inst1.direction = image_angle;
     inst2 = instance_create( x+sprite_width/2, y, obj_arrow_right );
     inst3 = instance_create( x, y-sprite_height/2, obj_arrow_up );
     inst4 = instance_create( x, y+sprite_height/2, obj_arrow_down );

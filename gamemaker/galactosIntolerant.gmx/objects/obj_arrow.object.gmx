@@ -109,22 +109,22 @@ if (!position_meeting(mouse_x, mouse_y, obj_arrow_left) &amp;&amp;
 if (object_get_name(id.object_index) == "obj_arrow_left")
 {
     //show_debug_message("move left "+string(self.parentid));
-    self.parentid.object_index.do_action = 0;
+    self.parentid.do_action = 0;
 }
 else if (object_get_name(id.object_index) == "obj_arrow_right")
 {
     //show_debug_message("move right "+string(self.parentid));
-    self.parentid.object_index.do_action = 1;
+    self.parentid.do_action = 1;
 }
 else if (object_get_name(id.object_index) == "obj_arrow_up")
 {
     //show_debug_message("move up "+string(self.parentid));
-    self.parentid.object_index.do_action = 2;
+    self.parentid.do_action = 2;
 }
 else if (object_get_name(id.object_index) == "obj_arrow_down")
 {
     //show_debug_message("move down "+string(self.parentid));
-    self.parentid.object_index.do_action = 3;
+    self.parentid.do_action = 3;
 }
 
 </string>
