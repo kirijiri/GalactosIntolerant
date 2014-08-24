@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>self.radius = global.sun_radius + (self.orbit * global.orb_width);
 
 //--------------------------------------------------------- TURNS
 if (global.action_lock = 0 &amp;&amp; global.turn == self.turn)
@@ -105,7 +105,6 @@ if (self.move_deg != 0)
     self.move_deg -= self.move_incr;
     
     // get the current radius
-    self.radius = global.sun_radius + (self.orbit * global.orb_width);
     
     /// set the positions
     self.x = (room_width/2)  + (self.radius * (sin(degtorad(global.offset + self.current_degrees))));
@@ -120,12 +119,13 @@ if (self.move_deg != 0)
     
     // roate planet and set facing
     self.image_angle += self.day_cycle;
-    self.facing = self.current_degrees - 90;
+    
     
 }
 
 //--------------------------------------------------------- POST-ANIMA
 
+self.facing = point_direction(room_width/2, room_height/2, self.x, self.y);
 
 
 
