@@ -124,10 +124,10 @@ if (global.arrows_visible == 0)
     inst2.parentid = id;
     inst3.parentid = id;
     
-    inst0.image_angle = id.facing-90;
-    inst1.image_angle = id.facing+90;
-    inst2.image_angle = id.facing;
-    inst3.image_angle = id.facing-180;
+    inst0.image_angle = id.facing;
+    inst1.image_angle = id.facing-180;
+    inst2.image_angle = id.facing+90;
+    inst3.image_angle = id.facing-90;
     
     inst0.sprite_index = global.spr_arrow_arr[0];
     inst1.sprite_index = global.spr_arrow_arr[1];
