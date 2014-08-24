@@ -33,26 +33,49 @@ show_debug_message("THIS IS A THING 11111" + string(array[0]))
 // turn
 globalvar global.turn = 0;
 
+//--------------------------------------------------PLANETS
+
+//rates
+plnt_rates[0] = 3;
+plnt_rates[1] = 5;
+plnt_rates[2] = 7;
+plnt_rates[3] = 9;
+plnt_rates[4] = 11;
+plnt_rates[5] = 14;
+globalvar global.plnt_rates = plnt_rates;
+
+//sprites
+spr_arr[0] = spr_planet_00;
+spr_arr[1] = spr_planet_01;
+spr_arr[2] = spr_planet_02;
+spr_arr[3] = spr_planet_03;
+spr_arr[4] = spr_planet_04;
+spr_arr[5] = spr_planet_05;
+globalvar global.spr_arr = spr_arr;
+
+
+//--------------------------------------------------ORBITS
+
 // orbit values
 globalvar global.sun_radius = 75;
 globalvar global.orb_width = 75;
 // steps
-s_arr[0] = 8;
-s_arr[1] = 16;
-s_arr[2] = 32;
-s_arr[3] = 64;
-s_arr[4] = 128;
-s_arr[5] = 248;
-globalvar global.orb_step_arr = s_arr;
+orb_step_arr[0] = 8;
+orb_step_arr[1] = 16;
+orb_step_arr[2] = 32;
+orb_step_arr[3] = 64;
+orb_step_arr[4] = 128;
+orb_step_arr[5] = 248;
+globalvar global.orb_step_arr = orb_step_arr;
 
 // degree array
-d_arr[0] = 45;
-d_arr[1] = 22.5;
-d_arr[2] = 11.25;
-d_arr[3] = 5.625;
-d_arr[4] = 2.8125;
-d_arr[5] = 1.4062;
-globalvar global.orbit_deg_arr = d_arr;
+orbit_deg_arr[0] = 45;
+orbit_deg_arr[1] = 22.5;
+orbit_deg_arr[2] = 11.25;
+orbit_deg_arr[3] = 5.625;
+orbit_deg_arr[4] = 2.8125;
+orbit_deg_arr[5] = 1.4062;
+globalvar global.orbit_deg_arr = orbit_deg_arr;
 
 // movement arrows visibility
 globalvar global.arrows_visible = 0;

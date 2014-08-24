@@ -7,12 +7,12 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_sun</sprite>
-    <sprite>sprites\spr_planet1</sprite>
-    <sprite>sprites\spr_planet2</sprite>
-    <sprite>sprites\spr_planet3</sprite>
-    <sprite>sprites\spr_planet4</sprite>
-    <sprite>sprites\spr_planet5</sprite>
-    <sprite>sprites\spr_planet6</sprite>
+    <sprite>sprites\spr_planet_00</sprite>
+    <sprite>sprites\spr_planet_01</sprite>
+    <sprite>sprites\spr_planet_02</sprite>
+    <sprite>sprites\spr_planet_03</sprite>
+    <sprite>sprites\spr_planet_04</sprite>
+    <sprite>sprites\spr_planet_05</sprite>
     <sprite>sprites\spr_testBtn</sprite>
     <sprite>sprites\spr_left</sprite>
     <sprite>sprites\spr_right</sprite>
@@ -31,24 +31,19 @@
     <object>objects\obj_global</object>
     <object>objects\obj_solver</object>
     <object>objects\obj_planet_base</object>
-    <object>objects\obj_planet_00</object>
-    <object>objects\obj_planet_01</object>
-    <object>objects\obj_planet_02</object>
-    <object>objects\obj_planet_03</object>
-    <object>objects\obj_planet_04</object>
-    <object>objects\obj_planet_05</object>
     <object>objects\obj_sun</object>
     <object>objects\obj_arrow</object>
     <object>objects\obj_arrow_left</object>
     <object>objects\obj_arrow_right</object>
     <object>objects\obj_arrow_down</object>
     <object>objects\obj_arrow_up</object>
+    <object>objects\obj_planet_init</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_control</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41875.0152200116</constant>
+    <constant name="GM_build_date">41875.567470162</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

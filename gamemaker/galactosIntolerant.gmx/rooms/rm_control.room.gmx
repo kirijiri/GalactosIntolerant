@@ -54,12 +54,7 @@
     <instance objName="obj_sun" x="512" y="384" name="inst_D67F725A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_global" x="0" y="0" name="inst_20B6BBE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_testBtn" x="32" y="32" name="inst_4F1A86D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_planet_00" x="32" y="32" name="inst_24805206" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_planet_01" x="32" y="96" name="inst_54CD2BC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_planet_02" x="32" y="160" name="inst_D9855E20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_planet_03" x="32" y="224" name="inst_A7EF4A5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_planet_04" x="32" y="288" name="inst_E47CA23C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_planet_05" x="32" y="352" name="inst_CD39D458" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_planet_init" x="96" y="576" name="inst_4406CCCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
