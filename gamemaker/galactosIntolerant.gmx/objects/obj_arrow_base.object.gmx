@@ -71,10 +71,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-// make arrows disappear if an area outside of the planets or arrows is clicked
+            <string>// make arrows disappear if an area outside of the planets or arrows is clicked
 if (!position_meeting(mouse_x, mouse_y, obj_arrow_base) &amp;&amp; 
     !position_meeting(mouse_x, mouse_y, obj_planet_base) &amp;&amp;
+    !position_meeting(mouse_x, mouse_y, obj_sun) &amp;&amp;
     mouse_check_button_pressed(mb_left))
 {
     instance_destroy();

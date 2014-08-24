@@ -145,8 +145,6 @@ self.facing = point_direction(room_width/2, room_height/2, self.x, self.y);
             <kind>1</kind>
             <string>// display arrows if there aren't any open already
 // otherwise trigger planet swap
-
-
 if (global.arrows_visible == 0 &amp;&amp; global.action_lock == 0 &amp;&amp; global.turn_lock == 0) 
 {
     //show_debug_message("sprite size: "+string(sprite_width)+" "+string(sprite_height));
@@ -155,9 +153,21 @@ if (global.arrows_visible == 0 &amp;&amp; global.action_lock == 0 &amp;&amp; glo
     r = sprite_width * 0.5;
     ang = id.facing;
     
+    // forward
     inst0 = instance_create( x, y, obj_arrow_base );
-    inst1 = instance_create( x, y, obj_arrow_base );
+    inst0.parentid = id;
+    inst0.image_angle = ang+90;
+    inst0.sprite_index = global.spr_arrow_arr[0];
+    inst0.type = 0; // left
     
+    // back
+    inst1 = instance_create( x, y, obj_arrow_base );
+    inst1.parentid = id;
+    inst1.image_angle = ang-90;
+    inst1.sprite_index = global.spr_arrow_arr[1];
+    inst1.type = 1; // right
+    
+    // swapping
     if (id.orbit != 5)
     {
         inst2 = instance_create( x, y, obj_arrow_base );
@@ -175,18 +185,6 @@ if (global.arrows_visible == 0 &amp;&amp; global.action_lock == 0 &amp;&amp; glo
         inst3.sprite_index = global.spr_arrow_arr[3];
         inst3.type = 3; // down
     }
-    
-    inst0.parentid = id;
-    inst1.parentid = id;
-    
-    inst0.image_angle = ang+90;
-    inst1.image_angle = ang-90;
-    
-    inst0.sprite_index = global.spr_arrow_arr[0];
-    inst1.sprite_index = global.spr_arrow_arr[1];
-
-    inst0.type = 0; // left
-    inst1.type = 1; // right
 }
 else
 {
