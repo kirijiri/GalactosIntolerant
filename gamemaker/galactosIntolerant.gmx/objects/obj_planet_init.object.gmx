@@ -25,12 +25,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-/*
+            <string>/*
+
 // parse planet data textfile
 show_debug_message("------------------parse filename-------------------");
 
-file = file_text_open_read(working_directory+"GI_planetdatafin.txt");
+file = file_text_open_read(global.file_message_data);
+c = 0;
+while (!file_text_eof(file))
+{
+   data_array[c] = file_text_readln(file);
+   c++;
+}
+file_text_close(file);
+
+a = scr_string_split(data_array[i], "=");
+for( var j=0; j&lt;array_length_1d(a); j+=1 )
+{
+    show_debug_message(a[j]);
+}
+*/
+
+/*
+/// TODO: planet data
+
+// parse planet data textfile
+show_debug_message("------------------parse filename-------------------");
+
+file = file_text_open_read(global.file_planet_data);
 c = 0;
 while (!file_text_eof(file))
 {
@@ -43,9 +65,9 @@ var planet_count = -1;
 for (i=0; i&lt;c; i++)
 {
     a = scr_string_split(data_array[i], "=");
-    //for( var j=0; j&lt;array_length_1d(array); j+=1 )
+    //for( var j=0; j&lt;array_length_1d(a); j+=1 )
     //{
-    //    show_debug_message(array[j]);
+    //    show_debug_message(a[j]);
     //}
     
     show_debug_message(array_length_1d(a));

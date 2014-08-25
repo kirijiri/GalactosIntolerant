@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar global.start_score = 5710000000;
+            <string>
+//--------------------------------------------------SCORE
+
+globalvar global.start_score = 5710000000;
 globalvar global.score = 5710000000;
 globalvar global.likes_received = 0;
 globalvar global.remaining_followers = 0;
@@ -33,6 +36,7 @@ globalvar global.remaining_population = 0;
 globalvar global.death_toll = 0;
 
 //--------------------------------------------------GLOBALS
+
 globalvar global.turn = 0;
 globalvar global.anim_time = 20;
 globalvar global.offset_rotation = 90;
@@ -44,6 +48,11 @@ globalvar global.cardinal_threshold = 0.15;
 globalvar global.planet_count = 6;
 globalvar global.win_condition_align_count = 3;
 
+//--------------------------------------------------FILES
+
+globalvar global.file_planet_data = working_directory+"GI_planetdatafin.txt";
+globalvar global.file_message_data = working_directory+"GI_news.txt";
+
 //--------------------------------------------------FLAGS
 
 globalvar global.arrows_visible = 0; // movement arrows visibility
@@ -51,7 +60,7 @@ globalvar global.turn_lock = 0; // lock for turn
 globalvar global.action_lock = 0; // lock for actions
 globalvar global.swap_mode = 0; // lock for actions
 
-//--------------------------------------------------FLAGS
+//--------------------------------------------------SOUND
 
 globalvar global.snd_music = 0.4;
 globalvar global.snd_fx = 1;
