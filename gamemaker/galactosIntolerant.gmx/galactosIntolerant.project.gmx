@@ -3,6 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles">
+    <datafile>
+      <name>GI_planetdatafin.txt</name>
+      <exists>-1</exists>
+      <size>4054</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>GI_planetdatafin.txt</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_bg</sound>
@@ -25,6 +44,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
+    <background>background\bg_score</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -51,8 +71,8 @@
     <room>rooms\rm_score</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41876.5553144097</constant>
-    <constant name="GM_version">'1.0.0.4'</constant>
+    <constant name="GM_build_date">41876.5860155787</constant>
+    <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

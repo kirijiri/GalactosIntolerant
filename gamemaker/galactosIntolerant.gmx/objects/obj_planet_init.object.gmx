@@ -44,7 +44,23 @@ for (i = 0; i &lt; global.planet_count; i += 1)
    planet.end_degrees = 0;
    global.plnts_arr[i] = planet;
    }
+   
+
+// parse planet data textfile
+show_debug_message("------------------parse filename-------------------");
+
+file = file_text_open_read(working_directory+"GI_planetdatafin.txt");
+i = 0;
+while (!file_text_eof(file))
+{
+   data_array[i] = file_text_readln(file);
+   i++;
 }
+file_text_close(file);
+
+}
+
+
 </string>
           </argument>
         </arguments>
