@@ -80,9 +80,20 @@ if (!position_meeting(mouse_x, mouse_y, obj_arrow_base) &amp;&amp;
     instance_destroy();
 }
 
+// destroy arrows on animation
 if (global.action_lock || global.turn_lock || global.swap_mode)
 {
     instance_destroy();
+}
+
+// highlight on hover
+if (position_meeting(mouse_x, mouse_y, id))
+{
+    self.image_index = 1;
+}
+else 
+{
+    self.image_index = 0;
 }
 </string>
           </argument>
