@@ -38,20 +38,46 @@ for (i = 0; i &lt; global.planet_count; i += 1)
     
     if (abs(c_nr - round(c_nr)) &lt; global.cardinal_threshold)
     {
-        possible_win_nr[c] = round(c_nr);
+        possible_win_nr[c] = round(c_nr) mod global.cardinal_count;
         possible_win_id[c] = global.plnts_arr[i];
         c += 1;
     }
 }
 
-show_debug_message("----------------");
-for (i = 0; i &lt; c; i += 1)
+// find the cardinal with the most planets on it 
+// (returns [cardinal_index, planet_count]
+r = scr_list_max(possible_win_nr, c);
+
+// if the planet count on that cardinal with the most
+// planets matches or exceeds the win condition, trigger
+if (r[1] &gt;= global.win_condition_align_count)
 {
-    show_debug_message( string(possible_win_nr[i])+" "+string(possible_win_id[i]) );
-    m = scr_list_max(possible_win_nr, c);
-    show_debug_message("MAX: "+string(m));
+    show_debug_message("---SNAPSHOT---");
+    // TODO: trigger a button
+    
+    // give me an array of all planets on the win-cardinal
+    win_c = 0;
+    for (i = 0; i &lt; c; i += 1)
+    {
+        if(possible_win_nr[i] == r[0])
+        {
+            win_ids[win_c] = possible_win_id[i];
+            win_c += 1;
+        }
+    }
+    
+    // TODO: hightlight these planets!
+    for (i = 0; i &lt; win_c; i += 1)
+    {
+        show_debug_message("HIGHLIGHT: "+string(win_ids[i])+" on "+string(r[0]));
+    }
 }
 
+
+/*
+second script: indices oc
+*of
+*/
 </string>
           </argument>
         </arguments>
