@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>global.arrows_visible = 1;
+
+// scale arrows
+image_xscale -= 0.3;
+image_yscale -= 0.3;
 </string>
           </argument>
         </arguments>
