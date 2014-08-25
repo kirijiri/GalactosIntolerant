@@ -157,8 +157,16 @@ self.parentid.do_action = self.type;
           <argument>
             <kind>1</kind>
             <string>// click sounds
-snd = audio_play_sound(snd_click, 100, false);
-audio_sound_gain(snd, global.snd_fx, 0);
+if (self.type == 0)
+    snd = audio_play_sound(snd_spdup, 100, false);
+
+else if (self.type == 1)
+    snd = audio_play_sound(snd_spddown, 100, false);
+    
+else if (self.type == 2 || self.type == 3)
+    snd = audio_play_sound(snd_swap, 100, false);
+    
+audio_sound_gain(snd, global.snd_fx_arrows, 0);
 </string>
           </argument>
         </arguments>

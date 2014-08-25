@@ -44,6 +44,9 @@
     <sound>sound\snd_bg</sound>
     <sound>sound\snd_click</sound>
     <sound>sound\snd_shutter</sound>
+    <sound>sound\snd_spdup</sound>
+    <sound>sound\snd_spddown</sound>
+    <sound>sound\snd_swap</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_sun</sprite>
@@ -98,7 +101,7 @@
     <room>rooms\rm_score</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41876.8096196644</constant>
+    <constant name="GM_build_date">41876.8167710532</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
