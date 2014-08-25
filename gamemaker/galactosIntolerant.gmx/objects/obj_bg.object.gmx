@@ -68,7 +68,7 @@ for (i=0; i&lt;global.cardinal_count; ++i)
 }
 
 // highlight winning cardinal on win
-if (!global.turn_lock &amp;&amp; !(global.align_count &lt; global.win_condition_align_count) )
+if (global.win &amp;&amp; (global.align_count &gt;= global.win_condition_align_count)) 
 {    
     cardinal = global.cardinal_count - global.win_cardinal;
     end_x = obj_sun.x + r * cos(degtorad(cardinal_angle*cardinal));

@@ -36,6 +36,7 @@ globalvar global.remaining_population = 0;
 globalvar global.death_toll = 0;
 globalvar global.align_count = 0;
 globalvar global.lost = 0;
+globalvar global.win = 0;
 globalvar global.win_cardinal = -1;
 
 //--------------------------------------------------GLOBALS
@@ -74,20 +75,20 @@ globalvar global.snd_fx_skip = 1;
 //--------------------------------------------------PLANETS
 
 // rates
-/*
 plnt_rates[0] = 3;
 plnt_rates[1] = 5;
 plnt_rates[2] = 7;
 plnt_rates[3] = 9;
 plnt_rates[4] = 11;
 plnt_rates[5] = 14;
-*/
+/*
 plnt_rates[0] = 1;
 plnt_rates[1] = 1;
 plnt_rates[2] = 1;
 plnt_rates[3] = 1;
 plnt_rates[4] = 1;
 plnt_rates[5] = 1;
+*/
 globalvar global.plnt_rates = plnt_rates;
 
 // sprites
@@ -115,20 +116,20 @@ globalvar global.sun_radius = 100;
 globalvar global.orb_width = 50;
 
 // steps 
-/*
 orb_step_arr[0] = global.cardinal_count;
 orb_step_arr[1] = orb_step_arr[0]*2;
 orb_step_arr[2] = orb_step_arr[1]*2;
 orb_step_arr[3] = orb_step_arr[2]*2;
 orb_step_arr[4] = orb_step_arr[3]*2;
 orb_step_arr[5] = orb_step_arr[4]*2;
-*/
+/*
 orb_step_arr[0] = 8;
 orb_step_arr[1] = 8;
 orb_step_arr[2] = 8;
 orb_step_arr[3] = 8;
 orb_step_arr[4] = 8;
 orb_step_arr[5] = 8;
+*/
 globalvar global.orb_step_arr = orb_step_arr;
 
 // degree array - make these procedural????
