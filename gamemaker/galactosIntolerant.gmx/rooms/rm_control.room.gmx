@@ -58,6 +58,7 @@
     <instance objName="obj_win_btn" x="192" y="768" name="inst_AD5A1F12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bg" x="96" y="0" name="inst_80EE5E4F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_phone" x="53" y="98" name="inst_9E21A64A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lost" x="1505" y="820" name="inst_006C7450" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

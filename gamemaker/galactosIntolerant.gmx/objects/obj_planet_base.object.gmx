@@ -45,6 +45,8 @@ if(self.do_action &gt; -1)
 {
     if (global.score &gt; 0)
         global.score -= random_range(200000000, 50000000);
+    if (global.score &lt; 0)
+        global.score = 0;
 }
     
 //--------------------------------------------------------- ACTIONS

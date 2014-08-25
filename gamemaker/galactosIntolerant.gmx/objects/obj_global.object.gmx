@@ -28,13 +28,14 @@
             <string>
 //--------------------------------------------------SCORE
 
-globalvar global.start_score = 5710000000;
-globalvar global.score = 5710000000;
+globalvar global.start_score = 20;//5710000000;
+globalvar global.score = global.start_score;
 globalvar global.likes_received = 0;
 globalvar global.remaining_followers = 0;
 globalvar global.remaining_population = 0;
 globalvar global.death_toll = 0;
 globalvar global.align_count = 0;
+globalvar global.lost = 0;
 
 //--------------------------------------------------GLOBALS
 

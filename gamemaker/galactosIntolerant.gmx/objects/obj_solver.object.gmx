@@ -34,7 +34,6 @@ if !(global.turn_lock || global.action_lock || global.turn == 0)
     var c = 0;
     for (i = 0; i &lt; global.planet_count; i += 1)
     {
-    
         c_nr = global.plnts_arr[i].current_degrees;
         c_nr = c_nr mod 360;
         c_nr = c_nr / cardinal_angle;
@@ -42,7 +41,6 @@ if !(global.turn_lock || global.action_lock || global.turn == 0)
         if (abs(c_nr - round(c_nr)) &lt; global.cardinal_threshold)
         {
             possible_win_nr[c] = round(c_nr) mod (global.cardinal_count/2);
-            show_debug_message(        possible_win_nr[c]);
             possible_win_id[c] = global.plnts_arr[i];
             c += 1;
         }
@@ -55,9 +53,7 @@ if !(global.turn_lock || global.action_lock || global.turn == 0)
     // if the planet count on that cardinal with the most
     // planets matches or exceeds the win condition, trigger
     if (r[1] &gt;= global.win_condition_align_count)
-    {
-        show_debug_message("---SNAPSHOT--- "+string(r[1])+" planets");
-        
+    {        
         // trigger win button
         obj_win_btn.visible = 1;
         
@@ -82,6 +78,11 @@ if !(global.turn_lock || global.action_lock || global.turn == 0)
         
         global.align_count = win_c;
     }
+}
+
+if !(global.score)
+{
+    global.lost = 1;
 }
 </string>
           </argument>
