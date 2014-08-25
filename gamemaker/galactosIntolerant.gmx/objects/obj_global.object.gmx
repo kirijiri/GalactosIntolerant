@@ -139,7 +139,6 @@ orbit_deg_arr[4] = 360/orb_step_arr[4];
 orbit_deg_arr[5] = 360/orb_step_arr[5];
 globalvar global.orbit_deg_arr = orbit_deg_arr;
 
-
 //--------------------------------------------------ARROWS
 
 // arrow sprites
@@ -148,8 +147,6 @@ spr_arrow_arr[1] = spr_right;
 spr_arrow_arr[2] = spr_up;
 spr_arrow_arr[3] = spr_down;
 globalvar global.spr_arrow_arr = spr_arrow_arr;
-
-
 
 </string>
           </argument>

@@ -66,6 +66,7 @@
     <sprite>sprites\spr_flash</sprite>
     <sprite>sprites\spr_phone</sprite>
     <sprite>sprites\spr_quit</sprite>
+    <sprite>sprites\spr_news</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -97,13 +98,14 @@
     <object>objects\obj_score</object>
     <object>objects\obj_phone</object>
     <object>objects\obj_lost</object>
+    <object>objects\obj_news</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_control</room>
     <room>rooms\rm_score</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41876.8245647454</constant>
+    <constant name="GM_build_date">41876.8720582755</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
