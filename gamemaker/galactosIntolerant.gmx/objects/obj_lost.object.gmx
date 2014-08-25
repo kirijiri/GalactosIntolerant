@@ -74,7 +74,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>game_end();
+            <string>if (self.visible)
+{
+    game_end();
+}
 </string>
           </argument>
         </arguments>

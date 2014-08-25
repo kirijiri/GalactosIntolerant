@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.win)
+            <string>if (self.visible)
 {
     room_goto(rm_score)
 }
