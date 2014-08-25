@@ -66,6 +66,21 @@ for (i=0; i&lt;global.cardinal_count; ++i)
     end_y = obj_sun.y + r * sin(degtorad(cardinal_angle*i));
     draw_line(obj_sun.x, obj_sun.y, end_x, end_y);
 }
+
+// highlight winning cardinal on win
+if (!global.turn_lock &amp;&amp; !(global.align_count &lt; global.win_condition_align_count) )
+{    
+    cardinal = global.cardinal_count - global.win_cardinal;
+    end_x = obj_sun.x + r * cos(degtorad(cardinal_angle*cardinal));
+    end_y = obj_sun.y + r * sin(degtorad(cardinal_angle*cardinal));
+    draw_line_width(obj_sun.x, obj_sun.y, end_x, end_y, 10);
+    
+    cardinal = global.cardinal_count-global.win_cardinal+(global.cardinal_count/2);
+    end_x = obj_sun.x + r * cos(degtorad(cardinal_angle*cardinal));
+    end_y = obj_sun.y + r * sin(degtorad(cardinal_angle*cardinal));
+    draw_line_width(obj_sun.x, obj_sun.y, end_x, end_y, 10);
+}
+
 </string>
           </argument>
         </arguments>

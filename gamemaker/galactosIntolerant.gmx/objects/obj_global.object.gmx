@@ -36,6 +36,7 @@ globalvar global.remaining_population = 0;
 globalvar global.death_toll = 0;
 globalvar global.align_count = 0;
 globalvar global.lost = 0;
+globalvar global.win_cardinal = -1;
 
 //--------------------------------------------------GLOBALS
 
@@ -122,12 +123,12 @@ orb_step_arr[3] = orb_step_arr[2]*2;
 orb_step_arr[4] = orb_step_arr[3]*2;
 orb_step_arr[5] = orb_step_arr[4]*2;
 */
-orb_step_arr[0] = 4;
-orb_step_arr[1] = 4;
-orb_step_arr[2] = 4;
-orb_step_arr[3] = 4;
-orb_step_arr[4] = 4;
-orb_step_arr[5] = 4;
+orb_step_arr[0] = 8;
+orb_step_arr[1] = 8;
+orb_step_arr[2] = 8;
+orb_step_arr[3] = 8;
+orb_step_arr[4] = 8;
+orb_step_arr[5] = 8;
 globalvar global.orb_step_arr = orb_step_arr;
 
 // degree array - make these procedural????
