@@ -57,6 +57,13 @@ global.likes_received = floor(0.17 * global.score);
 global.remaining_followers = floor(global.score);
 global.remaining_population = floor(9.23 * global.score);
 global.death_toll = floor(global.start_score * 11.3 - global.remaining_population);
+
+// mute other music
+audio_sound_gain(snd_bg, 0, 0);
+
+// start background music
+snd = audio_play_sound(snd_win, 10, true);
+audio_sound_gain(snd, global.snd_win_music, 0);
 </string>
           </argument>
         </arguments>
