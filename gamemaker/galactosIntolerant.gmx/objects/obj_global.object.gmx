@@ -64,9 +64,10 @@ globalvar global.swap_mode = 0; // lock for actions
 
 //--------------------------------------------------SOUND
 
-globalvar global.snd_music = 0.3;
+globalvar global.snd_music = 0.1;
 globalvar global.snd_fx = 0.7;
 globalvar global.snd_fx_arrows = 1;
+globalvar global.snd_fx_skip = 1;
 
 //--------------------------------------------------PLANETS
 

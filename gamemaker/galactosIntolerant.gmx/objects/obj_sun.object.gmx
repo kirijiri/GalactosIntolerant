@@ -90,12 +90,15 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message( global.arrows_visible );
-
+            <string>// advance turn
 if ( global.arrows_visible == 0 &amp;&amp; global.turn_lock == 0 &amp;&amp; global.action_lock == 0 )
 {
     global.turn += 1;
 }
+
+// skip sound effect
+snd = audio_play_sound(snd_skip, 100, false);
+audio_sound_gain(snd, global.snd_fx_skip, 0);
 </string>
           </argument>
         </arguments>
