@@ -150,6 +150,8 @@ globalvar global.spr_arrow_arr = spr_arrow_arr;
             <string>draw_set_colour(c_white);
 draw_set_font(fnt_HUD);
 draw_text(200, 200, "turn:"+string(global.turn) );
+
+
 </string>
           </argument>
         </arguments>

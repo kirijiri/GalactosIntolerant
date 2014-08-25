@@ -29,10 +29,8 @@
 
 if !(global.turn_lock || global.action_lock || global.turn == 0)
 {
-
     cardinal_angle = 360/global.cardinal_count;
     
-    var i;
     var c = 0;
     for (i = 0; i &lt; global.planet_count; i += 1)
     {

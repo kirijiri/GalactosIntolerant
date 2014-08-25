@@ -37,8 +37,6 @@ else
 
 if(self.do_action == 0 || self.do_action == 1)
 {
-    //show_debug_message(string(id)+" doing its action "+string(self.do_action));
-    
     // work out the steps
     if (self.do_action == 0) // move forward
     {
@@ -64,8 +62,6 @@ if(self.do_action == 0 || self.do_action == 1)
 //--------------------------------------------------------- TURNS
 if (global.action_lock = 0 &amp;&amp; global.turn == self.turn)
 {
-    //show_debug_message(string(id)+" moving its turn "+string(self.turn));
-    
     // work out the steps
     self.turn += 1;
     new_step = self.step + self.rate;
@@ -92,8 +88,8 @@ if (self.move_deg != 0)
     // get the current radius
     
     /// set the positions
-    self.x = (room_width/2)+global.offset_x  + (self.radius * (sin(degtorad(global.offset_rotation + self.current_degrees))));
-    self.y = (room_height/2)+global.offset_y + (self.radius * (cos(degtorad(global.offset_rotation + self.current_degrees))));
+    self.x = (room_width/2) + global.offset_x + (self.radius * (sin(degtorad(global.offset_rotation + self.current_degrees))));
+    self.y = (room_height/2)+ global.offset_y + (self.radius * (cos(degtorad(global.offset_rotation + self.current_degrees))));
     
     //if this is the last step of animation, turn off the lock
     if self.move_deg == 0
