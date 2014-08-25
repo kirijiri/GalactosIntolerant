@@ -73,10 +73,14 @@ if !(global.turn_lock || global.action_lock || global.turn == 0)
         }
         
         // TODO: hightlight these planets!
+        /*
         for (i = 0; i &lt; win_c; i += 1)
         {
             show_debug_message("HIGHLIGHT: "+string(win_ids[i])+" on "+string(r[0]));
         }
+        */
+        
+        global.align_count = win_c;
     }
 }
 </string>

@@ -34,6 +34,7 @@ globalvar global.likes_received = 0;
 globalvar global.remaining_followers = 0;
 globalvar global.remaining_population = 0;
 globalvar global.death_toll = 0;
+globalvar global.align_count = 0;
 
 //--------------------------------------------------GLOBALS
 
@@ -41,7 +42,7 @@ globalvar global.turn = 0;
 globalvar global.anim_time = 20;
 globalvar global.offset_rotation = 90;
 globalvar global.swap_from = -1;
-globalvar global.offset_x = 200;
+globalvar global.offset_x = 350;
 globalvar global.offset_y = 0;
 globalvar global.cardinal_count = 8;
 globalvar global.cardinal_threshold = 0.15;
@@ -170,8 +171,8 @@ globalvar global.spr_arrow_arr = spr_arrow_arr;
             <kind>1</kind>
             <string>draw_set_colour(c_white);
 draw_set_font(fnt_HUD);
-draw_text(200, 200, "turn:"+string(global.turn) );
-draw_text(200, 300, "score:"+string(global.score) );
+draw_text(0, 0, "turn:"+string(global.turn) );
+draw_text(0, 20, "score:"+string(global.score) );
 
 
 

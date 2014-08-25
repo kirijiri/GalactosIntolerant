@@ -50,6 +50,7 @@
           <argument>
             <kind>1</kind>
             <string>flash_alpha = 0;
+show_res = 0;
 
 global.likes_received = floor(0.17 * global.score);
 global.remaining_followers = floor(global.score);
@@ -78,6 +79,7 @@ global.death_toll = floor(global.start_score * 11.3 - global.remaining_populatio
           <argument>
             <kind>1</kind>
             <string>flash_alpha = 1;
+show_res = 1;
 </string>
           </argument>
         </arguments>
@@ -133,13 +135,24 @@ if (flash_alpha)
     draw_sprite_ext(spr_flash,floor(image_index),x,y,image_xscale,image_yscale,image_angle,c_white,flash_alpha)
 }
 
-draw_set_colour(c_white);
-draw_set_font(fnt_HUD);
-draw_text(100, 100, "Likes Received:"+string(global.likes_received) );
-draw_text(100, 200, "Remaining Followers:"+string(global.remaining_followers) );
-draw_text(100, 300, "Remaining Population:"+string(global.remaining_population) );
-draw_text(100, 400, "Death Toll:"+string(global.death_toll) );
-
+// display score
+if (show_res) 
+{
+    draw_set_colour(c_white);
+    draw_set_font(fnt_score1);
+    draw_text(100, 600, "You aligned "+string(scr_formatting(global.align_count))+" planets!" );
+    draw_text(100, 700, "Likes Received:" );
+    draw_text(600, 700, string(scr_formatting(global.likes_received)) );
+    draw_set_font(fnt_score2);
+    draw_text(100, 750, "Remaining Followers:" );
+    draw_text(600, 750, string(scr_formatting(global.remaining_followers)) );
+    draw_set_font(fnt_score3);
+    draw_text(100, 790, "Remaining Population:" );
+    draw_text(600, 790, string(scr_formatting(global.remaining_followers)) );
+    draw_set_font(fnt_score4);
+    draw_text(100, 825, "Death Toll:" );
+    draw_text(600, 825, string(scr_formatting(global.death_toll)) );
+}
 </string>
           </argument>
         </arguments>

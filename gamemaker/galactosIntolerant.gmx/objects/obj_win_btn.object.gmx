@@ -48,7 +48,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_score);
+            <string>if !( global.align_count &lt; global.win_condition_align_count )
+{
+    room_goto(rm_score);
+}
 </string>
           </argument>
         </arguments>

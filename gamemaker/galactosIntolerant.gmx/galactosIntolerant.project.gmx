@@ -58,6 +58,7 @@
     <sprite>sprites\spr_down</sprite>
     <sprite>sprites\spr_win</sprite>
     <sprite>sprites\spr_flash</sprite>
+    <sprite>sprites\spr_phone</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -68,9 +69,14 @@
     <script>scripts\sci_calculateMove.gml</script>
     <script>scripts\scr_list_max.gml</script>
     <script>scripts\scr_string_split.gml</script>
+    <script>scripts\scr_formatting.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
+    <font>fonts\fnt_score1</font>
+    <font>fonts\fnt_score2</font>
+    <font>fonts\fnt_score3</font>
+    <font>fonts\fnt_score4</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_global</object>
@@ -82,13 +88,14 @@
     <object>objects\obj_win_btn</object>
     <object>objects\obj_bg</object>
     <object>objects\obj_score</object>
+    <object>objects\obj_phone</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_control</room>
     <room>rooms\rm_score</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41876.7184410185</constant>
+    <constant name="GM_build_date">41876.7666415857</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
