@@ -44,6 +44,10 @@ globalvar global.turn_lock = 0; // lock for turn
 globalvar global.action_lock = 0; // lock for actions
 globalvar global.swap_mode = 0; // lock for actions
 
+//--------------------------------------------------FLAGS
+
+globalvar global.snd_music = 0.4;
+globalvar global.snd_fx = 1;
 
 //--------------------------------------------------PLANETS
 
