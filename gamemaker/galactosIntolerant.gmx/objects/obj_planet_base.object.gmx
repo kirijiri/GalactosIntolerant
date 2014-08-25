@@ -29,9 +29,15 @@
 
 // show info text on hover
 if (position_meeting(mouse_x, mouse_y, id))
-    showtext = 1;
+{
+    showtext = 0;
+    self.image_index = 1;
+}
 else 
+{
     showtext = 0; 
+    self.image_index = 0;
+}
 
 //--------------------------------------------------------- SCORE
 
@@ -333,6 +339,7 @@ showtext = 0;
 if (showtext == 1)
 {
     draw_text(x, y-64, "=====Hi!#This is information for:#"+object_get_name(id.object_index)+" #"+string(self.name));
+
 }
 </string>
           </argument>
