@@ -50,6 +50,11 @@
           <argument>
             <kind>1</kind>
             <string>flash_alpha = 0;
+
+global.likes_received = floor(0.17 * global.score);
+global.remaining_followers = floor(global.score);
+global.remaining_population = floor(9.23 * global.score);
+global.death_toll = floor(global.start_score * 11.3 - global.remaining_population);
 </string>
           </argument>
         </arguments>
@@ -72,9 +77,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("I WIN");
-
-flash_alpha = 1;
+            <string>flash_alpha = 1;
 </string>
           </argument>
         </arguments>
@@ -124,16 +127,19 @@ if (flash_alpha)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(flash_alpha)
+            <string>// draw flash
+if (flash_alpha)
 {
     draw_sprite_ext(spr_flash,floor(image_index),x,y,image_xscale,image_yscale,image_angle,c_white,flash_alpha)
 }
-else
-{
-    draw_sprite_ext(spr_flash,floor(image_index),x,y,image_xscale,image_yscale,image_angle,c_white,0)
 
-}
+draw_set_colour(c_white);
+draw_set_font(fnt_HUD);
+draw_text(100, 100, "Likes Received:"+string(global.likes_received) );
+draw_text(100, 200, "Remaining Followers:"+string(global.remaining_followers) );
+draw_text(100, 300, "Remaining Population:"+string(global.remaining_population) );
+draw_text(100, 400, "Death Toll:"+string(global.death_toll) );
+
 </string>
           </argument>
         </arguments>

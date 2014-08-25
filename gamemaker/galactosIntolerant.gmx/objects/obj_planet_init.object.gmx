@@ -25,42 +25,96 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>{
-var i;
-for (i = 0; i &lt; global.planet_count; i += 1)
-{
-   planet = instance_create(0,0,obj_planet_base);
-   planet.planet_id = i
-   planet.rate = global.plnt_rates[i]   //speed of movement around ring
-   planet.orbit = i                     // orbit ring
-   planet.turn = 1                      // player turn counter
-   planet.step = 0                      // starting position
-   planet.sprite_index = global.plnt_spr_arr[i]
-   planet.facing = 0 // facing fo the arrows in radians
-   planet.move_deg  = 0 // the amount the planet nees to move
-   planet.move_incr = 0 // the increments per frame
-   planet.day_cycle = global.plnt_dayCycle_arr[i] //speed of planet rotation
-   planet.current_degrees = 0;
-   planet.end_degrees = 0;
-   global.plnts_arr[i] = planet;
-   }
-   
-
+            <string>
+/*
 // parse planet data textfile
 show_debug_message("------------------parse filename-------------------");
 
 file = file_text_open_read(working_directory+"GI_planetdatafin.txt");
-i = 0;
+c = 0;
 while (!file_text_eof(file))
 {
-   data_array[i] = file_text_readln(file);
-   i++;
+   data_array[c] = file_text_readln(file);
+   c++;
 }
 file_text_close(file);
 
+var planet_count = -1;
+for (i=0; i&lt;c; i++)
+{
+    a = scr_string_split(data_array[i], "=");
+    //for( var j=0; j&lt;array_length_1d(array); j+=1 )
+    //{
+    //    show_debug_message(array[j]);
+    //}
+    
+    show_debug_message(array_length_1d(a));
+    show_debug_message(a[0]);
+    show_debug_message(string(a[0])+" ==? startplanet ??? "+string(a[0] == "startplanet"));
+    show_debug_message(is_string(a[0]));
+    show_debug_message(string_length(a[0]));
+    show_debug_message(string_length("startplanet"));
+    
+    if (a[0] == "startplanet") 
+    {
+        show_debug_message("START");
+        planet_count++;
+    }   
+    if (array_length_1d(a) == 2)
+    {
+        show_debug_message("planet_count:" + string(planet_count));
+        if      (a[0] == "name") planet_names[planet_count] = a[1];
+        else if (a[0] == "size") planet_sizes[planet_count] = a[1];
+        else if (a[0] == "race") planet_races[planet_count] = a[1];
+        else if (a[0] == "population") planet_populations[planet_count] = a[1];
+        else if (a[0] == "follow") planet_follows[planet_count] = a[1];
+        else if (a[0] == "damspeedup") planet_damspeedups[planet_count] = a[1];
+        else if (a[0] == "damspeeddown") planet_damspeeddowns[planet_count] = a[1];
+        else if (a[0] == "damorbit1") planet_damorbit1s[planet_count] = a[1];
+        else if (a[0] == "damorbit2") planet_damorbit2s[planet_count] = a[1];
+        else if (a[0] == "damorbit3") planet_damorbit3s[planet_count] = a[1];
+        else if (a[0] == "damorbit4") planet_damorbit4s[planet_count] = a[1];
+        else if (a[0] == "damorbit5") planet_damorbit5s[planet_count] = a[1];
+        else if (a[0] == "damorbit6") planet_damorbit6s[planet_count] = a[1];
+        else if (a[0] == "wikitext") planet_wikitexts[planet_count] = a[1];
+    }
 }
+*/
 
-
+var i;
+for (i = 0; i &lt; global.planet_count; i += 1)
+{
+    planet = instance_create(0,0,obj_planet_base);
+    planet.planet_id = i
+    planet.rate = global.plnt_rates[i]   //speed of movement around ring
+    planet.orbit = i                     // orbit ring
+    planet.turn = 1                      // player turn counter
+    planet.step = 0                      // starting position
+    planet.sprite_index = global.plnt_spr_arr[i]
+    planet.facing = 0 // facing fo the arrows in radians
+    planet.move_deg  = 0 // the amount the planet nees to move
+    planet.move_incr = 0 // the increments per frame
+    planet.day_cycle = global.plnt_dayCycle_arr[i] //speed of planet rotation
+    planet.current_degrees = 0;
+    planet.end_degrees = 0;
+    global.plnts_arr[i] = planet;
+    
+    // planet data
+    planet.name = "";
+    planet.size = "";
+    planet.race = "";
+    planet.population = 0;
+    planet.follow = 0;
+    planet.damspeedup = 0;
+    planet.damspeeddown = 0;
+    planet.damorbit1 = 0;
+    planet.damorbit2 = 0;
+    planet.damorbit3 = 0;
+    planet.damorbit4 = 0;
+    planet.damorbit5 = 0;
+    planet.damorbit6 = 0;
+    planet.wikitext = "";
+}
 </string>
           </argument>
         </arguments>

@@ -114,11 +114,10 @@ if(self.type == 2)
     global.swap_from = self.parentid;
     global.action_lock = 1;  
 }
-else
-{
-    // make the parent planet move
-    self.parentid.do_action = self.type;
-}
+
+// make the parent planet move
+self.parentid.do_action = self.type;
+
 
 </string>
           </argument>

@@ -25,7 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//--------------------------------------------------GLOBALS
+            <string>globalvar global.start_score = 5710000000;
+globalvar global.score = 5710000000;
+globalvar global.likes_received = 0;
+globalvar global.remaining_followers = 0;
+globalvar global.remaining_population = 0;
+globalvar global.death_toll = 0;
+
+//--------------------------------------------------GLOBALS
 globalvar global.turn = 0;
 globalvar global.anim_time = 20;
 globalvar global.offset_rotation = 90;
@@ -92,13 +99,14 @@ globalvar global.plnt_dayCycle_arr = plnt_dayCycle_arr;
 globalvar global.sun_radius = 100;
 globalvar global.orb_width = 50;
 
-// steps - make these procedural????
-/*orb_step_arr[0] = 8;
-orb_step_arr[1] = 16;
-orb_step_arr[2] = 32;
-orb_step_arr[3] = 64;
-orb_step_arr[4] = 128;
-orb_step_arr[5] = 248;
+// steps 
+/*
+orb_step_arr[0] = global.cardinal_count;
+orb_step_arr[1] = orb_step_arr[0]*2;
+orb_step_arr[2] = orb_step_arr[1]*2;
+orb_step_arr[3] = orb_step_arr[2]*2;
+orb_step_arr[4] = orb_step_arr[3]*2;
+orb_step_arr[5] = orb_step_arr[4]*2;
 */
 orb_step_arr[0] = 4;
 orb_step_arr[1] = 4;
@@ -154,6 +162,8 @@ globalvar global.spr_arrow_arr = spr_arrow_arr;
             <string>draw_set_colour(c_white);
 draw_set_font(fnt_HUD);
 draw_text(200, 200, "turn:"+string(global.turn) );
+draw_text(200, 300, "score:"+string(global.score) );
+
 
 
 </string>
