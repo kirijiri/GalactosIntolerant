@@ -29,6 +29,7 @@
   <scripts name="scripts">
     <script>scripts\sci_calculateMove.gml</script>
     <script>scripts\scr_list_max.gml</script>
+    <script>scripts\scr_string_split.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -45,9 +46,10 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_control</room>
+    <room>rooms\rm_score</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41876.5242588542</constant>
+    <constant name="GM_build_date">41876.5395731597</constant>
     <constant name="GM_version">'1.0.0.4'</constant>
   </constants>
   <help>
