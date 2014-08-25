@@ -38,7 +38,8 @@ for (i = 0; i &lt; global.planet_count; i += 1)
     
     if (abs(c_nr - round(c_nr)) &lt; global.cardinal_threshold)
     {
-        possible_win_nr[c] = round(c_nr) mod global.cardinal_count;
+        possible_win_nr[c] = round(c_nr) mod (global.cardinal_count/2);
+        show_debug_message(        possible_win_nr[c]);
         possible_win_id[c] = global.plnts_arr[i];
         c += 1;
     }
@@ -52,7 +53,7 @@ r = scr_list_max(possible_win_nr, c);
 // planets matches or exceeds the win condition, trigger
 if (r[1] &gt;= global.win_condition_align_count)
 {
-    show_debug_message("---SNAPSHOT---");
+    show_debug_message("---SNAPSHOT--- "+string(r[1])+" planets");
     // TODO: trigger a button
     
     // give me an array of all planets on the win-cardinal

@@ -1,5 +1,5 @@
 list = argument0;
-count = argument1;
+list_size = argument1;
 
 var i = 0;
 var card_nr = -1;
@@ -12,7 +12,7 @@ for (i = 0; i < global.cardinal_count; i += 1)
 
 // for each occurance of a cardinal nr increase
 // cardinal score
-for (i = 0; i < count; i += 1)
+for (i = 0; i < list_size; i += 1)
 {
     arr[list[i]] += 1;
 }
