@@ -17,6 +17,7 @@
     <sprite>sprites\spr_right</sprite>
     <sprite>sprites\spr_up</sprite>
     <sprite>sprites\spr_down</sprite>
+    <sprite>sprites\spr_win</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_space</background>
@@ -36,12 +37,13 @@
     <object>objects\obj_planet_init</object>
     <object>objects\obj_sun</object>
     <object>objects\obj_arrow_base</object>
+    <object>objects\obj_win_btn</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_control</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41876.0175239815</constant>
+    <constant name="GM_build_date">41876.473933912</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
