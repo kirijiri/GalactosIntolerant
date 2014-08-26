@@ -26,6 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>
+//--------------------------------------------------GAME OPTNS
+globalvar global.randomise_start = 1; // start planets on random step
+globalvar global.true_randomise = 1; // use true random values
+globalvar global.test_win = 1; // starts the planets one move from winning
+
 //--------------------------------------------------SCORE
 
 globalvar global.start_score = 5710000000;
@@ -51,10 +56,6 @@ globalvar global.cardinal_count = 8;
 globalvar global.cardinal_threshold = 0.15;
 globalvar global.planet_count = 6;
 globalvar global.win_condition_align_count = 3;
-
-//--------------------------------------------------GAME OPTNS
-globalvar global.randomise_start = 1; // start planets on random step
-globalvar global.true_randomise = 1;  // use true random values
 
 //--------------------------------------------------FILES
 
