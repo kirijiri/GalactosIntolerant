@@ -184,7 +184,7 @@ if (show_res)
     draw_text(600, 750, scr_formatting(global.remaining_followers));
     draw_set_font(fnt_score3);
     draw_text(100, 790, "Remaining Population:" );
-    draw_text(600, 790, scr_formatting(global.remaining_followers));
+    draw_text(600, 790, scr_formatting(global.remaining_population));
     draw_set_font(fnt_score4);
     draw_text(100, 825, "Death Toll:" );
     draw_text(600, 825, scr_formatting(global.death_toll));
