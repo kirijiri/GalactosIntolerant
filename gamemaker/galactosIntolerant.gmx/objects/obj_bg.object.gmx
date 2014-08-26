@@ -81,6 +81,13 @@ if (global.win &amp;&amp; (global.align_count &gt;= global.win_condition_align_c
     draw_line_width(obj_sun.x, obj_sun.y, end_x, end_y, 10);
 }
 
+// draw todo title
+/*
+draw_set_colour(c_white);
+draw_set_font(fnt_score1);
+draw_text(50, 20, "Please align "+string(global.win_condition_align_count)+" planets!" );
+*/
+
 </string>
           </argument>
         </arguments>
