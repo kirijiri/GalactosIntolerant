@@ -176,18 +176,18 @@ if (show_res)
 {
     draw_set_colour(c_white);
     draw_set_font(fnt_score1);
-    draw_text(100, 600, "You aligned "+string(scr_formatting(global.align_count))+" planets!" );
+    draw_text(100, 600, "You aligned "+scr_formatting(global.align_count)+" planets!" );
     draw_text(100, 700, "Likes Received:" );
-    draw_text(600, 700, string(scr_formatting(global.likes_received)) );
+    draw_text(600, 700, scr_formatting(global.likes_received));
     draw_set_font(fnt_score2);
     draw_text(100, 750, "Remaining Followers:" );
-    draw_text(600, 750, string(scr_formatting(global.remaining_followers)) );
+    draw_text(600, 750, scr_formatting(global.remaining_followers));
     draw_set_font(fnt_score3);
     draw_text(100, 790, "Remaining Population:" );
-    draw_text(600, 790, string(scr_formatting(global.remaining_followers)) );
+    draw_text(600, 790, scr_formatting(global.remaining_followers));
     draw_set_font(fnt_score4);
     draw_text(100, 825, "Death Toll:" );
-    draw_text(600, 825, string(scr_formatting(global.death_toll)) );
+    draw_text(600, 825, scr_formatting(global.death_toll));
 }
 </string>
           </argument>
