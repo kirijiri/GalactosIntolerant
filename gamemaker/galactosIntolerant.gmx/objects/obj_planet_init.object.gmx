@@ -118,7 +118,7 @@ for (i = 0; i &lt; global.planet_count; i += 1)
     
     // starting position
     if (global.randomise_start)
-        step = random(global.orb_step_arr[planet.orbit])
+        step = floor( random(global.orb_step_arr[planet.orbit]) )
     else
         step = 0
     planet.step = step
