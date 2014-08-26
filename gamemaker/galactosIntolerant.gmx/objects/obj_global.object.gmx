@@ -30,7 +30,7 @@
 
 globalvar global.randomise_start = 1; // start planets on random step
 globalvar global.true_randomise = 1; // use true random values
-globalvar global.test_win = 1; // starts the planets one move from winning
+globalvar global.test_win = 0; // starts the planets one move from winning
 
 //--------------------------------------------------SCORE
 
@@ -69,6 +69,7 @@ globalvar global.arrows_visible = 0; // movement arrows visibility
 globalvar global.turn_lock = 0; // lock for turn
 globalvar global.action_lock = 0; // lock for actions
 globalvar global.swap_mode = 0; // lock for actions
+globalvar global.konami = 0; // ssssssh!
 
 //--------------------------------------------------SOUND
 
@@ -192,12 +193,17 @@ konami_progress = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// konami code to unlock instant win
+            <string>if (global.konami == 1)
+{
+    global.konami = 0
+}
+
+// konami code to unlock instant win
 if (konami_progress == 10)
 {
     show_debug_message("I WIN BUTTON PRESSED");
     konami_progress = 0;
-    global.test_win = 1
+    global.konami = 1
 }
 
 if keyboard_check_pressed(vk_up)

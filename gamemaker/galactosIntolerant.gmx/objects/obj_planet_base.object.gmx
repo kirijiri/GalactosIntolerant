@@ -115,6 +115,19 @@ if (self.move_deg != 0)
     self.image_angle += self.day_cycle;
 }
 
+//--------------------------------------------------------- KONAMI CODE
+
+if (global.konami == 1)
+{
+    // run the calc script
+    new_step = global.orb_step_arr[planet.orbit] - planet.rate
+    script_execute(sci_calculateMove, self.id, new_step);
+    
+    // store new step
+    self.step = new_step;
+    global.action_lock = 1;
+}
+
 //--------------------------------------------------------- POST-ANIMA
 
 self.facing = point_direction(obj_sun.x, obj_sun.y, self.x, self.y);
