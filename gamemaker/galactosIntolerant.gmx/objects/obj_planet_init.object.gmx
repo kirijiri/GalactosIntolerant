@@ -103,6 +103,10 @@ for (i=0; i&lt;c; i++)
 }
 */
 
+/// if using true randomising, set the gml option
+if (global.true_randomise)
+    randomize()
+
 var i;
 for (i = 0; i &lt; global.planet_count; i += 1)
 {
@@ -111,7 +115,14 @@ for (i = 0; i &lt; global.planet_count; i += 1)
     planet.rate = global.plnt_rates[i]   //speed of movement around ring
     planet.orbit = i                     // orbit ring
     planet.turn = 1                      // player turn counter
-    planet.step = 0                      // starting position
+    
+    // starting position
+    if (global.randomise_start)
+        step = random(global.orb_step_arr[planet.orbit])
+    else
+        step = 0
+    planet.step = step
+    
     planet.sprite_index = global.plnt_spr_arr[i]
     planet.facing = 0 // facing fo the arrows in radians
     planet.move_deg  = 0 // the amount the planet nees to move
