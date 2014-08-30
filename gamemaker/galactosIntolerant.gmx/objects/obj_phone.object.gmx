@@ -30,7 +30,7 @@
 draw_set_colour(c_white);
 draw_set_font(fnt_HUD);
 //draw_text(0, 0, "turn:"+string(global.turn) );
-draw_text(225, 702, string(global.score) );
+draw_text(225, 702, string(scr_formatting(global.score)) );
 
 
 
