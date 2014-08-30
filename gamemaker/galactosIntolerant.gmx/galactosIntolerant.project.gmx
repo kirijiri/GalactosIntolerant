@@ -106,7 +106,7 @@
     <room>rooms\rm_score</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41881.8418294213</constant>
+    <constant name="GM_build_date">41881.8202156019</constant>
     <constant name="GM_version">'1.0.0.4'</constant>
   </constants>
   <help>

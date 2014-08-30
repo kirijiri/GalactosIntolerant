@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>self.turn_done = 1;
-self.draw_new_news = 0;
+self.draw_new_news = -1;
 </string>
           </argument>
         </arguments>
@@ -52,9 +52,9 @@ self.draw_new_news = 0;
             <string>if (global.action_lock &amp;&amp; !self.turn_done)
 {
     // get random int (dont choose the same one twice in a row)
-    rnd = round(random_range(0, sprite_get_number(spr_news)-1));
+    rnd = round(random_range(0, sprite_get_number(spr_news)));
     while(self.draw_new_news == rnd)
-        rnd = round(random_range(0, sprite_get_number(spr_news)-1));
+        rnd = round(random_range(0, sprite_get_number(spr_news)));
     self.draw_new_news = rnd;
     
     // make switches only after an action has been triggered
@@ -86,7 +86,7 @@ if !(global.action_lock)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (self.draw_new_news)
+            <string>if (self.draw_new_news &gt; -1)
 {
     draw_sprite(spr_news, self.draw_new_news, 80, 300);
 }
