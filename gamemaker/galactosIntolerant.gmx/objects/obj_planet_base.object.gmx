@@ -121,8 +121,8 @@ if (self.orbit_deg != 0)
 if (self.move_dist &gt; 0)
 {
     // get distance to target
-    diff_x = self.move_x - self.x
-    diff_y = self.move_y - self.y    
+    diff_x = self.move_x - self.x;
+    diff_y = self.move_y - self.y; 
 
     //calculate length
     length = sqrt((diff_x*diff_x)+(diff_y*diff_y));
@@ -132,20 +132,21 @@ if (self.move_dist &gt; 0)
     norm_y = diff_y / length;
     
     // add the calculated vector onto the current position
-    self.x = self.x + (norm_x * self.move_incr)
-    self.y = self.y + (norm_y * self.move_incr)
+    self.x = self.x + (norm_x * self.move_incr);
+    self.y = self.y + (norm_y * self.move_incr);
     
     // count down the total distance
-    self.move_dist -= self.move_incr
+    self.move_dist -= self.move_incr;
     
     // if this is the last step of animation, turn off the lock
     if self.move_dist == 0
     {
-        global.swap_mode = 0;
-        global.swap_from = -1;
-        global.swap_to = -1;
-        global.action_lock = 0;
-        global.turn +=1;  
+        if (self.turn != global.turn)
+            global.turn +=1;
+            global.swap_mode = 0;
+            global.swap_from = -1;
+            global.swap_to = -1;
+            global.action_lock = 0;
         self.move_x = 0;
         self.move_y = 0;
     }
