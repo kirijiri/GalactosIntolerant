@@ -28,9 +28,9 @@
             <string>
 //--------------------------------------------------GAME OPTNS
 
-globalvar global.randomise_start = 1; // start planets on random step
-globalvar global.true_randomise = 1; // use true random values
-globalvar global.test_win = 0; // starts the planets one move from winning
+globalvar global.randomise_start = 1;   // start planets on random step
+globalvar global.true_randomise = 1;    // use true random values
+globalvar global.test_win = 0;          // starts the planets one move from winning
 
 //--------------------------------------------------SCORE
 
@@ -55,7 +55,7 @@ globalvar global.swap_to = -1;
 globalvar global.offset_x = 350;
 globalvar global.offset_y = 0;
 globalvar global.cardinal_count = 8;
-globalvar global.cardinal_threshold = 0.15;
+globalvar global.cardinal_threshold = 0.10;
 globalvar global.planet_count = 6;
 globalvar global.win_condition_align_count = 3;
 
@@ -66,11 +66,11 @@ globalvar global.file_message_data = working_directory+"GI_news.txt";
 
 //--------------------------------------------------FLAGS
 
-globalvar global.arrows_visible = 0; // movement arrows visibility
-globalvar global.turn_lock = 0; // lock for turn
-globalvar global.action_lock = 0; // lock for actions
-globalvar global.swap_mode = 0; // lock for actions
-globalvar global.konami = 0; // ssssssh!
+globalvar global.arrows_visible = 0;    // movement arrows visibility
+globalvar global.turn_lock = 0;         // lock for turn
+globalvar global.action_lock = 0;       // lock for actions
+globalvar global.swap_mode = 0;         // lock for actions
+globalvar global.konami = 0;            // ssssssh!
 
 //--------------------------------------------------SOUND
 
@@ -124,7 +124,7 @@ orb_step_arr[4] = orb_step_arr[3]*2;
 orb_step_arr[5] = orb_step_arr[4]*2;
 globalvar global.orb_step_arr = orb_step_arr;
 
-// degree array - make these procedural????
+// degree array
 orbit_deg_arr[0] = 360/orb_step_arr[0];
 orbit_deg_arr[1] = 360/orb_step_arr[1];
 orbit_deg_arr[2] = 360/orb_step_arr[2];
@@ -142,7 +142,7 @@ spr_arrow_arr[2] = spr_up;
 spr_arrow_arr[3] = spr_down;
 globalvar global.spr_arrow_arr = spr_arrow_arr;
 
-//--------------------------------------------------KONAMI WIN
+//--------------------------------------------------KONAMI CHEAT
 
 konami_code[0] = "up";
 konami_code[1] = "up";
