@@ -110,13 +110,15 @@ if (global.true_randomise)
 var i;
 for (i = 0; i &lt; global.planet_count; i += 1)
 {
+    //-------------------------------------------- basic info
     planet = instance_create(0,0,obj_planet_base);
     planet.planet_id = i
     planet.rate = global.plnt_rates[i]   //speed of movement around ring
     planet.orbit = i                     // orbit ring
     planet.turn = 1                      // player turn counter
-    
-    // starting positions - auto-win/random/line
+    global.plnts_arr[i] = planet;        // store in global array
+        
+    //-------------------------------------------- starting positions - auto-win/random/line
     if (global.test_win)
         step = global.orb_step_arr[planet.orbit] - planet.rate
     else if (global.randomise_start)
@@ -125,20 +127,24 @@ for (i = 0; i &lt; global.planet_count; i += 1)
         step = 0;
     planet.step = step
     
+    //-------------------------------------------- planet sprite
     planet.sprite_index = global.plnt_spr_arr[i]
-    planet.facing = 0 // facing fo the arrows in radians
-    planet.move_deg  = 0 // the amount the planet nees to move
-    planet.move_incr = 0 // the increments per frame
-    planet.day_cycle = global.plnt_dayCycle_arr[i] //speed of planet rotation
-    planet.current_degrees = 0;
-    planet.end_degrees = 0;
-    global.plnts_arr[i] = planet;
-    
-    // scale planets
     planet.image_xscale -= random_range(0.5, 0.2);
     planet.image_yscale = planet.image_xscale;
     
-    // planet data
+    //-------------------------------------------- planet movement
+    planet.facing = 0                              // facing fo the arrows in radians
+    planet.orbit_deg  = 0                          // the amount the planet nees to orbit
+    planet.orbit_incr = 0                          // the increments per frame   
+    planet.move_x = 0                              // x value for moving the planet (e.g, for swapping)
+    planet.move_y = 0                              // y value for moving the planet (e.g, for swapping)
+    planet.move_incr = 0
+    planet.move_dist = 0 
+    planet.day_cycle = global.plnt_dayCycle_arr[i] //speed of planet rotation
+    planet.current_degrees = 0;                    // the current position around the sun in degrees
+    planet.end_degrees = 0;                        
+
+    //-------------------------------------------- planet game data
     planet.name = "";
     planet.size = "";
     planet.race = "";

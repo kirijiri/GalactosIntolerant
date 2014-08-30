@@ -74,7 +74,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\sci_calculateMove.gml</script>
+    <script>scripts\scr_calculateOrbit.gml</script>
     <script>scripts\scr_list_max.gml</script>
     <script>scripts\scr_string_split.gml</script>
     <script>scripts\scr_formatting.gml</script>
@@ -106,7 +106,7 @@
     <room>rooms\rm_score</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41881.5808332986</constant>
+    <constant name="GM_build_date">41881.7461922338</constant>
     <constant name="GM_version">'1.0.0.4'</constant>
   </constants>
   <help>

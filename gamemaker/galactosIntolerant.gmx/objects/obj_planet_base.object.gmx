@@ -51,11 +51,6 @@ if(self.do_action &gt; -1)
     
 //--------------------------------------------------------- ACTIONS
 
-if(self.do_action == 2 || self.do_action == 3)
-{
-    self.do_action = -1;
-}
-
 if(self.do_action == 0 || self.do_action == 1)
 {
     // work out the steps
@@ -68,12 +63,18 @@ if(self.do_action == 0 || self.do_action == 1)
         new_step = self.step - self.rate;
     }
     // run the calc script
-    sci_calculateMove( self.id, new_step );
+    scr_calculateOrbit( self.id, new_step );
 
     // store new step
     self.step = new_step;
     self.do_action = -1;
     global.action_lock = 1;
+}
+
+// swapping will be done on the subsequently selected planet, not here
+if(self.do_action == 2 || self.do_action == 3)
+{
+    self.do_action = -1;
 }
 
 //--------------------------------------------------------- TURNS
@@ -84,25 +85,25 @@ if (global.action_lock = 0 &amp;&amp; global.turn == self.turn)
     new_step = self.step + self.rate;
 
     // run the calc script
-    script_execute(sci_calculateMove, self.id, new_step );
+    script_execute(scr_calculateOrbit, self.id, new_step );
 
     // store new step
     self.step = new_step;
     global.turn_lock = 1;
 }
 
-//--------------------------------------------------------- ANIMATION
-if (self.move_deg != 0)
+//--------------------------------------------------------- ORBITING
+if (self.orbit_deg != 0)
 {
     // Calculate degrees of movement for this step
-    self.current_degrees += self.move_incr;
-    self.move_deg -= self.move_incr;
+    self.current_degrees += self.orbit_incr;
+    self.orbit_deg -= self.orbit_incr;
     
     // make the planet orbit
     script_execute(scr_setPlanetOrbit, self.id, self.current_degrees);
     
-    //if this is the last step of animation, turn off the lock
-    if self.move_deg == 0
+    // if this is the last step of animation, turn off the lock
+    if self.orbit_deg == 0
     {
         if (global.action_lock)
             global.turn +=1;
@@ -115,13 +116,52 @@ if (self.move_deg != 0)
     self.image_angle += self.day_cycle;
 }
 
+//--------------------------------------------------------- MOVING FOR SWAP
+if (self.move_dist &gt; 0)
+
+{
+    // get distance to target
+    diff_x = self.move_x - self.x
+    diff_y = self.move_y - self.y    
+
+    //calculate length
+    length = sqrt((diff_x*diff_x)+(diff_y*diff_y))
+ 
+    // normalise the distance
+    norm_x = diff_x / length
+    norm_y = diff_y / length
+    
+    // add the calculated vector onto the current position
+    self.x = self.x + (norm_x * self.move_incr)
+    self.y = self.y + (norm_y * self.move_incr)
+    
+    // count down the total distance
+    self.move_dist -= self.move_incr
+    
+    // if this is the last step of animation, turn off the lock
+    if self.move_dist == 0
+    {
+        global.swap_mode = 0;
+        global.swap_from = -1;
+        global.swap_to = -1;
+        global.action_lock = 0;
+        global.turn +=1;  
+        self.move_x = 0;
+        self.move_y = 0;
+    }
+    
+    // roate planet
+    self.image_angle += self.day_cycle;
+    
+}
+
 //--------------------------------------------------------- KONAMI CODE
 
 if (global.konami == 1)
 {
     // run the calc script
     new_step = global.orb_step_arr[planet.orbit] - planet.rate
-    script_execute(sci_calculateMove, self.id, new_step);
+    script_execute(scr_calculateOrbit, self.id, new_step);
     
     // store new step
     self.step = new_step;
@@ -216,9 +256,6 @@ if (global.swap_mode == 1)
 {
     //if (global.swap_from == self.id)
     //    return
-    
-    show_debug_message("print swap from id   :   " + string(global.swap_from));
-    show_debug_message("print swap from orbit:   " + string(global.swap_from.orbit));
         
     my_orbit = self.orbit
     my_step  = self.step
@@ -228,16 +265,27 @@ if (global.swap_mode == 1)
     
     global.swap_from.orbit = my_orbit;
     global.swap_from.step  = my_step ;
+
+    // animation data  
+    global.swap_from.move_x = self.x 
+    global.swap_from.move_y = self.y 
+
+    global.swap_from.move_dist =  point_distance(self.x, self.y, global.swap_from.x, global.swap_from.y)
+    global.swap_from.move_incr =  global.swap_from.move_dist / global.anim_time
+    
+    show_debug_message( object_get_name(global.swap_from.id.object_index))
+    show_debug_message(global.swap_from.move_dist)
+    show_debug_message(global.swap_from.move_incr)
     
     // swap self
     degrees = global.orbit_deg_arr[self.orbit] * self.step;
     radius = global.sun_radius + (self.orbit * global.orb_width);
     self.x = (room_width/2)+global.offset_x + (radius * (sin(degtorad(global.offset_rotation + degrees))));
     self.y = (room_height/2)+global.offset_y + (radius * (cos(degtorad(global.offset_rotation + degrees))));
-    
+    /*
     // swap remote
-    var degrees = global.orbit_deg_arr[global.swap_from.orbit] * global.swap_from.step;
-    var radius = global.sun_radius + (global.swap_from.orbit * global.orb_width);
+    degrees = global.orbit_deg_arr[global.swap_from.orbit] * global.swap_from.step;
+    radius = global.sun_radius + (global.swap_from.orbit * global.orb_width);
     global.swap_from.x = (room_width/2)+global.offset_x + (radius * (sin(degtorad(global.offset_rotation + degrees))));
     global.swap_from.y = (room_height/2)+global.offset_y + (radius * (cos(degtorad(global.offset_rotation + degrees))));
       
@@ -246,7 +294,10 @@ if (global.swap_mode == 1)
     global.swap_from = -1;
     global.action_lock = 0;
     global.turn +=1;
+    */
 }
+    
+
 
 
 
