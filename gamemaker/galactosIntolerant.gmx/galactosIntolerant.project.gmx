@@ -79,6 +79,7 @@
     <script>scripts\scr_string_split.gml</script>
     <script>scripts\scr_formatting.gml</script>
     <script>scripts\scr_setPlanetOrbit.gml</script>
+    <script>scripts\scr_array_is_zero.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -106,7 +107,7 @@
     <room>rooms\rm_score</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41881.9469750694</constant>
+    <constant name="GM_build_date">41882.0656325116</constant>
     <constant name="GM_version">'1.0.0.4'</constant>
   </constants>
   <help>

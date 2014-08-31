@@ -113,10 +113,12 @@ for (i = 0; i &lt; global.planet_count; i += 1)
     //-------------------------------------------- basic info
     planet = instance_create(0,0,obj_planet_base);
     planet.planet_id = i
-    planet.rate = global.plnt_rates[i]   //speed of movement around ring
-    planet.orbit = i                     // orbit ring
-    planet.turn = 1                      // player turn counter
-    global.plnts_arr[i] = planet;        // store in global array
+    planet.rate = global.plnt_rates[i]             //speed of movement around ring
+    planet.orbit = i                               // orbit ring
+    planet.turn = 1                                // player turn counter
+    global.plnts_arr[i] = planet;                  // store in global array
+    global.planets_action_lock[i] = 0              // individual action lock for every planet
+    global.planets_do_turn[i] = 0                  // individual flag to trigger turn anim
         
     //-------------------------------------------- starting positions - auto-win/random/line
     if (global.test_win)

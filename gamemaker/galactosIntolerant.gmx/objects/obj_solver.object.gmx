@@ -28,7 +28,7 @@
             <string>obj_win_btn.visible = 0;
 global.win = 0;
 
-if !(global.turn_lock || global.action_lock || global.turn == 0)
+if (scr_array_is_zero(global.planets_do_turn) &amp;&amp; scr_array_is_zero(global.planets_action_lock) &amp;&amp; global.turn &gt; 0)
 {
     cardinal_angle = 360/global.cardinal_count;
     

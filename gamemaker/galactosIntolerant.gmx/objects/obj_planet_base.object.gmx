@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.radius = global.sun_radius + (self.orbit * global.orb_width);
+            <string>//show_debug_message(global.planets_action_lock);
+
+self.radius = global.sun_radius + (self.orbit * global.orb_width);
 
 // show info text on hover
 if (position_meeting(mouse_x, mouse_y, id))
@@ -68,7 +70,7 @@ if(self.do_action == 0 || self.do_action == 1)
     // store new step
     self.step = new_step;
     self.do_action = -1;
-    global.action_lock = 1;
+    global.planets_action_lock[self.planet_id] = 0;
 }
 
 // swapping will be done on the subsequently selected planet, not here
@@ -78,38 +80,58 @@ if(self.do_action == 2 || self.do_action == 3)
 }
 
 //--------------------------------------------------------- TURNS
-if (global.action_lock = 0 &amp;&amp; global.turn == self.turn)
+if (global.planets_do_turn[self.planet_id])
 {
+    show_debug_message("DO TURN "+string(id));
+    
     // work out the steps
-    self.turn += 1;
     new_step = self.step + self.rate;
 
     // run the calc script
-    script_execute(scr_calculateOrbit, self.id, new_step );
+    scr_calculateOrbit(self.id, new_step);
 
     // store new step
     self.step = new_step;
     global.turn_lock = 1;
+    global.action_lock = 0;
+    
+    global.planets_do_turn[self.planet_id] = 0;
+    //global.do_turn = 0;
+    show_debug_message("do turns?"+string(global.planets_do_turn));
 }
 
 //--------------------------------------------------------- ORBITING
 if (self.orbit_deg != 0)
-{
+{   
     // Calculate degrees of movement for this step
     self.current_degrees += self.orbit_incr;
     self.orbit_deg -= self.orbit_incr;
     
     // make the planet orbit
-    script_execute(scr_setPlanetOrbit, self.id, self.current_degrees);
+    scr_setPlanetOrbit(self.id, self.current_degrees);
     
     // if this is the last step of animation, turn off the lock
     if self.orbit_deg == 0
-    {
-        if (global.action_lock)
+    {        
+        // check if a new turn animation has to be triggered, will happen if:
+        // - no other move/swap animation has to be played
+        // - a turn isnt already happening (loop)
+        if (scr_array_is_zero(global.planets_action_lock) &amp;&amp; !global.do_turn)
+        {
+            show_debug_message("UP TURN1: "+string(global.turn)+" "+string(global.do_turn));
             global.turn +=1;
+            for (i=0; i&lt;array_length_1d(global.planets_do_turn); i++)
+                global.planets_do_turn[i] = 1;    
+            global.do_turn = 1;
+        }
+        // switch do_turn flag to signal the end of the turn
+        if (!scr_array_is_zero(global.planets_do_turn))
+        {
+            global.do_turn = 0;
+        }
         
-        global.turn_lock = 0;
-        global.action_lock = 0;     
+        //global.turn_lock = 0;
+        global.planets_action_lock[self.planet_id] = 0;
     }
     
     // roate planet and set facing
@@ -142,18 +164,21 @@ if (self.move_dist &gt; 0)
     if self.move_dist == 0
     {
         if (self.turn != global.turn)
+        {            
+            show_debug_message("UP TURN2: "+string(global.turn));
             global.turn +=1;
             global.swap_mode = 0;
             global.swap_from = -1;
             global.swap_to = -1;
             global.action_lock = 0;
+            global.planets_action_lock[self.planet_id] = 0
+        }
         self.move_x = 0;
         self.move_y = 0;
     }
     
     // roate planet
     self.image_angle += self.day_cycle;
-    
 }
 
 //--------------------------------------------------------- KONAMI CODE
@@ -162,7 +187,7 @@ if (global.konami == 1)
 {
     // run the calc script
     new_step = global.orb_step_arr[planet.orbit] - planet.rate
-    script_execute(scr_calculateOrbit, self.id, new_step);
+    scr_calculateOrbit(self.id, new_step);
     
     // store new step
     self.step = new_step;
@@ -205,10 +230,17 @@ self.facing = point_direction(obj_sun.x, obj_sun.y, self.x, self.y);
             <kind>1</kind>
             <string>//--------------------------------------------------------- ARROW DISPLAY
 
+show_debug_message("...")
+show_debug_message(scr_array_is_zero(global.planets_do_turn))
+show_debug_message(scr_array_is_zero(global.planets_action_lock)) 
+show_debug_message(!global.arrows_visible)
+show_debug_message(!global.swap_mode)
+
 // display arrows if there aren't any open already
 // otherwise trigger planet swap
-if (global.arrows_visible == 0 &amp;&amp; global.swap_mode == 0 &amp;&amp; global.action_lock == 0 &amp;&amp; global.turn_lock == 0) 
+if (!global.arrows_visible &amp;&amp; !global.swap_mode &amp;&amp; scr_array_is_zero(global.planets_do_turn) &amp;&amp; scr_array_is_zero(global.planets_action_lock)) 
 {  
+    show_debug_message("HERE")
     r = sprite_width * 0.5;
     ang = id.facing;
     
@@ -244,11 +276,6 @@ if (global.arrows_visible == 0 &amp;&amp; global.swap_mode == 0 &amp;&amp; globa
         inst3.sprite_index = global.spr_arrow_arr[3];
         inst3.type = 2; // down
     }
-}
-else
-{
-    show_debug_message("TODO: planet swap");
-    // test if up/down arrow is activated -&gt; otherwise ignore?/close arrows?
 }
 
 //--------------------------------------------------------- SWAPPING 

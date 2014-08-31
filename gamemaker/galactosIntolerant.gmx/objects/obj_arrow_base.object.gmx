@@ -127,7 +127,7 @@ if(self.type == 2)
     show_debug_message("initiate swap for: "+string(self.parentid));
     global.swap_mode = 1;
     global.swap_from = self.parentid;
-    global.action_lock = 1;  
+    global.planets_action_lock[self.parentid.planet_id] = 1;
 }
 
 // make the parent planet move

@@ -47,6 +47,8 @@ globalvar global.win_cardinal = -1;
 
 //--------------------------------------------------GLOBALS
 
+globalvar global.do_turn = 0; // flag to activate a turn animation
+
 globalvar global.turn = 0;
 globalvar global.anim_time = 20;
 globalvar global.offset_rotation = 90;
