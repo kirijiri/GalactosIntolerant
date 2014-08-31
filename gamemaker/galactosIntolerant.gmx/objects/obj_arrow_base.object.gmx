@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>global.arrows_visible = 1;
+do_destroy = 0;
 
 // scale arrows
 image_xscale -= 0.3;
@@ -85,7 +86,7 @@ if (!position_meeting(mouse_x, mouse_y, obj_arrow_base) &amp;&amp;
 }
 
 // destroy arrows on animation
-if (global.action_lock || global.turn_lock || global.swap_mode)
+if (self.do_destroy)
 {
     instance_destroy();
 }
@@ -127,13 +128,17 @@ if(self.type == 2)
     show_debug_message("initiate swap for: "+string(self.parentid));
     global.swap_mode = 1;
     global.swap_from = self.parentid;
-    global.planets_action_lock[self.parentid.planet_id] = 1;
 }
 
 // make the parent planet move
 self.parentid.do_action = self.type;
+global.planets_action_lock[self.parentid.planet_id] = 1;
 
-
+for (i=0; i&lt;array_length_1d(self.parentid.arrows); i++)
+{
+    show_debug_message("destroy "+string(i));
+    self.parentid.arrows[i].do_destroy = 1;
+}
 </string>
           </argument>
         </arguments>

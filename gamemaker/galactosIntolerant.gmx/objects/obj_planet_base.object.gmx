@@ -234,6 +234,7 @@ if (!global.arrows_visible &amp;&amp; !global.swap_mode &amp;&amp; scr_array_is_
     
     // forward
     inst0 = instance_create( x, y, obj_arrow_base );
+    self.arrows[0] = inst0;
     inst0.parentid = id;
     inst0.image_angle = ang+90;
     inst0.sprite_index = global.spr_arrow_arr[0];
@@ -241,6 +242,7 @@ if (!global.arrows_visible &amp;&amp; !global.swap_mode &amp;&amp; scr_array_is_
         
     // back
     inst1 = instance_create( x, y, obj_arrow_base );
+    self.arrows[1] = inst1;
     inst1.parentid = id;
     inst1.image_angle = ang-90;
     inst1.sprite_index = global.spr_arrow_arr[1];
@@ -250,6 +252,7 @@ if (!global.arrows_visible &amp;&amp; !global.swap_mode &amp;&amp; scr_array_is_
     if (id.orbit != 5)
     {
         inst2 = instance_create( x, y, obj_arrow_base );
+        self.arrows[2] = inst2;
         inst2.parentid = id;
         inst2.image_angle = ang;
         inst2.sprite_index = global.spr_arrow_arr[2];
@@ -259,11 +262,14 @@ if (!global.arrows_visible &amp;&amp; !global.swap_mode &amp;&amp; scr_array_is_
     if (id.orbit != 0)
     {
         inst3 = instance_create( x, y, obj_arrow_base );
+        self.arrows[3] = inst3;
         inst3.parentid = id;
         inst3.image_angle = ang-180;
         inst3.sprite_index = global.spr_arrow_arr[3];
         inst3.type = 2; // down
     }
+
+
 }
 
 //--------------------------------------------------------- SWAPPING 
