@@ -28,60 +28,60 @@
             <string>
 //--------------------------------------------------GAME OPTNS
 
-globalvar global.randomise_start = 1;   // start planets on random step
-globalvar global.true_randomise = 1;    // use true random values
-globalvar global.test_win = 0;          // starts the planets one move from winning
+global.randomise_start = 1;   // start planets on random step
+global.true_randomise = 1;    // use true random values
+global.test_win = 0;          // starts the planets one move from winning
 
 //--------------------------------------------------SCORE
 
-globalvar global.start_score = 5710000000;
-globalvar global.score = global.start_score;
-globalvar global.likes_received = 0;
-globalvar global.remaining_followers = 0;
-globalvar global.remaining_population = 0;
-globalvar global.death_toll = 0;
-globalvar global.align_count = 0;
-globalvar global.lost = 0;
-globalvar global.win = 0;
-globalvar global.win_cardinal = -1;
+global.start_score = 5710000000;
+global.score = global.start_score;
+global.likes_received = 0;
+global.remaining_followers = 0;
+global.remaining_population = 0;
+global.death_toll = 0;
+global.align_count = 0;
+global.lost = 0;
+global.win = 0;
+global.win_cardinal = -1;
 
 //--------------------------------------------------GLOBALS
 
-globalvar global.do_turn = 0; // flag to activate a turn animation
-globalvar global.planets = 0;
-globalvar global.need_turn = false;
-globalvar global.turn = 0;
-globalvar global.anim_time = 20;
-globalvar global.offset_rotation = 90;
-globalvar global.swap_from = -1;
-globalvar global.swap_to = -1;
-globalvar global.offset_x = 350;
-globalvar global.offset_y = 0;
-globalvar global.cardinal_count = 8;
-globalvar global.cardinal_threshold = 0.10;
-globalvar global.planet_count = 6;
-globalvar global.win_condition_align_count = 3;
+global.planets = 0;
+global.do_turn = 0;
+global.need_turn = false;
+global.turn = 0;
+global.anim_time = 20;
+global.offset_rotation = 90;
+global.swap_from = -1;
+global.swap_to = -1;
+global.offset_x = 350;
+global.offset_y = 0;
+global.cardinal_count = 8;
+global.cardinal_threshold = 0.10;
+global.planet_count = 6;
+global.win_condition_align_count = 3;
 
 //--------------------------------------------------FILES
 
-globalvar global.file_planet_data = working_directory+"GI_planetdatafin.txt";
-globalvar global.file_message_data = working_directory+"GI_news.txt";
+global.file_planet_data = working_directory+"GI_planetdatafin.txt";
+global.file_message_data = working_directory+"GI_news.txt";
 
 //--------------------------------------------------FLAGS
 
-globalvar global.arrows_visible = 0;    // movement arrows visibility
-globalvar global.turn_lock = 0;         // lock for turn
-globalvar global.action_lock = 0;       // lock for actions
-globalvar global.swap_mode = 0;         // lock for actions
-globalvar global.konami = 0;            // ssssssh!
+global.arrows_visible = 0;    // movement arrows visibility
+global.turn_lock = 0;         // lock for turn
+global.action_lock = 0;       // lock for actions
+global.swap_mode = 0;         // lock for actions
+global.konami = 0;            // ssssssh!
 
 //--------------------------------------------------SOUND
 
-globalvar global.snd_win_music = 50;
-globalvar global.snd_music = 0.1;
-globalvar global.snd_fx = 0.7;
-globalvar global.snd_fx_arrows = 1;
-globalvar global.snd_fx_skip = 1;
+global.snd_win_music = 50;
+global.snd_music = 0.1;
+global.snd_fx = 0.7;
+global.snd_fx_arrows = 1;
+global.snd_fx_skip = 1;
 
 //--------------------------------------------------PLANETS
 
@@ -92,7 +92,7 @@ plnt_rates[2] = 7;
 plnt_rates[3] = 9;
 plnt_rates[4] = 11;
 plnt_rates[5] = 14;
-globalvar global.plnt_rates = plnt_rates;
+global.plnt_rates = plnt_rates;
 
 // sprites
 plnt_spr_arr[0] = spr_planet_00;
@@ -101,7 +101,7 @@ plnt_spr_arr[2] = spr_planet_02;
 plnt_spr_arr[3] = spr_planet_03;
 plnt_spr_arr[4] = spr_planet_04;
 plnt_spr_arr[5] = spr_planet_05;
-globalvar global.plnt_spr_arr = plnt_spr_arr;
+global.plnt_spr_arr = plnt_spr_arr;
 
 // day cycles
 plnt_dayCycle_arr[0] = 20;
@@ -110,13 +110,13 @@ plnt_dayCycle_arr[2] = 20;
 plnt_dayCycle_arr[3] = 20;
 plnt_dayCycle_arr[4] = 20;
 plnt_dayCycle_arr[5] = 20;
-globalvar global.plnt_dayCycle_arr = plnt_dayCycle_arr;
+global.plnt_dayCycle_arr = plnt_dayCycle_arr;
 
 //--------------------------------------------------ORBITS
 
 // orbit values
-globalvar global.sun_radius = 100;
-globalvar global.orb_width = 50;
+global.sun_radius = 100;
+global.orb_width = 50;
 
 // steps 
 orb_step_arr[0] = global.cardinal_count;
@@ -125,7 +125,7 @@ orb_step_arr[2] = orb_step_arr[1]*2;
 orb_step_arr[3] = orb_step_arr[2]*2;
 orb_step_arr[4] = orb_step_arr[3]*2;
 orb_step_arr[5] = orb_step_arr[4]*2;
-globalvar global.orb_step_arr = orb_step_arr;
+global.orb_step_arr = orb_step_arr;
 
 // degree array
 orbit_deg_arr[0] = 360/orb_step_arr[0];
@@ -134,7 +134,7 @@ orbit_deg_arr[2] = 360/orb_step_arr[2];
 orbit_deg_arr[3] = 360/orb_step_arr[3];
 orbit_deg_arr[4] = 360/orb_step_arr[4];
 orbit_deg_arr[5] = 360/orb_step_arr[5];
-globalvar global.orbit_deg_arr = orbit_deg_arr;
+global.orbit_deg_arr = orbit_deg_arr;
 
 //--------------------------------------------------ARROWS
 
@@ -143,7 +143,7 @@ spr_arrow_arr[0] = spr_left;
 spr_arrow_arr[1] = spr_right;
 spr_arrow_arr[2] = spr_up;
 spr_arrow_arr[3] = spr_down;
-globalvar global.spr_arrow_arr = spr_arrow_arr;
+global.spr_arrow_arr = spr_arrow_arr;
 
 //--------------------------------------------------KONAMI CHEAT
 
