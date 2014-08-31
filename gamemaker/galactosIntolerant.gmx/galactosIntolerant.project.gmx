@@ -93,6 +93,7 @@
   <objects name="objects">
     <object>objects\obj_global</object>
     <object>objects\obj_solver</object>
+    <object>objects\obj_news</object>
     <object>objects\obj_planet_base</object>
     <object>objects\obj_planet_init</object>
     <object>objects\obj_sun</object>
@@ -102,14 +103,13 @@
     <object>objects\obj_score</object>
     <object>objects\obj_phone</object>
     <object>objects\obj_lost</object>
-    <object>objects\obj_news</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_control</room>
     <room>rooms\rm_score</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41882.8563849306</constant>
+    <constant name="GM_build_date">41882.8795030556</constant>
     <constant name="GM_version">'1.0.0.4'</constant>
   </constants>
   <help>
