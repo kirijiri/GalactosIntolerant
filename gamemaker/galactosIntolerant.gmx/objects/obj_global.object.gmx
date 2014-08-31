@@ -31,6 +31,9 @@
 global.randomise_start = 1;   // start planets on random step
 global.true_randomise = 1;    // use true random values
 global.test_win = 0;          // starts the planets one move from winning
+global.planet_count = 6;                // number of planets in the game
+global.cardinal_count = 8;              // number of cardinals in the game
+global.win_condition_align_count = 3;   // number of aligned planets needed to win
 
 //--------------------------------------------------SCORE
 
@@ -47,20 +50,17 @@ global.win_cardinal = -1;
 
 //--------------------------------------------------GLOBALS
 
-global.planets = 0;
-global.do_turn = 0;
-global.need_turn = false;
-global.turn = 0;
-global.anim_time = 20;
-global.offset_rotation = 90;
-global.swap_from = -1;
-global.swap_to = -1;
-global.offset_x = 350;
-global.offset_y = 0;
-global.cardinal_count = 8;
-global.cardinal_threshold = 0.10;
-global.planet_count = 6;
-global.win_condition_align_count = 3;
+global.need_turn = false;           // turn request for planets
+global.turn = 0;                    // turn counter
+global.anim_time = 20;              // how quick the movement of the planets will be
+global.swap_from = -1;              // storage for planet to swap
+global.cardinal_threshold = 0.10;   // how close the planets need to be to the carinals
+
+//--------------------------------------------------GAME SETUP
+
+global.offset_rotation = 90;        // global rotation of the orbits
+global.offset_x = 350;              // offset for game area in x
+global.offset_y = 0;                // offset for game area in y
 
 //--------------------------------------------------FILES
 
@@ -84,6 +84,9 @@ global.snd_fx_arrows = 1;
 global.snd_fx_skip = 1;
 
 //--------------------------------------------------PLANETS
+
+// array of planets to be filled on init
+global.planets = 0;
 
 // rates
 plnt_rates[0] = 3;
