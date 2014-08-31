@@ -42,43 +42,38 @@ else
 }
 
 //--------------------------------------------------------- SCORE
-
 if(self.do_action &gt; -1)
 {
-    if (global.score &gt; 0)
-        global.score -= round(random_range(200000000, 50000000));
+    global.score -= round(random_range(200000000, 50000000));
     if (global.score &lt; 0)
         global.score = 0;
 }
     
 //--------------------------------------------------------- ACTIONS
-
-if(self.do_action == 0 || self.do_action == 1)
+if (global.planets_action_lock[self.planet_id])
 {
-    // work out the steps
-    if (self.do_action == 0) // move forward
+    if(self.do_action == 0 || self.do_action == 1)
     {
-        new_step = self.step + self.rate;
+        // work out the steps
+        if (self.do_action == 0) // move forward
+        {
+            new_step = self.step + self.rate;
+        }
+        else if (self.do_action == 1) // move back
+        {
+            new_step = self.step - self.rate;
+        }
+        // run the calc script
+        scr_calculateOrbit( self.id, new_step );
+    
+        // store new step
+        self.step = new_step
     }
-    else if (self.do_action == 1) // move back
-    {
-        new_step = self.step - self.rate;
-    }
-    // run the calc script
-    scr_calculateOrbit( self.id, new_step );
-
-    // store new step
-    self.step = new_step;
+    
     self.do_action = -1;
     global.planets_action_lock[self.planet_id] = 0;
 }
-
-// swapping will be done on the subsequently selected planet, not here
-if(self.do_action == 2 || self.do_action == 3)
-{
-    self.do_action = -1;
-}
-
+    
 //--------------------------------------------------------- TURNS
 if (global.planets_do_turn[self.planet_id])
 {
@@ -230,17 +225,10 @@ self.facing = point_direction(obj_sun.x, obj_sun.y, self.x, self.y);
             <kind>1</kind>
             <string>//--------------------------------------------------------- ARROW DISPLAY
 
-show_debug_message("...")
-show_debug_message(scr_array_is_zero(global.planets_do_turn))
-show_debug_message(scr_array_is_zero(global.planets_action_lock)) 
-show_debug_message(!global.arrows_visible)
-show_debug_message(!global.swap_mode)
-
 // display arrows if there aren't any open already
 // otherwise trigger planet swap
 if (!global.arrows_visible &amp;&amp; !global.swap_mode &amp;&amp; scr_array_is_zero(global.planets_do_turn) &amp;&amp; scr_array_is_zero(global.planets_action_lock)) 
 {  
-    show_debug_message("HERE")
     r = sprite_width * 0.5;
     ang = id.facing;
     
@@ -250,7 +238,7 @@ if (!global.arrows_visible &amp;&amp; !global.swap_mode &amp;&amp; scr_array_is_
     inst0.image_angle = ang+90;
     inst0.sprite_index = global.spr_arrow_arr[0];
     inst0.type = 0; // left
-    
+        
     // back
     inst1 = instance_create( x, y, obj_arrow_base );
     inst1.parentid = id;
