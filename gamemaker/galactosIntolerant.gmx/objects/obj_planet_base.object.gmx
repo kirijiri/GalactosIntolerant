@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//show_debug_message(global.planets_action_lock);
+            <string>show_debug_message("Planet " + string(self.planet_id))
+show_debug_message(string(self.action_lock)+","+string(scr_action_locked()))
+show_debug_message(string(self.turn)+","+string(global.turn))
+show_debug_message(string(self.turning))
 
 self.radius = global.sun_radius + (self.orbit * global.orb_width);
 
@@ -48,37 +51,10 @@ if(self.do_action &gt; -1)
     if (global.score &lt; 0)
         global.score = 0;
 }
-    
-//--------------------------------------------------------- ACTIONS
-if (global.planets_action_lock[self.planet_id])
-{
-    if(self.do_action == 0 || self.do_action == 1)
-    {
-        // work out the steps
-        if (self.do_action == 0) // move forward
-        {
-            new_step = self.step + self.rate;
-        }
-        else if (self.do_action == 1) // move back
-        {
-            new_step = self.step - self.rate;
-        }
-        // run the calc script
-        scr_calculateOrbit( self.id, new_step );
-    
-        // store new step
-        self.step = new_step
-    }
-    
-    self.do_action = -1;
-    global.planets_action_lock[self.planet_id] = 0;
-}
-    
+
 //--------------------------------------------------------- TURNS
-if (global.planets_do_turn[self.planet_id])
+if (self.turn &lt; global.turn)
 {
-    show_debug_message("DO TURN "+string(id));
-    
     // work out the steps
     new_step = self.step + self.rate;
 
@@ -87,14 +63,32 @@ if (global.planets_do_turn[self.planet_id])
 
     // store new step
     self.step = new_step;
-    global.turn_lock = 1;
-    global.action_lock = 0;
-    
-    global.planets_do_turn[self.planet_id] = 0;
-    //global.do_turn = 0;
-    show_debug_message("do turns?"+string(global.planets_do_turn));
+    self.action_lock = true;
+    self.turning = true;
+    self.turn +=1
 }
+    
+//--------------------------------------------------------- ACTIONS
+if(self.do_action == 0 || self.do_action == 1)
+{
+    // work out the steps
+    if (self.do_action == 0) // move forward
+    {
+        new_step = self.step + self.rate;
+    }
+    else if (self.do_action == 1) // move back
+    {
+        new_step = self.step - self.rate;
+    }
+    // run the calc script
+    scr_calculateOrbit( self.id, new_step );
 
+    // store new step
+    self.step = new_step
+    self.do_action = -1;
+    self.action_lock = true
+}  
+    
 //--------------------------------------------------------- ORBITING
 if (self.orbit_deg != 0)
 {   
@@ -107,26 +101,16 @@ if (self.orbit_deg != 0)
     
     // if this is the last step of animation, turn off the lock
     if self.orbit_deg == 0
-    {        
-        // check if a new turn animation has to be triggered, will happen if:
-        // - no other move/swap animation has to be played
-        // - a turn isnt already happening (loop)
-        if (scr_array_is_zero(global.planets_action_lock) &amp;&amp; !global.do_turn)
+    {   
+        if (self.turning == true)     
         {
-            show_debug_message("UP TURN1: "+string(global.turn)+" "+string(global.do_turn));
-            global.turn +=1;
-            for (i=0; i&lt;array_length_1d(global.planets_do_turn); i++)
-                global.planets_do_turn[i] = 1;    
-            global.do_turn = 1;
+            self.turning = false
         }
-        // switch do_turn flag to signal the end of the turn
-        if (!scr_array_is_zero(global.planets_do_turn))
+        else
         {
-            global.do_turn = 0;
+            global.need_turn = true
         }
-        
-        //global.turn_lock = 0;
-        global.planets_action_lock[self.planet_id] = 0;
+        self.action_lock = false;
     }
     
     // roate planet and set facing
@@ -159,19 +143,16 @@ if (self.move_dist &gt; 0)
     if self.move_dist == 0
     {
         if (self.turn != global.turn)
-        {            
-            show_debug_message("UP TURN2: "+string(global.turn));
-            global.turn +=1;
+        {
+            global.need_turn = true;
             global.swap_mode = 0;
             global.swap_from = -1;
             global.swap_to = -1;
-            global.action_lock = 0;
-            global.planets_action_lock[self.planet_id] = 0
+            self.action_lock = false;
         }
         self.move_x = 0;
         self.move_y = 0;
-    }
-    
+    }  
     // roate planet
     self.image_angle += self.day_cycle;
 }
@@ -186,7 +167,8 @@ if (global.konami == 1)
     
     // store new step
     self.step = new_step;
-    global.action_lock = 1;
+    global.need_turn = true;
+    self.action_lock = true;
 }
 
 //--------------------------------------------------------- POST-ANIMA
@@ -227,7 +209,7 @@ self.facing = point_direction(obj_sun.x, obj_sun.y, self.x, self.y);
 
 // display arrows if there aren't any open already
 // otherwise trigger planet swap
-if (!global.arrows_visible &amp;&amp; !global.swap_mode &amp;&amp; scr_array_is_zero(global.planets_do_turn) &amp;&amp; scr_array_is_zero(global.planets_action_lock)) 
+if (!global.arrows_visible &amp;&amp; !global.swap_mode &amp;&amp; !scr_action_locked()) 
 {  
     r = sprite_width * 0.5;
     ang = id.facing;

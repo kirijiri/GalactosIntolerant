@@ -91,11 +91,9 @@ else
           <argument>
             <kind>1</kind>
             <string>// advance turn
-if ( global.arrows_visible == 0 &amp;&amp; scr_array_is_zero(global.planets_action_lock) &amp;&amp; scr_array_is_zero(global.planets_do_turn) )
+if ( global.arrows_visible == 0 &amp;&amp; !scr_action_locked() )
 {
-    global.turn += 1;
-    for (i=0; i&lt;array_length_1d(global.planets_do_turn); i++)
-        global.planets_do_turn[i] = 1;    
+    global.need_turn = true 
 }
 
 // skip sound effect

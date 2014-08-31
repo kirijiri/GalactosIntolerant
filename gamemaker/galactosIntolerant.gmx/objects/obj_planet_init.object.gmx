@@ -25,85 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-
-// parse planet data textfile
-show_debug_message("------------------parse filename-------------------");
-
-file = file_text_open_read(global.file_message_data);
-c = 0;
-while (!file_text_eof(file))
-{
-   data_array[c] = file_text_readln(file);
-   c++;
-}
-file_text_close(file);
-
-a = scr_string_split(data_array[i], "=");
-for( var j=0; j&lt;array_length_1d(a); j+=1 )
-{
-    show_debug_message(a[j]);
-}
-*/
-
-/*
-/// TODO: planet data
-
-// parse planet data textfile
-show_debug_message("------------------parse filename-------------------");
-
-file = file_text_open_read(global.file_planet_data);
-c = 0;
-while (!file_text_eof(file))
-{
-   data_array[c] = file_text_readln(file);
-   c++;
-}
-file_text_close(file);
-
-var planet_count = -1;
-for (i=0; i&lt;c; i++)
-{
-    a = scr_string_split(data_array[i], "=");
-    //for( var j=0; j&lt;array_length_1d(a); j+=1 )
-    //{
-    //    show_debug_message(a[j]);
-    //}
-    
-    show_debug_message(array_length_1d(a));
-    show_debug_message(a[0]);
-    show_debug_message(string(a[0])+" ==? startplanet ??? "+string(a[0] == "startplanet"));
-    show_debug_message(is_string(a[0]));
-    show_debug_message(string_length(a[0]));
-    show_debug_message(string_length("startplanet"));
-    
-    if (a[0] == "startplanet") 
-    {
-        show_debug_message("START");
-        planet_count++;
-    }   
-    if (array_length_1d(a) == 2)
-    {
-        show_debug_message("planet_count:" + string(planet_count));
-        if      (a[0] == "name") planet_names[planet_count] = a[1];
-        else if (a[0] == "size") planet_sizes[planet_count] = a[1];
-        else if (a[0] == "race") planet_races[planet_count] = a[1];
-        else if (a[0] == "population") planet_populations[planet_count] = a[1];
-        else if (a[0] == "follow") planet_follows[planet_count] = a[1];
-        else if (a[0] == "damspeedup") planet_damspeedups[planet_count] = a[1];
-        else if (a[0] == "damspeeddown") planet_damspeeddowns[planet_count] = a[1];
-        else if (a[0] == "damorbit1") planet_damorbit1s[planet_count] = a[1];
-        else if (a[0] == "damorbit2") planet_damorbit2s[planet_count] = a[1];
-        else if (a[0] == "damorbit3") planet_damorbit3s[planet_count] = a[1];
-        else if (a[0] == "damorbit4") planet_damorbit4s[planet_count] = a[1];
-        else if (a[0] == "damorbit5") planet_damorbit5s[planet_count] = a[1];
-        else if (a[0] == "damorbit6") planet_damorbit6s[planet_count] = a[1];
-        else if (a[0] == "wikitext") planet_wikitexts[planet_count] = a[1];
-    }
-}
-*/
-
-/// if using true randomising, set the gml option
+            <string>/// if using true randomising, set the gml option
 if (global.true_randomise)
     randomize()
 
@@ -113,12 +35,12 @@ for (i = 0; i &lt; global.planet_count; i += 1)
     //-------------------------------------------- basic info
     planet = instance_create(0,0,obj_planet_base);
     planet.planet_id = i
+    global.planets[i] = planet
     planet.rate = global.plnt_rates[i]             //speed of movement around ring
     planet.orbit = i                               // orbit ring
-    planet.turn = 1                                // player turn counter
-    global.plnts_arr[i] = planet;                  // store in global array
-    global.planets_action_lock[i] = 0              // individual action lock for every planet
-    global.planets_do_turn[i] = 0                  // individual flag to trigger turn anim
+    planet.turn = 0                               // player turn counter
+    planet.action_lock = false
+    planet.turning = false
         
     //-------------------------------------------- starting positions - auto-win/random/line
     if (global.test_win)

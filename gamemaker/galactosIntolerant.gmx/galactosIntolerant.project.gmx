@@ -80,6 +80,8 @@
     <script>scripts\scr_formatting.gml</script>
     <script>scripts\scr_setPlanetOrbit.gml</script>
     <script>scripts\scr_array_is_zero.gml</script>
+    <script>scripts\scr_action_locked.gml</script>
+    <script>scripts\tmp.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -107,7 +109,7 @@
     <room>rooms\rm_score</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41882.727591169</constant>
+    <constant name="GM_build_date">41882.8437277546</constant>
     <constant name="GM_version">'1.0.0.4'</constant>
   </constants>
   <help>

@@ -28,21 +28,21 @@
             <string>obj_win_btn.visible = 0;
 global.win = 0;
 
-if (scr_array_is_zero(global.planets_do_turn) &amp;&amp; scr_array_is_zero(global.planets_action_lock) &amp;&amp; global.turn &gt; 0)
+if (!scr_action_locked() &amp;&amp; global.turn &gt; 0)
 {
     cardinal_angle = 360/global.cardinal_count;
     
     var c = 0;
     for (i = 0; i &lt; global.planet_count; i += 1)
     {
-        c_nr = global.plnts_arr[i].current_degrees;
+        c_nr = global.planets[i].current_degrees;
         c_nr = c_nr mod 360;
         c_nr = c_nr / cardinal_angle;
         
         if (abs(c_nr - round(c_nr)) &lt; global.cardinal_threshold)
         {
             possible_win_nr[c] = round(c_nr) mod (global.cardinal_count/2);
-            possible_win_id[c] = global.plnts_arr[i];
+            possible_win_id[c] = global.planets[i];
             c += 1;
         }
     }

@@ -48,7 +48,8 @@ globalvar global.win_cardinal = -1;
 //--------------------------------------------------GLOBALS
 
 globalvar global.do_turn = 0; // flag to activate a turn animation
-
+globalvar global.planets = 0;
+globalvar global.need_turn = false;
 globalvar global.turn = 0;
 globalvar global.anim_time = 20;
 globalvar global.offset_rotation = 90;
@@ -158,6 +159,37 @@ konami_code[8] = "B";
 konami_code[9] = "A";
 konami_progress = 0;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.need_turn)
+{
+    show_debug_message(scr_action_locked())
+    if (!scr_action_locked())
+    {
+        global.turn+=1
+    }
+}
+global.need_turn = false
 </string>
           </argument>
         </arguments>
