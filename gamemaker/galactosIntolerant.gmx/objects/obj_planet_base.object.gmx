@@ -142,14 +142,12 @@ if (self.move_dist &gt; 0)
     // if this is the last step of animation, turn off the lock
     if self.move_dist == 0
     {
-        if (self.turn != global.turn)
-        {
-            global.need_turn = true;
-            global.swap_mode = 0;
-            global.swap_from = -1;
-            global.swap_to = -1;
-            self.action_lock = false;
-        }
+        global.need_turn = true;
+        global.swap_mode = 0;
+        global.swap_from = -1;
+        global.swap_to = -1;
+        self.action_lock = false;
+        
         self.move_x = 0;
         self.move_y = 0;
     }  
