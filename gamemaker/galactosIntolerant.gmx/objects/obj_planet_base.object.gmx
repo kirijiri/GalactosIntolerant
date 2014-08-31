@@ -25,14 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("Planet " + string(self.planet_id))
-show_debug_message(string(self.action_lock)+","+string(scr_action_locked()))
-show_debug_message(string(self.turn)+","+string(global.turn))
-show_debug_message(string(self.turning))
-
-self.radius = global.sun_radius + (self.orbit * global.orb_width);
-
-// show info text on hover
+            <string>// show info text on hover
 if (position_meeting(mouse_x, mouse_y, id))
 {
     showtext = 0;
@@ -88,6 +81,11 @@ if(self.do_action == 0 || self.do_action == 1)
     self.do_action = -1;
     self.action_lock = true
 }  
+
+if(self.do_action == 2 || self.do_action == 3)
+{
+    self.do_action = -1;
+}
     
 //--------------------------------------------------------- ORBITING
 if (self.orbit_deg != 0)
