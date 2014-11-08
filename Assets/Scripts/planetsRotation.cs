@@ -9,11 +9,13 @@ public class planetsRotation : MonoBehaviour {
 		Debug.Log("I am alive and my name is " + myName);
 		Debug.Log (transform.position);
 		Debug.Log (transform.parent.position);
-		transform.position = new Vector3(2,2,0);
+		transform.position = new Vector3(1,1,0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+		transform.position += new Vector3(0.2f,0.2f,0.0f);
 	
 	}
 }
