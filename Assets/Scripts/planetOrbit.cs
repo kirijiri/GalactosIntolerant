@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class planetsRotation : MonoBehaviour {
-	public string myName;
+public class planetOrbit : MonoBehaviour {
 	public float radius;
 	public float startAngle;
 	public float speed;
-	float angle;
+	public bool animate = true;
+	private float angle;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +16,11 @@ public class planetsRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		angle += speed;
-		SetPosition();
+		if (animate) 
+		{
+			angle += speed;
+			SetPosition ();
+		}
 	}
 
 	private void SetPosition () {
