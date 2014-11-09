@@ -10,6 +10,12 @@ public class planetTouch : MonoBehaviour {
 		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof(debug));
 	}
 
+	void OnDrawGizmos () {
+		Gizmos.color = Color.white;
+		Gizmos.DrawRay(transform.position, transform.forward * 10);
+		Gizmos.DrawCube(new Vector3(0,0,0), new Vector3(100, 100, 100));
+	}
+
 	void OnMouseDown () {
 		dragOrigin = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
 		dragOriginVelocity = gameObject.rigidbody2D.velocity;
