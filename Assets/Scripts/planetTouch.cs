@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-[RequireComponent(typeof(BoxCollider2D))]
 
 public class planetTouch : MonoBehaviour {
 	private Vector3 dragOrigin;

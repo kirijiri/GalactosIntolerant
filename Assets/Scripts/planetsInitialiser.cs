@@ -2,26 +2,17 @@
 using System.Collections;
 
 public class planetsInitialiser : MonoBehaviour {
-	public float initSpeed;
+	public float initSpeed = 5;
+	GameObject sun;
+	Vector3 posDiff;
 
 	// Use this for initialization
 	void Start () {
-		GameObject sun;
-		HingeJoint2D hinge;
-		JointMotor2D motor;
-		Vector3 posDiff;
-
 		sun = GameObject.Find ("sun");
-		hinge = gameObject.GetComponent<HingeJoint2D>();
-		motor = hinge.motor;
 		posDiff = (sun.transform.position - transform.position);
-		
-		// Edit the hinge
-		hinge.anchor = new Vector2(posDiff.x, posDiff.y);
-		hinge.connectedBody = sun.rigidbody2D;
-		
-		motor.motorSpeed = initSpeed;
-		hinge.motor = motor;
+
+		HingeSetup ();
+		InitVelocity ();
 	}
 	
 	// Update is called once per frame
@@ -29,4 +20,22 @@ public class planetsInitialiser : MonoBehaviour {
 	
 	}
 
+	private void HingeSetup(){
+		HingeJoint2D hinge;
+
+		hinge = gameObject.GetComponent<HingeJoint2D>();
+		
+		// Edit the hinge
+		hinge.anchor = new Vector2(posDiff.x, posDiff.y);
+		hinge.connectedBody = sun.rigidbody2D;
+	}
+
+	private void InitVelocity(){
+		Vector3 initDirection;
+
+		initDirection = posDiff.normalized;
+		initDirection = Quaternion.AngleAxis (90, new Vector3 (0, 1, 0)) * initDirection;
+
+		rigidbody2D.velocity = initDirection * initSpeed;
+	}
 }

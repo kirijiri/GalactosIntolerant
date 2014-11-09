@@ -13,6 +13,7 @@ GameObject:
   - 233: {fileID: 23300000}
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: planets_prefab
   m_TagString: Untagged
@@ -69,7 +70,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969613b04c1b5734fbfe01e45cc53f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 50
+  initSpeed: 5
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af515c5fa98c8b848b22fb3f993aa370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -103,7 +115,7 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 0}
   m_Anchor: {x: 2, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_UseMotor: 1
+  m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 50
     m_MaximumMotorForce: 10000
