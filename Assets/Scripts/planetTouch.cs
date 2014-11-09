@@ -4,57 +4,47 @@ using System.Collections;
 
 public class planetTouch : MonoBehaviour {
 	private Vector3 dragOrigin;
+	private Vector3 dragOriginVelocity;
+	private debug debugScript;
 
-	/*
-	Collider2D hit_collider;
-	// Update is called once per frame
-	void Update () {
-
-		if (Input.GetMouseButtonDown (0) && !hit_collider) {
-			RaycastHit2D hit = Physics2D.Raycast (Camera.main.ScreenToWorldPoint (Input.mousePosition), Vector2.zero);
-			if (hit.collider != null) {
-				//Vector3 targetPos = hit.collider.gameObject.transform.position; //Save the position of the object mouse was over
-				//Destroy (GameObject.Find (hit.collider.gameObject.name));
-
-				// stop planet
-				hit.collider.rigidbody2D.isKinematic = true;
-				hit_collider = hit.collider;
-			}
-		}
-
-		if (Input.GetMouseButtonUp (0)) {
-
-			// release planet again
-			if (hit_collider != null) {
-				hit_collider.rigidbody2D.isKinematic = false;
-			} 
-			hit_collider = null;
-		}
+	void Start () {
+		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof(debug));
 	}
-	*/
-	
-	void OnMouseDown() {
-		dragOrigin = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
-		gameObject.rigidbody2D.isKinematic = true;
+
+	void OnMouseDown () {
+		dragOrigin = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+		dragOriginVelocity = gameObject.rigidbody2D.velocity;
+		Debug.Log ("dragOriginVelocity: " + dragOriginVelocity);
+
+		//gameObject.rigidbody2D.isKinematic = true;
 	}
 
 	void OnMouseUp () {
-		gameObject.rigidbody2D.isKinematic = false;
+		/*
+		if (gameObject.rigidbody2D.isKinematic) {
+			gameObject.rigidbody2D.isKinematic = false;
+			gameObject.rigidbody2D.velocity = dragOriginVelocity;
+		}
+		*/
 	}
 	
-	void OnMouseDrag()
-	{
+	void OnMouseDrag () {
 		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
-		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + dragOrigin;
-		//transform.position = curPosition;
+		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint);
 
 		dragOrigin.z = 0;
 		curPosition.z = 0;
-		Vector3 direction = dragOrigin - curPosition;
-		float intensity = direction.magnitude;
-		//direction = direction.normalized;
+		Vector3 direction = curPosition - dragOrigin;
 
-		Debug.Log ("OnMouseDrag " + dragOrigin + " " + curPosition + " dir: " + direction + " intensity:" + intensity);
+		// debug print/draw
+		if (debugScript.showTouch){
+			float intensity = direction.magnitude;
+			Debug.Log ("OnMouseDrag " + dragOrigin + " " + curPosition + " dir: " + direction + " intensity:" + intensity);
+			Debug.DrawLine (dragOrigin, curPosition, Color.white, 3.0f, false);
+		}
 
+		// add mouse drag as force to planet
+		//gameObject.rigidbody2D.isKinematic = false;
+		rigidbody2D.AddForce(new Vector2(direction.x*100, direction.y*100), ForceMode2D.Force);
 	}
 }
