@@ -7,6 +7,7 @@ public class buildLevel : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		/*
 		// Build array on sprites
 		pl_sprites = Resources.LoadAll<Sprite>("Planets");
 
@@ -29,6 +30,7 @@ public class buildLevel : MonoBehaviour {
 			sprite_rndr.sprite = pl_sprites[i] ;
 
 		}
+		*/
 	}
 	// Update is called once per frame
 	void Update () {
