@@ -12,11 +12,11 @@ public class planetTouch : MonoBehaviour {
 
 	void OnMouseDown () {
 		dragOrigin = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
-		dragOriginVelocity = gameObject.rigidbody2D.velocity;	}
+		dragOriginVelocity = gameObject.rigidbody2D.velocity;	
+	}
 	
 	void OnMouseDrag () {
-		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
-		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint);
+		Vector3 curPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
 
 		dragOrigin.z = 0;
 		curPosition.z = 0;
