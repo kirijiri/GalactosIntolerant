@@ -18,8 +18,7 @@ public class satellite : MonoBehaviour {
 		radius = diff.magnitude;
 	}
 
-	void OnMouseDrag () 
-	{
+	void OnMouseDrag () {
 		curPos = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0));
 		curPos.z = 0;
 		newVec = curPos - centre;

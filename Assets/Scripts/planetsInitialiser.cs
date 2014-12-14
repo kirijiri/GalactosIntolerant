@@ -15,7 +15,7 @@ public class planetsInitialiser : MonoBehaviour {
 		InitVelocity ();
 	}
 
-	private void HingeSetup(){
+	private void HingeSetup () {
 		HingeJoint2D hinge = gameObject.GetComponent<HingeJoint2D>();
 		Vector3 scale = transform.localScale;
 		
@@ -24,7 +24,7 @@ public class planetsInitialiser : MonoBehaviour {
 		hinge.connectedBody = sun.rigidbody2D;
 	}
 
-	private void InitVelocity(){
+	private void InitVelocity () {
 		Vector3 initDirection;
 		initDirection = posDiff.normalized;
 		initDirection = Quaternion.AngleAxis (90, new Vector3 (0, 1, 0)) * initDirection;

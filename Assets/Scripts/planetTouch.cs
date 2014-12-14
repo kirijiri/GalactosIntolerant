@@ -65,11 +65,17 @@ public class planetTouch : MonoBehaviour {
 
 	private Vector3 InputPosition () {
 		return Camera.main.ScreenToWorldPoint(
-			new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));}
+			new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+	}
 
-	private bool InputReleased(){ return Input.GetMouseButtonUp (0); }
+	private bool InputReleased() { 
+		return Input.GetMouseButtonUp (0); 
+	}
 
-	private void ResetControlFlags(){ held=false; flooked=false; }
+	private void ResetControlFlags() { 
+		held=false; 
+		flooked=false; 
+	}
 }
 
 
