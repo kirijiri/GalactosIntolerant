@@ -11,7 +11,7 @@ public class planetTouch : MonoBehaviour {
 	private debug debugScript;
 	// controls
 	private bool held = false;
-	private bool flooked = false;
+	private bool flicked = false;
 
 	void Start () {
 		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof(debug));
@@ -35,14 +35,14 @@ public class planetTouch : MonoBehaviour {
 		if (dist < radius) { 
 			held = true; }
 		else{
-			flooked = true;
+			flicked = true;
 			newVelocity = InputPosition() - storedPosition;
 		}
 	}
 
 	void Update () {
 		// flicking control
-		if (flooked && InputReleased()) {
+		if (flicked && InputReleased()) {
 			rigidbody2D.velocity = newVelocity;
 			ResetControlFlags();
 			return;
@@ -69,33 +69,6 @@ public class planetTouch : MonoBehaviour {
 
 	private void ResetControlFlags() { 
 		held=false; 
-		flooked=false; 
+		flicked=false; 
 	}
 }
-
-
-/*
-void OnMouseDown () {
-	dragOrigin = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
-	dragOriginVelocity = gameObject.rigidbody2D.velocity;	
-}
-
-void OnMouseDrag () {
-	Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
-	Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint);
-	
-	dragOrigin.z = 0;
-	curPosition.z = 0;
-	Vector3 direction = curPosition - dragOrigin;
-	
-	// debug print/draw
-	if (debugScript.showTouch){
-		//float intensity = direction.magnitude;
-		//Debug.Log ("OnMouseDrag " + dragOrigin + " " + curPosition + " dir: " + direction + " intensity:" + intensity);
-		Debug.DrawLine (dragOrigin, curPosition, Color.white, 3.0f, false);
-	}
-	
-	// add mouse drag as force to planet
-	rigidbody2D.AddForce(new Vector2(direction.x*100, direction.y*100), ForceMode2D.Force);
-}
-*/
