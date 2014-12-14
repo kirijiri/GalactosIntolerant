@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(CircleCollider2D))]
 
-public class gravityBeam : MonoBehaviour {
+public class snapshot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,5 +13,7 @@ public class gravityBeam : MonoBehaviour {
 	// Update is called once per frame
 	void OnMouseDown () {
 		Debug.Log ("OnMouseDown");
+
+
 	}
 }
