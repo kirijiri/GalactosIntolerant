@@ -217,7 +217,7 @@ GameObject:
   - 58: {fileID: 616974327}
   - 114: {fileID: 616974326}
   m_Layer: 0
-  m_Name: btn_gravity
+  m_Name: btn_snapshot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
