@@ -5,13 +5,12 @@ public class planetTouch : MonoBehaviour {
 	//data
 	private Vector3 storedPosition;
 	private Vector3 storedVelocity;
+	private Vector3 offsetVelocity;
 	// debug
 	private debug debugScript;
 	// controls
-	private bool holding = false;
-	private bool flicking = false;
 	private bool held = false;
-	private bool fluck = false;
+	private bool flooked = false;
 
 	void Start () {
 		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof(debug));
@@ -27,17 +26,39 @@ public class planetTouch : MonoBehaviour {
 	}
 	
 	void OnMouseDrag () {
-		held = true;
+		float dist;
+		dist = Vector3.Distance (storedPosition, InputPosition());
+
+		if (dist < GetComponent<CircleCollider2D>().radius) {
+			held = true;
+			}
+		else{
+			flooked = true;
+			offsetVelocity = InputPosition() - storedPosition;
+		}
 	}
 
 	void Update () {
+		// flicking control
+		if (flooked && InputReleased()) {
+			float dot = Vector3.Dot(storedVelocity, offsetVelocity);
+
+			// invert the velocity if we're changing direction
+			if (dot > 0){
+				rigidbody2D.velocity = storedVelocity + offsetVelocity;
+			}
+			else {
+				rigidbody2D.velocity = (storedVelocity * -1) + offsetVelocity;
+			}
+
+			ResetControlFlags();
+			return;
+		}
+
 		// holding control
 		if (held && InputReleased()) {
-			Debug.Log(storedVelocity);
 			rigidbody2D.velocity = storedVelocity;
-
-			// reset 
-			held = false;
+			ResetControlFlags();
 			return;
 		}
 	}
@@ -45,9 +66,12 @@ public class planetTouch : MonoBehaviour {
 	private Vector3 InputPosition () {
 		return Camera.main.ScreenToWorldPoint(
 			new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));}
-	private bool InputReleased(){
-		return Input.GetMouseButtonUp (0);}
+
+	private bool InputReleased(){ return Input.GetMouseButtonUp (0); }
+
+	private void ResetControlFlags(){ held=false; flooked=false; }
 }
+
 
 /*
 void OnMouseDown () {
