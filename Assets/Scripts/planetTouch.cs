@@ -24,8 +24,8 @@ public class planetTouch : MonoBehaviour {
 
 		// debug print/draw
 		if (debugScript.showTouch){
-			#float intensity = direction.magnitude;
-			#Debug.Log ("OnMouseDrag " + dragOrigin + " " + curPosition + " dir: " + direction + " intensity:" + intensity);
+			//float intensity = direction.magnitude;
+			//Debug.Log ("OnMouseDrag " + dragOrigin + " " + curPosition + " dir: " + direction + " intensity:" + intensity);
 			Debug.DrawLine (dragOrigin, curPosition, Color.white, 3.0f, false);
 		}
 
