@@ -63,7 +63,39 @@ public class planetTouch : MonoBehaviour {
 		return camPosition;
 	}
 
-	private bool InputReleased(){ return Input.GetMouseButtonUp (0); }
+	private bool InputReleased() { 
+		return Input.GetMouseButtonUp (0); 
+	}
 
-	private void ResetControlFlags(){ held=false; flooked=false; }
+	private void ResetControlFlags() { 
+		held=false; 
+		flooked=false; 
+	}
 }
+
+
+/*
+void OnMouseDown () {
+	dragOrigin = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+	dragOriginVelocity = gameObject.rigidbody2D.velocity;	
+}
+
+void OnMouseDrag () {
+	Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+	Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint);
+	
+	dragOrigin.z = 0;
+	curPosition.z = 0;
+	Vector3 direction = curPosition - dragOrigin;
+	
+	// debug print/draw
+	if (debugScript.showTouch){
+		//float intensity = direction.magnitude;
+		//Debug.Log ("OnMouseDrag " + dragOrigin + " " + curPosition + " dir: " + direction + " intensity:" + intensity);
+		Debug.DrawLine (dragOrigin, curPosition, Color.white, 3.0f, false);
+	}
+	
+	// add mouse drag as force to planet
+	rigidbody2D.AddForce(new Vector2(direction.x*100, direction.y*100), ForceMode2D.Force);
+}
+*/
