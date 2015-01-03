@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(CircleCollider2D))]
 
-public class satellite : MonoBehaviour {
+public class satelliteInitialiser : MonoBehaviour {
 	Vector3 newVec;
 	Vector3 newPos;
 	Vector3 curPos;

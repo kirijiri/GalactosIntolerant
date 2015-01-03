@@ -10,6 +10,6 @@ public class planetLockRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//transform.localEulerAngles = new Vector3(0,0,0);
+		print (transform.position);
 	}
 }

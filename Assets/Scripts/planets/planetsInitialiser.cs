@@ -25,6 +25,7 @@ public class planetsInitialiser : MonoBehaviour {
 		HingeSetup ();
 		InitVelocity ();
 		ColliderSetup ();
+		IgnoreCollisions ();
 	}
 
 	private void HingeSetup () {
@@ -54,4 +55,14 @@ public class planetsInitialiser : MonoBehaviour {
 		collider.radius = sprRad / 100 / 2;
 	}
 
+	private void IgnoreCollisions () {
+		GameObject[] planets = GameObject.FindGameObjectsWithTag ("Planet");
+
+		// ignore all the planets
+		foreach (GameObject planet in planets) {
+			Physics2D.IgnoreCollision(planet.collider2D, collider2D);
+		}
+		GameObject satillite = GameObject.Find ("satellite");
+		Physics2D.IgnoreCollision(satillite.collider2D, collider2D);
+	}
 }
