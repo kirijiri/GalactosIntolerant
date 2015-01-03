@@ -24,6 +24,7 @@ public class planetsInitialiser : MonoBehaviour {
 		// setup physics
 		HingeSetup ();
 		InitVelocity ();
+		ColliderSetup ();
 	}
 
 	private void HingeSetup () {
@@ -41,6 +42,16 @@ public class planetsInitialiser : MonoBehaviour {
 		initDirection = Quaternion.AngleAxis (90, new Vector3 (0, 1, 0)) * initDirection;
 
 		rigidbody2D.velocity = initDirection * initSpeed;
+	}
+
+	private void ColliderSetup () {
+		CircleCollider2D collider = gameObject.GetComponent<CircleCollider2D>();
+		SpriteRenderer sprRen = gameObject.GetComponent<SpriteRenderer>();
+
+		string sprName = sprRen.sprite.name.ToString ();
+		float sprRad = System.Convert.ToSingle( sprName.Split ('_') [2]);
+
+		collider.radius = sprRad / 100 / 2;
 	}
 
 }

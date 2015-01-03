@@ -3,6 +3,8 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - Planet
+  - Orbit
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -37,15 +39,15 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
-  - name: backgroundLayer
+  - name: background
     userID: 1
     uniqueID: 2770083797
     locked: 0
-  - name: sunLayer
+  - name: phone
     userID: 3
     uniqueID: 3331293113
     locked: 0
-  - name: planetsLayer
+  - name: solarSystem
     userID: 2
     uniqueID: 1870004305
     locked: 0
