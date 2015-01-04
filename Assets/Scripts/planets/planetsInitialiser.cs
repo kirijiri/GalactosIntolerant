@@ -13,19 +13,30 @@ public class planetsInitialiser : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		// get pos from Sun and resize
-		sun = GameObject.Find ("sun");
-		posDiff = (sun.transform.position - transform.position);
-		posDiff.z = 0;
+			// get pos from Sun and resize
+			sun = GameObject.Find ("sun");
+			posDiff = (sun.transform.position - transform.position);
+			posDiff.z = 0;
 
-		// resize the posDiff to snap to the radius
-		posDiff = posDiff.normalized * (orbitRadius / 100 / 2);
+			// resize the posDiff to snap to the radius
+			posDiff = posDiff.normalized * (orbitRadius / 100 / 2);
 
-		// setup physics
-		HingeSetup ();
-		InitVelocity ();
-		ColliderSetup ();
-		IgnoreCollisions ();
+			// setup physics
+			HingeSetup ();
+			InitVelocity ();
+			ColliderSetup ();
+			IgnoreCollisions ();
+	}
+
+	void Awake(){
+		SpriteRenderer sprRen = gameObject.GetComponent<SpriteRenderer>();
+		GameObject imagePrefab = Instantiate (Resources.Load ("planetImage_prefab")) as GameObject;
+
+		// setup a image prefab, then turn off sprite
+		imagePrefab.name = gameObject.name + "_IMAGE";
+		imagePrefab.GetComponent<SpriteRenderer>().sprite = sprRen.sprite;
+		imagePrefab.GetComponent<planetConnectImageToControl> ().parent = gameObject;
+		sprRen.enabled = false;
 	}
 
 	private void HingeSetup () {
@@ -46,9 +57,8 @@ public class planetsInitialiser : MonoBehaviour {
 	}
 
 	private void ColliderSetup () {
-		CircleCollider2D collider = gameObject.GetComponent<CircleCollider2D>();
 		SpriteRenderer sprRen = gameObject.GetComponent<SpriteRenderer>();
-
+		CircleCollider2D collider = gameObject.GetComponent<CircleCollider2D>();
 		string sprName = sprRen.sprite.name.ToString ();
 		float sprRad = System.Convert.ToSingle( sprName.Split ('_') [2]);
 
