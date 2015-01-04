@@ -30,12 +30,12 @@ public class planetsInitialiser : MonoBehaviour {
 
 	void Awake(){
 		SpriteRenderer sprRen = gameObject.GetComponent<SpriteRenderer>();
-		GameObject imagePrefab = Instantiate (Resources.Load ("planetImage_prefab")) as GameObject;
+		GameObject imagePrefab = Instantiate (Resources.Load ("image_prefab")) as GameObject;
 
 		// setup a image prefab, then turn off sprite
 		imagePrefab.name = gameObject.name + "_IMAGE";
 		imagePrefab.GetComponent<SpriteRenderer>().sprite = sprRen.sprite;
-		imagePrefab.GetComponent<planetConnectImageToControl> ().parent = gameObject;
+		imagePrefab.GetComponent<connectImageToControl> ().parent = gameObject;
 		sprRen.enabled = false;
 	}
 
