@@ -192,6 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbb6ac7fdc7f5347a05de6ef9b5c8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sizeLower: 20
+  sizeUpper: 50
 --- !u!212 &161563098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1303,6 +1305,7 @@ GameObject:
   - 114: {fileID: 1449353994}
   - 58: {fileID: 1449353997}
   - 50: {fileID: 1449353996}
+  - 114: {fileID: 1449353995}
   m_Layer: 8
   m_Name: ship
   m_TagString: Untagged
@@ -1358,6 +1361,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbitRadius: 250
+--- !u!114 &1449353995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f600519b65bad5340a108fcb7684fdfa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1506905241}
+  m_GameObject: {fileID: 1449353991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473c5dde07bf4104aaaba3faad5e8ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 2
 --- !u!50 &1449353996
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1423,7 +1439,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f600519b65bad5340a108fcb7684fdfa, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f600519b65bad5340a108fcb7684fdfa, type: 2}
       propertyPath: m_Name
