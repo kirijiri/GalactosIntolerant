@@ -371,6 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beamThreshold: .100000001
 --- !u!114 &536487400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initSpeed: -.699999988
   orbitRadius: 110
+  planetGraphic: {fileID: 0}
 --- !u!58 &536487402
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -552,7 +554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e6374ce39e4da44bbf77cd41344998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showTouch: 1
+  gravityBeamOn: 0
+  gravityBeamThreshold: .100000001
 --- !u!4 &555966793
 Transform:
   m_ObjectHideFlags: 0
@@ -662,6 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beamThreshold: .100000001
 --- !u!114 &579743642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,6 +692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initSpeed: -.699999988
   orbitRadius: 215
+  planetGraphic: {fileID: 0}
 --- !u!58 &579743644
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -805,6 +810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beamThreshold: .100000001
 --- !u!114 &816915852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,6 +837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initSpeed: -.699999988
   orbitRadius: 145
+  planetGraphic: {fileID: 0}
 --- !u!58 &816915854
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1390,6 +1397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beamThreshold: .100000001
 --- !u!114 &1315941545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,6 +1424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initSpeed: -.699999988
   orbitRadius: 75
+  planetGraphic: {fileID: 0}
 --- !u!58 &1315941547
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1781,6 +1790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beamThreshold: .100000001
 --- !u!114 &1545869387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,6 +1817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initSpeed: -.699999988
   orbitRadius: 180
+  planetGraphic: {fileID: 0}
 --- !u!58 &1545869389
 CircleCollider2D:
   m_ObjectHideFlags: 0

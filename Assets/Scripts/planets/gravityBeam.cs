@@ -15,7 +15,7 @@ public class gravityBeam : MonoBehaviour {
 	bool gravityBeamOn = false;
 
 	// DEBUG: threshold should be public and global?
-	public float beam_threshold = 0.1f;
+	public float beamThreshold = 0.1f;
 
 	// debug
 	private debug debugScript;
@@ -29,6 +29,7 @@ public class gravityBeam : MonoBehaviour {
 
 		// DEBUG: set gravitybeam to debug one
 		gravityBeamOn = debugScript.gravityBeamOn;
+		beamThreshold = debugScript.gravityBeamThreshold;
 
 		// find sun and ship
 		sun = GameObject.Find ("sun");
@@ -48,7 +49,7 @@ public class gravityBeam : MonoBehaviour {
 		// colour the planets when in the threshold and trigger pull
 		planetGraphic = GetComponent<planetsInitialiser>().planetGraphic;
 		SpriteRenderer spriteRenderer = planetGraphic.GetComponent<SpriteRenderer>();
-		if (beamDist < beam_threshold && gravityBeamOn){
+		if (beamDist < beamThreshold && gravityBeamOn){
 			spriteRenderer.color = Color.red;
 			gravityPull(beam, beamIntersectPoint);
 		}
