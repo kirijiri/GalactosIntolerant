@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class planetLockRotation : MonoBehaviour {
-
+public class planetConnectImageToControl : MonoBehaviour {
+	public GameObject parent;
 	// Use this for initialization
 	void Start () {
 	
@@ -10,6 +10,6 @@ public class planetLockRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print (transform.position);
+		transform.position = parent.transform.position;
 	}
 }
