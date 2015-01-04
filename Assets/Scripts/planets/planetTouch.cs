@@ -2,23 +2,17 @@
 using System.Collections;
 
 public class planetTouch : MonoBehaviour {
+
 	//------------------------------------------------------------------- init
 	//data
 	private Vector3 storedPosition;
 	private Vector3 storedVelocity;
 	private Vector3 newVelocity;
-	// debug
-	private debug debugScript;
 	// controls
 	private bool held = false;
 	private bool flicked = false;
-
-	void Start () {
-		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof(debug));
-	}
 	
 	//------------------------------------------------------------------- event functions
-
 	void OnMouseDown () {
 		// store data
 		storedPosition = transform.position;
@@ -58,7 +52,7 @@ public class planetTouch : MonoBehaviour {
 
 	//------------------------------------------------------------------- private functions
 	private Vector3 InputPosition () {
-		Vector3 camPosition =  Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+		Vector3 camPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
 		camPosition.z = 0;
 		return camPosition;
 	}
@@ -68,7 +62,7 @@ public class planetTouch : MonoBehaviour {
 	}
 
 	private void ResetControlFlags() { 
-		held=false; 
-		flicked=false; 
+		held = false; 
+		flicked = false; 
 	}
 }

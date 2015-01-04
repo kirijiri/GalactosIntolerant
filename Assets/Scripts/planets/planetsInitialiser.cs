@@ -8,6 +8,7 @@ using System.Collections;
 public class planetsInitialiser : MonoBehaviour {
 	public float initSpeed = 5;
 	public float orbitRadius = 96;
+	public GameObject planetGraphic;
 	GameObject sun;
 	Vector3 posDiff;
 
@@ -75,5 +76,7 @@ public class planetsInitialiser : MonoBehaviour {
 		imagePrefab.GetComponent<SpriteRenderer>().sprite = sprRen.sprite;
 		imagePrefab.GetComponent<connectImageToControl> ().parent = gameObject;
 		sprRen.enabled = false;
+
+		planetGraphic = imagePrefab;
 	}
 }
