@@ -72,7 +72,7 @@ public class planetsInitialiser : MonoBehaviour {
 		foreach (GameObject planet in planets) {
 			Physics2D.IgnoreCollision(planet.collider2D, collider2D);
 		}
-		GameObject satillite = GameObject.Find ("satellite");
+		GameObject satillite = GameObject.Find ("ship");
 		Physics2D.IgnoreCollision(satillite.collider2D, collider2D);
 	}
 }
