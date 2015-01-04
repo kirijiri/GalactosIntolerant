@@ -41,6 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  smooth: 1
 --- !u!212 &21285188
 SpriteRenderer:
   m_ObjectHideFlags: 1
