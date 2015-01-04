@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21285188}
   - 114: {fileID: 11423854}
   m_Layer: 0
-  m_Name: planetImage_prefab
+  m_Name: image_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,6 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
+  lookat: {fileID: 0}
   smooth: 1
 --- !u!212 &21285188
 SpriteRenderer:

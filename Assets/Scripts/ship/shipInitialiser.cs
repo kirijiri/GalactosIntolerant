@@ -15,22 +15,12 @@ public class shipInitialiser : MonoBehaviour {
 		centre = sun.transform.position;
 	}
 
-	void Awake(){
-		SpriteRenderer sprRen = gameObject.GetComponent<SpriteRenderer>();
-		GameObject imagePrefab = Instantiate (Resources.Load ("image_prefab")) as GameObject;
-		
-		// setup a image prefab, then turn off sprite
-		imagePrefab.name = gameObject.name + "_IMAGE";
-		imagePrefab.GetComponent<SpriteRenderer>().sprite = sprRen.sprite;
-		imagePrefab.GetComponent<connectImageToControl> ().parent = gameObject;
-		sprRen.enabled = false;
-
-		// lookat sun
-		imagePrefab.GetComponent<connectImageToControl> ().lookat = GameObject.Find("sun");	
-
-		// TEMP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		imagePrefab.GetComponent<SpriteRenderer> ().color = Color.red;
-
+	void Update(){
+		// lootat sun
+		Vector3 dir = centre - transform.position; 
+		float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+		Quaternion rot = Quaternion.AngleAxis(angle+90, Vector3.forward);
+		transform.rotation = rot;
 	}
 
 	void OnMouseDrag () {
