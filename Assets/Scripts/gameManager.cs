@@ -7,7 +7,6 @@ public class gameManager : MonoBehaviour {
 	public int aligned_planet_count = 0;
 
 	void Awake () {
-		Debug.Log ("new gameManager");
 		DontDestroyOnLoad(this);
 	}
 }
