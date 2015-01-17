@@ -3,8 +3,10 @@ using System.Collections;
 
 public class shipControl : MonoBehaviour {
 	public float speed = 10f;
+	public bool gravityBeamEngaged = false;
+	public float gravityBeamThreshold = 0.3f;
 	public float beamActivateAngle = 30f;
-
+	
 	GameObject sun;
 
 	float orbitPixelRadius;
@@ -15,8 +17,7 @@ public class shipControl : MonoBehaviour {
 	float dot;
 
 	bool hold = false;
-	bool gravityBeamEngaged = false;
-
+	
 	Vector3 sunPos;
 	Vector3 solarPos;
 	Vector3 toRotate;

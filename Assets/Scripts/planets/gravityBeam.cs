@@ -8,39 +8,36 @@ public class gravityBeam : MonoBehaviour {
 	// objects
 	GameObject sun;
 	GameObject ship;
+	debug debugScript;
 	GameObject planetGraphic;
 
 	Vector3 beamVec;
 	Ray beam;
 	float beamDist;
+	float beamThreshold;
 	Vector3 beamIntersectPoint;
-
-	// DEBUG: threshold should be public and global?
-	public float beamThreshold = 0.1f;
-
-	// debug
-	private debug debugScript;
 	
 	void Start () {
-		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof(debug));
+		sun = GameObject.Find ("sun");
+		ship = GameObject.Find("ship");
+		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof (debug));
+		beamThreshold = ship.GetComponent<shipControl>().gravityBeamThreshold;
+
 	}
 
 	// Update is called once per frame
 	void Update () {
-
-		// DEBUG: set gravitybeam to debug one
-		gravityBeamOn = debugScript.gravityBeamOn;
-		beamThreshold = debugScript.gravityBeamThreshold;
-
-		// find sun and ship
-		sun = GameObject.Find ("sun");
-		ship = GameObject.Find ("ship");
+		// Look for gravity beam
+		gravityBeamOn = ship.GetComponent<shipControl>().gravityBeamEngaged;
 
 		// get beam 
 		beamVec = (sun.transform.position - ship.transform.position);
 		beamVec.z = 0;
 		beam = new Ray(ship.transform.position, beamVec*2);
-		Debug.DrawRay(ship.transform.position, beamVec*2, Color.white, 3.0f, false);
+
+		if (debugScript.drawShipDiameter){
+			Debug.DrawRay(ship.transform.position, beamVec*2, Color.white, 3.0f, false);
+		}
 
 		// get intersection point and distance to the beam ray
 		beamDist = DistanceToRay(beam, transform.position);

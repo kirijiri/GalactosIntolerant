@@ -5,23 +5,21 @@ using System.Collections;
 
 public class snapshot : MonoBehaviour {
 	GameObject[] planets;
+	GameObject ship;
 	gravityBeam beam_script;
 	int aligned_planet_count = 0;
 
 	// globals
 	private gameManager manager;
 
-	// debug
-	private debug debugScript;
-
 	// Use this for initialization
 	void Start () {
-		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof(debug));
+		ship = GameObject.Find("ship");
 	}
 
 	void OnMouseDown () {
 		// only if gravity beam is on, otherwise ignore
-		if (!debugScript.gravityBeamOn) 
+		if (!ship.GetComponent<shipControl>().gravityBeamEngaged) 
 			return;
 
 		aligned_planet_count = 0;
