@@ -447,8 +447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affected_by_beam: 0
-  gravityBeamOn: 0
-  beamThreshold: .100000001
 --- !u!114 &536487400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,8 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e6374ce39e4da44bbf77cd41344998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityBeamOn: 0
-  gravityBeamThreshold: .300000012
+  drawShipDiameter: 0
 --- !u!4 &555966793
 Transform:
   m_ObjectHideFlags: 0
@@ -743,8 +740,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affected_by_beam: 0
-  gravityBeamOn: 0
-  beamThreshold: .100000001
 --- !u!114 &579743642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,8 +885,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affected_by_beam: 0
-  gravityBeamOn: 0
-  beamThreshold: .100000001
 --- !u!114 &816915852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,8 +1472,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affected_by_beam: 0
-  gravityBeamOn: 0
-  beamThreshold: .100000001
 --- !u!114 &1315941545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1737,7 +1728,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473c5dde07bf4104aaaba3faad5e8ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2
+  speed: 5
+  gravityBeamEngaged: 0
+  gravityBeamThreshold: .300000012
+  beamActivateAngle: 30
 --- !u!50 &1449353996
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1821,6 +1815,10 @@ Prefab:
       propertyPath: m_Color.b
       value: .308823526
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: f600519b65bad5340a108fcb7684fdfa, type: 2}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: f600519b65bad5340a108fcb7684fdfa, type: 2}
@@ -1874,8 +1872,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affected_by_beam: 0
-  gravityBeamOn: 0
-  beamThreshold: .100000001
 --- !u!114 &1545869387
 MonoBehaviour:
   m_ObjectHideFlags: 0
