@@ -37,5 +37,6 @@ public class snapshot : MonoBehaviour {
 
 		// move rooms
 		Debug.Log("Change room - aligned_planet_count: " + aligned_planet_count);
+		Application.LoadLevel ("scoreScreen");
 	}
 }
