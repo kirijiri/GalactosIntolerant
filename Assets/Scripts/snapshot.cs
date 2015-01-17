@@ -8,6 +8,9 @@ public class snapshot : MonoBehaviour {
 	gravityBeam beam_script;
 	int aligned_planet_count = 0;
 
+	// globals
+	private gameManager manager;
+
 	// debug
 	private debug debugScript;
 
@@ -34,8 +37,12 @@ public class snapshot : MonoBehaviour {
 				aligned_planet_count++;
 		}
 
+		// save stats
+		manager = (gameManager)GameObject.FindObjectOfType(typeof(gameManager));
+		Debug.Log (manager.aligned_planet_count);
+		manager.aligned_planet_count = aligned_planet_count;
+
 		// move rooms
-		Debug.Log("Change room - aligned_planet_count: " + aligned_planet_count);
 		Application.LoadLevel ("scoreScreen");
 	}
 }
