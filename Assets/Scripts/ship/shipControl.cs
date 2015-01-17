@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class shipControl : MonoBehaviour {
-	public float speed = 10f;
+	public float speed = 5f;
 	public bool gravityBeamEngaged = false;
 	public float gravityBeamThreshold = 0.3f;
 	public float beamActivateAngle = 30f;
