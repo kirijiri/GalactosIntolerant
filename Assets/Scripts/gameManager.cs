@@ -8,8 +8,4 @@ public class gameManager : MonoBehaviour {
 	void Start () {
 		DontDestroyOnLoad(this);
 	}
-
-	void Update() {
-		Debug.Log (aligned_planet_count);
-	}
 }
