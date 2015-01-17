@@ -37,7 +37,6 @@ public class snapshot : MonoBehaviour {
 
 		// save stats
 		manager = (gameManager)GameObject.FindObjectOfType(typeof(gameManager));
-		Debug.Log (manager.aligned_planet_count);
 		manager.aligned_planet_count = aligned_planet_count;
 
 		// move rooms
