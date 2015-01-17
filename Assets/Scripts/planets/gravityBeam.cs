@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class gravityBeam : MonoBehaviour {
+	public bool affected_by_beam = false;
+	public bool gravityBeamOn = false;
 
 	// objects
 	GameObject sun;
@@ -12,7 +14,6 @@ public class gravityBeam : MonoBehaviour {
 	Ray beam;
 	float beamDist;
 	Vector3 beamIntersectPoint;
-	bool gravityBeamOn = false;
 
 	// DEBUG: threshold should be public and global?
 	public float beamThreshold = 0.1f;
@@ -52,6 +53,7 @@ public class gravityBeam : MonoBehaviour {
 		if (beamDist < beamThreshold && gravityBeamOn){
 			spriteRenderer.color = Color.red;
 			gravityPull(beam, beamIntersectPoint);
+			affected_by_beam = true;
 		}
 		else{
 			spriteRenderer.color = Color.white;
