@@ -15,8 +15,7 @@ public class snapshot : MonoBehaviour {
 	void Start () {
 		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof(debug));
 	}
-	
-	// Update is called once per frame
+
 	void OnMouseDown () {
 		// only if gravity beam is on, otherwise ignore
 		if (!debugScript.gravityBeamOn) 

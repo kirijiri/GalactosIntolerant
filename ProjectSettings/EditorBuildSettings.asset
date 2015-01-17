@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Levels/titleScreen.unity
+  - enabled: 1
     path: Assets/Levels/scene1.unity
   - enabled: 1
     path: Assets/Levels/scoreScreen.unity

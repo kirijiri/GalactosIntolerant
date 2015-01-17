@@ -3,7 +3,7 @@ using System.Collections;
 
 public class gravityBeam : MonoBehaviour {
 	public bool affected_by_beam = false;
-	public bool gravityBeamOn = false;
+	bool gravityBeamOn = false;
 
 	// objects
 	GameObject sun;
