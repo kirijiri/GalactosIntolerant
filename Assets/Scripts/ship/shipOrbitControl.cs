@@ -5,17 +5,20 @@ using System.Collections;
 public class shipOrbitControl : MonoBehaviour {
 	public float sizeLower = 20;
 	public float sizeUpper = 80;
+
+	GameObject ship;
+	GameObject sun;
+
 	float clickedRadius;
 	float orbitRadius;
-	Vector3 centre;
-	Vector3 curPos;
-	Vector3 newVec;
 	float upper;
 	float lower;
 	float moveToDegrees;
-	GameObject ship;
-	GameObject sun ;
 
+	Vector3 centre;
+	Vector3 curPos;
+	Vector3 newVec;
+	
 	void Start () {
 		sun = GameObject.Find ("sun");
 		ship = GameObject.Find ("ship");
@@ -28,6 +31,7 @@ public class shipOrbitControl : MonoBehaviour {
 	}
 
 	void Update(){
+		// emulating an 'OnMouseUp' behaviour
 		if (Input.GetMouseButton (0)) {
 			SetClickedRadius ();
 			if (clickedRadius >= lower && clickedRadius <= upper) {
