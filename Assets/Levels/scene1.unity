@@ -206,6 +206,43 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 74d37db88f3a8c44a8547af895e5887a,
         type: 3}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: initSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: population
+      value: 20999999500
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: followers
+      value: .119999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: name
+      value: Focida
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: biome
+      value: Jungle
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: race
+      value: Throngx
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: look
+      value: Ant men with togas, 4 arms, 2 legs, large compound eyes and mandables.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: note
+      value: Large weak fanbase, meak, may send diplomat (who will be subseqently
+        shot).
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 816915849}
@@ -507,6 +544,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initSpeed: 5
   orbitRadius: 110
+  population: 1.36e+10
+  followers: .0399999991
+  name: Selachii
+  size: 18
+  biome: Desert
+  race: Sharktang
+  look: Desert nomad shark horses - mussled for high gravity, may attack player
+  note: Super durable but small fan base.
 --- !u!1 &555966791
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,8 +799,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 5
+  initSpeed: 13
   orbitRadius: 215
+  population: 17799999500
+  followers: .0900000036
+  name: Roxbrus
+  size: 14
+  biome: Artificial Habitat
+  race: Rocket Space Bats
+  look: Rocket Space Bats
+  note: Rocket Space Bats, lots of cyberization and techno stuff
 --- !u!1 &816915849
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,8 +965,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 5
+  initSpeed: 7
   orbitRadius: 145
+  population: 20999999500
+  followers: .119999997
+  name: Focida
+  size: 16
+  biome: Jungle
+  race: Throngx
+  look: Ant men with togas, 4 arms, 2 legs, large compound eyes and mandables.
+  note: Large weak fanbase, meak, may send diplomat (who will be subseqently shot).
 --- !u!1 &837360523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,8 +1610,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 5
+  initSpeed: 3
   orbitRadius: 75
+  population: 0
+  followers: .0799999982
+  name: Omis
+  size: 14
+  biome: Lava Hellscape
+  race: Magmatoels
+  look: Impossible towering silicon lava beasts, type slowly in all caps.
+  note: Super durable but not into social media.
 --- !u!1 &1335665835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,6 +1862,38 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: b3210de22648dc743a5c79776e24d54b,
         type: 3}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: population
+      value: 1.36e+10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: followers
+      value: .0399999991
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: name
+      value: Selachii
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: biome
+      value: Desert
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: race
+      value: Sharktang
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: look
+      value: Desert nomad shark horses - mussled for high gravity, may attack player
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: note
+      value: Super durable but small fan base.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 536487397}
@@ -2019,8 +2120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 5
+  initSpeed: 9
   orbitRadius: 180
+  population: 8899999740
+  followers: .0799999982
+  name: Gem
+  size: 20
+  biome: Gas
+  race: Bil'us
+  look: ' Highly compressed gas bubble.'
+  note: Wired, maybe give him a tie?
 --- !u!1001 &1557801769
 Prefab:
   m_ObjectHideFlags: 0
@@ -2067,6 +2176,42 @@ Prefab:
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: orbitRadius
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: initSpeed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: population
+      value: 8899999740
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: followers
+      value: .0799999982
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: name
+      value: Gem
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: biome
+      value: Gas
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: race
+      value: Bil'us
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: look
+      value: ' Highly compressed gas bubble.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: note
+      value: Wired, maybe give him a tie?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
@@ -2176,6 +2321,42 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 2e7c4b584fdc43244a376d0be3c097a9,
         type: 3}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: initSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: followers
+      value: .0799999982
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: population
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: name
+      value: Omis
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: biome
+      value: Lava Hellscape
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: race
+      value: Magmatoels
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: look
+      value: Impossible towering silicon lava beasts, type slowly in all caps.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: note
+      value: Super durable but not into social media.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 1315941542}
@@ -2278,6 +2459,42 @@ Prefab:
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: orbitRadius
       value: 215
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: initSpeed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: population
+      value: 17799999500
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: followers
+      value: .0900000036
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: name
+      value: Roxbrus
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: biome
+      value: Artificial Habitat
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: race
+      value: Rocket Space Bats
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: look
+      value: Rocket Space Bats
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: note
+      value: Rocket Space Bats, lots of cyberization and techno stuff
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
