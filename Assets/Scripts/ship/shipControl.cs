@@ -2,12 +2,13 @@
 using System.Collections;
 
 public class shipControl : MonoBehaviour {
-	public float speed = 5f;
+	public float speed = 200f;
 	public bool gravityBeamEngaged = false;
 	public float gravityBeamThreshold = 0.3f;
 	public float beamActivateAngle = 30f;
 	
 	GameObject sun;
+	GameObject shipOrbit;
 
 	float orbitPixelRadius;
 	float currentAngle;
@@ -36,6 +37,8 @@ public class shipControl : MonoBehaviour {
 
 	void Start(){
 		sun = GameObject.Find ("sun");
+		shipOrbit = GameObject.Find ("shipOrbit");
+
 		sunPos = sun.transform.position;
 		orbitPixelRadius = gameObject.GetComponent<shipInitialiser>().orbitRadius / 100 / 2;
 		toRotate = new Vector3(0, orbitPixelRadius, 0);
@@ -49,7 +52,7 @@ public class shipControl : MonoBehaviour {
 		currentDiffAngle = GetAngleToTarget();
 
 		if (hold == false && currentDiffAngle != 0){
-			moveQuat = Quaternion.RotateTowards(currentQuat, targetQuat, speed);
+			moveQuat = Quaternion.RotateTowards(currentQuat, targetQuat, speed * Time.deltaTime);
 			SetPosByQuat(moveQuat);
 		}
 	}
@@ -59,6 +62,7 @@ public class shipControl : MonoBehaviour {
 	}
 
 	void OnMouseDrag() {
+		// keep the ship stuck
 		hold = true;
 	}
 
@@ -68,6 +72,7 @@ public class shipControl : MonoBehaviour {
 		if (dot < -1+(beamActivateAngle / 180.0f)){
 			GetComponent<SpriteRenderer>().color = Color.white;
 			gravityBeamEngaged = true;
+			hold = true;
 		}
 		else{
 			hold = false;
