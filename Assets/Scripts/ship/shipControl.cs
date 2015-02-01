@@ -71,6 +71,9 @@ public class shipControl : MonoBehaviour {
 			GetComponent<SpriteRenderer>().color = Color.white;
 			gravityBeamEngaged = true;
 			hold = true;
+			
+			GameObject snapshot = GameObject.Find ("snapshot");
+			snapshot.renderer.enabled = true;
 		}
 		else{
 			hold = false;

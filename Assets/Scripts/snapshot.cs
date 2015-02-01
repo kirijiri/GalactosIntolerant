@@ -15,9 +15,12 @@ public class snapshot : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ship = GameObject.Find("ship");
+		renderer.enabled = false;
 	}
 
 	void OnMouseDown () {
+		if (!renderer.enabled) return;
+
 		// only if gravity beam is on, otherwise ignore
 		if (!ship.GetComponent<shipControl>().gravityBeamEngaged) 
 			return;
