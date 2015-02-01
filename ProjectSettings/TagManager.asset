@@ -47,6 +47,10 @@ TagManager:
     userID: 3
     uniqueID: 3331293113
     locked: 0
+  - name: snapshot
+    userID: 4
+    uniqueID: 2724913153
+    locked: 0
   - name: solarSystem
     userID: 2
     uniqueID: 1870004305
