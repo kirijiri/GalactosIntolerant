@@ -11,8 +11,15 @@ public class planetTouch : MonoBehaviour {
 	// controls
 	private bool held = false;
 	private bool flicked = false;
+	// gameobjects
+	private GameObject shipOrbit;
 	
 	//------------------------------------------------------------------- event functions
+
+	void Start(){
+		shipOrbit = GameObject.Find ("shipOrbit");
+	}
+
 	void OnMouseDown () {
 		// store data
 		storedPosition = transform.position;
@@ -20,6 +27,9 @@ public class planetTouch : MonoBehaviour {
 
 		// pause
 		rigidbody2D.velocity = new Vector3 (0, 0, 0);
+
+		// tell ship orbit to not respond
+		shipOrbit.SendMessage ("SetIsOn", false);
 	}
 	
 	void OnMouseDrag () {
@@ -27,11 +37,19 @@ public class planetTouch : MonoBehaviour {
 		float radius = GetComponent<CircleCollider2D> ().radius;
 
 		if (dist < radius) { 
-			held = true; }
-		else{
+			held = true;
+		} 
+		else {
 			flicked = true;
-			newVelocity = InputPosition() - storedPosition;
+			newVelocity = InputPosition () - storedPosition;
 		}
+		// tell ship orbit to not respond
+		shipOrbit.SendMessage ("SetIsOn", false);
+	}
+
+	void OnMouseUp(){
+		// turn the ship Obit on again
+		shipOrbit.SendMessage ("SetIsOn", true);
 	}
 
 	void Update () {

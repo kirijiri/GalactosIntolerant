@@ -18,6 +18,8 @@ public class shipOrbitControl : MonoBehaviour {
 	Vector3 centre;
 	Vector3 curPos;
 	Vector3 newVec;
+
+	bool isOn = true;
 	
 	void Start () {
 		sun = GameObject.Find ("sun");
@@ -32,7 +34,7 @@ public class shipOrbitControl : MonoBehaviour {
 
 	void Update(){
 		// emulating an 'OnMouseUp' behaviour
-		if (Input.GetMouseButton (0)) {
+		if (isOn && Input.GetMouseButton (0)) {
 			SetClickedRadius ();
 			if (clickedRadius >= lower && clickedRadius <= upper) {
 				moveToDegrees = Mathf.Atan2(newVec.y, newVec.x) * Mathf.Rad2Deg;
@@ -52,5 +54,9 @@ public class shipOrbitControl : MonoBehaviour {
 		SpriteRenderer sprRen = gameObject.GetComponent<SpriteRenderer>();
 		string sprName = sprRen.sprite.name.ToString ();
 		orbitRadius = System.Convert.ToSingle( sprName.Split ('_') [2]);
+	}
+
+	void SetIsOn(bool setIsOn){
+		isOn = setIsOn;
 	}
 }
