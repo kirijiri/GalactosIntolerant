@@ -28,12 +28,12 @@ public class planetStats : MonoBehaviour {
 	}
 
 	public string GetIdleMessage () {
-
+		/*
 		print (idleTrack.Count);
 		int rand = Random.Range(0, idleTrack.Count);
 		Debug.Log(rand);
 		idleTrack.RemoveAt(rand);
-
+		*/
 		return "hi";
 	}
 }
