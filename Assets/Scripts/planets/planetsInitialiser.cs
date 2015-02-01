@@ -6,28 +6,34 @@ using UnityEngine;
 using System.Collections;
 
 public class planetsInitialiser : MonoBehaviour {
-	public float initSpeed = 5;
-	public float orbitRadius = 96;
 	public GameObject planetGraphic;
+	float initSpeed;
+	float orbitRadius;
 	GameObject sun;
 	Vector3 posDiff;
+	planetStats planetStats;
 
 	// Use this for initialization
 	void Start () {
-			// get pos from Sun and resize
-			sun = GameObject.Find ("sun");
-			posDiff = (sun.transform.position - transform.position);
-			posDiff.z = 0;
 
-			// resize the posDiff to snap to the radius
-			posDiff = posDiff.normalized * (orbitRadius / 100 / 2);
+		// get stats from stat class
+		initSpeed = GetComponent<planetStats>().initSpeed;
+		orbitRadius = GetComponent<planetStats>().orbitRadius;
 
-			// setup physics
-			HingeSetup ();
-			InitVelocity ();
-			ColliderSetup ();
-			IgnoreCollisions ();
-			MakeImagePrefab ();
+		// get pos from Sun and resize
+		sun = GameObject.Find ("sun");
+		posDiff = (sun.transform.position - transform.position);
+		posDiff.z = 0;
+
+		// resize the posDiff to snap to the radius
+		posDiff = posDiff.normalized * (orbitRadius / 100 / 2);
+
+		// setup physics
+		HingeSetup ();
+		InitVelocity ();
+		ColliderSetup ();
+		IgnoreCollisions ();
+		MakeImagePrefab ();
 	}
 
 	private void HingeSetup () {

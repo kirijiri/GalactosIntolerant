@@ -16,13 +16,14 @@ public class gravityBeam : MonoBehaviour {
 	float beamDist;
 	float beamThreshold;
 	Vector3 beamIntersectPoint;
+
+	SpriteRenderer spriteRenderer;
 	
 	void Start () {
 		sun = GameObject.Find ("sun");
 		ship = GameObject.Find("ship");
 		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof (debug));
 		beamThreshold = ship.GetComponent<shipControl>().gravityBeamThreshold;
-
 	}
 
 	// Update is called once per frame
@@ -46,7 +47,7 @@ public class gravityBeam : MonoBehaviour {
 
 		// colour the planets when in the threshold and trigger pull
 		planetGraphic = GetComponent<planetsInitialiser>().planetGraphic;
-		SpriteRenderer spriteRenderer = planetGraphic.GetComponent<SpriteRenderer>();
+		spriteRenderer = planetGraphic.GetComponent<SpriteRenderer>();
 		if (beamDist < beamThreshold && gravityBeamOn){
 			spriteRenderer.color = Color.red;
 			gravityPull(beam, beamIntersectPoint);
