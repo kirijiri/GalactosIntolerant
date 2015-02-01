@@ -8,7 +8,6 @@ public class shipControl : MonoBehaviour {
 	public float beamActivateAngle = 30f;
 	
 	GameObject sun;
-	GameObject shipOrbit;
 
 	float orbitPixelRadius;
 	float currentAngle;
@@ -37,7 +36,6 @@ public class shipControl : MonoBehaviour {
 
 	void Start(){
 		sun = GameObject.Find ("sun");
-		shipOrbit = GameObject.Find ("shipOrbit");
 
 		sunPos = sun.transform.position;
 		orbitPixelRadius = gameObject.GetComponent<shipInitialiser>().orbitRadius / 100 / 2;
