@@ -2,13 +2,20 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class phone_text : MonoBehaviour {
+public class phoneMessages : MonoBehaviour {
 
-	Text phone_messages; 
+	GameObject[] planets;
 
 	// Use this for initialization
 	void Start () {
-		phone_messages.text = "hello";
+		GetComponent<Text>().text = "hello";
+
+
+		planets = GameObject.FindGameObjectsWithTag ("Planet");
+		for (int i = 0; i < planets.Length; i++) {
+			Debug.Log(planets[i].GetComponent<planetStats>().GetIdleMessage());
+		}
+		
 	}
 	
 	// Update is called once per frame
