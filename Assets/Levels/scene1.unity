@@ -161,6 +161,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1335665836}
     m_Modifications:
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_LocalPosition.x
       value: .415947199
@@ -242,6 +254,89 @@ Prefab:
       propertyPath: note
       value: Large weak fanbase, meak, may send diplomat (who will be subseqently
         shot).
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessage
+      value: Queen issues addendum to slavery act of ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[0]
+      value: Royal decree pulls surface colonies back to hive as scientists struggle
+        to explain recent shifts to the axial tilt of...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[1]
+      value: Southern festival cancelled due to fears of meteor shower during what
+        the government is calling...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[2]
+      value: Food shortages continue as beleaguered Kiplah awaits late rain season
+        to...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[3]
+      value: Fears mount as crop counts continue to come up short. In a royal address
+        concerning the crisis the Queen is expected to announce...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[4]
+      value: After initial disruption some experts believe that rising temperature
+        could have long term benefits...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[5]
+      value: Crowds ignore pleas to remain calm, fleeing to the equator to escape
+        "the...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[6]
+      value: The markets close after record low today as the inexplicably low temperatures
+        force many high hive businesses to...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[0]
+      value: Rationing set to intensify in race to feed the dying continent, many
+        experts believe it?s already too late...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[1]
+      value: Rationing set to intensify in race to feed the dying continent, many
+        experts believe it?s already too late...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[2]
+      value: Soldier drones employ deadly force at hive gates as mass rioting erupts.
+        It?s still unclear who gave the order to...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[3]
+      value: Queen moved to undisclosed location amidst the largest communications
+        blackout on record...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[4]
+      value: Sweating it out! Surface temperatures rise to boiling point as tensions
+        match!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[5]
+      value: All contact lost with surface, deeper tunneling is ?just buying time"...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[6]
+      value: Medical facilities hopelessly overcrowded, crematoriums hopelessly overcrowded,
+        refugee centers on Pheriso cannot...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[7]
+      value: 'ROYAL DECREE DEMANDS ALL SOLDIER DRONES MAKE WAY TO CAPITAL IMMEDIATELY.
+        ALL WORKER DRONES TO HOLD POSITION UNTIL FURTHER NOTICE. MESSAGE REPEATS:
+        ROYAL DECREE ?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.data[0]
+      value: Queen issues addendum to slavery act of ...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
@@ -386,6 +481,79 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .159999996
   m_Center: {x: 0, y: 0}
+--- !u!1 &454218758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 454218762}
+  - 114: {fileID: 454218761}
+  - 114: {fileID: 454218760}
+  - 114: {fileID: 454218759}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &454218759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454218758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowActivationOnStandalone: 0
+--- !u!114 &454218760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454218758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_AllowActivationOnMobileDevice: 0
+--- !u!114 &454218761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454218758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
+--- !u!4 &454218762
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454218758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &536487397
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +720,25 @@ MonoBehaviour:
   race: Sharktang
   look: Desert nomad shark horses - mussled for high gravity, may attack player
   note: Super durable but small fan base.
+  idleMessages:
+  - Grand Khan announces new economic reforms in the wake of...
+  minorMessages:
+  - Neck injuries are being reported in their hundreds of thousands as orbital inertia
+    brings traffic to a halt in all...
+  - Massive solar storms cause communications disruptions across the planet. The live
+    broadcast of the Shark Factor final is...
+  - Khan's apology may pave way for limited Throngxian aid.
+  majorMessages:
+  - An ultra sand storm Xenacathi to hit Denude City within the next 24 hours. The
+    public is advised to stay indoors at...
+  - Graphic images of dead baby Sharktangs flood meTEOR feeds as the outrage for the
+    government's inactivity...
+  - This is an automatic message generated by the Planetary Civil Defence Grid. Please
+    report to the nearest evacuation...
+  - Vigilante ?peace squads? attack groups of exo-planet minority mammals believed
+    to be responsible for the recent climate...
+  - 'Solar wind (?) magnetosphere destroyed (?) ionosphere stripped (?) require evacuation
+    (?)... '
 --- !u!1 &555966791
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +996,91 @@ MonoBehaviour:
   race: Rocket Space Bats
   look: Rocket Space Bats
   note: Rocket Space Bats, lots of cyberization and techno stuff
+  idleMessages:
+  - 'Cloud Command: All cloud members at ease.'
+  - 'Cloud Admin: Sales drop detected - Colloquial description of major export "Guano"
+    is now criminal offence...'
+  - 'Cloud Member: Request specialist literature - Bounty posted...'
+  minorMessages:
+  - 'Cloud Command: Outside influence detected - info bounties posted...'
+  - 'Cloud Command: Curfew in effect...'
+  - 'Cloud Command: Disaster event - Search and rescue bounties posted ...'
+  - 'Cloud Command: Defensive posture - Raiding parties RTB, no exceptions...'
+  - 'Assault Cloud: Damage sustained - support bounty posted'
+  majorMessages:
+  - 'Cloud Command: We have no more options on the table...'
+  - 'Cloud Command: Major threat - Combat bounties posted ...'
+  - 'Cloud Command: Disaster event - Alternate homeworld required - Info bounties
+    posted ...'
+  - 'Cloud Command: Command compromised - Contingency activated - Bounties suspended
+    until further notice ...'
+  - 'Colony Cloud: Require urgent infrastructure replacement - Bounties posted ...'
+--- !u!1 &672174900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 672174903}
+  - 222: {fileID: 672174902}
+  - 114: {fileID: 672174901}
+  m_Layer: 5
+  m_Name: phone_messages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &672174901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 672174900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &672174902
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 672174900}
+--- !u!224 &672174903
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 672174900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1617110185}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &816915849
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +1247,37 @@ MonoBehaviour:
   race: Throngx
   look: Ant men with togas, 4 arms, 2 legs, large compound eyes and mandables.
   note: Large weak fanbase, meak, may send diplomat (who will be subseqently shot).
+  idleMessages:
+  - Queen issues addendum to slavery act of ...
+  minorMessages:
+  - Royal decree pulls surface colonies back to hive as scientists struggle to explain
+    recent shifts to the axial tilt of...
+  - Southern festival cancelled due to fears of meteor shower during what the government
+    is calling...
+  - Food shortages continue as beleaguered Kiplah awaits late rain season to...
+  - Fears mount as crop counts continue to come up short. In a royal address concerning
+    the crisis the Queen is expected to announce...
+  - After initial disruption some experts believe that rising temperature could have
+    long term benefits...
+  - Crowds ignore pleas to remain calm, fleeing to the equator to escape "the...
+  - The markets close after record low today as the inexplicably low temperatures
+    force many high hive businesses to...
+  majorMessages:
+  - Rationing set to intensify in race to feed the dying continent, many experts believe
+    it?s already too late...
+  - Rationing set to intensify in race to feed the dying continent, many experts believe
+    it?s already too late...
+  - Soldier drones employ deadly force at hive gates as mass rioting erupts. It?s
+    still unclear who gave the order to...
+  - Queen moved to undisclosed location amidst the largest communications blackout
+    on record...
+  - Sweating it out! Surface temperatures rise to boiling point as tensions match!
+  - All contact lost with surface, deeper tunneling is ?just buying time"...
+  - Medical facilities hopelessly overcrowded, crematoriums hopelessly overcrowded,
+    refugee centers on Pheriso cannot...
+  - 'ROYAL DECREE DEMANDS ALL SOLDIER DRONES MAKE WAY TO CAPITAL IMMEDIATELY. ALL
+    WORKER DRONES TO HOLD POSITION UNTIL FURTHER NOTICE. MESSAGE REPEATS: ROYAL DECREE
+    ?'
 --- !u!1 &837360523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1923,35 @@ MonoBehaviour:
   race: Magmatoels
   look: Impossible towering silicon lava beasts, type slowly in all caps.
   note: Super durable but not into social media.
+  idleMessages:
+  - Nothing happening, news at eleven ...
+  minorMessages:
+  - Balkholm left without power as the Fist Of God volcano stops erupting for the
+    first time in...
+  - The planet core has reportedly skipped a rotational cycle resulting in disrupted
+    religious...
+  - Three magma trawlers reported missing as the Obsidian Magma Whirpool, a popular
+    tourist destination...
+  - Record high temperatures are reported during the peak of tectonic winter, resulting
+    in scores of...
+  - Schools closed as the sub-vaporization temperatures hold for another week and
+    the fusion furnaces are failing to...
+  - 'Unscheduled seismic activity detected at the poles has scientist scratching their
+    pyroclasts: the causes remain...'
+  majorMessages:
+  - The core spin slows to a highly dangerous level as almost all economic activity
+    in the northern hemisphere...
+  - Seasonal crust melt rate has been reduced to glacial levels exacerbating the already
+    low temperatures at the national...
+  - Deathtoll mounts as yet another unexpected crust solidification causes multiple
+    deep lava operations to...
+  - The remaining population of the Fuegerton is being moved North along the Mafic
+    Line 975 or 1289 communication satellites are now officially considered either
+    destroyed or damaged beyond...
+  - Still no signal received from the Southern Felsic Centre after temporary loss
+    of planetary electromagnetic field due to...
+  - Boninite refugee centre didn?t receive any survivors today as their have been
+    no transports returning from the 3rd zone of...
 --- !u!1 &1335665835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,6 +2149,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1335665836}
     m_Modifications:
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_LocalPosition.x
       value: -.273972273
@@ -1893,6 +2237,57 @@ Prefab:
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: note
       value: Super durable but small fan base.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: initSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessage
+      value: Grand Khan announces new economic reforms in the wake of...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[0]
+      value: Neck injuries are being reported in their hundreds of thousands as orbital
+        inertia brings traffic to a halt in all...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[1]
+      value: Massive solar storms cause communications disruptions across the planet.
+        The live broadcast of the Shark Factor final is...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[2]
+      value: Khan's apology may pave way for limited Throngxian aid.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[0]
+      value: An ultra sand storm Xenacathi to hit Denude City within the next 24 hours.
+        The public is advised to stay indoors at...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[1]
+      value: Graphic images of dead baby Sharktangs flood meTEOR feeds as the outrage
+        for the government's inactivity...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[2]
+      value: This is an automatic message generated by the Planetary Civil Defence
+        Grid. Please report to the nearest evacuation...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[3]
+      value: Vigilante ?peace squads? attack groups of exo-planet minority mammals
+        believed to be responsible for the recent climate...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[4]
+      value: 'Solar wind (?) magnetosphere destroyed (?) ionosphere stripped (?) require
+        evacuation (?)... '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.data[0]
+      value: Grand Khan announces new economic reforms in the wake of...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
@@ -2130,6 +2525,18 @@ MonoBehaviour:
   race: Bil'us
   look: ' Highly compressed gas bubble.'
   note: Wired, maybe give him a tie?
+  idleMessages:
+  - Ties! Ties! Ties! new nanocarbon matterials allow us to sport the lateist human
+    fashions within gas giant Gem!...
+  minorMessages:
+  - Orbit shift possible result of ...
+  - Electrical buildup continues, efforts to direct discharge are underway...
+  - High winds push settlements coreward in the latest spate of environmental anomalies...
+  - Survivalist settlements equip for low pressure in expectaion of further...
+  majorMessages:
+  - Atmospheric ignition a grim possibilty ...
+  - Senate reports "We may still have options" ...
+  - Inertia insurmountable, evacuation of spaceworthy settlements continues...
 --- !u!1001 &1557801769
 Prefab:
   m_ObjectHideFlags: 0
@@ -2137,6 +2544,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1335665836}
     m_Modifications:
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_LocalPosition.x
       value: .297591686
@@ -2213,6 +2632,40 @@ Prefab:
       propertyPath: note
       value: Wired, maybe give him a tie?
       objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.data[0]
+      value: Ties! Ties! Ties! new nanocarbon matterials allow us to sport the lateist
+        human fashions within gas giant Gem!...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[0]
+      value: Orbit shift possible result of ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[1]
+      value: Electrical buildup continues, efforts to direct discharge are underway...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[2]
+      value: High winds push settlements coreward in the latest spate of environmental
+        anomalies...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[3]
+      value: Survivalist settlements equip for low pressure in expectaion of further...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[0]
+      value: Atmospheric ignition a grim possibilty ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[1]
+      value: Senate reports "We may still have options" ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[2]
+      value: Inertia insurmountable, evacuation of spaceworthy settlements continues...
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 1545869384}
@@ -2269,6 +2722,96 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fabfc413374e5084e8d20163643d6c92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1617110184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1617110185}
+  - 223: {fileID: 1617110188}
+  - 114: {fileID: 1617110187}
+  - 114: {fileID: 1617110186}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1617110185
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1617110184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 672174903}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &1617110186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1617110184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreReversedGraphics: 1
+  blockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1617110187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1617110184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1617110188
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1617110184}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!1001 &1699166057
 Prefab:
   m_ObjectHideFlags: 0
@@ -2276,6 +2819,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1335665836}
     m_Modifications:
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_LocalPosition.x
       value: .346251726
@@ -2357,6 +2912,75 @@ Prefab:
       propertyPath: note
       value: Super durable but not into social media.
       objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[0]
+      value: Balkholm left without power as the Fist Of God volcano stops erupting
+        for the first time in...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[1]
+      value: The planet core has reportedly skipped a rotational cycle resulting in
+        disrupted religious...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[2]
+      value: Three magma trawlers reported missing as the Obsidian Magma Whirpool,
+        a popular tourist destination...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[3]
+      value: Record high temperatures are reported during the peak of tectonic winter,
+        resulting in scores of...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[4]
+      value: Schools closed as the sub-vaporization temperatures hold for another
+        week and the fusion furnaces are failing to...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[5]
+      value: 'Unscheduled seismic activity detected at the poles has scientist scratching
+        their pyroclasts: the causes remain...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessage
+      value: Nothing happening, news at eleven ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[0]
+      value: The core spin slows to a highly dangerous level as almost all economic
+        activity in the northern hemisphere...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[1]
+      value: Seasonal crust melt rate has been reduced to glacial levels exacerbating
+        the already low temperatures at the national...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[2]
+      value: Deathtoll mounts as yet another unexpected crust solidification causes
+        multiple deep lava operations to...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[3]
+      value: The remaining population of the Fuegerton is being moved North along
+        the Mafic Line 975 or 1289 communication satellites are now officially considered
+        either destroyed or damaged beyond...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[4]
+      value: Still no signal received from the Southern Felsic Centre after temporary
+        loss of planetary electromagnetic field due to...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[5]
+      value: Boninite refugee centre didn?t receive any survivors today as their have
+        been no transports returning from the 3rd zone of...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.data[0]
+      value: Nothing happening, news at eleven ...
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 1315941542}
@@ -2420,6 +3044,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1335665836}
     m_Modifications:
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_LocalPosition.x
       value: -.879372299
@@ -2495,6 +3131,62 @@ Prefab:
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: note
       value: Rocket Space Bats, lots of cyberization and techno stuff
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.data[0]
+      value: 'Cloud Command: All cloud members at ease.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.data[1]
+      value: 'Cloud Admin: Sales drop detected - Colloquial description of major export
+        "Guano" is now criminal offence...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: idleMessages.Array.data[2]
+      value: 'Cloud Member: Request specialist literature - Bounty posted...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[0]
+      value: 'Cloud Command: Outside influence detected - info bounties posted...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[1]
+      value: 'Cloud Command: Curfew in effect...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[2]
+      value: 'Cloud Command: Disaster event - Search and rescue bounties posted ...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[3]
+      value: 'Cloud Command: Defensive posture - Raiding parties RTB, no exceptions...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: minorMessages.Array.data[4]
+      value: 'Assault Cloud: Damage sustained - support bounty posted'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[0]
+      value: 'Cloud Command: We have no more options on the table...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[1]
+      value: 'Cloud Command: Major threat - Combat bounties posted ...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[2]
+      value: 'Cloud Command: Disaster event - Alternate homeworld required - Info
+        bounties posted ...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[3]
+      value: 'Cloud Command: Command compromised - Contingency activated - Bounties
+        suspended until further notice ...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: majorMessages.Array.data[4]
+      value: 'Colony Cloud: Require urgent infrastructure replacement - Bounties posted
+        ...'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}

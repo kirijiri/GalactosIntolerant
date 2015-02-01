@@ -13,6 +13,9 @@ public class planetStats : MonoBehaviour {
 	public string race = "";
 	public string look = "";
 	public string note = "";
+	public string[] idleMessages;
+	public string[] minorMessages;
+	public string[] majorMessages;
 
 	// Use this for initialization
 	void Start () {
