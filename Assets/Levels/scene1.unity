@@ -2122,7 +2122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473c5dde07bf4104aaaba3faad5e8ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 250
   gravityBeamEngaged: 0
   gravityBeamThreshold: .300000012
   beamActivateAngle: 30
@@ -2363,7 +2363,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: f600519b65bad5340a108fcb7684fdfa, type: 2}
       propertyPath: speed
-      value: 5
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
