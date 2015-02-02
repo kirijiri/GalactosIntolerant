@@ -3,6 +3,7 @@ using System.Collections;
 
 public class gravityBeam : MonoBehaviour {
 	public bool affected_by_beam = false;
+	public bool is_aligned = false;
 	bool gravityBeamOn = false;
 
 	// objects
@@ -15,6 +16,7 @@ public class gravityBeam : MonoBehaviour {
 	Ray beam;
 	float beamDist;
 	float beamThreshold;
+	float alignmentThreshold;
 	Vector3 beamIntersectPoint;
 
 	SpriteRenderer spriteRenderer;
@@ -24,6 +26,7 @@ public class gravityBeam : MonoBehaviour {
 		ship = GameObject.Find("ship");
 		debugScript = (debug)GameObject.Find("debug").GetComponent(typeof (debug));
 		beamThreshold = ship.GetComponent<shipControl>().gravityBeamThreshold;
+		alignmentThreshold = ship.GetComponent<shipControl>().alignmentThreshold;
 	}
 
 	// Update is called once per frame
@@ -52,6 +55,11 @@ public class gravityBeam : MonoBehaviour {
 			spriteRenderer.color = Color.red;
 			gravityPull(beam, beamIntersectPoint);
 			affected_by_beam = true;
+
+			if (beamDist < alignmentThreshold){
+				spriteRenderer.color = Color.blue;
+				is_aligned = true;
+			}
 		}
 		else{
 			spriteRenderer.color = Color.white;

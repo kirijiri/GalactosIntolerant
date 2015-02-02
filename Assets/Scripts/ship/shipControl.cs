@@ -5,6 +5,7 @@ public class shipControl : MonoBehaviour {
 	public float speed = 200f;
 	public bool gravityBeamEngaged = false;
 	public float gravityBeamThreshold = 0.3f;
+	public float alignmentThreshold = 0.00005f;
 	public float beamActivateAngle = 30f;
 	
 	GameObject sun;
