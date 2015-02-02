@@ -21,19 +21,29 @@ public class planetStats : MonoBehaviour {
 	List<int> majorTrack = new List<int>();
 	
 	void Start () {
-		print (idleMessages.Length);
+		ResetIdleMessage ();
+		ResetMinorMessage ();
+		ResetMajorMessage ();
+	}
+
+	void ResetIdleMessage() {
 		for (int i = 0; i < idleMessages.Length; i++) idleTrack.Add(i);
-		for (int i = 0; i < minorMessages.Length; i++) minorTrack.Add(i);;
+	}
+	
+	void ResetMinorMessage() {
+		for (int i = 0; i < minorMessages.Length; i++) minorTrack.Add(i);
+	}
+	
+	void ResetMajorMessage() {
 		for (int i = 0; i < majorMessages.Length; i++) majorTrack.Add(i);
 	}
 
 	public string GetIdleMessage () {
-		/*
-		print (idleTrack.Count);
+		if (idleTrack.Count == 0) ResetIdleMessage ();
 		int rand = Random.Range(0, idleTrack.Count);
-		Debug.Log(rand);
+
+		string idle = idleMessages [idleTrack [rand]];
 		idleTrack.RemoveAt(rand);
-		*/
-		return "hi";
+		return idle;
 	}
 }
