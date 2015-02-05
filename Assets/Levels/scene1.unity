@@ -84,7 +84,7 @@ GameObject:
   - 4: {fileID: 36719267}
   - 212: {fileID: 36719268}
   m_Layer: 0
-  m_Name: orbit_prefab_75
+  m_Name: orbit_prefab_56
   m_TagString: Orbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f6e3455431d01bb4faddf10c2b5bf4a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f8db4c56de40804cae2d4640c5a44b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &49757468
 GameObject:
@@ -207,11 +207,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_Name
-      value: planets_prefab_145
+      value: planets_prefab_128
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: orbitRadius
-      value: 145
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_Sprite
@@ -405,7 +405,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 85af4871e4bf05d4c89ceb5714045cf3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b8d10072339afa14fa2d2eda139e4351, type: 3}
   m_Color: {r: 1, g: .937254906, b: .294117659, a: 1}
 --- !u!1 &359556501
 GameObject:
@@ -571,7 +571,7 @@ GameObject:
   - 114: {fileID: 536487400}
   - 114: {fileID: 536487399}
   m_Layer: 0
-  m_Name: planets_prefab_110
+  m_Name: planets_prefab_92
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,6 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affected_by_beam: 0
+  is_aligned: 0
 --- !u!114 &536487400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,7 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initSpeed: 1.25
-  orbitRadius: 110
+  orbitRadius: 92
   population: 1.36e+10
   followers: .0399999991
   name: Selachii
@@ -789,7 +790,7 @@ GameObject:
   - 4: {fileID: 579585162}
   - 212: {fileID: 579585163}
   m_Layer: 0
-  m_Name: orbit_prefab_215
+  m_Name: orbit_prefab_200
   m_TagString: Orbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -828,7 +829,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 29afe71ab696bde4a9e14d7f10ab898c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc6fa5b08c67a7647ae64e0df2aee1e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &579743639
 GameObject:
@@ -847,7 +848,7 @@ GameObject:
   - 114: {fileID: 579743642}
   - 114: {fileID: 579743641}
   m_Layer: 0
-  m_Name: planets_prefab_215
+  m_Name: planets_prefab_200
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,6 +879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affected_by_beam: 0
+  is_aligned: 0
 --- !u!114 &579743642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,7 +974,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1870004305
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b295f245ede2e05449c672f306c79588, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3210de22648dc743a5c79776e24d54b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &579743648
 MonoBehaviour:
@@ -987,7 +989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initSpeed: 3
-  orbitRadius: 215
+  orbitRadius: 200
   population: 17799999500
   followers: .0900000036
   name: Roxbrus
@@ -1110,7 +1112,7 @@ GameObject:
   - 114: {fileID: 816915852}
   - 114: {fileID: 816915851}
   m_Layer: 0
-  m_Name: planets_prefab_145
+  m_Name: planets_prefab_128
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1141,6 +1143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affected_by_beam: 0
+  is_aligned: 0
 --- !u!114 &816915852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initSpeed: 1.5
-  orbitRadius: 145
+  orbitRadius: 128
   population: 20999999500
   followers: .119999997
   name: Focida
@@ -1381,12 +1384,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Name
-      value: orbit_prefab_180
+      value: orbit_prefab_164
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d42e4ef29ac0e0243a39faaef2720965,
+      objectReference: {fileID: 21300000, guid: 7e30d6ee568566d4186064543733d9ab,
         type: 3}
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_SortingOrder
@@ -1492,7 +1495,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Name
-      value: orbit_prefab_75
+      value: orbit_prefab_56
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_SortingOrder
@@ -1501,7 +1504,7 @@ Prefab:
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f6e3455431d01bb4faddf10c2b5bf4a9,
+      objectReference: {fileID: 21300000, guid: 2f8db4c56de40804cae2d4640c5a44b2,
         type: 3}
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Enabled
@@ -1749,12 +1752,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Name
-      value: orbit_prefab_145
+      value: orbit_prefab_128
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 63f49e31789372a4889fc7b509504b73,
+      objectReference: {fileID: 21300000, guid: 4601a3d128ba838468157981985cfa6c,
         type: 3}
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_SortingOrder
@@ -1786,7 +1789,7 @@ GameObject:
   - 114: {fileID: 1315941545}
   - 114: {fileID: 1315941544}
   m_Layer: 0
-  m_Name: planets_prefab_75
+  m_Name: planets_prefab_56
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1817,6 +1820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affected_by_beam: 0
+  is_aligned: 0
 --- !u!114 &1315941545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1926,7 +1930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initSpeed: .75
-  orbitRadius: 75
+  orbitRadius: 56
   population: 0
   followers: .0799999982
   name: Omis
@@ -2109,7 +2113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b50101d6846f0940b34bbd5af3ea29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbitRadius: 250
+  orbitRadius: 236
 --- !u!114 &1449353995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2125,6 +2129,7 @@ MonoBehaviour:
   speed: 250
   gravityBeamEngaged: 0
   gravityBeamThreshold: .300000012
+  alignmentThreshold: 4.99999987e-05
   beamActivateAngle: 30
 --- !u!50 &1449353996
 Rigidbody2D:
@@ -2207,11 +2212,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_Name
-      value: planets_prefab_110
+      value: planets_prefab_92
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: orbitRadius
-      value: 110
+      value: 92
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_Sprite
@@ -2365,6 +2370,10 @@ Prefab:
       propertyPath: speed
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f600519b65bad5340a108fcb7684fdfa, type: 2}
+      propertyPath: orbitRadius
+      value: 236
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: f600519b65bad5340a108fcb7684fdfa, type: 2}
@@ -2388,7 +2397,7 @@ GameObject:
   - 114: {fileID: 1545869387}
   - 114: {fileID: 1545869386}
   m_Layer: 0
-  m_Name: planets_prefab_180
+  m_Name: planets_prefab_164
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2419,6 +2428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affected_by_beam: 0
+  is_aligned: 0
 --- !u!114 &1545869387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2513,7 +2523,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1870004305
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b295f245ede2e05449c672f306c79588, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e7c4b584fdc43244a376d0be3c097a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1545869393
 MonoBehaviour:
@@ -2528,7 +2538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initSpeed: 2
-  orbitRadius: 180
+  orbitRadius: 164
   population: 8899999740
   followers: .0799999982
   name: Gem
@@ -2602,11 +2612,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_Name
-      value: planets_prefab_180
+      value: planets_prefab_164
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: orbitRadius
-      value: 180
+      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: initSpeed
@@ -2678,6 +2688,11 @@ Prefab:
       propertyPath: majorMessages.Array.data[2]
       value: Inertia insurmountable, evacuation of spaceworthy settlements continues...
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e7c4b584fdc43244a376d0be3c097a9,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 1545869384}
@@ -2693,7 +2708,7 @@ GameObject:
   - 4: {fileID: 1593204604}
   - 212: {fileID: 1593204605}
   m_Layer: 0
-  m_Name: orbit_prefab_110
+  m_Name: orbit_prefab_92
   m_TagString: Orbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2732,7 +2747,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: fabfc413374e5084e8d20163643d6c92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b19981bfc241c254987966cc07ef17b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1617110184
 GameObject:
@@ -2877,11 +2892,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_Name
-      value: planets_prefab_75
+      value: planets_prefab_56
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: orbitRadius
-      value: 75
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_Sprite
@@ -3008,7 +3023,7 @@ GameObject:
   - 4: {fileID: 1733469250}
   - 212: {fileID: 1733469251}
   m_Layer: 0
-  m_Name: orbit_prefab_180
+  m_Name: orbit_prefab_164
   m_TagString: Orbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3047,7 +3062,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d42e4ef29ac0e0243a39faaef2720965, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e30d6ee568566d4186064543733d9ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1758055307
 Prefab:
@@ -3102,11 +3117,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_Name
-      value: planets_prefab_215
+      value: planets_prefab_200
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: orbitRadius
-      value: 215
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: initSpeed
@@ -3200,6 +3215,11 @@ Prefab:
       value: 'Colony Cloud: Require urgent infrastructure replacement - Bounties posted
         ...'
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3210de22648dc743a5c79776e24d54b,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 579743639}
@@ -3296,12 +3316,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Name
-      value: orbit_prefab_215
+      value: orbit_prefab_200
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 29afe71ab696bde4a9e14d7f10ab898c,
+      objectReference: {fileID: 21300000, guid: bc6fa5b08c67a7647ae64e0df2aee1e2,
         type: 3}
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_SortingOrder
@@ -3326,7 +3346,7 @@ GameObject:
   - 4: {fileID: 2116742008}
   - 212: {fileID: 2116742009}
   m_Layer: 0
-  m_Name: orbit_prefab_145
+  m_Name: orbit_prefab_128
   m_TagString: Orbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3365,7 +3385,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 63f49e31789372a4889fc7b509504b73, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4601a3d128ba838468157981985cfa6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &2136727161
 Prefab:
@@ -3408,12 +3428,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Name
-      value: orbit_prefab_110
+      value: orbit_prefab_92
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fabfc413374e5084e8d20163643d6c92,
+      objectReference: {fileID: 21300000, guid: b19981bfc241c254987966cc07ef17b5,
         type: 3}
     - target: {fileID: 21200000, guid: 1fd93fd1691470d48a546661d01dadf5, type: 2}
       propertyPath: m_SortingOrder
