@@ -697,7 +697,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1870004305
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b3210de22648dc743a5c79776e24d54b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6577a088e5ea4254a9f6e68f1cb87e07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &536487406
 MonoBehaviour:
@@ -2087,7 +2087,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1870004305
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b7df6b6fb62183e48bf227173e7048bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b33810493abeaf24986fd84d03506b06, type: 3}
   m_Color: {r: 1, g: .308823526, b: .308823526, a: 1}
 --- !u!4 &1449353993
 Transform:
@@ -2221,7 +2221,7 @@ Prefab:
     - target: {fileID: 21200000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b3210de22648dc743a5c79776e24d54b,
+      objectReference: {fileID: 21300000, guid: 6577a088e5ea4254a9f6e68f1cb87e07,
         type: 3}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: population
@@ -2374,6 +2374,11 @@ Prefab:
       propertyPath: orbitRadius
       value: 236
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: f600519b65bad5340a108fcb7684fdfa, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b33810493abeaf24986fd84d03506b06,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: f600519b65bad5340a108fcb7684fdfa, type: 2}
