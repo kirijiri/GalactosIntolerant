@@ -13,11 +13,37 @@ public class planetTouch : MonoBehaviour {
 	private bool flicked = false;
 	// gameobjects
 	private GameObject shipOrbit;
+
+	private GameObject tinker;
+	private float modifier1;
 	
 	//------------------------------------------------------------------- event functions
 
 	void Start(){
 		shipOrbit = GameObject.Find ("shipOrbit");
+		tinker = GameObject.Find ("tinker");
+	}
+
+	void Update () {
+		UpdateTinker();
+
+		// flicking control
+		if (flicked && InputReleased()) {
+			rigidbody2D.velocity = newVelocity;
+			ResetControlFlags();
+			return;
+		}
+		
+		// holding control
+		if (held && InputReleased()) {
+			rigidbody2D.velocity = storedVelocity;
+			ResetControlFlags();
+			return;
+		}
+	}
+	
+	void UpdateTinker () {
+		modifier1 = tinker.GetComponent<tinker>().modifier1;
 	}
 
 	void OnMouseDown () {
@@ -50,22 +76,6 @@ public class planetTouch : MonoBehaviour {
 	void OnMouseUp(){
 		// turn the ship Obit on again
 		shipOrbit.SendMessage ("SetIsOn", true);
-	}
-
-	void Update () {
-		// flicking control
-		if (flicked && InputReleased()) {
-			rigidbody2D.velocity = newVelocity;
-			ResetControlFlags();
-			return;
-		}
-
-		// holding control
-		if (held && InputReleased()) {
-			rigidbody2D.velocity = storedVelocity;
-			ResetControlFlags();
-			return;
-		}
 	}
 
 	//------------------------------------------------------------------- private functions
