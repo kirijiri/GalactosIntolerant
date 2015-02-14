@@ -7,9 +7,8 @@ public class tinker : MonoBehaviour {
 	// Gravity Beam
 	public float beamActivateAngle = 45f;
 	// Ship
-	public float shipMaxSpeed = 5;
-	public float shipAccPercent = 25;
-	public float shipDecPercent = 75;
+    public float shipAcceleration = 100f;
+
 
 	// Use this for initialization
 	void Start () {

@@ -8,22 +8,17 @@ public class shipMove : MonoBehaviour
     // private vars
     float angle;
     float tarAngle;
-    float fullMoveAngle;
     float moveAngle;
     float accAngle;
     float decAngle;
     float percAngle;
-    float speedPercent;
     float speed;
-
-    bool movePositive;
+    float deacceleration;
 
     tinker tinker;
 
     // tinkered vars
-    float maxSpeed;
-    float accPercent;
-    float decPercent;
+    float acceleration;
 
     // public vars
 
@@ -40,9 +35,7 @@ public class shipMove : MonoBehaviour
     
     void UpdateTinker()
     {
-        maxSpeed = tinker.shipMaxSpeed;
-        accPercent = tinker.shipAccPercent;
-        decPercent = tinker.shipDecPercent;
+        acceleration = tinker.shipAcceleration;
     }
 
     // public functions ----------------------------------------------------
@@ -51,15 +44,12 @@ public class shipMove : MonoBehaviour
     {
         // new position should be local to the sun
         tarAngle = GetSignedAngle(transform.localPosition, newPosition);
-        fullMoveAngle = tarAngle;
-        movePositive = tarAngle > 0;
     }
 
     // private functions ---------------------------------------------------
 
     private void MoveShip()
     { 
-
         if (tarAngle != 0)
         {
             moveAngle = GetMoveAngle();
@@ -70,45 +60,9 @@ public class shipMove : MonoBehaviour
         
     private float GetMoveAngle()
     {
-        speedPercent = Mathf.Max(5, GetSpeedPercent());
-        speed = maxSpeed; //* (speedPercent / 100);
-
-        // never move more then the leftover angle
-        if (movePositive){
-            return Mathf.Min (speed * Time.deltaTime, tarAngle);
-        }
-        else{
-            return Mathf.Max (-speed * Time.deltaTime, tarAngle);
-        }
-    }
-
-    private float GetSpeedPercent()
-    {
-        percAngle = GetPercentage(tarAngle, 0, fullMoveAngle, true);
-        if (percAngle < accPercent)
-        {
-            return GetPercentage(percAngle, 0, accPercent, false);
-        } else if (percAngle > decPercent)
-        {
-            return GetPercentage(percAngle, decPercent, 100, true);
-        } else
-        {
-            return 100;
-        }
-    }
-
-    private float GetPercentage(float value, float min, float max, bool invert)
-    {
-        value -= min;
-        max -= min;
-
-        if (invert)
-        {
-            return 100 - (value / (max / 100));
-        } else
-        {
-            return value / (max / 100);
-        }
+        deacceleration = 2*Mathf.Sqrt(acceleration);
+        speed = (acceleration * tarAngle) - deacceleration;
+        return speed * Time.deltaTime;
     }
 
     private float GetSignedAngle(Vector3 from, Vector3 to)
