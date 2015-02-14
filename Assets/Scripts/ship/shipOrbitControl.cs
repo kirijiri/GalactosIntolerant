@@ -18,6 +18,7 @@ public class shipOrbitControl : MonoBehaviour {
 	Vector3 centre;
 	Vector3 curPos;
 	Vector3 newVec;
+    Vector3 solarClick;
 
 	bool isOn = true;
 	
@@ -37,11 +38,17 @@ public class shipOrbitControl : MonoBehaviour {
 		if (isOn && Input.GetMouseButton (0)) {
 			SetClickedRadius ();
 			if (clickedRadius >= lower && clickedRadius <= upper) {
-				moveToDegrees = Mathf.Atan2(newVec.y, newVec.x) * Mathf.Rad2Deg;
-				ship.SendMessage("MoveTo", moveToDegrees);
+                solarClick = GetSolarPosition();
+                ship.SendMessage("SetNewPosition", solarClick);
 			}
 		}
 	}
+
+    Vector3 GetSolarPosition(){
+        curPos = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0));
+        curPos.z = 0;
+        return curPos - sun.transform.position;
+    }
 
 	void SetClickedRadius(){
 		curPos = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0));
