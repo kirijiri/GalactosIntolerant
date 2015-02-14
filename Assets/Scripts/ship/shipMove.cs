@@ -71,7 +71,7 @@ public class shipMove : MonoBehaviour
     private float GetMoveAngle()
     {
         speedPercent = Mathf.Max(5, GetSpeedPercent());
-        speed = maxSpeed //* (speedPercent / 100);
+        speed = maxSpeed; //* (speedPercent / 100);
 
         // never move more then the leftover angle
         if (movePositive){
