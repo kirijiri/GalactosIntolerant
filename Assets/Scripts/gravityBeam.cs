@@ -21,9 +21,9 @@ public class gravityBeam : MonoBehaviour
         for (int i = 0; i < planets.Length; i++)
         {
             // count how many planets are aligned
-            planetGravityPull beam_script = planets [i].GetComponent<planetGravityPull>();
+            planetGravityPull beam = planets [i].GetComponent<planetGravityPull>();
 
-            if (beam_script.affectedByBeam)
+            if (beam.isAligned)
                 alignedPlanetCount++;
         }
         return alignedPlanetCount;

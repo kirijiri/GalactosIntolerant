@@ -9,7 +9,6 @@ public class phoneMessages : MonoBehaviour
     private float timer = 0;
     private List<int> planetsTrack;
 
-    // Use this for initialization
     void Start()
     {
         GetComponent<Text>().text = "Oh hello";
@@ -25,7 +24,6 @@ public class phoneMessages : MonoBehaviour
             planetsTrack.Add(i);
     }
     
-    // Update is called once per frame
     void Update()
     {
 

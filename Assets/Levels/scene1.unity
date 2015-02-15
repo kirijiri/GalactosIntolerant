@@ -583,7 +583,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GBEffectThreshold: .300000012
   GBAlignmentThreshold: .0500000007
-  beamActivateAngle: 30
 --- !u!4 &526614313
 Transform:
   m_ObjectHideFlags: 0

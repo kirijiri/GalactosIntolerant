@@ -15,10 +15,4 @@ public class scoreManager : MonoBehaviour
     {
         DontDestroyOnLoad(this);
     }
-
-    void Start()
-    {
-        scoreManager manager = GetComponent<scoreManager>();
-        alignedPlanetCount = manager.alignedPlanetCount;
-    }
 }

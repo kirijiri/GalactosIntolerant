@@ -3,7 +3,6 @@ using System.Collections;
 
 public class planetGravityPull : MonoBehaviour
 {
-    public bool affectedByBeam = false;
     public bool isAligned = false;
 
     // from settings
@@ -74,7 +73,6 @@ public class planetGravityPull : MonoBehaviour
         {
             color.red(planetGraphic);
             gravityPull(beam, beamIntersectPoint);
-            affectedByBeam = true;
 
             if (beamDist < gbAlignmentThreshold)
             {
