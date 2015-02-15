@@ -13,13 +13,14 @@ public class shipMove : MonoBehaviour
     private float decAngle;
     private float percAngle;
     private float speed;
-    private float deacceleration;
+    private float deceleration;
 
     private tinker tinker;
     private shipControl shipCtrl;
 
     // tinkered vars
-    float acceleration;
+    float accelerationRate;
+    float decelerationRate;
 
     // public vars
 
@@ -37,7 +38,8 @@ public class shipMove : MonoBehaviour
     
     void UpdateTinker()
     {
-        acceleration = tinker.shipAcceleration;
+        accelerationRate = tinker.shipAcceleration;
+        decelerationRate = tinker.shipDeceleration;
     }
 
     // public functions ----------------------------------------------------
@@ -62,8 +64,8 @@ public class shipMove : MonoBehaviour
         
     private float GetMoveAngle()
     {
-        deacceleration = 2*Mathf.Sqrt(acceleration);
-        speed = (acceleration * tarAngle) - deacceleration;
+        deceleration = 2*Mathf.Sqrt(decelerationRate);
+        speed = (accelerationRate * tarAngle) - deceleration;
         return speed * Time.deltaTime;
     }
 

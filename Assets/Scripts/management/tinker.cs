@@ -6,10 +6,10 @@ using System.Collections;
 
 public class tinker : MonoBehaviour
 {
-    public float modifier1 = 1;
-
     // ship
-    public float shipAcceleration = 10f;
+    public float shipAcceleration = 5;
+    public float shipDeceleration = 10f;
+
     public float shipOrbitRadius = 236f;
     public float shipClickUpperBoundary = 80f;
     public float shipClickLowerBoundary = 20f;
