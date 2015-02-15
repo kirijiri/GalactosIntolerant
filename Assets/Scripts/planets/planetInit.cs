@@ -32,7 +32,7 @@ public class planetInit : MonoBehaviour
     {
         // get settings 
         planetSettings = GetComponent<planetSettings>();
-        initSpeed = planetSettings.initSpeed;
+        initSpeed = planetSettings.speed;
         orbitRadius = planetSettings.orbitRadius;
 
         // get pos from sun
@@ -64,8 +64,7 @@ public class planetInit : MonoBehaviour
 
     private void InitVelocity()
     {
-        Vector3 initDirection;
-        initDirection = posDiff.normalized;
+        Vector3 initDirection = posDiff.normalized;
         initDirection = Quaternion.AngleAxis(90, new Vector3(0, 1, 0)) * initDirection;
 
         rigidbody2D.velocity = initDirection * initSpeed;

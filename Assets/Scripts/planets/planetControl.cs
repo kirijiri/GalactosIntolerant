@@ -5,15 +5,24 @@ public class planetControl : MonoBehaviour
 {
     private Vector3 storedPosition;
     private Vector3 storedVelocity;
+    private float storedAngularVelocity;
     private Vector3 newVelocity;
 
     // controls
     private bool held = false;
+    private bool drag = false;
     private bool flicked = false;
 
-    // gameobjects
+    // 
     private GameObject shipOrbit;
     private tinker tinker;
+    private planetSettings planetSettings;
+
+    // tinker
+    // Option: restore speed
+    private bool slowDownMovement;
+    private float slowDownMovementDampingFactor;
+
     
     //-------------------------------------------------------------------
 
@@ -21,6 +30,7 @@ public class planetControl : MonoBehaviour
     {
         shipOrbit = GameObject.Find("shipOrbit");
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+        planetSettings = GetComponent<planetSettings>();
     }
 
     void Update()
@@ -28,10 +38,11 @@ public class planetControl : MonoBehaviour
         UpdateTinker();
 
         // flicking control
-        if (flicked && InputReleased())
+        if (drag && InputReleased())
         {
             rigidbody2D.velocity = newVelocity;
             ResetControlFlags();
+            flicked = true;
             return;
         }
         
@@ -42,10 +53,24 @@ public class planetControl : MonoBehaviour
             ResetControlFlags();
             return;
         }
+
+        if (drag)
+        {
+            print ("drag");
+            CalculateNewVelocity();
+        }
+
+        if (flicked && slowDownMovement)
+        {
+            RestoreSpeed();
+            return;
+        }
     }
     
     void UpdateTinker()
     {
+        slowDownMovement = tinker.PSlowDownMovementOption;
+        slowDownMovementDampingFactor = tinker.PSlowDownMovementDampingFactor;
     }
 
     void OnMouseDown()
@@ -71,8 +96,7 @@ public class planetControl : MonoBehaviour
             held = true;
         } else
         {
-            flicked = true;
-            newVelocity = InputPosition() - storedPosition;
+            drag = true;
         }
         // tell ship orbit to not respond
         shipOrbit.SendMessage("SetIsOn", false);
@@ -84,7 +108,18 @@ public class planetControl : MonoBehaviour
         shipOrbit.SendMessage("SetIsOn", true);
     }
 
-    //------------------------------------------------------------------- private functions
+    //------------------------------------------------------------------- 
+
+    private void CalculateNewVelocity() 
+    {
+        newVelocity = InputPosition() - storedPosition;
+    }
+
+    private void RestoreSpeed()
+    {
+        if (rigidbody2D.velocity.magnitude > storedVelocity.magnitude)
+            rigidbody2D.velocity *= slowDownMovementDampingFactor;
+    }
 
     private Vector3 InputPosition()
     {
@@ -101,6 +136,6 @@ public class planetControl : MonoBehaviour
     private void ResetControlFlags()
     { 
         held = false; 
-        flicked = false; 
+        drag = false; 
     }
 }

@@ -66,7 +66,7 @@ public class planetGravityPull : MonoBehaviour
         if (beamDist < gbEffectThreshold && gravityBeam.isActive)
         {
             planetLook.gravity(gameObject);
-            gravityPull(beam, beamIntersectPoint);
+            GravityPull(beam, beamIntersectPoint);
 
             if (beamDist < gbAlignmentThreshold)
             {
@@ -87,7 +87,7 @@ public class planetGravityPull : MonoBehaviour
 
     //------------------------------------------------------------------- helper functions
 
-    private void gravityPull(Ray beam, Vector3 intersect)
+    private void GravityPull(Ray beam, Vector3 intersect)
     {
         rigidbody2D.velocity = intersect - transform.position;
     }

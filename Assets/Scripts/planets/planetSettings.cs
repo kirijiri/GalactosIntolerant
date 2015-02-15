@@ -7,7 +7,7 @@ using System.Collections;
 public class planetSettings : MonoBehaviour
 {
     // planet stats
-    public float initSpeed = 0;
+    public float speed = 0;
     public float orbitRadius = 0;
     public float population = 0;
     public float followers = 0;
