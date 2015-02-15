@@ -81,9 +81,6 @@ public class planetControl : MonoBehaviour
 
         // pause
         rigidbody2D.velocity = new Vector3(0, 0, 0);
-
-        // tell ship orbit to not respond
-        shipOrbit.SendMessage("SetIsOn", false);
     }
     
     void OnMouseDrag()
@@ -98,14 +95,6 @@ public class planetControl : MonoBehaviour
         {
             drag = true;
         }
-        // tell ship orbit to not respond
-        shipOrbit.SendMessage("SetIsOn", false);
-    }
-
-    void OnMouseUp()
-    {
-        // turn the ship Obit on again
-        shipOrbit.SendMessage("SetIsOn", true);
     }
 
     //------------------------------------------------------------------- 

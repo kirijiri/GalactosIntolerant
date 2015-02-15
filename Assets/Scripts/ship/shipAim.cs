@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(CircleCollider2D))]
 
-public class shipInitialiser : MonoBehaviour {
+public class shipAim : MonoBehaviour {
 	public float orbitRadius;
 	Vector3 sunPos;
 		

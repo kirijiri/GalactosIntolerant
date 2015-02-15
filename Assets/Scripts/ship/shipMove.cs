@@ -6,25 +6,27 @@ using System.Collections;
 public class shipMove : MonoBehaviour
 {
     // private vars
-    float angle;
-    float tarAngle;
-    float moveAngle;
-    float accAngle;
-    float decAngle;
-    float percAngle;
-    float speed;
-    float deacceleration;
-
-    tinker tinker;
+    private float angle;
+    private float tarAngle;
+    private float moveAngle;
+    private float accAngle;
+    private float decAngle;
+    private float percAngle;
+    private float speed;
+    private float deceleration;
+    private tinker tinker;
+    private shipControl shipCtrl;
 
     // tinkered vars
-    float acceleration;
+    float accelerationRate;
+    float decelerationRate;
 
     // public vars
 
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+        shipCtrl = GetComponent<shipControl>();
     }
     
     void Update()
@@ -35,7 +37,8 @@ public class shipMove : MonoBehaviour
     
     void UpdateTinker()
     {
-        acceleration = tinker.shipAcceleration;
+        accelerationRate = tinker.shipAcceleration;
+        decelerationRate = tinker.shipDeceleration;
     }
 
     // public functions ----------------------------------------------------
@@ -50,7 +53,7 @@ public class shipMove : MonoBehaviour
 
     private void MoveShip()
     { 
-        if (tarAngle != 0)
+        if (shipCtrl.isMoving && tarAngle != 0)
         {
             moveAngle = GetMoveAngle();
             transform.localPosition = Quaternion.Euler(0, 0, moveAngle) * transform.localPosition;
@@ -60,8 +63,8 @@ public class shipMove : MonoBehaviour
         
     private float GetMoveAngle()
     {
-        deacceleration = 2*Mathf.Sqrt(acceleration);
-        speed = (acceleration * tarAngle) - deacceleration;
+        deceleration = 2 * Mathf.Sqrt(decelerationRate);
+        speed = (accelerationRate * tarAngle) - deceleration;
         return speed * Time.deltaTime;
     }
 
