@@ -3,46 +3,38 @@ using System.Collections;
 
 [RequireComponent(typeof(CircleCollider2D))]
 
-public class snapshot : MonoBehaviour {
-	GameObject[] planets;
-	GameObject ship;
-	gravityBeam beam_script;
-	int aligned_planet_count = 0;
+// This class is dealing with the snapshot button behaviour.
+// It 
 
-	// globals
-	private gameManager manager;
+public class snapshot : MonoBehaviour
+{
+    private scoreManager scoreManager;
+    private gravityBeam gravityBeam;
 
-	// Use this for initialization
-	void Start () {
-		ship = GameObject.Find("ship");
-		renderer.enabled = false;
-	}
+    //-------------------------------------------------------------------
 
-	void OnMouseDown () {
-		if (!renderer.enabled) return;
+    void Start()
+    {
+        gravityBeam = GameObject.Find("gravityBeam").GetComponent<gravityBeam>();
+        scoreManager = GameObject.Find("scoreManager").GetComponent<scoreManager>();
+        
+        // make button invisible (gravity beam will make it visible)
+        renderer.enabled = false;
+    }
 
-		// only if gravity beam is on, otherwise ignore
-		if (!ship.GetComponent<shipControl>().gravityBeamEngaged) 
-			return;
+    void OnMouseDown()
+    {
+        if (!renderer.enabled)
+            return;
 
-		aligned_planet_count = 0;
+        // only if gravity beam is on, otherwise ignore
+        if (!gravityBeam.enabled) 
+            return;
 
-		planets = GameObject.FindGameObjectsWithTag ("Planet");
-		for (int i = 0; i < planets.Length; i++) {
-			// freeze planets
-			planets[i].GetComponent<Rigidbody2D>().isKinematic = true;
+        // save stats
+        scoreManager.alignedPlanetCount = gravityBeam.GetAlignedPlanetCount();
 
-			// count how many planets are aligned
-			beam_script = (gravityBeam)planets[i].GetComponent(typeof(gravityBeam));
-			if (beam_script.affected_by_beam)
-				aligned_planet_count++;
-		}
-
-		// save stats
-		manager = (gameManager)GameObject.FindObjectOfType(typeof(gameManager));
-		manager.aligned_planet_count = aligned_planet_count;
-
-		// move rooms
-		Application.LoadLevel ("scoreScreen");
-	}
+        // switch screens
+        sceneManager.GoToScoreScreen();
+    }
 }
