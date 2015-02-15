@@ -3,7 +3,7 @@ using System.Collections;
 
 public class gravityBeam : MonoBehaviour
 {
-    public bool enabled = false; // set from ship control
+    public bool isActive = false; // set from ship control
 
     private GameObject[] planets;
 

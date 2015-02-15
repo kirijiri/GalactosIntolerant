@@ -75,7 +75,7 @@ public class shipControl : MonoBehaviour {
 		if (dot < -1+(beamActivateAngle / 180.0f)){
 			GetComponent<SpriteRenderer>().color = Color.white;
 			gravityBeamEngaged = true;
-            gravityBeam.enabled = true;
+            gravityBeam.isActive = true;
 			hold = true;
 			
 			snapshot snapshot = GameObject.Find ("phone_button_32").GetComponent<snapshot>();

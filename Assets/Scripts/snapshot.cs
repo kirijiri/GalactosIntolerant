@@ -4,7 +4,6 @@ using System.Collections;
 [RequireComponent(typeof(CircleCollider2D))]
 
 // This class is dealing with the snapshot button behaviour.
-// It 
 
 public class snapshot : MonoBehaviour
 {
@@ -28,7 +27,7 @@ public class snapshot : MonoBehaviour
             return;
 
         // only if gravity beam is on, otherwise ignore
-        if (!gravityBeam.enabled) 
+        if (!gravityBeam.isActive) 
             return;
 
         // save stats

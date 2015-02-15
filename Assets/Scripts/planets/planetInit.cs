@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// This class sets up the planet prefab structure
+
 public class planetInit : MonoBehaviour
 {
     // graphic object to be able to rotate the  
@@ -21,9 +23,8 @@ public class planetInit : MonoBehaviour
 
     void Awake()
     {
-        // sprite renderer
+        // change image sprite
         sprRen = GetComponent<SpriteRenderer>();
-        
         MakeImagePrefab();
     }
 
