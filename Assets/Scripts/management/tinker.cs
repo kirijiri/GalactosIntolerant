@@ -10,6 +10,9 @@ public class tinker : MonoBehaviour
 
     // ship
     public float shipAcceleration = 10f;
+    public float shipOrbitRadius = 236f;
+    public float shipClickUpperBoundary = 80f;
+    public float shipClickLowerBoundary = 20f;
 
     // gravity beam
     public float GBActivateAngle = 45f;

@@ -6,16 +6,17 @@ using System.Collections;
 public class shipMove : MonoBehaviour
 {
     // private vars
-    float angle;
-    float tarAngle;
-    float moveAngle;
-    float accAngle;
-    float decAngle;
-    float percAngle;
-    float speed;
-    float deacceleration;
+    private float angle;
+    private float tarAngle;
+    private float moveAngle;
+    private float accAngle;
+    private float decAngle;
+    private float percAngle;
+    private float speed;
+    private float deacceleration;
 
-    tinker tinker;
+    private tinker tinker;
+    private shipControl shipCtrl;
 
     // tinkered vars
     float acceleration;
@@ -25,6 +26,7 @@ public class shipMove : MonoBehaviour
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+        shipCtrl = GetComponent<shipControl>();
     }
     
     void Update()
@@ -50,7 +52,7 @@ public class shipMove : MonoBehaviour
 
     private void MoveShip()
     { 
-        if (tarAngle != 0)
+        if (shipCtrl.isMoving && tarAngle != 0)
         {
             moveAngle = GetMoveAngle();
             transform.localPosition = Quaternion.Euler(0, 0, moveAngle) * transform.localPosition;

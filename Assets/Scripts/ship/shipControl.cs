@@ -5,10 +5,10 @@ using System.Collections;
 
 public class shipControl : MonoBehaviour
 {
-    private bool hold = false;
     private float dot;
-    private Vector3 storedMousePosition;
+    private Vector3 storedPosition;
     private Vector3 mouseDrag;
+    public bool isMoving = true;
 
     // tinkered
     private tinker tinker;
@@ -39,12 +39,13 @@ public class shipControl : MonoBehaviour
 
     void OnMouseDown()
     {
-        storedMousePosition = transform.position;
+        storedPosition = transform.position;
+        isMoving = false;
     }
 
     void OnMouseDrag()
     {
-        hold = true;
+        isMoving = false;
     }
     
     void OnMouseUp()
@@ -55,22 +56,15 @@ public class shipControl : MonoBehaviour
             ActivateGravityBeam();
         } else
         {
-            hold = false;
+            isMoving = true;
         }
     }
 
     // Private functions ------------------------------------------------------------------
 
-    private Vector3 GetInputPosition()
-    {
-        Vector3 camPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
-        camPosition.z = 0;
-        return camPosition;
-    }
-
     private float GetDragAngle()
     {
-        mouseDrag = GetInputPosition() - storedMousePosition;
+        mouseDrag = mouseInput.GetScreenPosition() - storedPosition;
         dot = Vector3.Dot(transform.position.normalized, mouseDrag.normalized);
         return ConvertDotToAngle(dot);
     }
@@ -78,16 +72,16 @@ public class shipControl : MonoBehaviour
     private float ConvertDotToAngle(float nb)
     {
         // changes scale from -1:1 to 180:0
-        return (-nb / 2f + 0.5f) * 180f;
+        return (nb / 2f + 0.5f) * 180f;
     }
 
     private void ActivateGravityBeam()
     {
+        isMoving = false;
+
         GetComponent<SpriteRenderer>().color = Color.white;
-        print ("ActivateGravityBeam");
         gravityBeam.isActive = true;
-        hold = true;
-        
+
         snapshot snapshot = GameObject.Find("phone_button_32").GetComponent<snapshot>();
         snapshot.renderer.enabled = true;
     }
