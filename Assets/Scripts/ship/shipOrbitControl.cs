@@ -34,7 +34,7 @@ public class shipOrbitControl : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         { 
-            mousePosition = GetMouseScreenPosition();
+            mousePosition = mouseInput.GetScreenPosition();
             solarPosition = ConvertToSolarPosition(mousePosition);
             clickedRadius = ConvertSolarPosToRadius(solarPosition);
 
@@ -56,13 +56,6 @@ public class shipOrbitControl : MonoBehaviour
     }
 
     // private methods
-
-    private Vector3 GetMouseScreenPosition()
-    {
-        curPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
-        curPos.z = 0;
-        return curPos;
-    }
 
     private Vector3 ConvertToSolarPosition( Vector3 position )
     {

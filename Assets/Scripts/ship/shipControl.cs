@@ -79,7 +79,7 @@ public class shipControl : MonoBehaviour
     {
         isMoving = false;
 
-        GetComponent<SpriteRenderer>().color = Color.white;
+        shipLook.beamOn( gameObject );
         gravityBeam.isActive = true;
 
         snapshot snapshot = GameObject.Find("phone_button_32").GetComponent<snapshot>();
