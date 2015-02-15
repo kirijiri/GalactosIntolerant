@@ -5,23 +5,24 @@ using System.Collections;
 
 public class shipControl : MonoBehaviour
 {
-    tinker tinker;
-    bool hold = false;
-    float dot;
-    Vector3 storedMousePosition;
-    Vector3 mouseDrag;
+    private bool hold = false;
+    private float dot;
+    private Vector3 storedMousePosition;
+    private Vector3 mouseDrag;
 
     // tinkered
-    float beamActivateAngle;
+    private tinker tinker;
+    private float beamActivateAngle;
 
-    // get rid of these eventually!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    public float gravityBeamThreshold = 0.3f;
-    public float alignmentThreshold = 0.00005f;
-    public bool gravityBeamEngaged = false;
+    // gravity beam
+    private gravityBeam gravityBeam;
+
+    //-------------------------------------------------------------------
     
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+        gravityBeam = GameObject.Find("gravityBeam").GetComponent<gravityBeam>();
     }
 
     void Update()
@@ -31,7 +32,7 @@ public class shipControl : MonoBehaviour
     
     void UpdateTinker()
     {
-        beamActivateAngle = tinker.beamActivateAngle;
+        beamActivateAngle = tinker.GBActivateAngle;
     }
     
     // events -------------------------------------------------------------
@@ -83,7 +84,8 @@ public class shipControl : MonoBehaviour
     private void ActivateGravityBeam()
     {
         GetComponent<SpriteRenderer>().color = Color.white;
-        gravityBeamEngaged = true;
+        print ("ActivateGravityBeam");
+        gravityBeam.isActive = true;
         hold = true;
         
         snapshot snapshot = GameObject.Find("phone_button_32").GetComponent<snapshot>();

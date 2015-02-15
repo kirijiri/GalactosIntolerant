@@ -554,50 +554,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!1 &526614311
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 526614313}
-  - 114: {fileID: 526614312}
-  m_Layer: 0
-  m_Name: tinker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &526614312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 526614311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bca14b501d19b34b955b97c4f2cb627, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modifier1: 1
-  beamActivateAngle: .300000012
-  shipMaxSpeed: 5
-  shipAccPercent: 25
-  shipDecPercent: 75
---- !u!4 &526614313
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 526614311}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.34817708, y: -1.04491591, z: -.0376258157}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
 --- !u!1 &536487397
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affectedByBeam: 0
   isAligned: 0
 --- !u!114 &536487400
 MonoBehaviour:
@@ -936,7 +891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affectedByBeam: 0
   isAligned: 0
 --- !u!114 &579743642
 MonoBehaviour:
@@ -1192,7 +1146,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!114 &673749922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,7 +1158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc8a7dcc18893a4ab12f6dd49a90fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabled: 0
+  isActive: 0
 --- !u!1 &816915849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affectedByBeam: 0
   isAligned: 0
 --- !u!114 &816915852
 MonoBehaviour:
@@ -1903,7 +1856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affectedByBeam: 0
   isAligned: 0
 --- !u!114 &1315941545
 MonoBehaviour:
@@ -2223,9 +2175,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473c5dde07bf4104aaaba3faad5e8ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 200
+  gravityBeamEngaged: 0
   gravityBeamThreshold: .300000012
   alignmentThreshold: 4.99999987e-05
-  gravityBeamEngaged: 0
+  beamActivateAngle: 30
 --- !u!50 &1449353996
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2465,7 +2419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affectedByBeam: 0
   isAligned: 0
 --- !u!114 &1545869387
 MonoBehaviour:
@@ -2636,7 +2589,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!114 &1546193288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3315,6 +3268,47 @@ Prefab:
   m_RootGameObject: {fileID: 579743639}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1855041391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1855041393}
+  - 114: {fileID: 1855041392}
+  m_Layer: 0
+  m_Name: tinker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1855041392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1855041391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bca14b501d19b34b955b97c4f2cb627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GBEffectThreshold: .300000012
+  GBAlignmentThreshold: .0500000007
+--- !u!4 &1855041393
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1855041391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.34817708, y: -1.04491591, z: -.0376258157}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &2026440802
 GameObject:
   m_ObjectHideFlags: 0

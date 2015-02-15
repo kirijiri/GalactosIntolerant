@@ -6,7 +6,13 @@ using System.Collections;
 
 public class tinker : MonoBehaviour
 {
+    public float modifier1 = 1;
+
+    // ship
+    public float shipAcceleration = 10f;
+
     // gravity beam
+    public float GBActivateAngle = 45f;
     public float GBEffectThreshold = 0.3f;
     public float GBAlignmentThreshold = 0.05f;
 }
