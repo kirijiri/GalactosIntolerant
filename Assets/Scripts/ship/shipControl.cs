@@ -48,7 +48,7 @@ public class shipControl : MonoBehaviour
     
     void OnMouseUp()
     {
-        // Calculate the drag manually and activcate beam if in angle
+        // Calculate the drag manually and activate beam if in angle
         if (GetDragAngle() < beamActivateAngle)
         {
             ActivateGravityBeam();
