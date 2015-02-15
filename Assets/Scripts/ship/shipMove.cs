@@ -14,7 +14,6 @@ public class shipMove : MonoBehaviour
     private float percAngle;
     private float speed;
     private float deceleration;
-
     private tinker tinker;
     private shipControl shipCtrl;
 
@@ -64,7 +63,7 @@ public class shipMove : MonoBehaviour
         
     private float GetMoveAngle()
     {
-        deceleration = 2*Mathf.Sqrt(decelerationRate);
+        deceleration = 2 * Mathf.Sqrt(decelerationRate);
         speed = (accelerationRate * tarAngle) - deceleration;
         return speed * Time.deltaTime;
     }
