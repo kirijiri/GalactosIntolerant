@@ -181,9 +181,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca14b501d19b34b955b97c4f2cb627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PSlowDownMovementOption: 0
+  PSlowDownMovementOption: 1
   PSlowDownMovementDampingFactor: .980000019
-  shipAcceleration: 10
+  PUseForcesOption: 1
+  PUseForcesDragAmount: 5
+  shipAcceleration: 5
+  shipDeceleration: 10
+  shipOrbitRadius: 236
+  shipClickUpperBoundary: 80
+  shipClickLowerBoundary: 20
   GBActivateAngle: 45
   GBEffectThreshold: .300000012
   GBAlignmentThreshold: .0500000007
@@ -385,7 +391,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: speed
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
@@ -432,8 +438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbb6ac7fdc7f5347a05de6ef9b5c8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeLower: 20
-  sizeUpper: 50
 --- !u!212 &161563098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -760,7 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: .75
   orbitRadius: 92
   population: 1.36e+10
   followers: .0399999991
@@ -1049,7 +1053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1.5
   orbitRadius: 200
   population: 17799999500
   followers: .0900000036
@@ -1365,7 +1369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 1
   orbitRadius: 128
   population: 20999999500
   followers: .119999997
@@ -2014,7 +2018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   orbitRadius: 56
   population: 0
   followers: .0799999982
@@ -2224,6 +2228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473c5dde07bf4104aaaba3faad5e8ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 1
 --- !u!50 &1449353996
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2412,7 +2417,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: speed
-      value: 2
+      value: .75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
@@ -3105,7 +3110,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: speed
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
@@ -3321,7 +3326,7 @@ Prefab:
         type: 3}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: speed
-      value: 5
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}

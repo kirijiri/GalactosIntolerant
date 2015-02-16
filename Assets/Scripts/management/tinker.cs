@@ -7,8 +7,14 @@ using System.Collections;
 public class tinker : MonoBehaviour
 {
     // planets
-    public bool PSlowDownMovementOption = false;
+    public bool PSlowDownMovementOption = true;
+
+    // option 1
     public float PSlowDownMovementDampingFactor = 0.98f;
+
+    // option 2
+    public bool PUseForcesOption = true;
+    public float PUseForcesDragAmount = 5.0f;
 
     // ship
     public float shipAcceleration = 5f;

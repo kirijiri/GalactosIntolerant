@@ -22,6 +22,8 @@ public class planetControl : MonoBehaviour
     // Option: restore speed
     private bool slowDownMovement;
     private float slowDownMovementDampingFactor;
+    private bool useForcesOption;
+    private float useForcesDragAmount;
 
     
     //-------------------------------------------------------------------
@@ -32,6 +34,7 @@ public class planetControl : MonoBehaviour
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         planetSettings = GetComponent<planetSettings>();
     }
+
 
     void Update()
     {
@@ -56,13 +59,18 @@ public class planetControl : MonoBehaviour
 
         if (drag)
         {
-            print ("drag");
             CalculateNewVelocity();
+        }
+
+        if (slowDownMovement && (rigidbody2D.velocity.magnitude <= storedVelocity.magnitude) && storedVelocity.magnitude > 0)
+        {
+            rigidbody2D.drag = 0;
         }
 
         if (flicked && slowDownMovement)
         {
             RestoreSpeed();
+            if (useForcesOption) flicked = false;
             return;
         }
     }
@@ -71,6 +79,11 @@ public class planetControl : MonoBehaviour
     {
         slowDownMovement = tinker.PSlowDownMovementOption;
         slowDownMovementDampingFactor = tinker.PSlowDownMovementDampingFactor;
+        useForcesOption = tinker.PUseForcesOption;
+        useForcesDragAmount = tinker.PUseForcesDragAmount;
+
+        if (useForcesOption)
+            tinker.PSlowDownMovementOption = true;
     }
 
     void OnMouseDown()
@@ -106,8 +119,15 @@ public class planetControl : MonoBehaviour
 
     private void RestoreSpeed()
     {
-        if (rigidbody2D.velocity.magnitude > storedVelocity.magnitude)
-            rigidbody2D.velocity *= slowDownMovementDampingFactor;
+        if (useForcesOption)
+        {
+            rigidbody2D.drag = useForcesDragAmount;
+            rigidbody2D.AddForce(new Vector2(planetSettings.speed, 0.0f));
+        }
+        else{
+            if (rigidbody2D.velocity.magnitude > storedVelocity.magnitude)
+                rigidbody2D.velocity *= slowDownMovementDampingFactor;
+        }
     }
 
     private Vector3 InputPosition()
