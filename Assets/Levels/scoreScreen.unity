@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d6b2e94d518dc40af2b4bfecd6f6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alignedPlanetCount: 0
 --- !u!4 &106070978
 Transform:
   m_ObjectHideFlags: 0
@@ -456,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471d90d17da409547a4d636ef39f62c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aligned_planet_count: 0
+  alignedPlanetCount: 0
 --- !u!1 &945239586
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +470,7 @@ GameObject:
   - 92: {fileID: 945239589}
   - 124: {fileID: 945239588}
   - 81: {fileID: 945239587}
+  - 114: {fileID: 945239592}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -541,6 +543,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &945239592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 945239586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab87accc08d8240458b1fc0274d74f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1105695302
 GameObject:
   m_ObjectHideFlags: 0
