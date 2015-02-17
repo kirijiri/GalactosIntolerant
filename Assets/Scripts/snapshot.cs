@@ -7,7 +7,6 @@ using System.Collections;
 
 public class snapshot : MonoBehaviour
 {
-    private scoreManager scoreManager;
     private gravityBeam gravityBeam;
 
     //-------------------------------------------------------------------
@@ -15,7 +14,6 @@ public class snapshot : MonoBehaviour
     void Start()
     {
         gravityBeam = GameObject.Find("gravityBeam").GetComponent<gravityBeam>();
-        scoreManager = GameObject.Find("scoreManager").GetComponent<scoreManager>();
         
         // make button invisible (gravity beam will make it visible)
         renderer.enabled = false;
@@ -31,7 +29,7 @@ public class snapshot : MonoBehaviour
             return;
 
         // save stats
-        scoreManager.alignedPlanetCount = gravityBeam.GetAlignedPlanetCount();
+        gameManager.Instance.alignedPlanetCount = gravityBeam.GetAlignedPlanetCount();
 
         // switch screens
         sceneManager.GoToScoreScreen();

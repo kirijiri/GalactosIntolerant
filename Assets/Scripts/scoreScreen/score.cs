@@ -12,22 +12,17 @@ public class score : MonoBehaviour
     // UI elements
     private Text planetAlignText;
 
-    // score manager
-    scoreManager scoreManager;
-
     //-------------------------------------------------------------------
 
     void Start()
     {
-        // get score manager
-        scoreManager = GameObject.Find("scoreManager").GetComponent<scoreManager>();
-
         // get UI elements
         planetAlignText = GameObject.Find("planetAligned").GetComponent<Text>();
     }
 
     void Update()
     {
-        planetAlignText.text = "You aligned " + scoreManager.alignedPlanetCount + " planets";
+        print ("HERE: " + gameManager.Instance) ;
+        planetAlignText.text = "You aligned " + gameManager.Instance.alignedPlanetCount + " planets";
     }
 }

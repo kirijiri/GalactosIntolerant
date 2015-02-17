@@ -11,9 +11,11 @@ public enum GameState
 
 public delegate void OnStateChangeHandler();
 
-public class gameManager : Object
+public class gameManager 
 {
-    protected gameManager() {}
+    public int alignedPlanetCount = 0;
+
+    private gameManager() {}
 
     private static gameManager instance = null;
 
@@ -25,10 +27,9 @@ public class gameManager : Object
     {
         get
         {
-            if (gameManager.instance == null)
+            if (instance == null)
             {
-                DontDestroyOnLoad(gameManager.instance);
-                gameManager.instance = new gameManager();
+                instance = new gameManager();
             }
             return gameManager.instance;
         }
