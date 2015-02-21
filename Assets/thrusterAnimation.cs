@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class shipAnimation : MonoBehaviour
+public class thrusterAnimation : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
     Animator anim;
     Animator thrustAnim;
     int currentState = 0;
@@ -14,16 +13,19 @@ public class shipAnimation : MonoBehaviour
     int BEAMING = 3;
     int CLOCKWISE = 4;
     int ANTICLOCKWISE = 5;
-
-
+        
+        
     // Use this for initialization
     void Start()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        thrustAnim = GameObject.Find("thrusters").GetComponent<Animator>();
         anim = this.GetComponent<Animator>();
     }
 
+    public void Hello()
+    {
+        print("hello");
+    }
+        
     public void AnimDefault()
     {
         if (currentState != DEFAULT)
@@ -32,7 +34,7 @@ public class shipAnimation : MonoBehaviour
             currentState = DEFAULT;
         }
     }
-
+        
     public void AnimHeld()
     {
         if (currentState != PULSING)
@@ -41,7 +43,7 @@ public class shipAnimation : MonoBehaviour
             currentState = PULSING;
         }
     }
-
+        
     public void AnimBeamBegin()
     {
         if (currentState != BEAMBEGIN)
@@ -50,30 +52,31 @@ public class shipAnimation : MonoBehaviour
             currentState = BEAMBEGIN;
         }
     }
-
+        
     public void AnimBeamOn()
     {
         if (currentState != BEAMING)
         {
             anim.SetInteger("state", BEAMING); //<-- just reusing pulsealong for now
-            GetComponent<SpriteRenderer>().color = Color.red;
             currentState = BEAMING;
         }
     }
-
+        
     public void AnimClockwise()
     {
         if (currentState != CLOCKWISE)
         {
+            print("clock");
             anim.SetInteger("state", CLOCKWISE);
             currentState = CLOCKWISE;
         }
     }
-
+        
     public void AnimAntiClockwise()
     {
         if (currentState != ANTICLOCKWISE)
         {
+            print("anticlock");
             anim.SetInteger("state", ANTICLOCKWISE);
             currentState = ANTICLOCKWISE;
         }

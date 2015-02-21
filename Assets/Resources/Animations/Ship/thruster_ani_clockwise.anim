@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ship_ani_default
+  m_Name: thruster_ani_clockwise
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -18,7 +18,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300036, guid: b52eaa57552ae3e4db93d074c00fe6f2, type: 3}
+      value: {fileID: 21300018, guid: fe31d065b3387f84c8a5e4e18196dd1a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -37,7 +37,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300036, guid: b52eaa57552ae3e4db93d074c00fe6f2, type: 3}
+    - {fileID: 21300018, guid: fe31d065b3387f84c8a5e4e18196dd1a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
