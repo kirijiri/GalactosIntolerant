@@ -41,11 +41,19 @@ public class shipControl : MonoBehaviour
     {
         storedPosition = transform.position;
         isMoving = false;
+        this.SendMessage("AnimHeld");
     }
 
     void OnMouseDrag()
     {
         isMoving = false;
+        if (GetDragDistance() > 0.15)
+        {
+            this.SendMessage("AnimBeamBegin");
+        } else
+        {
+            this.SendMessage("AnimHeld");
+        }
     }
     
     void OnMouseUp()
@@ -56,11 +64,18 @@ public class shipControl : MonoBehaviour
             ActivateGravityBeam();
         } else
         {
+            this.SendMessage("AnimDefault");
             isMoving = true;
         }
     }
 
     // Private functions ------------------------------------------------------------------
+
+    private float GetDragDistance()
+    {
+        mouseDrag = mouseInput.GetScreenPosition() - storedPosition;
+        return mouseDrag.magnitude;
+    }
 
     private float GetDragAngle()
     {
@@ -79,7 +94,7 @@ public class shipControl : MonoBehaviour
     {
         isMoving = false;
 
-        shipLook.beamOn( gameObject );
+        this.SendMessage("AnimBeamOn");
         gravityBeam.isActive = true;
 
         snapshot snapshot = GameObject.Find("phone_button_32").GetComponent<snapshot>();
