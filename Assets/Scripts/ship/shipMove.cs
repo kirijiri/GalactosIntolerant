@@ -30,7 +30,7 @@ public class shipMove : MonoBehaviour
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
-        thrusters = GameObject.Find("thrusters").;
+        thrusters = GameObject.Find("thrusters");
         shipCtrl = GetComponent<shipControl>();
     }
     
