@@ -230,13 +230,13 @@ MonoBehaviour:
   PUseForcesOption: 1
   PUseForcesDragAmount: 5
   shipOptions: '--- SHIP OPTIONS ---'
-  shipAcceleration: .5
-  shipDeceleration: 5
+  shipAcceleration: 2
+  shipDeceleration: 3
   shipOrbitRadius: 236
   shipClickUpperBoundary: 80
   shipClickLowerBoundary: 20
   beamOptions: '--- BEAM OPTIONS ---'
-  GBActivateAngle: 5
+  GBActivateAngle: 45
   GBEffectThreshold: .300000012
   GBAlignmentThreshold: .0500000007
 --- !u!4 &58712543
@@ -2351,6 +2351,8 @@ GameObject:
   - 50: {fileID: 1449353996}
   - 114: {fileID: 1449353995}
   - 114: {fileID: 1449353998}
+  - 95: {fileID: 1449353999}
+  - 114: {fileID: 1449354000}
   m_Layer: 8
   m_Name: ship
   m_TagString: Untagged
@@ -2379,8 +2381,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1870004305
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b33810493abeaf24986fd84d03506b06, type: 3}
-  m_Color: {r: 1, g: .308823526, b: .308823526, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ae5c8e85a8c0c1e4f91b46b33b424553, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1449353993
 Transform:
   m_ObjectHideFlags: 0
@@ -2456,6 +2458,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f196ce2c9af34ba458a20d30abf71cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1449353999
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1449353991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 787422b175cf52947bf360f4fad7d4b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1449354000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1449353991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e75f2ff036895468cca3c2f6b4d6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1505974426
@@ -3010,6 +3038,7 @@ GameObject:
   - 223: {fileID: 1617110188}
   - 114: {fileID: 1617110187}
   - 114: {fileID: 1617110186}
+  - 95: {fileID: 1617110189}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3089,6 +3118,21 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!95 &1617110189
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1617110184}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d869cef12babc524ea8cfec06e574f5b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1662974471
 GameObject:
   m_ObjectHideFlags: 0

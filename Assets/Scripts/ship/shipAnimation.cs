@@ -17,7 +17,7 @@ public class shipAnimation : MonoBehaviour
     }
 
     void Update(){
-        print(currentState);
+        //print(currentState);
     }
 
     public void AnimDefault()
