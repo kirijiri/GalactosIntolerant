@@ -18,6 +18,10 @@ public class planetInit : MonoBehaviour
     private float orbitRadius;
     private Vector3 posDiff;
     private SpriteRenderer sprRen;
+    private tinker tinker;
+
+    //tinkered
+    private float speedMult;
 
     //-------------------------------------------------------------------
 
@@ -25,14 +29,16 @@ public class planetInit : MonoBehaviour
     {
         // change image sprite
         sprRen = GetComponent<SpriteRenderer>();
+        tinker = GameObject.Find("tinker").GetComponent<tinker>();
         MakeImagePrefab();
     }
 
     void Start()
     {
+        UpdateTinker();
         // get settings 
         planetSettings = GetComponent<planetSettings>();
-        initSpeed = planetSettings.speed;
+        initSpeed = planetSettings.speed * speedMult;
         orbitRadius = planetSettings.orbitRadius;
 
         // get pos from sun
@@ -48,6 +54,14 @@ public class planetInit : MonoBehaviour
         InitVelocity();
         ColliderSetup();
         IgnoreCollisions();
+    }
+
+    void Update(){
+        UpdateTinker();
+    }
+
+    void UpdateTinker(){
+        speedMult = tinker.PInitSpeedMultiplier;
     }
 
     //------------------------------------------------------------------- physics

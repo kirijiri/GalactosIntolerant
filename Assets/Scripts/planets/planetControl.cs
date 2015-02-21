@@ -24,6 +24,7 @@ public class planetControl : MonoBehaviour
     private float slowDownMovementDampingFactor;
     private bool useForcesOption;
     private float useForcesDragAmount;
+    private float speedMult;
 
     
     //-------------------------------------------------------------------
@@ -34,7 +35,6 @@ public class planetControl : MonoBehaviour
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         planetSettings = GetComponent<planetSettings>();
     }
-
 
     void Update()
     {
@@ -70,13 +70,15 @@ public class planetControl : MonoBehaviour
         if (flicked && slowDownMovement)
         {
             RestoreSpeed();
-            if (useForcesOption) flicked = false;
+            if (useForcesOption)
+                flicked = false;
             return;
         }
     }
     
     void UpdateTinker()
     {
+        speedMult = tinker.PInitSpeedMultiplier;
         slowDownMovement = tinker.PSlowDownMovementOption;
         slowDownMovementDampingFactor = tinker.PSlowDownMovementDampingFactor;
         useForcesOption = tinker.PUseForcesOption;
@@ -112,7 +114,7 @@ public class planetControl : MonoBehaviour
 
     //------------------------------------------------------------------- 
 
-    private void CalculateNewVelocity() 
+    private void CalculateNewVelocity()
     {
         newVelocity = InputPosition() - storedPosition;
     }
@@ -122,9 +124,9 @@ public class planetControl : MonoBehaviour
         if (useForcesOption)
         {
             rigidbody2D.drag = useForcesDragAmount;
-            rigidbody2D.AddForce(new Vector2(planetSettings.speed, 0.0f));
-        }
-        else{
+            rigidbody2D.AddForce(new Vector2(planetSettings.speed * speedMult, 0.0f));
+        } else
+        {
             if (rigidbody2D.velocity.magnitude > storedVelocity.magnitude)
                 rigidbody2D.velocity *= slowDownMovementDampingFactor;
         }

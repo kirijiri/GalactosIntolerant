@@ -7,6 +7,8 @@ using System.Collections;
 public class tinker : MonoBehaviour
 {
     // planets
+	public string planetOptions = "--- PLANET OPTIONS ---";
+    public float PInitSpeedMultiplier = 1;
     public bool PSlowDownMovementOption = true;
 
     // option 1
@@ -17,6 +19,7 @@ public class tinker : MonoBehaviour
     public float PUseForcesDragAmount = 5.0f;
 
     // ship
+	public string shipOptions = "--- SHIP OPTIONS ---";
     public float shipAcceleration = 5f;
     public float shipDeceleration = 10f;
     public float shipOrbitRadius = 236f;
@@ -24,6 +27,7 @@ public class tinker : MonoBehaviour
     public float shipClickLowerBoundary = 20f;
 
     // gravity beam
+	public string beamOptions = "--- BEAM OPTIONS ---";
     public float GBActivateAngle = 45f;
     public float GBEffectThreshold = 0.3f;
     public float GBAlignmentThreshold = 0.05f;
