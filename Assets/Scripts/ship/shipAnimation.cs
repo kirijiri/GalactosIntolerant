@@ -12,19 +12,15 @@ public class shipAnimation : MonoBehaviour
     int PULSING = 1;
     int BEAMBEGIN = 2;
     int BEAMING = 3;
-    int CLOCKWISE = 4;
-    int ANTICLOCKWISE = 5;
-
 
     // Use this for initialization
     void Start()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        thrustAnim = GameObject.Find("thrusters").GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         anim = this.GetComponent<Animator>();
     }
 
-    public void AnimDefault()
+    public void SAnimDefault()
     {
         if (currentState != DEFAULT)
         {
@@ -33,7 +29,7 @@ public class shipAnimation : MonoBehaviour
         }
     }
 
-    public void AnimHeld()
+    public void SAnimHeld()
     {
         if (currentState != PULSING)
         {
@@ -42,7 +38,7 @@ public class shipAnimation : MonoBehaviour
         }
     }
 
-    public void AnimBeamBegin()
+    public void SAnimBeamBegin()
     {
         if (currentState != BEAMBEGIN)
         {
@@ -51,31 +47,13 @@ public class shipAnimation : MonoBehaviour
         }
     }
 
-    public void AnimBeamOn()
+    public void SAnimBeamOn()
     {
         if (currentState != BEAMING)
         {
-            anim.SetInteger("state", BEAMING); //<-- just reusing pulsealong for now
+            anim.SetInteger("state", 2); //<-- just reusing pulsealong for now
             GetComponent<SpriteRenderer>().color = Color.red;
             currentState = BEAMING;
-        }
-    }
-
-    public void AnimClockwise()
-    {
-        if (currentState != CLOCKWISE)
-        {
-            anim.SetInteger("state", CLOCKWISE);
-            currentState = CLOCKWISE;
-        }
-    }
-
-    public void AnimAntiClockwise()
-    {
-        if (currentState != ANTICLOCKWISE)
-        {
-            anim.SetInteger("state", ANTICLOCKWISE);
-            currentState = ANTICLOCKWISE;
         }
     }
 }
