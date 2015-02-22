@@ -4,64 +4,56 @@ using System.Collections;
 public class shipAnimation : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
+    Animator anim;
+    Animator thrustAnim;
+    int currentState = 0;
+    // animation states
     int DEFAULT = 0;
     int PULSING = 1;
-    int PULSEALONG = 2;
-    int BEAMON = 3;
-    int currentState = 0;
+    int BEAMBEGIN = 2;
+    int BEAMING = 3;
 
     // Use this for initialization
     void Start()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = this.GetComponent<Animator>();
     }
 
-    void Update(){
-        //print(currentState);
-    }
-
-    public void AnimDefault()
+    public void SAnimDefault()
     {
         if (currentState != DEFAULT)
         {
-            GetComponent<Animator>().SetInteger("state", DEFAULT);
+            anim.SetInteger("state", 0);
             currentState = DEFAULT;
         }
     }
 
-    public void AnimHeld()
+    public void SAnimHeld()
     {
         if (currentState != PULSING)
         {
-            GetComponent<Animator>().SetInteger("state", PULSING);
+            anim.SetInteger("state", PULSING);
             currentState = PULSING;
         }
     }
 
-    public void AnimBeamBegin()
+    public void SAnimBeamBegin()
     {
-        if (currentState != PULSEALONG)
+        if (currentState != BEAMBEGIN)
         {
-            GetComponent<Animator>().SetInteger("state", PULSEALONG);
-            currentState = PULSEALONG;
+            anim.SetInteger("state", BEAMBEGIN);
+            currentState = BEAMBEGIN;
         }
     }
 
-    public void AnimBeamOn()
+    public void SAnimBeamOn()
     {
-        if (currentState != BEAMON)
+        if (currentState != BEAMING)
         {
-            GetComponent<Animator>().SetInteger("state", 2);
+            anim.SetInteger("state", 2); //<-- just reusing pulsealong for now
             GetComponent<SpriteRenderer>().color = Color.red;
-            currentState = BEAMON;
+            currentState = BEAMING;
         }
-    }
-
-    public void AnimClockwise()
-    {
-    }
-
-    public void AnimAntiClockwise()
-    {
     }
 }

@@ -16,17 +16,23 @@ public class shipMove : MonoBehaviour
     private float deceleration;
     private tinker tinker;
     private shipControl shipCtrl;
+    private thrustAnimation thrusters;
 
     // tinkered vars
     float accelerationRate;
     float decelerationRate;
+    float restThreshold;
+
+        
 
     // public vars
 
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+        thrusters = GameObject.Find("thrusters").GetComponent<thrustAnimation>();
         shipCtrl = GetComponent<shipControl>();
+        print(thrusters);
     }
     
     void Update()
@@ -39,6 +45,7 @@ public class shipMove : MonoBehaviour
     {
         accelerationRate = tinker.shipAcceleration;
         decelerationRate = tinker.shipDeceleration;
+        restThreshold = tinker.shipAnimRestThreshold;
     }
 
     // public functions ----------------------------------------------------
@@ -55,6 +62,19 @@ public class shipMove : MonoBehaviour
     { 
         if (shipCtrl.isMoving && tarAngle != 0)
         {
+
+            if (tarAngle > restThreshold)
+            {
+				thrusters.TAnimAntiClockWiseHigh();
+			} else if (tarAngle < -restThreshold)
+            {
+				thrusters.TAnimClockWiseHigh();
+			} else
+            {
+				thrusters.TAnimDefault();
+			}
+
+			
             moveAngle = GetMoveAngle();
             transform.localPosition = Quaternion.Euler(0, 0, moveAngle) * transform.localPosition;
             tarAngle -= moveAngle;

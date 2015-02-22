@@ -25,6 +25,7 @@ public class tinker : MonoBehaviour
     public float shipOrbitRadius = 236f;
     public float shipClickUpperBoundary = 80f;
     public float shipClickLowerBoundary = 20f;
+    public float shipAnimRestThreshold = 5.0f;
 
     // gravity beam
 	public string beamOptions = "--- BEAM OPTIONS ---";
