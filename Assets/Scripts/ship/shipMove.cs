@@ -62,7 +62,7 @@ public class shipMove : MonoBehaviour
     { 
         if (shipCtrl.isMoving && tarAngle != 0)
         {
-            /*
+
             if (tarAngle > restThreshold)
             {
 				thrusters.TAnimAntiClockWiseHigh();
@@ -73,7 +73,7 @@ public class shipMove : MonoBehaviour
             {
 				thrusters.TAnimDefault();
 			}
-            */
+
 			
             moveAngle = GetMoveAngle();
             transform.localPosition = Quaternion.Euler(0, 0, moveAngle) * transform.localPosition;
