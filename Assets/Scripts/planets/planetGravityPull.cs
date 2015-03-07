@@ -18,6 +18,7 @@ public class planetGravityPull : MonoBehaviour
     private float beamDist;
     private Vector3 beamIntersectPoint;
     private bool gravityBeamActive;
+    private Vector3 planetDist;
     
     // settings objects
     private gravityBeam gravityBeam;
@@ -65,6 +66,11 @@ public class planetGravityPull : MonoBehaviour
         // colour the planets when in the threshold and trigger pull
         if (beamDist < gbEffectThreshold && gravityBeam.isActive)
         {
+            // stop gravity beam at sun
+            planetDist = transform.position - ship.transform.position;
+            if (beamVec.magnitude <= planetDist.magnitude)
+                return;
+
             planetLook.gravity(gameObject);
             gravityPull(beam, beamIntersectPoint);
 
