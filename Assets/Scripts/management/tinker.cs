@@ -32,4 +32,5 @@ public class tinker : MonoBehaviour
     public float GBActivateAngle = 45f;
     public float GBEffectThreshold = 0.3f;
     public float GBAlignmentThreshold = 0.05f;
+    public float GBTimeout = 3.0f;
 }

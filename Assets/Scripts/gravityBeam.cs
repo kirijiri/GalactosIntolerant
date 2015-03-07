@@ -6,12 +6,32 @@ public class gravityBeam : MonoBehaviour
     public bool isActive = false; // set from ship control
 
     private GameObject[] planets;
+    private float timer = 0;
+
+    // settings objects
+    private tinker tinker;
 
     //-------------------------------------------------------------------
 
     void Start()
     {
         planets = GameObject.FindGameObjectsWithTag("Planet");
+
+        // settings
+        tinker = GameObject.Find("tinker").GetComponent<tinker>();
+    }
+
+    void Update()
+    {
+        if (isActive)
+        {
+            timer += Time.deltaTime;
+            if (timer >= tinker.GBTimeout)
+            {
+                timer = 0;
+                isActive = false;
+            }
+        }
     }
     
     public int GetAlignedPlanetCount()
