@@ -226,6 +226,12 @@ MonoBehaviour:
   planetOptions: '--- PLANET OPTIONS ---'
   PInitSpeedMultiplier: 1
   PSlowDownMovementOption: 1
+  PInnerBand: 0
+  POuterBand: 300
+  PMaxSecsForDrag: 3
+  PMaxSecsForHold: 3
+  PForceMult: 1
+  PAcceleration: .00999999978
   PSlowDownMovementDampingFactor: .980000019
   PUseForcesOption: 1
   PUseForcesDragAmount: 5

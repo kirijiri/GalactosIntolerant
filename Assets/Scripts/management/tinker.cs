@@ -11,7 +11,7 @@ public class tinker : MonoBehaviour
     public float PInitSpeedMultiplier = 1;
     public bool PSlowDownMovementOption = true;
     public float PInnerBand = 0;
-    public float POuterBand = 10;
+    public float POuterBand = 200;
     public float PMaxSecsForDrag = 3;
     public float PMaxSecsForHold = 3;
     public float PForceMult = 1;
