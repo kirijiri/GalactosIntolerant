@@ -227,18 +227,12 @@ MonoBehaviour:
   planetOptions: '--- PLANET OPTIONS ---'
   PInitSpeedMultiplier: 1
   PSlowDownMovementOption: 1
-  PInnerBand: 0
-  POuterBand: 10
-  PMaxSecsForDrag: 3
-  PMaxSecsForHold: 3
-  PForceMult: 1
-  PAcceleration: .400000006
   PSlowDownMovementDampingFactor: .980000019
   PUseForcesOption: 1
   PUseForcesDragAmount: 5
   shipOptions: '--- SHIP OPTIONS ---'
-  shipAcceleration: 2
-  shipDeceleration: 3
+  shipAcceleration: 5
+  shipDeceleration: 10
   shipOrbitRadius: 236
   shipClickUpperBoundary: 80
   shipClickLowerBoundary: 20
@@ -248,6 +242,20 @@ MonoBehaviour:
   GBEffectThreshold: .300000012
   GBAlignmentThreshold: .0500000007
   GBTimeout: 3
+  messageOptions: '--- MESSAGE OPTIONS ---'
+  idleTimer: 1
+  messageX: 80
+  messageY: 140
+  messageWidth: 235
+  messageHeight: 50
+  messageVSpace: 20
+  messageMargins:
+  - 10
+  - 10
+  - 10
+  - 10
+  characterWidth: 10
+  phoneHeight: 520
 --- !u!4 &58712543
 Transform:
   m_ObjectHideFlags: 0
