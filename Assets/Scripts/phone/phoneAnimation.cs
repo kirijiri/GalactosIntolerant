@@ -48,7 +48,7 @@ public class phoneAnimation : MonoBehaviour
         newMessage.text = message;
         float height = Mathf.Ceil((message.Length*characterWidth)/defaultBox.width) * defaultBox.height + margins[1] + margins[3];
         newMessage.size = new Rect(defaultBox.x, defaultBox.y, defaultBox.width, height);
-        newMessage.y = newMessage.size.y;
+        newMessage.newY = newMessage.size.y;
         newMessage.CreateTexture();
 
         // move all the other boxes down
@@ -56,11 +56,11 @@ public class phoneAnimation : MonoBehaviour
         messageToRemove.Clear();
         foreach(messageBox box in messageBoxes)
         {
-            box.move = true;
+            //box.size.y = box.newY;
+            box.time = Time.time;
             box.oldY = box.size.y;
-            //box.size.y += (newMessage.size.height + messageVSpace);
-            box.y += (newMessage.size.height + messageVSpace);  
-            if ((box.y + box.size.height) > maxHeight)
+            box.newY += newMessage.size.height + messageVSpace;
+            if ((box.newY + box.size.height) > maxHeight)
             {
                 messageToRemove.Add(box);
             }
@@ -77,14 +77,10 @@ public class phoneAnimation : MonoBehaviour
     {
         foreach(messageBox box in messageBoxes)
         {
-            if (box.size.y >= box.y)
+            if (box.size.y < box.newY)
             {
-                box.size.y = box.y;
-            }
-            else
-            {
-                float lerp = Mathf.Lerp (box.oldY, box.y, scrollSpeed * Time.fixedDeltaTime);
-                box.size.y += lerp;
+                float lerp = Mathf.Lerp (box.oldY, box.newY, scrollSpeed * (Time.time - box.time));
+                box.size.y = lerp;
             }
 
             // convert position into world space (avoid floating)
@@ -109,11 +105,11 @@ public class phoneAnimation : MonoBehaviour
 public class messageBox
 {
     public Rect size;
-    public float y;
+    public float newY;
     public float oldY;
     public string text;
     public Texture2D tx;
-    public bool move = false;
+    public float time;
 
     private Vector3 phonePos;
 
