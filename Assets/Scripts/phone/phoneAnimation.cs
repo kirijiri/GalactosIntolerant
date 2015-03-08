@@ -41,7 +41,7 @@ public class phoneAnimation : MonoBehaviour
 
     public void AddNewMessage(string message)
     {
-        print("Add New Message "+ message);
+        //print("Add New Message "+ message);
 
         // create new message box
         newMessage = new messageBox();

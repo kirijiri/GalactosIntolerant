@@ -13,6 +13,7 @@ public class tinker : MonoBehaviour
     public bool PSlowDownMovementOption = true;
     public float PInnerBand = 0f;
     public float POuterBand = 200f;
+    public bool PFlickOnOuterBand = false;
     public float PMaxSecsForDrag = 3f;
     public float PMaxSecsForHold = 3f;
     public float PForceMult = 0.02f;
