@@ -9,13 +9,13 @@ public class tinker : MonoBehaviour
     // planets
 	public string planetOptions = "--- PLANET OPTIONS ---";
     public bool printPlanetControls = false;
-    public float PInitSpeedMultiplier = 1;
+    public float PInitSpeedMultiplier = 1f;
     public bool PSlowDownMovementOption = true;
-    public float PInnerBand = 0;
-    public float POuterBand = 200;
-    public float PMaxSecsForDrag = 3;
-    public float PMaxSecsForHold = 3;
-    public float PForceMult = 0.02;
+    public float PInnerBand = 0f;
+    public float POuterBand = 200f;
+    public float PMaxSecsForDrag = 3f;
+    public float PMaxSecsForHold = 3f;
+    public float PForceMult = 0.02f;
     public float PAcceleration = 0.25f;
 
     // option 1
