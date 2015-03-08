@@ -44,12 +44,12 @@ public class tinker : MonoBehaviour
     // messages
     public string messageOptions = "--- MESSAGE OPTIONS ---";
     public float idleTimer = 1.0f;//7.0f;
-    public float messageX = 80.0f;
-    public float messageY = 140.0f;
+    public float messageX = 0.0f;//80.0f;
+    public float messageY = 0.0f;//140.0f;
     public float messageWidth = 235.0f;
     public float messageHeight = 20.0f;
     public float messageVSpace = 20.0f;
     public float[] messageMargins = new float[4]{10.0f, 10.0f, 10.0f, 10.0f}; //left, top, right, bottom
     public float characterWidth = 10.0f;
-    public float phoneHeight = 520.0f;
+    public float phoneHeight = 380.0f;
 }

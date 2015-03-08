@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class phoneAnimation : MonoBehaviour
 {
     private Rect defaultBox;
-    private float top = 140.0f;
     private float[] margins;
     private float characterWidth;
     private float messageVSpace;
@@ -22,7 +21,8 @@ public class phoneAnimation : MonoBehaviour
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
-
+        
+        // define message font
         textFont = new GUIStyle();
         textFont.fontSize = 17;
         textFont.normal.textColor = Color.black;
@@ -75,12 +75,20 @@ public class phoneAnimation : MonoBehaviour
     {
         foreach(messageBox box in messageBoxes)
         {
-            GUI.DrawTexture(box.size, box.tx); //Draws the texture for the entire screen (width, height)
-            Rect textRect = box.size;
-            textRect.x = box.size.x + margins[0];
-            textRect.y = box.size.y + margins[1];
+            // convert position into world space (avoid floating)
+            Rect curPos = box.ConvertSpace();
+
+            // draw box
+            GUI.DrawTexture(curPos, box.tx); 
+
+            // add margin for the text
+            Rect textRect = curPos;
+            textRect.x = curPos.x + margins[0];
+            textRect.y = curPos.y + margins[1];
             textRect.width = textRect.width - (margins[0] + margins[2]);
             textRect.height = textRect.height - (margins[1] + margins[3]);
+
+            // draw text
             GUI.Label (textRect, box.text, textFont);
         }
     }
@@ -91,6 +99,25 @@ public class messageBox
     public Rect size;
     public string text;
     public Texture2D tx;
+
+    private Vector3 phonePos;
+
+    public Rect ConvertSpace() 
+    {
+        // find phone to convert GUI to world space
+        GameObject phone = GameObject.Find("phone_bg_256");
+        SpriteRenderer sprRen = phone.GetComponent<SpriteRenderer>();
+        Rect sprRect = sprRen.sprite.rect;
+        phonePos = Camera.main.WorldToScreenPoint(phone.transform.position);
+
+        // TODO: get extra sprite just for message window, so I get 
+        // rid of the hardcoded bits
+        Rect newPos = size;
+        newPos.x += (float)(phonePos[0] - (sprRect.width-20)/2);
+        newPos.y += (float)(phonePos[1] - (sprRect.height+100)/2);
+
+        return newPos;
+    }
 
     public void CreateTexture()
     {

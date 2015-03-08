@@ -15,12 +15,10 @@ public class phoneMessages : MonoBehaviour
 
     void Start()
     {
-        phoneAnimation = GameObject.Find("messages").GetComponent<phoneAnimation>();
+        phoneAnimation = GetComponent<phoneAnimation>();
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
-
-        GetComponent<Text>().text = "Oh hello";
+        
         planets = GameObject.FindGameObjectsWithTag("Planet");
-
         ResetPlanetTrack();
     }
 
@@ -47,7 +45,6 @@ public class phoneMessages : MonoBehaviour
 
             // set idle message text
             message = planets [rand].GetComponent<planetMessaging>().GetIdleMessage();
-            GetComponent<Text>().text = message;
 
             // play animation
             phoneAnimation.AddNewMessage(message);
