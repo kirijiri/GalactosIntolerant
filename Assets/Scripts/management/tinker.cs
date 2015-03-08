@@ -53,4 +53,5 @@ public class tinker : MonoBehaviour
     public float[] messageMargins = new float[4]{10.0f, 10.0f, 10.0f, 10.0f}; //left, top, right, bottom
     public float characterWidth = 10.0f;
     public float phoneHeight = 380.0f;
+    public float scrollSpeed = 2.0f;
 }
