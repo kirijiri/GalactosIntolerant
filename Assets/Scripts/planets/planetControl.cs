@@ -147,7 +147,7 @@ public class planetControl : MonoBehaviour
 
     private void Flick()
     {
-        newForce = newVelocity / GetElapsedTime(dragStartTime);
+        newForce = newVelocity.normalized / (GetElapsedTime(dragStartTime) / maxSecForDrag);
         rigidbody2D.velocity = storedVelocity + (newForce * forceMult);
 
         ResetControlFlags();

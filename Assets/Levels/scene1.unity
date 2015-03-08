@@ -230,8 +230,8 @@ MonoBehaviour:
   POuterBand: 300
   PMaxSecsForDrag: 3
   PMaxSecsForHold: 3
-  PForceMult: 1
-  PAcceleration: .00999999978
+  PForceMult: .0199999996
+  PAcceleration: .100000001
   PSlowDownMovementDampingFactor: .980000019
   PUseForcesOption: 1
   PUseForcesDragAmount: 5
