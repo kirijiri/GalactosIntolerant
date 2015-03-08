@@ -9,6 +9,7 @@ public class phoneAnimation : MonoBehaviour
     private float characterWidth;
     private float messageVSpace;
     private float maxHeight;
+    private float scrollSpeed;
 
     private List<messageBox> messageBoxes = new List<messageBox>();
     private List<messageBox> messageToRemove = new List<messageBox>();
@@ -37,6 +38,7 @@ public class phoneAnimation : MonoBehaviour
         characterWidth = tinker.characterWidth;
         messageVSpace = tinker.messageVSpace;
         maxHeight = tinker.phoneHeight;
+        scrollSpeed = tinker.scrollSpeed;
     }
 
     public void AddNewMessage(string message)
