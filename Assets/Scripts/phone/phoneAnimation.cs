@@ -1,19 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-<<<<<<< HEAD
-
-public class phoneAnimation : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-=======
 using System.Collections.Generic;
 
 public class phoneAnimation : MonoBehaviour
@@ -112,5 +98,4 @@ public class messageBox
         tx.SetPixel(1, 1, Color.white);     //Sets the 1 pixel to be white
         tx.Apply();                         //Applies all the changes made
     }
->>>>>>> kiri
 }
