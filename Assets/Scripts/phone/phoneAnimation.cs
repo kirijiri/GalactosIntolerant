@@ -9,6 +9,7 @@ public class phoneAnimation : MonoBehaviour
     private float characterWidth;
     private float messageVSpace;
     private float maxHeight;
+    private float scrollSpeed;
 
     private List<messageBox> messageBoxes = new List<messageBox>();
     private List<messageBox> messageToRemove = new List<messageBox>();
@@ -37,17 +38,17 @@ public class phoneAnimation : MonoBehaviour
         characterWidth = tinker.characterWidth;
         messageVSpace = tinker.messageVSpace;
         maxHeight = tinker.phoneHeight;
+        scrollSpeed = tinker.scrollSpeed;
     }
 
     public void AddNewMessage(string message)
     {
-        print("Add New Message "+ message);
-
         // create new message box
         newMessage = new messageBox();
         newMessage.text = message;
         float height = Mathf.Ceil((message.Length*characterWidth)/defaultBox.width) * defaultBox.height + margins[1] + margins[3];
         newMessage.size = new Rect(defaultBox.x, defaultBox.y, defaultBox.width, height);
+        newMessage.y = newMessage.size.y;
         newMessage.CreateTexture();
 
         // move all the other boxes down
@@ -55,10 +56,11 @@ public class phoneAnimation : MonoBehaviour
         messageToRemove.Clear();
         foreach(messageBox box in messageBoxes)
         {
-            float space = (newMessage.size.height + messageVSpace);
-            box.size.y += space;
-
-            if ((box.size.y + box.size.height) > maxHeight)
+            box.move = true;
+            box.oldY = box.size.y;
+            //box.size.y += (newMessage.size.height + messageVSpace);
+            box.y += (newMessage.size.height + messageVSpace);  
+            if ((box.y + box.size.height) > maxHeight)
             {
                 messageToRemove.Add(box);
             }
@@ -75,6 +77,16 @@ public class phoneAnimation : MonoBehaviour
     {
         foreach(messageBox box in messageBoxes)
         {
+            if (box.size.y >= box.y)
+            {
+                box.size.y = box.y;
+            }
+            else
+            {
+                float lerp = Mathf.Lerp (box.oldY, box.y, scrollSpeed * Time.fixedDeltaTime);
+                box.size.y += lerp;
+            }
+
             // convert position into world space (avoid floating)
             Rect curPos = box.ConvertSpace();
 
@@ -97,8 +109,11 @@ public class phoneAnimation : MonoBehaviour
 public class messageBox
 {
     public Rect size;
+    public float y;
+    public float oldY;
     public string text;
     public Texture2D tx;
+    public bool move = false;
 
     private Vector3 phonePos;
 
