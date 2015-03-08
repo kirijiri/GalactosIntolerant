@@ -8,9 +8,16 @@ public class phoneMessages : MonoBehaviour
     private GameObject[] planets;
     private float timer = 0;
     private List<int> planetsTrack;
+    private string message;
+
+    private phoneAnimation phoneAnimation;
+    private tinker tinker;
 
     void Start()
     {
+        phoneAnimation = GameObject.Find("messages").GetComponent<phoneAnimation>();
+        tinker = GameObject.Find("tinker").GetComponent<tinker>();
+
         GetComponent<Text>().text = "Oh hello";
         planets = GameObject.FindGameObjectsWithTag("Planet");
 
@@ -26,9 +33,8 @@ public class phoneMessages : MonoBehaviour
     
     void Update()
     {
-
         timer += Time.deltaTime;
-        if (timer > 7)
+        if (timer > tinker.idleTimer)
         {
             timer = 0;
 
@@ -40,7 +46,11 @@ public class phoneMessages : MonoBehaviour
             int rand = Random.Range(0, planetsTrack.Count);
 
             // set idle message text
-            GetComponent<Text>().text = planets [rand].GetComponent<planetMessaging>().GetIdleMessage();
+            message = planets [rand].GetComponent<planetMessaging>().GetIdleMessage();
+            GetComponent<Text>().text = message;
+
+            // play animation
+            phoneAnimation.AddNewMessage(message);
 
             // remove planet from track list to not repeat it immidiately again
             planetsTrack.RemoveAt(rand);
