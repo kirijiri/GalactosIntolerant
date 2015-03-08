@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetOptions: '--- PLANET OPTIONS ---'
+  printPlanetControls: 0
   PInitSpeedMultiplier: 1
   PSlowDownMovementOption: 1
   PInnerBand: 0
@@ -231,7 +232,7 @@ MonoBehaviour:
   PMaxSecsForDrag: 3
   PMaxSecsForHold: 3
   PForceMult: .0199999996
-  PAcceleration: .100000001
+  PAcceleration: .25
   PSlowDownMovementDampingFactor: .980000019
   PUseForcesOption: 1
   PUseForcesDragAmount: 5

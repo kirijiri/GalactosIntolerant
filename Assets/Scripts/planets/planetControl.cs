@@ -39,6 +39,7 @@ public class planetControl : MonoBehaviour
     private float maxSecForHold;
     private float forceMult;
     private float acceleration;
+    private bool dbug;
     
     //-------------------------------------------------------------------
 
@@ -52,29 +53,33 @@ public class planetControl : MonoBehaviour
     void Update()
     {
         UpdateTinker();
-
-        if (drag){
-            print("dragging "  + transform.name);
-        } else if (held){
-            print("holding "  + transform.name);
+        if (dbug)
+        {
+            if (drag)
+            {
+                print("dragging " + transform.name);
+            } else if (held)
+            {
+                print("holding " + transform.name);
+            }
         }
 
         // flicking control
         if (drag && InputReleased())
         {
-            print("FLICKED " + transform.name);
+            if (dbug) {print("FLICKED " + transform.name);}
             Flick();
         } else if (drag && GetElapsedTime(dragStartTime) > maxSecForDrag)
         { 
-            print("DRAG TIMER RAN OUT " + transform.name);
+            if (dbug) {print("DRAG TIMER RAN OUT " + transform.name);}
             Release();
         } else if (held && InputReleased())
         {
-            print("HELD AND RELEASED " + transform.name);
+            if (dbug) {print("HELD AND RELEASED " + transform.name);}
             Release();
         } else if (held && GetElapsedTime(dragStartTime) > maxSecForHold)
         {
-            print("HOLD TIMER RAN OUT "  + transform.name);
+            if (dbug) {print("HOLD TIMER RAN OUT "  + transform.name);}
             Release();
         }
 
@@ -83,7 +88,7 @@ public class planetControl : MonoBehaviour
             CalculateNewVelocity();
             // release if dragged too far
             if (newVelocity.magnitude > (outerBand / 200)){
-                print("DRAGGED TOO FAR " + transform.name);
+                if (dbug) {print("DRAGGED TOO FAR " + transform.name);}
                 Release();
                 return;
             }
@@ -108,6 +113,7 @@ public class planetControl : MonoBehaviour
         maxSecForHold = tinker.PMaxSecsForHold;
         forceMult = tinker.PForceMult;
         acceleration = tinker.PAcceleration;
+        dbug = tinker.printPlanetControls;
 
         if (useForcesOption)
             tinker.PSlowDownMovementOption = true;
@@ -129,8 +135,6 @@ public class planetControl : MonoBehaviour
     {
         float dist = Vector3.Distance(storedPosition, InputPosition());
         float radius = GetComponent<CircleCollider2D>().radius;
-
-        print("OnMouseDrag " + transform.name);
 
         if (dist < radius + (innerBand /200))
         { 
