@@ -17,7 +17,6 @@ public class planetControl : MonoBehaviour
     // controls
     private bool held = false;
     private bool drag = false;
-    private bool flicked = false;
     private float holdStartTime = 0;
     private float dragStartTime = 0;
     private float elapsed = 0;
@@ -53,59 +52,43 @@ public class planetControl : MonoBehaviour
     void Update()
     {
         UpdateTinker();
-        if(Time.frameCount < 5){
-            storedVelocity = rigidbody2D.velocity;
+
+        if (drag){
+            print("dragging "  + transform.name);
+        } else if (held){
+            print("holding "  + transform.name);
         }
 
-        // spam filter
-        if (pauseFrame == -1 || pauseFrame - Time.frameCount > 5){
-            // flicking control
-            if (drag && InputReleased())
-            {
-                elapsed = GetElapsedTime(dragStartTime);
-                print("FLICKED");
-                if (useForcesOption){
-                    print(rigidbody2D.velocity.magnitude);
-                    print((newVelocity / elapsed) * forceMult);
+        // flicking control
+        if (drag && InputReleased())
+        {
+            print("FLICKED " + transform.name);
+            Flick();
+        } else if (drag && GetElapsedTime(dragStartTime) > maxSecForDrag)
+        { 
+            print("DRAG TIMER RAN OUT " + transform.name);
+            Release();
+        } else if (held && InputReleased())
+        {
+            print("HELD AND RELEASED " + transform.name);
+            Release();
+        } else if (held && GetElapsedTime(dragStartTime) > maxSecForHold)
+        {
+            print("HOLD TIMER RAN OUT "  + transform.name);
+            Release();
+        }
 
-                    rigidbody2D.velocity = storedVelocity ;
-                    rigidbody2D.AddForce((newVelocity / elapsed) * forceMult);
-                } else{
-                    rigidbody2D.velocity = newVelocity;
-                }
-                ResetControlFlags();
-                ResetTimers();
-                flicked = true;
+        if (drag)
+        {
+            CalculateNewVelocity();
+            // release if dragged too far
+            if (newVelocity.magnitude > (outerBand / 200)){
+                print("DRAGGED TOO FAR " + transform.name);
+                Release();
                 return;
-
-            } else if (drag && GetElapsedTime(dragStartTime) > maxSecForDrag)
-            { 
-                print("DRAG TIMER RAN OUT");
-                ReleaseWithoutVelocity();
-                return;
-            } else if (held && InputReleased())
-            {
-                print("HELD AND RELEASED");
-                ReleaseWithoutVelocity();
-                return;
-            } else if (held && GetElapsedTime(dragStartTime) > maxSecForHold)
-            {
-                print("HOLD TIMER RAN OUT");
-                ReleaseWithoutVelocity();
-                return;
-            }
-
-            if (drag)
-            {
-                CalculateNewVelocity();
-                // release if dragged too far
-                if (newVelocity.magnitude > (outerBand / 200)){
-                    print("DRAGGED TOO FAR");
-                    ReleaseWithoutVelocity();
-                    return;
-                }
             }
         }
+
 
         if (!held && !drag && useForcesOption){
             RestoreSpeed();
@@ -134,10 +117,7 @@ public class planetControl : MonoBehaviour
     {
         // store data
         storedPosition = transform.position;
-        if (rigidbody2D.velocity.magnitude > 0.02){
-            storedVelocity = rigidbody2D.velocity;
-        }
-
+        storedVelocity = rigidbody2D.velocity;
         holdStartTime = Time.time;
         dragStartTime = Time.time;
 
@@ -150,22 +130,35 @@ public class planetControl : MonoBehaviour
         float dist = Vector3.Distance(storedPosition, InputPosition());
         float radius = GetComponent<CircleCollider2D>().radius;
 
+        print("OnMouseDrag " + transform.name);
+
         if (dist < radius + (innerBand /200))
         { 
+            drag = false;
             held = true;
         } else
         {
             drag = true;
+            held = false;
         }
     }
 
     //------------------------------------------------------------------- 
 
-    private void ReleaseWithoutVelocity(){
-        rigidbody2D.velocity = new Vector3(0,0,0);
+    private void Flick()
+    {
+        newForce = newVelocity / GetElapsedTime(dragStartTime);
+        rigidbody2D.velocity = storedVelocity + (newForce * forceMult);
+
         ResetControlFlags();
         ResetTimers();
-        pauseFrame = Time.frameCount;
+    }
+
+    private void Release()
+    {
+        rigidbody2D.velocity = storedVelocity.normalized * acceleration;
+        ResetControlFlags();
+        ResetTimers();
     }
 
     private float GetElapsedTime(float start)
@@ -180,11 +173,21 @@ public class planetControl : MonoBehaviour
 
     private void RestoreSpeed()
     {
-        if (storedVelocity.magnitude > 0) {
+        if (storedVelocity.magnitude > 0.01)
+        {
             diffMagnitude = storedVelocity.magnitude - rigidbody2D.velocity.magnitude;
-            newForce = rigidbody2D.velocity.normalized * diffMagnitude;
+            // if the current velocity is too small, use the stored velocity
+            if (rigidbody2D.velocity.magnitude > 0.01)
+            {
+                newForce = rigidbody2D.velocity.normalized * diffMagnitude;
+            } else
+            {
+                newForce = storedVelocity.normalized * diffMagnitude;
+            }
             rigidbody2D.AddForce(newForce * acceleration);
         }
+
+
         /*
         if (useForcesOption)
         {
