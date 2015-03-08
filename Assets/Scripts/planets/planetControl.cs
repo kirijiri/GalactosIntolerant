@@ -19,7 +19,6 @@ public class planetControl : MonoBehaviour
     private bool drag = false;
     private float holdStartTime = 0;
     private float dragStartTime = 0;
-    private float elapsed = 0;
 
     // 
     private GameObject shipOrbit;
@@ -40,6 +39,7 @@ public class planetControl : MonoBehaviour
     private float forceMult;
     private float acceleration;
     private bool dbug;
+    private bool flickOnOuterBand;
     
     //-------------------------------------------------------------------
 
@@ -89,7 +89,11 @@ public class planetControl : MonoBehaviour
             // release if dragged too far
             if (newVelocity.magnitude > (outerBand / 200)){
                 if (dbug) {print("DRAGGED TOO FAR " + transform.name);}
-                Release();
+                if (flickOnOuterBand){
+                    Flick();
+                }else{
+                    Release();
+                }
                 return;
             }
         }
@@ -114,7 +118,7 @@ public class planetControl : MonoBehaviour
         forceMult = tinker.PForceMult;
         acceleration = tinker.PAcceleration;
         dbug = tinker.printPlanetControls;
-
+        flickOnOuterBand= tinker.PFlickOnOuterBand;
         if (useForcesOption)
             tinker.PSlowDownMovementOption = true;
     }
@@ -190,8 +194,6 @@ public class planetControl : MonoBehaviour
             }
             rigidbody2D.AddForce(newForce * acceleration);
         }
-
-
         /*
         if (useForcesOption)
         {

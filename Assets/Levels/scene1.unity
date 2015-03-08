@@ -230,6 +230,7 @@ MonoBehaviour:
   PSlowDownMovementOption: 1
   PInnerBand: 0
   POuterBand: 200
+  PFlickOnOuterBand: 1
   PMaxSecsForDrag: 3
   PMaxSecsForHold: 3
   PForceMult: .0199999996

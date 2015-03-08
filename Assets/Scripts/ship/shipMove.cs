@@ -62,6 +62,10 @@ public class shipMove : MonoBehaviour
     { 
         if (shipCtrl.isMoving && tarAngle != 0)
         {
+            if (shipCtrl.gravityBeamActivated)
+            {
+                return;
+            }
 
             if (tarAngle > restThreshold)
             {

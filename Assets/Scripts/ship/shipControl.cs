@@ -9,6 +9,7 @@ public class shipControl : MonoBehaviour
     private Vector3 storedPosition;
     private Vector3 mouseDrag;
     public bool isMoving = true;
+    public bool gravityBeamActivated = false;
 
     // tinkered
     private tinker tinker;
@@ -96,6 +97,7 @@ public class shipControl : MonoBehaviour
     private void ActivateGravityBeam()
     {
         isMoving = false;
+        gravityBeamActivated = true;
 
         shipAnim.SAnimBeamOn();
         gravityBeam.isActive = true;
