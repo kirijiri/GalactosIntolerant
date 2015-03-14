@@ -4,6 +4,10 @@ using System.Collections.Generic;
 
 public class phoneAnimation : MonoBehaviour
 {
+    private float screenHeight;
+    private float bgWidth;
+    private float bgHeight;
+
     private Rect defaultBox;
     private float phoneX;
     private float phoneY;
@@ -12,14 +16,12 @@ public class phoneAnimation : MonoBehaviour
     private float messageHeight;
 
     private float[] margins;
-    private float characterWidth;
     private float messageVSpace;
     private float scrollSpeed;
-    private float screenResolutionFix;
     private Vector3 phonePos;
 
-    Rect sprRect;
-    int fontSize;
+    private GameObject phone;
+    private int fontSize;
 
     private List<messageBox> messageBoxes = new List<messageBox>();
     private List<messageBox> messageToRemove = new List<messageBox>();
@@ -28,46 +30,57 @@ public class phoneAnimation : MonoBehaviour
     private tinker tinker;
     private int messageID = 0;
 
-    GUIStyle textFont;
+    GUIStyle textStyle;
 
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+
+        bgWidth = 480;//GameObject.Find("backdrop").GetComponent<SpriteRenderer>().sprite.rect.width;
+        bgHeight = 270;//bgWidth/16 * 9;
         
         // define message font
-        textFont = new GUIStyle();
-        fontSize = 18;
-        textFont.normal.textColor = Color.black;
-        textFont.wordWrap = true;
-        textFont.font = (Font)Resources.Load("Fonts/MunroSmall");
+        textStyle = new GUIStyle();
+        fontSize = 22;
+        textStyle.normal.textColor = Color.black;
+        textStyle.wordWrap = true;
+        textStyle.font = (Font)Resources.Load("Fonts/MunroSmall");
 
         // find phone to convert GUI to world space
-        GameObject phone = GameObject.Find("phone_bg_256");
-        SpriteRenderer sprRen = phone.GetComponent<SpriteRenderer>();
-        sprRect = sprRen.sprite.rect;
+        phone = GameObject.Find("phone_bg_256");
     }
 
     void FixedUpdate() 
     {
-        textFont.fontSize = Mathf.Min(Mathf.FloorToInt(Screen.width * fontSize/1000), Mathf.FloorToInt(Screen.height * fontSize/1000));
-        screenResolutionFix = Screen.width / 19.2f / 100;
+        textStyle.fontSize = Mathf.Min(Mathf.FloorToInt(Screen.width * fontSize/1000), Mathf.FloorToInt(screenHeight * fontSize/1000));
     }
 
     void Update()
     {
-        messageVSpace = 20.0f;
-        margins = new float[4]{10.0f, 10.0f, 10.0f, 10.0f}; //left, top, right, bottom
-        for (int i = 0; i < margins.Length; i++) margins[i] *= screenResolutionFix;
-        characterWidth = 10.0f;
-        scrollSpeed = 2.0f;
-        
-        phoneX = 52.0f;
-        phoneY = 250.0f;
-        phoneWidth = 400.0f;
-        phoneHeight = 380.0f;
-        messageHeight = 30.0f;
+        screenHeight = Screen.width/16 * 9;
 
-        defaultBox = new Rect(phoneX, phoneY, phoneWidth, messageHeight);
+        margins = new float[4]{3.0f, 3.0f, 3.0f, 3.0f}; //left, top, right, bottom
+        margins[0] = margins[0] / bgWidth * Screen.width;
+        margins[1] = margins[1] / bgHeight * screenHeight;
+        margins[2] = margins[2] / bgWidth * Screen.width;
+        margins[3] = margins[3] / bgHeight * screenHeight;
+
+        messageVSpace = 20.0f;
+        scrollSpeed = 2.0f;
+
+        phoneWidth = 98.0f;
+        phoneWidth = phoneWidth / bgWidth * Screen.width;
+        phoneHeight = 118.0f;
+        phoneHeight = phoneHeight / bgHeight * screenHeight;
+        print ("phoneHeight: " + phoneHeight);
+
+        phoneX = -phoneWidth/2;
+        float phoneYOffset = 10.0f;
+        phoneYOffset = phoneYOffset / bgHeight * screenHeight;
+        phoneY = -phoneHeight/2 - phoneYOffset;
+
+        defaultBox = new Rect(phoneX, phoneY, phoneWidth, phoneHeight);
+        phonePos = Camera.main.WorldToScreenPoint(phone.transform.position);
 
         /*
         phoneX = tinker.phoneX;
@@ -77,7 +90,6 @@ public class phoneAnimation : MonoBehaviour
 
         defaultBox = new Rect(phoneX, phoneY, tinker.messageWidth, tinker.messageHeight);
         margins = tinker.messageMargins;
-        characterWidth = tinker.characterWidth;
         messageVSpace = tinker.messageVSpace;
         scrollSpeed = tinker.scrollSpeed;
         */
@@ -94,9 +106,11 @@ public class phoneAnimation : MonoBehaviour
         newMessage.id = messageID;
 
         newMessage.text = message;
+        GUIContent content = new GUIContent(message);
 
         newMessage.size = defaultBox;
-        newMessage.size.height = Mathf.Ceil((message.Length*characterWidth)/defaultBox.width) * defaultBox.height + margins[1] + margins[3];
+        Vector2 textSize = textStyle.CalcSize(content);
+        newMessage.size.height = Mathf.Ceil(textSize[0] / (defaultBox.width - margins[0] - margins[2])) * textSize[1] + margins[1] + margins[3];
         newMessage.newY = newMessage.size.y; 
 
         // move all the other boxes down
@@ -107,7 +121,8 @@ public class phoneAnimation : MonoBehaviour
             box.time = Time.time;
             box.oldY = box.size.y;
             box.newY += newMessage.size.height + messageVSpace;
-            if ((box.newY + box.size.height) > phoneHeight)
+
+            if ((box.newY + box.size.height) > (phoneHeight+defaultBox.y))
             {
                 messageToRemove.Add(box);
             }
@@ -126,20 +141,16 @@ public class phoneAnimation : MonoBehaviour
         {
             if (box.size.y < box.newY)
             {
-                print ("move "+box.id+" ->" +box.size.y +" to "+box.newY);
+                //print ("move "+box.id+" ->" +box.size.y +" to "+box.newY);
                 float lerp = Mathf.Lerp (box.oldY, box.newY, scrollSpeed * (Time.time - box.time));
                 box.size.y = lerp;
             }
 
             // convert position into world space (avoid floating)
             Rect curPos = box.size;
-            //curPos.x += phonePos[0];
-            //curPos.y += phonePos[1];
 
-            curPos.x *= screenResolutionFix;
-            curPos.y *= screenResolutionFix;
-            curPos.width *= screenResolutionFix;
-            curPos.height *= screenResolutionFix;
+            curPos.x += phonePos[0];
+            curPos.y += phonePos[1];
 
             // draw box
             GUI.DrawTexture(curPos, box.tx); 
@@ -148,11 +159,10 @@ public class phoneAnimation : MonoBehaviour
             Rect textRect = curPos;
             textRect.x = curPos.x + margins[0];
             textRect.y = curPos.y + margins[1];
-            textRect.width = textRect.width - (margins[0] + margins[2]);
-            textRect.height = textRect.height - (margins[1] + margins[3]);
+            textRect.width = curPos.width - margins[2];
 
             // draw text
-            GUI.Label (textRect, box.text, textFont);
+            GUI.Label (textRect, box.text, textStyle);
         }
     }
 }
@@ -174,3 +184,4 @@ public class messageBox
         tx.Apply();                         //Applies all the changes made
     }
 }
+
