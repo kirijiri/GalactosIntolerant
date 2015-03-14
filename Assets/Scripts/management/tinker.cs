@@ -45,16 +45,15 @@ public class tinker : MonoBehaviour
     // messages
     public string messageOptions = "--- MESSAGE OPTIONS ---";
     public float idleTimer = 1.0f;//7.0f;
-    public float messageX = 0.0f;//80.0f;
-    public float messageY = 0.0f;//140.0f;
-    public float messageWidth = 400.0f;
-    public float messageHeight = 20.0f;
-    public float messageVSpace = 20.0f;
-    public float[] messageMargins = new float[4]{10.0f, 10.0f, 10.0f, 10.0f}; //left, top, right, bottom
-    public float characterWidth = 10.0f;
-    public float phoneHeight = 380.0f;
-    public float scrollSpeed = 2.0f;
 
-    public float phoneX = 52.0f;
-    public float phoneY = 250.0f;
+    public string messageAnimOptions = "--- MESSAGE ANIMATION OPTIONS ---";
+    public float[] messageMargins = new float[4]{3.0f, 3.0f, 3.0f, 3.0f}; //left, top, right, bottom
+    public float messageVSpace = 5.0f;
+    public float scrollSpeed = 2.0f;
+    public float phoneWidth = 98.0f;
+    public float phoneHeight = 118.0f;
+    public float phoneYOffset = 10.0f;
+    public float bgWidth = 480.0f;
+    public float bgHeight = 270.0f;
+    public int fontSize = 22;
 }

@@ -14,6 +14,7 @@ public class phoneAnimation : MonoBehaviour
     private float phoneWidth;
     private float phoneHeight;
     private float messageHeight;
+    private float phoneYOffset;
 
     private float[] margins;
     private float messageVSpace;
@@ -28,20 +29,15 @@ public class phoneAnimation : MonoBehaviour
     private messageBox newMessage;
 
     private tinker tinker;
-    private int messageID = 0;
 
     GUIStyle textStyle;
 
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
-
-        bgWidth = 480;//GameObject.Find("backdrop").GetComponent<SpriteRenderer>().sprite.rect.width;
-        bgHeight = 270;//bgWidth/16 * 9;
         
         // define message font
         textStyle = new GUIStyle();
-        fontSize = 22;
         textStyle.normal.textColor = Color.black;
         textStyle.wordWrap = true;
         textStyle.font = (Font)Resources.Load("Fonts/MunroSmall");
@@ -58,6 +54,8 @@ public class phoneAnimation : MonoBehaviour
     void Update()
     {
         screenHeight = Screen.width/16 * 9;
+        bgWidth = tinker.bgWidth;
+        bgHeight = tinker.bgHeight;
 
         margins = new float[4]{3.0f, 3.0f, 3.0f, 3.0f}; //left, top, right, bottom
         margins[0] = margins[0] / bgWidth * Screen.width;
@@ -65,45 +63,31 @@ public class phoneAnimation : MonoBehaviour
         margins[2] = margins[2] / bgWidth * Screen.width;
         margins[3] = margins[3] / bgHeight * screenHeight;
 
-        messageVSpace = 20.0f;
-        scrollSpeed = 2.0f;
+        messageVSpace = tinker.messageVSpace;
+        messageVSpace = messageVSpace / bgHeight * screenHeight;
+        scrollSpeed = tinker.scrollSpeed;
 
-        phoneWidth = 98.0f;
+        phoneWidth = tinker.phoneWidth;
         phoneWidth = phoneWidth / bgWidth * Screen.width;
-        phoneHeight = 118.0f;
+        phoneHeight = tinker.phoneHeight;
         phoneHeight = phoneHeight / bgHeight * screenHeight;
-        print ("phoneHeight: " + phoneHeight);
 
         phoneX = -phoneWidth/2;
-        float phoneYOffset = 10.0f;
+        phoneYOffset = tinker.phoneYOffset;
         phoneYOffset = phoneYOffset / bgHeight * screenHeight;
         phoneY = -phoneHeight/2 - phoneYOffset;
 
         defaultBox = new Rect(phoneX, phoneY, phoneWidth, phoneHeight);
         phonePos = Camera.main.WorldToScreenPoint(phone.transform.position);
 
-        /*
-        phoneX = tinker.phoneX;
-        phoneY = tinker.phoneY;
-
-        messageHeight = tinker.messageHeight;
-
-        defaultBox = new Rect(phoneX, phoneY, tinker.messageWidth, tinker.messageHeight);
-        margins = tinker.messageMargins;
-        messageVSpace = tinker.messageVSpace;
-        scrollSpeed = tinker.scrollSpeed;
-        */
+        fontSize = tinker.fontSize;
     }
 
     public void AddNewMessage(string message)
     {
-        //print("Add New Message "+ message);
-
         // create new message box
         newMessage = new messageBox();
         newMessage.CreateTexture();
-        messageID += 1;
-        newMessage.id = messageID;
 
         newMessage.text = message;
         GUIContent content = new GUIContent(message);
@@ -175,7 +159,6 @@ public class messageBox
     public string text;
     public Texture2D tx;
     public float time;
-    public int id;
 
     public void CreateTexture()
     {
