@@ -1405,6 +1405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
+  available: 1
 --- !u!1 &816915849
 GameObject:
   m_ObjectHideFlags: 0
