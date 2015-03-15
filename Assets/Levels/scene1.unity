@@ -230,7 +230,7 @@ MonoBehaviour:
   PSlowDownMovementOption: 1
   PInnerBand: 0
   POuterBand: 200
-  PFlickOnOuterBand: 1
+  PFlickOnOuterBand: 0
   PMaxSecsForDrag: 3
   PMaxSecsForHold: 3
   PForceMult: .0199999996
@@ -251,19 +251,22 @@ MonoBehaviour:
   GBAlignmentThreshold: .0500000007
   GBTimeout: 3
   messageOptions: '--- MESSAGE OPTIONS ---'
-  idleTimer: 1
-  messageX: 0
-  messageY: 0
-  messageWidth: 235
-  messageHeight: 20
-  messageVSpace: 20
+  idleTimer: 3
+  criticalPopulationPercentage: 30
+  messageAnimOptions: '--- MESSAGE ANIMATION OPTIONS ---'
   messageMargins:
-  - 10
-  - 10
-  - 10
-  - 10
-  characterWidth: 10
-  phoneHeight: 380
+  - 3
+  - 3
+  - 3
+  - 3
+  messageVSpace: 5
+  scrollSpeed: 2
+  phoneWidth: 98
+  phoneHeight: 118
+  phoneYOffset: 10
+  bgWidth: 480
+  bgHeight: 270
+  fontSize: 22
 --- !u!4 &58712543
 Transform:
   m_ObjectHideFlags: 0
@@ -982,6 +985,7 @@ MonoBehaviour:
   speed: .75
   orbitRadius: 92
   population: 1.36e+10
+  maxPopulation: 0
   followers: .0399999991
   planetName: 
   size: 18
@@ -1271,6 +1275,7 @@ MonoBehaviour:
   speed: 1.5
   orbitRadius: 200
   population: 17799999500
+  maxPopulation: 0
   followers: .0900000036
   planetName: 
   size: 14
@@ -1344,8 +1349,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 610153776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.78099823, y: -.0250015259, z: 0}
+  m_LocalScale: {x: 1.40655184, y: 1.40655255, z: 1.40655255}
   m_Children: []
   m_Father: {fileID: 49757469}
   m_RootOrder: 5
@@ -1560,6 +1565,7 @@ MonoBehaviour:
   speed: 1
   orbitRadius: 128
   population: 20999999500
+  maxPopulation: 0
   followers: .119999997
   planetName: 
   size: 16
@@ -2287,6 +2293,7 @@ MonoBehaviour:
   speed: 1
   orbitRadius: 56
   population: 0
+  maxPopulation: 0
   followers: .0799999982
   planetName: 
   size: 14
@@ -2497,6 +2504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoving: 1
+  gravityBeamActivated: 0
 --- !u!50 &1449353996
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2878,6 +2886,7 @@ MonoBehaviour:
   speed: 1
   orbitRadius: 164
   population: 8899999740
+  maxPopulation: 0
   followers: .0799999982
   planetName: 
   size: 20
