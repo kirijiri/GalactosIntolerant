@@ -17,7 +17,7 @@ public static class planetLook
 
     public static void standard(this GameObject go)
     {
-        float percentage = 100 / go.GetComponent<planetSettings>().maxPopulation * go.GetComponent<planetSettings>().population;
+        float percentage = (float) (100 / go.GetComponent<planetSettings>().maxPopulation * go.GetComponent<planetSettings>().population);
         Color lerpedColor = Color.Lerp(Color.black, Color.white, percentage / 100);
 
         SpriteRenderer spriteRenderer = go.GetComponent<planetInit>().planetGraphic.GetComponent<SpriteRenderer>();

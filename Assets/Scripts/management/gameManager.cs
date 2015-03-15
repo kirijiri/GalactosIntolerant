@@ -14,7 +14,7 @@ public delegate void OnStateChangeHandler();
 public class gameManager 
 {
     public int alignedPlanetCount = 0;
-    public int followers = 0;
+    public double followers = 0;
 
     private gameManager() {}
 

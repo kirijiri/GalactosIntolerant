@@ -26,7 +26,13 @@ public class followerCount : MonoBehaviour
         textStyle.normal.textColor = Color.black;
         textStyle.wordWrap = true;
         textStyle.font = (Font)Resources.Load("Fonts/MunroSmall");
-        fontSize = 35;
+
+        double followers = 0;
+        for (int i = 0; i < planets.Length; i++)
+        {
+            followers += (planets [i].GetComponent<planetSettings>().population * planets [i].GetComponent<planetSettings>().followers);
+        }
+        gameManager.Instance.followers = followers;
     }
     
     void FixedUpdate()
@@ -40,6 +46,7 @@ public class followerCount : MonoBehaviour
         bgWidth = tinker.bgWidth;
         bgHeight = tinker.bgHeight;
 
+        fontSize = tinker.followerFontSize;
         x = tinker.followerX;
         y = tinker.followerY;
         w = tinker.followerWidth;
@@ -54,12 +61,12 @@ public class followerCount : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(textRect, "Followers: " + gameManager.Instance.followers, textStyle);
+        GUI.Label(textRect, "Followers: " + gameManager.Instance.followers.ToString("F0"), textStyle);
     }
 
     public void UpdateDeceaseCount(GameObject planet)
     {
-        float dead = planet.GetComponent<planetSettings>().maxPopulation / 100 * tinker.populationDiesPercentage;
+        double dead = planet.GetComponent<planetSettings>().maxPopulation / 100 * tinker.populationDiesPercentage;
         planet.GetComponent<planetSettings>().population = planet.GetComponent<planetSettings>().population - dead;
 
         // planet dead
@@ -67,11 +74,11 @@ public class followerCount : MonoBehaviour
         {  
             planet.GetComponent<planetSettings>().population = 0.0f;
         }
-    
-        int followers = 0;
+
+        double followers = 0;
         for (int i = 0; i < planets.Length; i++)
         {
-            followers += (int)(planets [i].GetComponent<planetSettings>().population * planets [i].GetComponent<planetSettings>().followers);
+            followers += (planets [i].GetComponent<planetSettings>().population * planets [i].GetComponent<planetSettings>().followers);
         }
         gameManager.Instance.followers = followers;
     }

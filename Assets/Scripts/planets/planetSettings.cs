@@ -9,9 +9,9 @@ public class planetSettings : MonoBehaviour
     // planet stats
     public float speed = 0;
     public float orbitRadius = 0;
-    public float population = 0;
-    public float maxPopulation;
-    public float followers = 0;
+    public double population = 0;
+    public double maxPopulation;
+    public double followers = 0;
     public string planetName = "";
     public int size = 14;
 

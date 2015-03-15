@@ -63,5 +63,6 @@ public class tinker : MonoBehaviour
     public float followerY = 210;
     public float followerWidth = 100;
     public float followerHeight = 50;
+    public int followerFontSize = 30;
     public float populationDiesPercentage = 30.0f;
 }
