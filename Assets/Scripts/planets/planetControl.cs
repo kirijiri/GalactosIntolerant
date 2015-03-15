@@ -25,6 +25,7 @@ public class planetControl : MonoBehaviour
     private tinker tinker;
     private planetSettings planetSettings;
     private phoneMessages phoneMessaging;
+    private followerCount followerCount;
 
     // tinker
     // Option: restore speed
@@ -50,6 +51,7 @@ public class planetControl : MonoBehaviour
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         planetSettings = GetComponent<planetSettings>();
         phoneMessaging = GameObject.Find("messages").GetComponent<phoneMessages>();
+        followerCount = GameObject.Find("follower_count").GetComponent<followerCount>();
     }
 
     void Update()
@@ -165,6 +167,9 @@ public class planetControl : MonoBehaviour
 
         // send message to phone
         phoneMessaging.SendNewMessage(gameObject);
+
+        // decrease follower count
+        followerCount.UpdateDeceaseCount(gameObject);
     }
 
     private void Release()

@@ -7,7 +7,6 @@ public class phoneAnimation : MonoBehaviour
     private float screenHeight;
     private float bgWidth;
     private float bgHeight;
-
     private Rect defaultBox;
     private float phoneX;
     private float phoneY;
@@ -15,22 +14,17 @@ public class phoneAnimation : MonoBehaviour
     private float phoneHeight;
     private float messageHeight;
     private float phoneYOffset;
-
     private float[] margins;
     private float messageVSpace;
     private float scrollSpeed;
     private Vector3 phonePos;
-
     private GameObject phone;
     private int fontSize;
-
     private List<messageBox> messageBoxes = new List<messageBox>();
     private List<messageBox> messageToRemove = new List<messageBox>();
     private messageBox newMessage;
-
     private tinker tinker;
-
-    GUIStyle textStyle;
+    private GUIStyle textStyle;
 
     void Start()
     {
@@ -46,22 +40,22 @@ public class phoneAnimation : MonoBehaviour
         phone = GameObject.Find("phone_bg_256");
     }
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
-        textStyle.fontSize = Mathf.Min(Mathf.FloorToInt(Screen.width * fontSize/1000), Mathf.FloorToInt(screenHeight * fontSize/1000));
+        textStyle.fontSize = Mathf.Min(Mathf.FloorToInt(Screen.width * fontSize / 1000), Mathf.FloorToInt(screenHeight * fontSize / 1000));
     }
 
     void Update()
     {
-        screenHeight = Screen.width/16 * 9;
+        screenHeight = Screen.width / 16 * 9;
         bgWidth = tinker.bgWidth;
         bgHeight = tinker.bgHeight;
 
         margins = new float[4]{3.0f, 3.0f, 3.0f, 3.0f}; //left, top, right, bottom
-        margins[0] = margins[0] / bgWidth * Screen.width;
-        margins[1] = margins[1] / bgHeight * screenHeight;
-        margins[2] = margins[2] / bgWidth * Screen.width;
-        margins[3] = margins[3] / bgHeight * screenHeight;
+        margins [0] = margins [0] / bgWidth * Screen.width;
+        margins [1] = margins [1] / bgHeight * screenHeight;
+        margins [2] = margins [2] / bgWidth * Screen.width;
+        margins [3] = margins [3] / bgHeight * screenHeight;
 
         messageVSpace = tinker.messageVSpace;
         messageVSpace = messageVSpace / bgHeight * screenHeight;
@@ -72,10 +66,10 @@ public class phoneAnimation : MonoBehaviour
         phoneHeight = tinker.phoneHeight;
         phoneHeight = phoneHeight / bgHeight * screenHeight;
 
-        phoneX = -phoneWidth/2;
+        phoneX = -phoneWidth / 2;
         phoneYOffset = tinker.phoneYOffset;
         phoneYOffset = phoneYOffset / bgHeight * screenHeight;
-        phoneY = -phoneHeight/2 - phoneYOffset;
+        phoneY = -phoneHeight / 2 - phoneYOffset;
 
         defaultBox = new Rect(phoneX, phoneY, phoneWidth, phoneHeight);
         phonePos = Camera.main.WorldToScreenPoint(phone.transform.position);
@@ -94,24 +88,24 @@ public class phoneAnimation : MonoBehaviour
 
         newMessage.size = defaultBox;
         Vector2 textSize = textStyle.CalcSize(content);
-        newMessage.size.height = Mathf.Ceil(textSize[0] / (defaultBox.width - margins[0] - margins[2])) * textSize[1] + margins[1] + margins[3];
+        newMessage.size.height = Mathf.Ceil(textSize [0] / (defaultBox.width - margins [0] - margins [2])) * textSize [1] + margins [1] + margins [3];
         newMessage.newY = newMessage.size.y; 
 
         // move all the other boxes down
         // remove the ones that go out of bounds
         messageToRemove.Clear();
-        foreach(messageBox box in messageBoxes)
+        foreach (messageBox box in messageBoxes)
         {
             box.time = Time.time;
             box.oldY = box.size.y;
             box.newY += newMessage.size.height + messageVSpace;
 
-            if ((box.newY + box.size.height) > (phoneHeight+defaultBox.y))
+            if ((box.newY + box.size.height) > (phoneHeight + defaultBox.y))
             {
                 messageToRemove.Add(box);
             }
         }
-        foreach(messageBox box in messageToRemove)
+        foreach (messageBox box in messageToRemove)
         {
             messageBoxes.Remove(box);
         }
@@ -121,32 +115,32 @@ public class phoneAnimation : MonoBehaviour
 
     void OnGUI()
     {
-        foreach(messageBox box in messageBoxes)
+        foreach (messageBox box in messageBoxes)
         {
             if (box.size.y < box.newY)
             {
                 //print ("move "+box.id+" ->" +box.size.y +" to "+box.newY);
-                float lerp = Mathf.Lerp (box.oldY, box.newY, scrollSpeed * (Time.time - box.time));
+                float lerp = Mathf.Lerp(box.oldY, box.newY, scrollSpeed * (Time.time - box.time));
                 box.size.y = lerp;
             }
 
             // convert position into world space (avoid floating)
             Rect curPos = box.size;
 
-            curPos.x += phonePos[0];
-            curPos.y += phonePos[1];
+            curPos.x += phonePos [0];
+            curPos.y += phonePos [1];
 
             // draw box
             GUI.DrawTexture(curPos, box.tx); 
 
             // add margin for the text
             Rect textRect = curPos;
-            textRect.x = curPos.x + margins[0];
-            textRect.y = curPos.y + margins[1];
-            textRect.width = curPos.width - margins[2];
+            textRect.x = curPos.x + margins [0];
+            textRect.y = curPos.y + margins [1];
+            textRect.width = curPos.width - margins [2];
 
             // draw text
-            GUI.Label (textRect, box.text, textStyle);
+            GUI.Label(textRect, box.text, textStyle);
         }
     }
 }

@@ -9,9 +9,7 @@ public class phoneMessages : MonoBehaviour
     private float timer = 0;
     private List<int> planetsTrack;
     private string message;
-
     private float idleTimer;
-
     private phoneAnimation phoneAnimation;
     private tinker tinker;
 
@@ -50,6 +48,8 @@ public class phoneMessages : MonoBehaviour
 
             // set idle message text
             message = planets [rand].GetComponent<planetMessaging>().GetIdleMessage();
+            if (message == "")
+                return;
 
             // play animation
             phoneAnimation.AddNewMessage(message);
@@ -63,7 +63,9 @@ public class phoneMessages : MonoBehaviour
     {
         // set idle message text
         message = planet.GetComponent<planetMessaging>().GetDamageMessage();
-        
+        if (message == "")
+            return;
+
         // play animation
         phoneAnimation.AddNewMessage(message);
     }

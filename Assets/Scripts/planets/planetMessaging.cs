@@ -68,6 +68,10 @@ public class planetMessaging : MonoBehaviour
     // resets the unused list if it runs out of messages
     public string GetIdleMessage()
     {
+        // drop out of planet is dead
+        if (planetSettings.population == 0) return "";
+
+        // reset counter if every message has been used already
         if (idleTrack.Count == 0)
             ResetIdleMessage();
         int rand = Random.Range(0, idleTrack.Count);
@@ -80,6 +84,10 @@ public class planetMessaging : MonoBehaviour
     
     public string GetMinorMessage()
     {
+        // drop out of planet is dead
+        if (planetSettings.population == 0) return "";
+
+        // reset counter if every message has been used already
         if (minorTrack.Count == 0)
             ResetMinorMessage();
         int rand = Random.Range(0, minorTrack.Count);
@@ -92,11 +100,15 @@ public class planetMessaging : MonoBehaviour
     
     public string GetMajorMessage()
     {
+        // drop out of planet is dead
+        if (planetSettings.population == 0) return "";
+
+        // reset counter if every message has been used already
         if (majorTrack.Count == 0)
             ResetMajorMessage();
         int rand = Random.Range(0, majorTrack.Count);
         
-        string message = idleMessages [majorTrack [rand]];
+        string message = majorMessages [majorTrack [rand]];
         majorTrack.RemoveAt(rand);
         return message;
     }
