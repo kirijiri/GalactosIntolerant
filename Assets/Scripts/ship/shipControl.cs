@@ -84,7 +84,7 @@ public class shipControl : MonoBehaviour
     private float GetDragAngle()
     {
         mouseDrag = mouseInput.GetScreenPosition() - storedPosition;
-        dot = Vector3.Dot(transform.position.normalized, mouseDrag.normalized);
+        dot = Vector3.Dot(transform.localPosition.normalized, mouseDrag.normalized);
         return ConvertDotToAngle(dot);
     }
 
