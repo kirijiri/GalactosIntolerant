@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5a66985f8ef57724ca6faee70d722b0c, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
@@ -457,7 +457,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471d90d17da409547a4d636ef39f62c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alignedPlanetCount: 0
+--- !u!1 &920232675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 920232677}
+  - 114: {fileID: 920232676}
+  m_Layer: 0
+  m_Name: tinker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &920232676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 920232675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bca14b501d19b34b955b97c4f2cb627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetOptions: '--- PLANET OPTIONS ---'
+  printPlanetControls: 0
+  PInitSpeedMultiplier: 1
+  PSlowDownMovementOption: 1
+  PInnerBand: 0
+  POuterBand: 200
+  PFlickOnOuterBand: 0
+  PMaxSecsForDrag: 3
+  PMaxSecsForHold: 3
+  PForceMult: .0199999996
+  PAcceleration: .25
+  PSlowDownMovementDampingFactor: .980000019
+  PUseForcesOption: 1
+  PUseForcesDragAmount: 5
+  shipOptions: '--- SHIP OPTIONS ---'
+  shipAcceleration: 5
+  shipDeceleration: 10
+  shipOrbitRadius: 236
+  shipClickUpperBoundary: 80
+  shipClickLowerBoundary: 20
+  shipAnimRestThreshold: 5
+  beamOptions: '--- BEAM OPTIONS ---'
+  GBActivateAngle: 45
+  GBEffectThreshold: .300000012
+  GBAlignmentThreshold: .0500000007
+  GBTimeout: 3
+  messageOptions: '--- MESSAGE OPTIONS ---'
+  idleTimer: 3
+  criticalPopulationPercentage: 30
+  messageAnimOptions: '--- MESSAGE ANIMATION OPTIONS ---'
+  messageMargins:
+  - 3
+  - 3
+  - 3
+  - 3
+  messageVSpace: 5
+  scrollSpeed: 2
+  phoneWidth: 98
+  phoneHeight: 118
+  phoneYOffset: 10
+  bgWidth: 480
+  bgHeight: 270
+  fontSize: 22
+  scoreOptions: '--- SCORE OPTIONS ---'
+  followerX: 15
+  followerY: 210
+  followerWidth: 100
+  followerHeight: 50
+  followerFontSize: 30
+  populationDiesPercentage: 30
+  snapshotOptions: '--- SNAPSHOT OPTIONS ---'
+  flashFadeInSpeed: 10
+  flashFadeOutSpeed: 10
+--- !u!4 &920232677
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 920232675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.283641726, y: .0964702219, z: -.00439453125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &945239586
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,8 +10,7 @@ public class snapshot : MonoBehaviour
     private gravityBeam gravityBeam;
     private bool doSnapshot = false;
     private float time;
-    private float fadeInSpeed;
-
+    private float fadeSpeed;
     private tinker tinker;
 
     //-------------------------------------------------------------------
@@ -41,7 +40,8 @@ public class snapshot : MonoBehaviour
         StartCoroutine(WaitAndScoreScreen());
     }
 
-    IEnumerator WaitAndScoreScreen(){
+    IEnumerator WaitAndScoreScreen()
+    {
         time = Time.time;
         yield return new WaitForSeconds(0.25f);
 
@@ -52,18 +52,19 @@ public class snapshot : MonoBehaviour
 
     void Update()
     {
-        fadeInSpeed = tinker.flashFadeInSpeed;
+        fadeSpeed = tinker.flashFadeInSpeed;
     }
 
     void OnGUI()
     {
-        if (!doSnapshot) return;
+        if (!doSnapshot)
+            return;
 
         Rect screenRect = new Rect(0, 0, Screen.width, Screen.height);
 
         Texture2D tx;
         tx = new Texture2D(1, 1);          
-        Color lerpedColor = Color.Lerp(Color.clear, Color.white, (Time.time - time)*fadeInSpeed);
+        Color lerpedColor = Color.Lerp(Color.clear, Color.white, (Time.time - time) * fadeSpeed);
         tx.SetPixel(1, 1, lerpedColor);    
         tx.Apply();                        
 

@@ -68,4 +68,5 @@ public class tinker : MonoBehaviour
 
     public string snapshotOptions = "--- SNAPSHOT OPTIONS ---";
     public float flashFadeInSpeed = 10.0f;
+    public float flashFadeOutSpeed = 10.0f;
 }

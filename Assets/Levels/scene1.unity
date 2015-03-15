@@ -273,7 +273,11 @@ MonoBehaviour:
   followerY: 210
   followerWidth: 100
   followerHeight: 50
+  followerFontSize: 30
   populationDiesPercentage: 30
+  snapshotOptions: '--- SNAPSHOT OPTIONS ---'
+  flashFadeInSpeed: 10
+  flashFadeOutSpeed: 10
 --- !u!4 &58712543
 Transform:
   m_ObjectHideFlags: 0
@@ -993,7 +997,7 @@ MonoBehaviour:
   orbitRadius: 92
   population: 1.36e+10
   maxPopulation: 0
-  followers: .0399999991
+  followers: .039999999100000003
   planetName: 
   size: 18
   biome: Desert
@@ -1283,7 +1287,7 @@ MonoBehaviour:
   orbitRadius: 200
   population: 17799999500
   maxPopulation: 0
-  followers: .0900000036
+  followers: .090000003600000003
   planetName: 
   size: 14
   biome: Artificial Habitat
@@ -2341,7 +2345,7 @@ MonoBehaviour:
   orbitRadius: 56
   population: 10000
   maxPopulation: 0
-  followers: .0799999982
+  followers: .079999998200000005
   planetName: 
   size: 14
   biome: Lava Hellscape
@@ -2934,7 +2938,7 @@ MonoBehaviour:
   orbitRadius: 164
   population: 8899999740
   maxPopulation: 0
-  followers: .0799999982
+  followers: .079999998200000005
   planetName: 
   size: 20
   biome: Gas
