@@ -24,6 +24,7 @@ public class planetControl : MonoBehaviour
     private GameObject shipOrbit;
     private tinker tinker;
     private planetSettings planetSettings;
+    private phoneMessages phoneMessaging;
 
     // tinker
     // Option: restore speed
@@ -48,6 +49,7 @@ public class planetControl : MonoBehaviour
         shipOrbit = GameObject.Find("shipOrbit");
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         planetSettings = GetComponent<planetSettings>();
+        phoneMessaging = GameObject.Find("messages").GetComponent<phoneMessages>();
     }
 
     void Update()
@@ -160,6 +162,9 @@ public class planetControl : MonoBehaviour
 
         ResetControlFlags();
         ResetTimers();
+
+        // send message to phone
+        phoneMessaging.SendNewMessage(gameObject);
     }
 
     private void Release()

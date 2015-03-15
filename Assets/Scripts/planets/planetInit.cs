@@ -35,11 +35,11 @@ public class planetInit : MonoBehaviour
 
     void Start()
     {
-        UpdateTinker();
         // get settings 
         planetSettings = GetComponent<planetSettings>();
         initSpeed = planetSettings.speed * speedMult;
         orbitRadius = planetSettings.orbitRadius;
+        planetSettings.maxPopulation = planetSettings.population;
 
         // get pos from sun
         sun = GameObject.Find("sun");

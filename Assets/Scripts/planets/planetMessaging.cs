@@ -15,13 +15,18 @@ public class planetMessaging : MonoBehaviour
     private List<int> minorTrack = new List<int>();
     private List<int> majorTrack = new List<int>();
 
+    private float criticalPopulationPercentage;
+
     // get planet settings from settings class (easier to set up)
     private planetSettings planetSettings;
+    private tinker tinker;
 
     //-------------------------------------------------------------------
 
     void Start()
     {
+        tinker = GameObject.Find("tinker").GetComponent<tinker>();
+
         planetSettings = GetComponent<planetSettings>();
         idleMessages = planetSettings.idleMessages;
         minorMessages = planetSettings.minorMessages;
@@ -30,6 +35,11 @@ public class planetMessaging : MonoBehaviour
         ResetIdleMessage();
         ResetMinorMessage();
         ResetMajorMessage();
+    }
+
+    void Update ()
+    {
+        criticalPopulationPercentage = tinker.criticalPopulationPercentage;
     }
 
     //------------------------------------------------------------------- reset
@@ -56,15 +66,46 @@ public class planetMessaging : MonoBehaviour
     
     // returns a random idle message that has not been used 
     // resets the unused list if it runs out of messages
-
     public string GetIdleMessage()
     {
         if (idleTrack.Count == 0)
             ResetIdleMessage();
         int rand = Random.Range(0, idleTrack.Count);
         
-        string idle = idleMessages [idleTrack [rand]];
+        string message = idleMessages [idleTrack [rand]];
         idleTrack.RemoveAt(rand);
-        return idle;
+        return message;
+    }
+
+    
+    public string GetMinorMessage()
+    {
+        if (minorTrack.Count == 0)
+            ResetMinorMessage();
+        int rand = Random.Range(0, minorTrack.Count);
+        
+        string message = minorMessages [minorTrack [rand]];
+        minorTrack.RemoveAt(rand);
+        return message;
+    }
+
+    
+    public string GetMajorMessage()
+    {
+        if (majorTrack.Count == 0)
+            ResetMajorMessage();
+        int rand = Random.Range(0, majorTrack.Count);
+        
+        string message = idleMessages [majorTrack [rand]];
+        majorTrack.RemoveAt(rand);
+        return message;
+    }
+
+    public string GetDamageMessage()
+    {
+        if (planetSettings.population >= (planetSettings.maxPopulation/100*criticalPopulationPercentage))
+            return GetMinorMessage();
+        else
+            return GetMajorMessage();
     }
 }

@@ -44,7 +44,8 @@ public class tinker : MonoBehaviour
 
     // messages
     public string messageOptions = "--- MESSAGE OPTIONS ---";
-    public float idleTimer = 1.0f;//7.0f;
+    public float idleTimer = 3.0f;
+    public float criticalPopulationPercentage = 30.0f;
 
     public string messageAnimOptions = "--- MESSAGE ANIMATION OPTIONS ---";
     public float[] messageMargins = new float[4]{3.0f, 3.0f, 3.0f, 3.0f}; //left, top, right, bottom

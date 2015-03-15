@@ -10,6 +10,8 @@ public class phoneMessages : MonoBehaviour
     private List<int> planetsTrack;
     private string message;
 
+    private float idleTimer;
+
     private phoneAnimation phoneAnimation;
     private tinker tinker;
 
@@ -31,8 +33,11 @@ public class phoneMessages : MonoBehaviour
     
     void Update()
     {
+        idleTimer = tinker.idleTimer;
+
+        // show idle message from random planet every couple of seconds
         timer += Time.deltaTime;
-        if (timer > tinker.idleTimer)
+        if (timer > idleTimer)
         {
             timer = 0;
 
@@ -52,5 +57,14 @@ public class phoneMessages : MonoBehaviour
             // remove planet from track list to not repeat it immidiately again
             planetsTrack.RemoveAt(rand);
         }
+    }
+
+    public void SendNewMessage(GameObject planet)
+    {
+        // set idle message text
+        message = planet.GetComponent<planetMessaging>().GetDamageMessage();
+        
+        // play animation
+        phoneAnimation.AddNewMessage(message);
     }
 }
