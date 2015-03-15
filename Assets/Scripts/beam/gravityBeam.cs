@@ -4,6 +4,7 @@ using System.Collections;
 public class gravityBeam : MonoBehaviour
 {
     public bool isActive = false; // set from ship control
+    public bool available = true;
 
     private GameObject[] planets;
     private float timer = 0;
@@ -30,6 +31,7 @@ public class gravityBeam : MonoBehaviour
             {
                 timer = 0;
                 isActive = false;
+                available = false;
             }
         }
     }

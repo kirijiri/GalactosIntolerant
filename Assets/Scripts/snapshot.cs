@@ -24,8 +24,7 @@ public class snapshot : MonoBehaviour
         if (!renderer.enabled)
             return;
 
-        // only if gravity beam is on, otherwise ignore
-        if (!gravityBeam.isActive) 
+        if (!gravityBeam.isActive && gravityBeam.available) 
             return;
 
         // save stats
