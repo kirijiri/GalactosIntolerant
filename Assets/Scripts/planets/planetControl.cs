@@ -12,7 +12,6 @@ public class planetControl : MonoBehaviour
     private float targetSpeed;
     private bool returnToTargetSpeed;
     private bool targetSpeedClockwise;
-    private int pauseFrame = -1;
 
     // controls
     private bool held = false;
@@ -21,19 +20,13 @@ public class planetControl : MonoBehaviour
     private float dragStartTime = 0;
 
     // 
-    private GameObject shipOrbit;
     private tinker tinker;
-    private planetSettings planetSettings;
     private phoneMessages phoneMessaging;
     private followerCount followerCount;
 
     // tinker
     // Option: restore speed
-    private bool slowDownMovement;
-    private float slowDownMovementDampingFactor;
     private bool useForcesOption;
-    private float useForcesDragAmount;
-    private float speedMult;
     private float innerBand;
     private float outerBand;
     private float maxSecForDrag;
@@ -47,9 +40,7 @@ public class planetControl : MonoBehaviour
 
     void Start()
     {
-        shipOrbit = GameObject.Find("shipOrbit");
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
-        planetSettings = GetComponent<planetSettings>();
         phoneMessaging = GameObject.Find("messages").GetComponent<phoneMessages>();
         followerCount = GameObject.Find("follower_count").GetComponent<followerCount>();
     }
@@ -81,7 +72,7 @@ public class planetControl : MonoBehaviour
         {
             if (dbug) {print("HELD AND RELEASED " + transform.name);}
             Release();
-        } else if (held && GetElapsedTime(dragStartTime) > maxSecForHold)
+        } else if (held && GetElapsedTime(holdStartTime) > maxSecForHold)
         {
             if (dbug) {print("HOLD TIMER RAN OUT "  + transform.name);}
             Release();
@@ -110,11 +101,7 @@ public class planetControl : MonoBehaviour
     
     void UpdateTinker()
     {
-        speedMult = tinker.PInitSpeedMultiplier;
-        slowDownMovement = tinker.PSlowDownMovementOption;
-        slowDownMovementDampingFactor = tinker.PSlowDownMovementDampingFactor;
         useForcesOption = tinker.PUseForcesOption;
-        useForcesDragAmount = tinker.PUseForcesDragAmount;
         innerBand = tinker.PInnerBand;
         outerBand = tinker.POuterBand;
         maxSecForDrag = tinker.PMaxSecsForDrag;
@@ -123,8 +110,6 @@ public class planetControl : MonoBehaviour
         acceleration = tinker.PAcceleration;
         dbug = tinker.printPlanetControls;
         flickOnOuterBand= tinker.PFlickOnOuterBand;
-        if (useForcesOption)
-            tinker.PSlowDownMovementOption = true;
     }
 
     void OnMouseDown()
@@ -204,17 +189,6 @@ public class planetControl : MonoBehaviour
             }
             rigidbody2D.AddForce(newForce * acceleration);
         }
-        /*
-        if (useForcesOption)
-        {
-            rigidbody2D.drag = useForcesDragAmount;
-            rigidbody2D.AddForce(new Vector2(planetSettings.speed * speedMult, 0.0f));
-        } else
-        {
-            if (rigidbody2D.velocity.magnitude > storedVelocity.magnitude)
-                rigidbody2D.velocity *= slowDownMovementDampingFactor;
-        }
-        */
     }
 
     private Vector3 InputPosition()

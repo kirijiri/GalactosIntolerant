@@ -10,26 +10,19 @@ public class tinker : MonoBehaviour
 	public string planetOptions = "--- PLANET OPTIONS ---";
     public bool printPlanetControls = false;
     public float PInitSpeedMultiplier = 1f;
-    public bool PSlowDownMovementOption = true;
     public float PInnerBand = 0f;
-    public float POuterBand = 200f;
+    public float POuterBand = 500;
     public bool PFlickOnOuterBand = false;
     public float PMaxSecsForDrag = 3f;
     public float PMaxSecsForHold = 3f;
     public float PForceMult = 0.02f;
     public float PAcceleration = 0.25f;
-
-    // option 1
-    public float PSlowDownMovementDampingFactor = 0.98f;
-
-    // option 2
     public bool PUseForcesOption = true;
-    public float PUseForcesDragAmount = 5.0f;
 
     // ship
 	public string shipOptions = "--- SHIP OPTIONS ---";
-    public float shipAcceleration = 5f;
-    public float shipDeceleration = 10f;
+    public float shipAcceleration = 0.5f;
+    public float shipDeceleration = 3f;
     public float shipOrbitRadius = 236f;
     public float shipClickUpperBoundary = 80f;
     public float shipClickLowerBoundary = 20f;
@@ -40,11 +33,11 @@ public class tinker : MonoBehaviour
     public float GBActivateAngle = 45f;
     public float GBEffectThreshold = 0.3f;
     public float GBAlignmentThreshold = 0.05f;
-    public float GBTimeout = 3.0f;
+    public float GBTimeout = 2.0f;
 
     // messages
     public string messageOptions = "--- MESSAGE OPTIONS ---";
-    public float idleTimer = 3.0f;
+    public float idleTimer = 7.0f;
     public float criticalPopulationPercentage = 30.0f;
 
     public string messageAnimOptions = "--- MESSAGE ANIMATION OPTIONS ---";

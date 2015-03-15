@@ -3,7 +3,6 @@ using System.Collections;
 
 public class shipAnimation : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
     Animator anim;
     Animator thrustAnim;
     int currentState = 0;
@@ -16,7 +15,6 @@ public class shipAnimation : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         anim = this.GetComponent<Animator>();
     }
 
