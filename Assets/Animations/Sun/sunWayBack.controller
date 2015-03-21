@@ -7,7 +7,13 @@ AnimatorController:
   m_PrefabInternal: {fileID: 0}
   m_Name: sunWayBack
   serializedVersion: 2
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: death
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -73,7 +79,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
-    m_ConditionEvent: 
+    m_ConditionEvent: death
     m_EventTreshold: 0
     m_ExitTime: 1
   m_Atomic: 1
@@ -92,8 +98,8 @@ Transition:
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: 
+  - m_ConditionMode: 1
+    m_ConditionEvent: death
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
@@ -113,7 +119,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 5
-    m_ConditionEvent: 
+    m_ConditionEvent: death
     m_EventTreshold: 0
     m_ExitTime: 1
   m_Atomic: 1
@@ -212,17 +218,20 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110291022}
-      second:
-      - {fileID: 110160138}
-    data:
       first: {fileID: 110229058}
       second:
       - {fileID: 110183314}
     data:
+      first: {fileID: 110239780}
+      second: []
+    data:
       first: {fileID: 110286150}
       second:
       - {fileID: 110176990}
+    data:
+      first: {fileID: 110291022}
+      second:
+      - {fileID: 110160138}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 24, y: -48, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

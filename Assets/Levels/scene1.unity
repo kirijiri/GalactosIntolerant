@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &36719266
 GameObject:
@@ -287,7 +286,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1001 &114952281
 Prefab:
   m_ObjectHideFlags: 0
@@ -833,7 +832,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &534868176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1460,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 673749921}
   - 114: {fileID: 673749922}
+  - 114: {fileID: 673749923}
   m_Layer: 0
   m_Name: gravityBeam
   m_TagString: Untagged
@@ -1475,11 +1475,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673749920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.34817708, y: -1.04491591, z: -.0376258157}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1449353993}
+  m_RootOrder: 2
 --- !u!114 &673749922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1493,6 +1493,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   available: 1
+--- !u!114 &673749923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 673749920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f66d3f19a359394e89f1dcf6258dea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &816915849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2557,7 @@ GameObject:
   - 212: {fileID: 1335665837}
   - 50: {fileID: 1335665838}
   - 95: {fileID: 1335665839}
+  - 114: {fileID: 1335665840}
   m_Layer: 0
   m_Name: sun
   m_TagString: Untagged
@@ -2632,6 +2644,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1335665840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1335665835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a0c89adf8941e4a91689bee0346949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  die: 0
 --- !u!1 &1449353991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,6 +2713,7 @@ Transform:
   m_Children:
   - {fileID: 534868177}
   - {fileID: 359227751}
+  - {fileID: 673749921}
   m_Father: {fileID: 1335665836}
   m_RootOrder: 10
 --- !u!114 &1449353994

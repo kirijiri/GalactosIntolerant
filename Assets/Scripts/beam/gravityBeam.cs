@@ -32,6 +32,7 @@ public class gravityBeam : MonoBehaviour
                 timer = 0;
                 isActive = false;
                 available = false;
+				this.SendMessage("BeamAnimationOn");
             }
         }
     }
