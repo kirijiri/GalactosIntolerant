@@ -12,6 +12,15 @@ public class shipAnimation : MonoBehaviour
     int BEAMBEGIN = 2;
     int BEAMING = 3;
 
+	/*
+	 * COMMENTED OUT ANIM STUFF FOR NOW
+	 * 
+	 * WILL REPLACE WHEN NEW CONTROLLER IS SET UP
+	 * 
+	 */
+
+
+
     // Use this for initialization
     void Start()
     {
@@ -22,7 +31,7 @@ public class shipAnimation : MonoBehaviour
     {
         if (currentState != DEFAULT)
         {
-            anim.SetInteger("state", 0);
+            //anim.SetInteger("state", 0);
             currentState = DEFAULT;
         }
     }
@@ -31,7 +40,7 @@ public class shipAnimation : MonoBehaviour
     {
         if (currentState != PULSING)
         {
-            anim.SetInteger("state", PULSING);
+            //anim.SetInteger("state", PULSING);
             currentState = PULSING;
         }
     }
@@ -40,7 +49,7 @@ public class shipAnimation : MonoBehaviour
     {
         if (currentState != BEAMBEGIN)
         {
-            anim.SetInteger("state", BEAMBEGIN);
+            //anim.SetInteger("state", BEAMBEGIN);
             currentState = BEAMBEGIN;
         }
     }
@@ -49,7 +58,7 @@ public class shipAnimation : MonoBehaviour
     {
         if (currentState != BEAMING)
         {
-            anim.SetInteger("state", 2); //<-- just reusing pulsealong for now
+            //anim.SetInteger("state", 2);
             GetComponent<SpriteRenderer>().color = Color.red;
             currentState = BEAMING;
         }
