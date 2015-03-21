@@ -7,6 +7,7 @@ public class gravityBeam : MonoBehaviour
     public bool available = true;
 
     private GameObject[] planets;
+    private gravityBeamAnimation animationCtrl;
     private float timer = 0;
 
     // settings objects
@@ -17,8 +18,7 @@ public class gravityBeam : MonoBehaviour
     void Start()
     {
         planets = GameObject.FindGameObjectsWithTag("Planet");
-
-        // settings
+        animationCtrl = this.GetComponent<gravityBeamAnimation>();
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
     }
 
@@ -26,13 +26,13 @@ public class gravityBeam : MonoBehaviour
     {
         if (isActive)
         {
+            animationCtrl.BeamAnimationOn();
             timer += Time.deltaTime;
             if (timer >= tinker.GBTimeout)
             {
                 timer = 0;
                 isActive = false;
                 available = false;
-				this.SendMessage("BeamAnimationOn");
             }
         }
     }
