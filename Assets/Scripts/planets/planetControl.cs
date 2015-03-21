@@ -187,7 +187,9 @@ public class planetControl : MonoBehaviour
             {
                 newForce = storedVelocity.normalized * diffMagnitude;
             }
-            rigidbody2D.AddForce(newForce * acceleration);
+			newForce *= acceleration;
+			if (dbug) { Debug.DrawLine(transform.position, transform.position + newForce, Color.red, 0, false); } 
+            rigidbody2D.AddForce(newForce);
         }
     }
 

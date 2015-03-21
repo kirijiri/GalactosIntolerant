@@ -234,7 +234,7 @@ MonoBehaviour:
   PMaxSecsForDrag: 3
   PMaxSecsForHold: 3
   PForceMult: .0199999996
-  PAcceleration: .25
+  PAcceleration: 1
   PUseForcesOption: 1
   shipOptions: '--- SHIP OPTIONS ---'
   shipAcceleration: .5
@@ -1314,7 +1314,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 1758055307}
   m_GameObject: {fileID: 579743639}
-  m_Mass: 1000
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -2450,7 +2450,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 1699166057}
   m_GameObject: {fileID: 1315941542}
-  m_Mass: 100
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -3655,10 +3655,6 @@ Prefab:
       propertyPath: speed
       value: .5
       objectReference: {fileID: 0}
-    - target: {fileID: 5000000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 1315941542}
@@ -3874,10 +3870,6 @@ Prefab:
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: speed
       value: .75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5000000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
-      propertyPath: m_Mass
-      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
