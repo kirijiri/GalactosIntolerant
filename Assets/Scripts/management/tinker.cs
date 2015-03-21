@@ -27,6 +27,8 @@ public class tinker : MonoBehaviour
     public float shipClickUpperBoundary = 80f;
     public float shipClickLowerBoundary = 20f;
     public float shipAnimRestThreshold = 5.0f;
+    public int thrusterSmooth = 20;
+    public float thrusterAccelScale = 1000f;
 
     // gravity beam
 	public string beamOptions = "--- BEAM OPTIONS ---";
@@ -34,6 +36,8 @@ public class tinker : MonoBehaviour
     public float GBEffectThreshold = 0.3f;
     public float GBAlignmentThreshold = 0.05f;
     public float GBTimeout = 2.0f;
+    public float GBMinDragDistance = 30f;
+    public float GBMaxGuideDragDistance = 100f;
 
     // messages
     public string messageOptions = "--- MESSAGE OPTIONS ---";

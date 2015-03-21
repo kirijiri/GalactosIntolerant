@@ -9,11 +9,13 @@ public class shipControl : MonoBehaviour
     private Vector3 storedPosition;
     private Vector3 mouseDrag;
     public bool isMoving = true;
+    private bool isBeingDragged = false;
     public bool gravityBeamActivated = false;
 
     // tinkered
     private tinker tinker;
     private float beamActivateAngle;
+    private float minDragDistance;
 
     // gravity beam
     private gravityBeam gravityBeam;
@@ -36,6 +38,7 @@ public class shipControl : MonoBehaviour
     void UpdateTinker()
     {
         beamActivateAngle = tinker.GBActivateAngle;
+        minDragDistance = tinker.GBMinDragDistance / 200.0f;
     }
     
     // events -------------------------------------------------------------
@@ -45,28 +48,46 @@ public class shipControl : MonoBehaviour
         storedPosition = transform.position;
         isMoving = false;
         shipAnim.Open();
+        shipAnim.GuideOn();
     }
 
     void OnMouseDrag()
     {
         isMoving = false;
-        if (GetDragDistance() > 0.15)
-        {
-            // NOTHING YET
-        }
+        isBeingDragged = true;
+        shipAnim.GuideDetails(GetDragDistance(), GetDragAngle());
+
     }
     
     void OnMouseUp()
     {
         // Calculate the drag manually and activate beam if in angle
-        if (GetDragAngle() < beamActivateAngle)
+        if (GetDragDistance() > minDragDistance)
         {
-            ActivateGravityBeam();
+            if (GetDragAngle() < beamActivateAngle)
+            {
+                ActivateGravityBeam();
+                shipAnim.GuideOff();
+            }
+          
         } else
         {
             shipAnim.Close();
+            shipAnim.GuideOff();
             isMoving = true;
         }
+
+        isBeingDragged = false;
+    }
+
+    void OnMouseOver()
+    {
+        isMoving = false;
+    }
+    
+    void OnMouseExit()
+    {
+        isMoving = true;
     }
 
     // Private functions ------------------------------------------------------------------

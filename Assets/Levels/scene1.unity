@@ -234,7 +234,7 @@ MonoBehaviour:
   PMaxSecsForDrag: 3
   PMaxSecsForHold: 3
   PForceMult: .0199999996
-  PAcceleration: 1
+  PAcceleration: .5
   PUseForcesOption: 1
   shipOptions: '--- SHIP OPTIONS ---'
   shipAcceleration: .5
@@ -243,11 +243,15 @@ MonoBehaviour:
   shipClickUpperBoundary: 80
   shipClickLowerBoundary: 20
   shipAnimRestThreshold: 5
+  thrusterSmooth: 20
+  thrusterAccelScale: 1000
   beamOptions: '--- BEAM OPTIONS ---'
   GBActivateAngle: 45
   GBEffectThreshold: .300000012
   GBAlignmentThreshold: .0500000007
   GBTimeout: 2
+  GBMinDragDistance: 30
+  GBMaxGuideDragDistance: 100
   messageOptions: '--- MESSAGE OPTIONS ---'
   idleTimer: 7
   criticalPopulationPercentage: 30
@@ -1466,10 +1470,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 673749921}
   - 114: {fileID: 673749922}
+  - 212: {fileID: 673749924}
   - 114: {fileID: 673749923}
   - 95: {fileID: 673749925}
-  - 212: {fileID: 673749924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: gravityBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1530,8 +1534,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: -3
+  m_SortingLayerID: 3331293113
+  m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!95 &673749925
