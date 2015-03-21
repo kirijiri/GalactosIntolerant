@@ -14,8 +14,8 @@ public class planetControl : MonoBehaviour
     private bool targetSpeedClockwise;
 
     // controls
-    private bool held = false;
-    private bool drag = false;
+    public bool held = false;
+    public bool drag = false;
     private float holdStartTime = 0;
     private float dragStartTime = 0;
 

@@ -1,16 +1,16 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class shipAnimation : MonoBehaviour
 {
     Animator anim;
-    Animator thrustAnim;
-    int currentState = 0;
-    // animation states
-    int DEFAULT = 0;
-    int PULSING = 1;
-    int BEAMBEGIN = 2;
-    int BEAMING = 3;
+    Animator hoverAnim;
+    GameObject hover;
+    SpriteRenderer hoverSprite;
+    GameObject[] planets;
+    bool hold;
+    bool flick;
+    bool over ;
 
 	/*
 	 * COMMENTED OUT ANIM STUFF FOR NOW
@@ -25,42 +25,60 @@ public class shipAnimation : MonoBehaviour
     void Start()
     {
         anim = this.GetComponent<Animator>();
+        hover = GameObject.Find("shipHover");
+        hoverAnim = hover.GetComponent<Animator>();
+        hoverSprite = hover.GetComponent<SpriteRenderer>();
+        planets = GameObject.FindGameObjectsWithTag("Planet");
+        hoverSprite.enabled = false;
     }
 
-    public void SAnimDefault()
-    {
-        if (currentState != DEFAULT)
-        {
-            //anim.SetInteger("state", 0);
-            currentState = DEFAULT;
-        }
+    void OnMouseOver(){
+        hoverSprite.enabled = true;
     }
 
-    public void SAnimHeld()
-    {
-        if (currentState != PULSING)
-        {
-            //anim.SetInteger("state", PULSING);
-            currentState = PULSING;
-        }
+    void OnMouseExit(){
+        hoverSprite.enabled = false;
     }
 
-    public void SAnimBeamBegin()
+    void LateUpdate()
     {
-        if (currentState != BEAMBEGIN)
-        {
-            //anim.SetInteger("state", BEAMBEGIN);
-            currentState = BEAMBEGIN;
-        }
+        anim.SetBool("holding", IsHolding());
+        anim.SetBool("flicking", IsFlicking());
     }
 
-    public void SAnimBeamOn()
+    public void Open()
     {
-        if (currentState != BEAMING)
+        anim.SetBool("open", true);
+        hoverAnim.SetBool("open", true);
+    }
+
+    public void Close()
+    {
+        anim.SetBool("open", false);
+        hoverAnim.SetBool("open", false);
+    }
+
+    private bool IsHolding()
+    {
+        foreach (GameObject planet in planets)
         {
-            //anim.SetInteger("state", 2);
-            GetComponent<SpriteRenderer>().color = Color.red;
-            currentState = BEAMING;
+            if (planet.GetComponent<planetControl>().held)
+            {    
+                return true;
+            }
         }
+        return false;
+    }
+
+    private bool IsFlicking()
+    {
+        foreach (GameObject planet in planets)
+        {
+            if (planet.GetComponent<planetControl>().drag)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -60,11 +60,11 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: accel
-    m_EventTreshold: .600000024
+    m_EventTreshold: .300000012
     m_ExitTime: 0
   - m_ConditionMode: 3
     m_ConditionEvent: accel
-    m_EventTreshold: .300000012
+    m_EventTreshold: .100000001
     m_ExitTime: 0
   m_Atomic: 1
   m_Solo: 0
@@ -82,9 +82,13 @@ Transition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: accel
+    m_EventTreshold: 0
+    m_ExitTime: 1
   - m_ConditionMode: 4
     m_ConditionEvent: accel
-    m_EventTreshold: -.0500000007
+    m_EventTreshold: .100000001
     m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
@@ -232,11 +236,11 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: accel
-    m_EventTreshold: -.600000024
+    m_EventTreshold: -.300000012
     m_ExitTime: 1
   - m_ConditionMode: 4
     m_ConditionEvent: accel
-    m_EventTreshold: -.300000012
+    m_EventTreshold: -.100000001
     m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
@@ -256,7 +260,11 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: accel
-    m_EventTreshold: .0500000007
+    m_EventTreshold: 0
+    m_ExitTime: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: accel
+    m_EventTreshold: .100000001
     m_ExitTime: 0
   m_Atomic: 1
   m_Solo: 0
@@ -593,7 +601,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 35fa749aeaebcb24e9c117e49782ac57, type: 2}
   m_ParentStateMachine: {fileID: 110748186}
-  m_Position: {x: -144, y: 24, z: 0}
+  m_Position: {x: -168, y: 24, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -773,7 +781,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 29c4a02840bfc4b40bf11514b1f13a85, type: 2}
   m_ParentStateMachine: {fileID: 110748186}
-  m_Position: {x: -24, y: -48, z: 0}
+  m_Position: {x: -60, y: -60, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 

@@ -26,7 +26,6 @@ public class shipControl : MonoBehaviour
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         gravityBeam = GameObject.Find("gravityBeam").GetComponent<gravityBeam>();
         shipAnim = this.GetComponent<shipAnimation>();
-        shipAnim.SAnimDefault();
     }
 
     void Update()
@@ -45,7 +44,7 @@ public class shipControl : MonoBehaviour
     {
         storedPosition = transform.position;
         isMoving = false;
-        shipAnim.SAnimHeld();
+        shipAnim.Open();
     }
 
     void OnMouseDrag()
@@ -53,10 +52,7 @@ public class shipControl : MonoBehaviour
         isMoving = false;
         if (GetDragDistance() > 0.15)
         {
-            shipAnim.SAnimBeamBegin();
-        } else
-        {
-            shipAnim.SAnimHeld();
+            // NOTHING YET
         }
     }
     
@@ -68,7 +64,7 @@ public class shipControl : MonoBehaviour
             ActivateGravityBeam();
         } else
         {
-            shipAnim.SAnimDefault();
+            shipAnim.Close();
             isMoving = true;
         }
     }
@@ -98,8 +94,6 @@ public class shipControl : MonoBehaviour
     {
         isMoving = false;
         gravityBeamActivated = true;
-
-        shipAnim.SAnimBeamOn();
         gravityBeam.isActive = true;
 
         snapshot snapshot = GameObject.Find("phone_button_32").GetComponent<snapshot>();

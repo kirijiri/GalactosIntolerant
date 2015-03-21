@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &36719266
 GameObject:
@@ -665,6 +664,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03cb8533b1fac544c9e359c5e1a3f078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  queueSize: 5
+  accelScale: 1000
 --- !u!212 &359227754
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -973,6 +974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af515c5fa98c8b848b22fb3f993aa370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  held: 0
+  drag: 0
 --- !u!114 &536487401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,6 +1266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af515c5fa98c8b848b22fb3f993aa370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  held: 0
+  drag: 0
 --- !u!114 &579743643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1605,6 +1610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af515c5fa98c8b848b22fb3f993aa370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  held: 0
+  drag: 0
 --- !u!114 &816915853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2438,6 +2445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af515c5fa98c8b848b22fb3f993aa370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  held: 0
+  drag: 0
 --- !u!114 &1315941546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3131,6 +3140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af515c5fa98c8b848b22fb3f993aa370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  held: 0
+  drag: 0
 --- !u!114 &1545869388
 MonoBehaviour:
   m_ObjectHideFlags: 0
