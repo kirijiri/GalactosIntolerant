@@ -32,7 +32,6 @@ public class thrustAnimation : MonoBehaviour
         // set it in the animator
         if (diffAcceleration > 0.0f)
         {
-
             right = transform.rotation * Vector3.right;
             clockwise = Vector3.Dot(currVelocity.normalized, right) > 0;
 
@@ -53,11 +52,13 @@ public class thrustAnimation : MonoBehaviour
             accelQueue.Dequeue ();
         }
 
+        /*
         string printStr = "";
         foreach (float a in accelQueue)
         {
             printStr += a.ToString() + ", ";
         }
+        */
 
         // calulate average in queue
         avgAccel = 0.0f;
@@ -66,8 +67,7 @@ public class thrustAnimation : MonoBehaviour
             avgAccel += a;
         }
         avgAccel /= accelQueue.Count;
-        print(avgAccel);
-
+        anim.SetFloat("accel", avgAccel);
 
         // store data for next check
         lastPos = transform.position;
