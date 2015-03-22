@@ -72,13 +72,11 @@ public class shipControl : MonoBehaviour
                 shipAnim.GuideOff();
             }
           
-        } else
-        {
-            shipAnim.Close();
-            shipAnim.GuideOff();
-            isMoving = true;
         }
-
+            
+        isMoving = true;
+        shipAnim.Close();
+        shipAnim.GuideOff();
         isBeingDragged = false;
     }
 

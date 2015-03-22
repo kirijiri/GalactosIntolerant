@@ -49,8 +49,8 @@ public class shipAnimation : MonoBehaviour
         UpdateTinker();
 
         // cone guide
-        coneL.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -beamActivateAngle));
-        coneR.transform.rotation = Quaternion.Euler(new Vector3(0, 0, beamActivateAngle));
+        coneL.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, -beamActivateAngle));
+        coneR.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, beamActivateAngle));
     }
 
 
