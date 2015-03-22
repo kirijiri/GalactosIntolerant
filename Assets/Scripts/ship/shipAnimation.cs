@@ -7,6 +7,10 @@ public class shipAnimation : MonoBehaviour
     private Animator hoverAnim;
     private Animator guideAnim;
     private GameObject hover;
+    private GameObject coneL;
+    private GameObject coneR;
+    private SpriteRenderer coneLSpriteRend;
+    private SpriteRenderer coneRSpriteRend;
     private GameObject[] planets;
     private SpriteRenderer hoverSprite;
     private bool hold;
@@ -30,10 +34,23 @@ public class shipAnimation : MonoBehaviour
         hoverSprite = hover.GetComponent<SpriteRenderer>();
         hoverSprite.enabled = false;
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+
+        coneL = GameObject.Find("cone_L_OFS");
+        coneR = GameObject.Find("cone_R_OFS");
+        coneLSpriteRend = GameObject.Find("cone_L").GetComponent<SpriteRenderer>();
+        coneRSpriteRend = GameObject.Find("cone_R").GetComponent<SpriteRenderer>();
+        coneLSpriteRend.enabled = false;
+        coneRSpriteRend.enabled = false;
     }
+
+
 
     void Update(){
         UpdateTinker();
+
+        // cone guide
+        coneL.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -beamActivateAngle));
+        coneR.transform.rotation = Quaternion.Euler(new Vector3(0, 0, beamActivateAngle));
     }
 
 
@@ -57,12 +74,16 @@ public class shipAnimation : MonoBehaviour
     {
         anim.SetBool("open", true);
         hoverAnim.SetBool("open", true);
+        coneLSpriteRend.enabled = true;
+        coneRSpriteRend.enabled = true;
     }
 
     public void Close()
     {
         anim.SetBool("open", false);
         hoverAnim.SetBool("open", false);
+        coneLSpriteRend.enabled = false;
+        coneRSpriteRend.enabled = false;
     }
 
     public void GuideOn()

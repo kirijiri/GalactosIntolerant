@@ -56,6 +56,7 @@ public class shipControl : MonoBehaviour
     {
         isMoving = false;
         isBeingDragged = true;
+
         shipAnim.GuideDetails(GetDragDistance(), GetDragAngle());
 
     }
@@ -95,21 +96,14 @@ public class shipControl : MonoBehaviour
 
     private float GetDragDistance()
     {
-        mouseDrag = mouseInput.GetScreenPosition() - storedPosition;
+        mouseDrag = mouseInput.GetScreenPosition() - transform.position;
         return mouseDrag.magnitude;
     }
 
     private float GetDragAngle()
     {
-        mouseDrag = mouseInput.GetScreenPosition() - storedPosition;
-        dot = Vector3.Dot(transform.localPosition.normalized, mouseDrag.normalized);
-        return ConvertDotToAngle(dot);
-    }
-
-    private float ConvertDotToAngle(float nb)
-    {
-        // changes scale from -1:1 to 180:0
-        return (nb / 2f + 0.5f) * 180f;
+        mouseDrag = mouseInput.GetScreenPosition() - transform.position;
+        return Vector3.Angle(transform.rotation * Vector3.down, mouseDrag.normalized);
     }
 
     private void ActivateGravityBeam()
