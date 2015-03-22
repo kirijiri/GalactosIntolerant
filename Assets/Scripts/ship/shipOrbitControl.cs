@@ -6,6 +6,7 @@ public class shipOrbitControl : MonoBehaviour
 {
     private GameObject ship;
     private GameObject sun;
+    private shipControl shipCtrl;
     private float clickedRadius;
     private float upper;
     private float lower;
@@ -24,6 +25,7 @@ public class shipOrbitControl : MonoBehaviour
     {
         sun = GameObject.Find("sun");
         ship = GameObject.Find("ship");
+        shipCtrl = ship.GetComponent<shipControl>();
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         centre = sun.transform.position;
     }
@@ -34,16 +36,20 @@ public class shipOrbitControl : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         { 
-            mousePosition = mouseInput.GetScreenPosition();
-            solarPosition = ConvertToSolarPosition(mousePosition);
-            clickedRadius = ConvertSolarPosToRadius(solarPosition);
-
-            upper = orbitRadius + upperBoundary;
-            lower = orbitRadius - lowerBoundary;
-
-            if (clickedRadius >= lower && clickedRadius <= upper)
+            if (shipCtrl.isMoving)
             {
-                ship.SendMessage("SetNewPosition", solarPosition);
+            
+                mousePosition = mouseInput.GetScreenPosition();
+                solarPosition = ConvertToSolarPosition(mousePosition);
+                clickedRadius = ConvertSolarPosToRadius(solarPosition);
+
+                upper = orbitRadius + upperBoundary;
+                lower = orbitRadius - lowerBoundary;
+
+                if (clickedRadius >= lower && clickedRadius <= upper)
+                {
+                    ship.SendMessage("SetNewPosition", solarPosition);
+                }
             }
         }
     }
@@ -57,12 +63,12 @@ public class shipOrbitControl : MonoBehaviour
 
     // private methods
 
-    private Vector3 ConvertToSolarPosition( Vector3 position )
+    private Vector3 ConvertToSolarPosition(Vector3 position)
     {
         return position - centre;
     }
 
-    private float ConvertSolarPosToRadius( Vector3 position )
+    private float ConvertSolarPosToRadius(Vector3 position)
     {
         // based on the pixel to unit scale our sprites are using
         return position.magnitude * 200; 
