@@ -246,7 +246,7 @@ MonoBehaviour:
   thrusterSmooth: 20
   thrusterAccelScale: 200
   beamOptions: '--- BEAM OPTIONS ---'
-  GBActivateAngle: 45
+  GBActivateAngle: 25
   GBEffectThreshold: .300000012
   GBAlignmentThreshold: .0500000007
   GBTimeout: 2
@@ -498,6 +498,7 @@ GameObject:
   - 4: {fileID: 161563096}
   - 212: {fileID: 161563098}
   - 114: {fileID: 161563097}
+  - 95: {fileID: 161563099}
   m_Layer: 0
   m_Name: shipOrbit
   m_TagString: Untagged
@@ -548,8 +549,23 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b8d10072339afa14fa2d2eda139e4351, type: 3}
-  m_Color: {r: 1, g: .937254906, b: .294117659, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c68849babffba9047bb13d7ac8003869, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!95 &161563099
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 161563095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d115f69344ce9604684710237385833a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &321762977
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +859,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!1 &477664810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 477664811}
+  - 212: {fileID: 477664812}
+  m_Layer: 8
+  m_Name: cone_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &477664811
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 477664810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.515999973, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1647452839}
+  m_RootOrder: 0
+--- !u!212 &477664812
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 477664810}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c2b2f610f5191fc49ae959e4070a6634, type: 3}
+  m_Color: {r: .573529422, g: .261461943, b: .564920723, a: .294117659}
 --- !u!1 &485413029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1085,9 @@ GameObject:
   - 114: {fileID: 536487399}
   - 114: {fileID: 536487407}
   - 114: {fileID: 536487409}
+  - 114: {fileID: 536487411}
   - 95: {fileID: 536487408}
+  - 82: {fileID: 536487410}
   m_Layer: 0
   m_Name: planets_prefab_92
   m_TagString: Planet
@@ -1232,6 +1300,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &536487410
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8251184, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1505974426}
+  m_GameObject: {fileID: 536487397}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &536487411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11483968, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1505974426}
+  m_GameObject: {fileID: 536487397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d025fafe35616343933ad0b6a1140dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flicked: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  held: {fileID: 0}
 --- !u!1 &555966791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1482,9 @@ GameObject:
   - 114: {fileID: 579743641}
   - 114: {fileID: 579743649}
   - 114: {fileID: 579743651}
+  - 114: {fileID: 579743653}
   - 95: {fileID: 579743650}
+  - 82: {fileID: 579743652}
   m_Layer: 0
   m_Name: planets_prefab_200
   m_TagString: Planet
@@ -1554,6 +1697,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &579743652
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8251184, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1758055307}
+  m_GameObject: {fileID: 579743639}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &579743653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11483968, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1758055307}
+  m_GameObject: {fileID: 579743639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d025fafe35616343933ad0b6a1140dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flicked: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  held: {fileID: 0}
 --- !u!1 &610153776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,6 +1913,34 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1 &803911601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 803911602}
+  m_Layer: 8
+  m_Name: cone_L_OFS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &803911602
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803911601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 910805393}
+  m_Father: {fileID: 1449353993}
+  m_RootOrder: 5
 --- !u!1 &816915849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,7 +1959,9 @@ GameObject:
   - 114: {fileID: 816915851}
   - 114: {fileID: 816915859}
   - 114: {fileID: 816915861}
+  - 114: {fileID: 816915863}
   - 95: {fileID: 816915860}
+  - 82: {fileID: 816915862}
   m_Layer: 0
   m_Name: planets_prefab_128
   m_TagString: Planet
@@ -1940,6 +2186,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &816915862
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8251184, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 114952281}
+  m_GameObject: {fileID: 816915849}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &816915863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11483968, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 114952281}
+  m_GameObject: {fileID: 816915849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d025fafe35616343933ad0b6a1140dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flicked: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  held: {fileID: 0}
 --- !u!1 &837360523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,6 +2420,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1051774920}
   m_RootOrder: 0
+--- !u!1 &910805392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 910805393}
+  - 212: {fileID: 910805394}
+  m_Layer: 8
+  m_Name: cone_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910805393
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 910805392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.515999973, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 803911602}
+  m_RootOrder: 0
+--- !u!212 &910805394
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 910805392}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c2b2f610f5191fc49ae959e4070a6634, type: 3}
+  m_Color: {r: .573529422, g: .261461943, b: .564920723, a: .294117659}
 --- !u!1 &933412368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,7 +2949,9 @@ GameObject:
   - 114: {fileID: 1315941544}
   - 114: {fileID: 1315941552}
   - 114: {fileID: 1315941554}
+  - 114: {fileID: 1315941556}
   - 95: {fileID: 1315941553}
+  - 82: {fileID: 1315941555}
   m_Layer: 0
   m_Name: planets_prefab_56
   m_TagString: Planet
@@ -2803,6 +3174,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1315941555
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8251184, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1699166057}
+  m_GameObject: {fileID: 1315941542}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &1315941556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11483968, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1699166057}
+  m_GameObject: {fileID: 1315941542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d025fafe35616343933ad0b6a1140dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flicked: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  held: {fileID: 0}
 --- !u!1 &1335665835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,7 +3399,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ceb93f614b77765498eab6e140f4bb3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1449353993
@@ -2973,6 +3417,8 @@ Transform:
   - {fileID: 359227751}
   - {fileID: 673749921}
   - {fileID: 485413030}
+  - {fileID: 803911602}
+  - {fileID: 1647452839}
   m_Father: {fileID: 1335665836}
   m_RootOrder: 10
 --- !u!114 &1449353994
@@ -3311,7 +3757,9 @@ GameObject:
   - 114: {fileID: 1545869386}
   - 114: {fileID: 1545869394}
   - 114: {fileID: 1545869396}
+  - 114: {fileID: 1545869398}
   - 95: {fileID: 1545869395}
+  - 82: {fileID: 1545869397}
   m_Layer: 0
   m_Name: planets_prefab_164
   m_TagString: Planet
@@ -3517,6 +3965,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1545869397
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8251184, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1557801769}
+  m_GameObject: {fileID: 1545869384}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &1545869398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11483968, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1557801769}
+  m_GameObject: {fileID: 1545869384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d025fafe35616343933ad0b6a1140dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flicked: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  held: {fileID: 0}
 --- !u!1001 &1557801769
 Prefab:
   m_ObjectHideFlags: 0
@@ -3715,6 +4236,34 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b19981bfc241c254987966cc07ef17b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1647452838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1647452839}
+  m_Layer: 8
+  m_Name: cone_R_OFS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1647452839
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647452838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 477664811}
+  m_Father: {fileID: 1449353993}
+  m_RootOrder: 6
 --- !u!1 &1662974471
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,7 +4536,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1718585437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.209999993, z: 0}
+  m_LocalPosition: {x: 0, y: -.230000004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1449353993}
@@ -4028,7 +4577,7 @@ SpriteRenderer:
   m_SortingLayerID: 1870004305
   m_SortingOrder: 10
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: .784313738}
 --- !u!1 &1733469249
 GameObject:
   m_ObjectHideFlags: 0

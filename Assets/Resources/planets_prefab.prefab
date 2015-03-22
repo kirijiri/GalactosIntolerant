@@ -18,7 +18,9 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11453858}
   - 114: {fileID: 11422178}
+  - 114: {fileID: 11483968}
   - 95: {fileID: 9593582}
+  - 82: {fileID: 8251184}
   m_Layer: 0
   m_Name: planets_prefab
   m_TagString: Planet
@@ -64,6 +66,64 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .159999996
   m_Center: {x: 0, y: 0}
+--- !u!82 &8251184
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9593582
 Animator:
   serializedVersion: 3
@@ -163,6 +223,19 @@ MonoBehaviour:
   idleMessages: []
   minorMessages: []
   majorMessages: []
+--- !u!114 &11483968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d025fafe35616343933ad0b6a1140dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flicked: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  held: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

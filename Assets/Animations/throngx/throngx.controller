@@ -35,12 +35,12 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110200702}
   m_DstState: {fileID: 110200700}
-  m_TransitionDuration: .25
+  m_TransitionDuration: .000839042361
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: decay
-    m_EventTreshold: .800000012
+    m_EventTreshold: .666000009
     m_ExitTime: .75
   - m_ConditionMode: 5
     m_ConditionEvent: decay
@@ -59,12 +59,12 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110200698}
   m_DstState: {fileID: 110200696}
-  m_TransitionDuration: .25
+  m_TransitionDuration: .000839042361
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: decay
-    m_EventTreshold: .400000006
+    m_EventTreshold: .333000004
     m_ExitTime: .75
   - m_ConditionMode: 5
     m_ConditionEvent: decay
@@ -83,13 +83,9 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110200696}
   m_DstState: {fileID: 110200694}
-  m_TransitionDuration: .25
+  m_TransitionDuration: .00737428432
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: decay
-    m_EventTreshold: .200000003
-    m_ExitTime: 1
   - m_ConditionMode: 5
     m_ConditionEvent: 
     m_EventTreshold: 0
@@ -107,13 +103,9 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110200700}
   m_DstState: {fileID: 110200698}
-  m_TransitionDuration: .25
+  m_TransitionDuration: .00352315791
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: decay
-    m_EventTreshold: .600000024
-    m_ExitTime: .75
   - m_ConditionMode: 5
     m_ConditionEvent: decay
     m_EventTreshold: .5
@@ -215,21 +207,21 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110200696}
+      first: {fileID: 110200702}
       second:
-      - {fileID: 110141272}
-    data:
-      first: {fileID: 110200698}
-      second:
-      - {fileID: 110130908}
+      - {fileID: 110115352}
     data:
       first: {fileID: 110200700}
       second:
       - {fileID: 110151444}
     data:
-      first: {fileID: 110200702}
+      first: {fileID: 110200698}
       second:
-      - {fileID: 110115352}
+      - {fileID: 110130908}
+    data:
+      first: {fileID: 110200696}
+      second:
+      - {fileID: 110141272}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -108, y: -144, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
