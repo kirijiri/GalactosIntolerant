@@ -77,7 +77,6 @@ public class shipAnimation : MonoBehaviour
 
     public void GuideDetails(float dist, float angle)
     {
-        print(dist);
         guideAnim.SetBool("inAngle", angle < beamActivateAngle);
         guideAnim.SetFloat("dist", ((dist * 200.0f) - minDragDistance) / (maxGuideDragDistance - minDragDistance));
     }

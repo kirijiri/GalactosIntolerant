@@ -13,6 +13,14 @@ TextureImporter:
     21300016: guide_on_06
     21300018: guide_on_07
     21300020: guide_on_08
+    21300022: guide_anim_01
+    21300024: guide_anim_02
+    21300026: guide_anim_03
+    21300028: guide_anim_04
+    21300030: guide_anim_05
+    21300032: guide_anim_06
+    21300034: guide_anim_07
+    21300036: guide_anim_08
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -58,9 +66,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 100
+        y: 96
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -68,9 +76,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 100
+        y: 96
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -78,89 +86,89 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 100
+        y: 96
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: guide_on_01
+    - name: guide_anim_01
       rect:
         serializedVersion: 2
         x: 48
-        y: 100
+        y: 96
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: guide_on_02
+    - name: guide_anim_02
       rect:
         serializedVersion: 2
         x: 64
-        y: 100
+        y: 96
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: guide_on_03
+    - name: guide_anim_03
       rect:
         serializedVersion: 2
         x: 80
-        y: 100
+        y: 96
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: guide_on_04
+    - name: guide_anim_04
       rect:
         serializedVersion: 2
         x: 0
-        y: 72
+        y: 64
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: guide_on_05
+    - name: guide_anim_05
       rect:
         serializedVersion: 2
         x: 16
-        y: 72
+        y: 64
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: guide_on_06
+    - name: guide_anim_06
       rect:
         serializedVersion: 2
         x: 32
-        y: 72
+        y: 64
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: guide_on_07
+    - name: guide_anim_07
       rect:
         serializedVersion: 2
         x: 48
-        y: 72
+        y: 64
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: guide_on_08
+    - name: guide_anim_08
       rect:
         serializedVersion: 2
         x: 64
-        y: 72
+        y: 64
         width: 16
-        height: 28
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
