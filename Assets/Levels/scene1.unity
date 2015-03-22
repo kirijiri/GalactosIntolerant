@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &36719266
 GameObject:
@@ -2568,7 +2567,7 @@ MonoBehaviour:
     religious...
   - Three magma trawlers reported missing as the Obsidian Magma Whirpool, a popular
     tourist destination...
-  - Record high temperatures are reported during the peak of tectonic winter, resulting
+  - Record low temperatures are reported during the peak of tectonic winter, resulting
     in scores of...
   - Schools closed as the sub-vaporization temperatures hold for another week and
     the fusion furnaces are failing to...
@@ -2582,8 +2581,8 @@ MonoBehaviour:
   - Deathtoll mounts as yet another unexpected crust solidification causes multiple
     deep lava operations to...
   - The remaining population of the Fuegerton is being moved North along the Mafic
-    Line 975 or 1289 communication satellites are now officially considered either
-    destroyed or damaged beyond...
+    Line 975 or 1289. Communication satellites considered either destroyed or damaged
+    beyond...
   - Still no signal received from the Southern Felsic Centre after temporary loss
     of planetary electromagnetic field due to...
   - Boninite refugee centre didn?t receive any survivors today as their have been
@@ -3655,7 +3654,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: minorMessages.Array.data[3]
-      value: Record high temperatures are reported during the peak of tectonic winter,
+      value: Record low temperatures are reported during the peak of tectonic winter,
         resulting in scores of...
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
@@ -3690,8 +3689,8 @@ Prefab:
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: majorMessages.Array.data[3]
       value: The remaining population of the Fuegerton is being moved North along
-        the Mafic Line 975 or 1289 communication satellites are now officially considered
-        either destroyed or damaged beyond...
+        the Mafic Line 975 or 1289. Communication satellites considered either destroyed
+        or damaged beyond...
       objectReference: {fileID: 0}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: majorMessages.Array.data[4]
