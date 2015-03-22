@@ -479,6 +479,10 @@ Prefab:
       propertyPath: speed
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 9593582, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 816915849}
@@ -1014,6 +1018,8 @@ GameObject:
   - 114: {fileID: 536487400}
   - 114: {fileID: 536487399}
   - 114: {fileID: 536487407}
+  - 114: {fileID: 536487409}
+  - 95: {fileID: 536487408}
   m_Layer: 0
   m_Name: planets_prefab_92
   m_TagString: Planet
@@ -1198,6 +1204,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61304f1fdcde7dc46b8c14e82dd68b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &536487408
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9593582, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1505974426}
+  m_GameObject: {fileID: 536487397}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &536487409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11422178, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1505974426}
+  m_GameObject: {fileID: 536487397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &555966791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,6 +1340,8 @@ GameObject:
   - 114: {fileID: 579743642}
   - 114: {fileID: 579743641}
   - 114: {fileID: 579743649}
+  - 114: {fileID: 579743651}
+  - 95: {fileID: 579743650}
   m_Layer: 0
   m_Name: planets_prefab_200
   m_TagString: Planet
@@ -1434,7 +1470,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1870004305
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b3210de22648dc743a5c79776e24d54b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b295f245ede2e05449c672f306c79588, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &579743648
 MonoBehaviour:
@@ -1488,6 +1524,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61304f1fdcde7dc46b8c14e82dd68b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &579743650
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9593582, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1758055307}
+  m_GameObject: {fileID: 579743639}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &579743651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11422178, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1758055307}
+  m_GameObject: {fileID: 579743639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &610153776
@@ -1650,6 +1714,8 @@ GameObject:
   - 114: {fileID: 816915852}
   - 114: {fileID: 816915851}
   - 114: {fileID: 816915859}
+  - 114: {fileID: 816915861}
+  - 95: {fileID: 816915860}
   m_Layer: 0
   m_Name: planets_prefab_128
   m_TagString: Planet
@@ -1844,6 +1910,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61304f1fdcde7dc46b8c14e82dd68b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &816915860
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9593582, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 114952281}
+  m_GameObject: {fileID: 816915849}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &816915861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11422178, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 114952281}
+  m_GameObject: {fileID: 816915849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &837360523
@@ -2485,6 +2579,8 @@ GameObject:
   - 114: {fileID: 1315941545}
   - 114: {fileID: 1315941544}
   - 114: {fileID: 1315941552}
+  - 114: {fileID: 1315941554}
+  - 95: {fileID: 1315941553}
   m_Layer: 0
   m_Name: planets_prefab_56
   m_TagString: Planet
@@ -2677,6 +2773,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61304f1fdcde7dc46b8c14e82dd68b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1315941553
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9593582, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1699166057}
+  m_GameObject: {fileID: 1315941542}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1315941554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11422178, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1699166057}
+  m_GameObject: {fileID: 1315941542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1335665835
@@ -3160,6 +3284,10 @@ Prefab:
       propertyPath: speed
       value: .375
       objectReference: {fileID: 0}
+    - target: {fileID: 9593582, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 536487397}
@@ -3182,6 +3310,8 @@ GameObject:
   - 114: {fileID: 1545869387}
   - 114: {fileID: 1545869386}
   - 114: {fileID: 1545869394}
+  - 114: {fileID: 1545869396}
+  - 95: {fileID: 1545869395}
   m_Layer: 0
   m_Name: planets_prefab_164
   m_TagString: Planet
@@ -3359,6 +3489,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61304f1fdcde7dc46b8c14e82dd68b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1545869395
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9593582, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1557801769}
+  m_GameObject: {fileID: 1545869384}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1545869396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11422178, guid: 2bd96caba59187b468cd05df0fbc582d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1557801769}
+  m_GameObject: {fileID: 1545869384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1557801769
 Prefab:
   m_ObjectHideFlags: 0
@@ -3497,6 +3655,10 @@ Prefab:
       propertyPath: speed
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 9593582, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 1545869384}
@@ -3792,6 +3954,10 @@ Prefab:
       propertyPath: speed
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 9593582, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 1315941542}
@@ -4065,15 +4231,14 @@ Prefab:
       value: 'Colony Cloud: Require urgent infrastructure replacement - Bounties posted
         ...'
       objectReference: {fileID: 0}
-    - target: {fileID: 21200000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b3210de22648dc743a5c79776e24d54b,
-        type: 3}
     - target: {fileID: 11468412, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
       propertyPath: speed
       value: .75
       objectReference: {fileID: 0}
+    - target: {fileID: 9593582, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 579743639}

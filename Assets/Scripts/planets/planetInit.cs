@@ -19,6 +19,7 @@ public class planetInit : MonoBehaviour
     private Vector3 posDiff;
     private SpriteRenderer sprRen;
     private tinker tinker;
+    private Animator anim;
 
     //tinkered
     private float speedMult;
@@ -30,6 +31,7 @@ public class planetInit : MonoBehaviour
         // change image sprite
         sprRen = GetComponent<SpriteRenderer>();
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+        anim = GetComponent<Animator>();
         MakeImagePrefab();
     }
 
@@ -118,6 +120,8 @@ public class planetInit : MonoBehaviour
         planetGraphic.name = name + "_IMAGE";
         planetGraphic.GetComponent<SpriteRenderer>().sprite = sprRen.sprite;
         planetGraphic.GetComponent<planetImageSpriteControl>().parent = gameObject;
+        planetGraphic.GetComponent<Animator>().runtimeAnimatorController = anim.runtimeAnimatorController;
+
         sprRen.enabled = false;
     }
 }

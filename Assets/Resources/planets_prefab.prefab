@@ -17,6 +17,8 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11453858}
+  - 114: {fileID: 11422178}
+  - 95: {fileID: 9593582}
   m_Layer: 0
   m_Name: planets_prefab
   m_TagString: Planet
@@ -62,6 +64,21 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .159999996
   m_Center: {x: 0, y: 0}
+--- !u!95 &9593582
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,6 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af515c5fa98c8b848b22fb3f993aa370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  held: 0
+  drag: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,8 +115,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc570eb714f75548b589f4afbb150a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affected_by_beam: 0
-  is_aligned: 0
+  isAligned: 0
+--- !u!114 &11422178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359514c26013bac47b171449fa4278d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11453858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,11 +149,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 5
+  speed: 0
   orbitRadius: 96
   population: 0
+  maxPopulation: 0
   followers: 0
-  name: 
+  planetName: 
   size: 14
   biome: 
   race: 

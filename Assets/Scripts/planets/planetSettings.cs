@@ -23,4 +23,8 @@ public class planetSettings : MonoBehaviour
     public string[] idleMessages;
     public string[] minorMessages;
     public string[] majorMessages;
+
+    void Start(){
+        maxPopulation = population;
+    }
 }

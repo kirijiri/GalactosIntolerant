@@ -20,6 +20,7 @@ public class shipControl : MonoBehaviour
     // gravity beam
     private gravityBeam gravityBeam;
     private shipAnimation shipAnim;
+    private thrustAnimation thusterAnimation;
 
     //-------------------------------------------------------------------
     

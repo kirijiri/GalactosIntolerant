@@ -19,6 +19,7 @@ public class planetGravityPull : MonoBehaviour
     private Vector3 beamIntersectPoint;
     private bool gravityBeamActive;
     private Vector3 planetDist;
+    private planetAnimation animation;
     
     // settings objects
     private gravityBeam gravityBeam;
@@ -35,6 +36,7 @@ public class planetGravityPull : MonoBehaviour
 
         // gravity beam
         gravityBeam = GameObject.Find("gravityBeam").GetComponent<gravityBeam>();
+        animation = GetComponent<planetAnimation>();
 
         // settings
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
@@ -65,7 +67,7 @@ public class planetGravityPull : MonoBehaviour
 
         // colour the planets when in the threshold and trigger pull
         isAligned = false;
-        planetLook.standard(gameObject);
+        //planetLook.standard(gameObject);
         if (beamDist < gbEffectThreshold)
         {
             // stop gravity beam at sun
@@ -75,13 +77,13 @@ public class planetGravityPull : MonoBehaviour
 
             if (gravityBeam.isActive && gravityBeam.available)
             {
-                planetLook.gravity(gameObject);
+                //planetLook.gravity(gameObject);
                 gravityPull(beam, beamIntersectPoint);
             }
 
             if (beamDist < gbAlignmentThreshold)
             {
-                planetLook.aligned(gameObject);
+                //planetLook.aligned(gameObject);
                 isAligned = true;
             }
         }

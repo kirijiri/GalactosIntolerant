@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 485188}
   - 212: {fileID: 21285188}
   - 114: {fileID: 11423854}
+  - 95: {fileID: 9554872}
   m_Layer: 0
   m_Name: image_prefab
   m_TagString: Untagged
@@ -29,6 +30,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!95 &9554872
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185188}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11423854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41,8 +57,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  lookat: {fileID: 0}
-  smooth: 1
 --- !u!212 &21285188
 SpriteRenderer:
   m_ObjectHideFlags: 1
