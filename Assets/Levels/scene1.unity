@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &36719266
 GameObject:
@@ -479,6 +480,10 @@ Prefab:
       propertyPath: speed
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: fluck
+      value: 
+      objectReference: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 816915849}
@@ -1060,6 +1065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   held: 0
   drag: 0
+  fluck: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
 --- !u!114 &536487401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1306,6 +1312,7 @@ GameObject:
   - 114: {fileID: 579743642}
   - 114: {fileID: 579743641}
   - 114: {fileID: 579743649}
+  - 82: {fileID: 579743650}
   m_Layer: 0
   m_Name: planets_prefab_200
   m_TagString: Planet
@@ -1352,6 +1359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   held: 0
   drag: 0
+  fluck: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
 --- !u!114 &579743643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,6 +1498,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61304f1fdcde7dc46b8c14e82dd68b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &579743650
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 579743639}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &610153776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,6 +1762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   held: 0
   drag: 0
+  fluck: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
 --- !u!114 &816915853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2531,6 +2598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   held: 0
   drag: 0
+  fluck: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
 --- !u!114 &1315941546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3160,6 +3228,10 @@ Prefab:
       propertyPath: speed
       value: .375
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: fluck
+      value: 
+      objectReference: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 536487397}
@@ -3228,6 +3300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   held: 0
   drag: 0
+  fluck: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
 --- !u!114 &1545869388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,6 +3570,10 @@ Prefab:
       propertyPath: speed
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: fluck
+      value: 
+      objectReference: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 1545869384}
@@ -3792,6 +3869,10 @@ Prefab:
       propertyPath: speed
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: fluck
+      value: 
+      objectReference: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 1315941542}
@@ -4074,6 +4155,10 @@ Prefab:
       propertyPath: speed
       value: .75
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
+      propertyPath: fluck
+      value: 
+      objectReference: {fileID: 8300000, guid: 42867276f1c8fb74eb365eeb764131bb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd96caba59187b468cd05df0fbc582d, type: 2}
   m_RootGameObject: {fileID: 579743639}

@@ -38,6 +38,10 @@ public class planetControl : MonoBehaviour
     
     //-------------------------------------------------------------------
 
+	public AudioClip fluck;
+
+
+
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
@@ -62,7 +66,7 @@ public class planetControl : MonoBehaviour
         // flicking control
         if (drag && InputReleased())
         {
-            if (dbug) {print("FLICKED " + transform.name);}
+			if (dbug) {print("FLICKED " + transform.name);}
             Flick();
         } else if (drag && GetElapsedTime(dragStartTime) > maxSecForDrag)
         { 
@@ -155,7 +159,10 @@ public class planetControl : MonoBehaviour
 
         // decrease follower count
         followerCount.UpdateDeceaseCount(gameObject);
-    }
+
+		//should be playing audio
+		audio.Play();
+	}
 
     private void Release()
     {
