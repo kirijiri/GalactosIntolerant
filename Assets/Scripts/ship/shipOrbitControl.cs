@@ -4,10 +4,11 @@ using System.Collections;
 
 public class shipOrbitControl : MonoBehaviour
 {
+    private Animator anim;
     private GameObject ship;
     private GameObject sun;
     private shipControl shipCtrl;
-    private float clickedRadius;
+    private float inputRadius;
     private float upper;
     private float lower;
     private Vector3 centre;
@@ -28,29 +29,33 @@ public class shipOrbitControl : MonoBehaviour
         shipCtrl = ship.GetComponent<shipControl>();
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         centre = sun.transform.position;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         UpdateTinker();
 
-        if (Input.GetMouseButtonDown(0))
-        { 
-            if (shipCtrl.isMoving)
-            {
-            
-                mousePosition = mouseInput.GetScreenPosition();
-                solarPosition = ConvertToSolarPosition(mousePosition);
-                clickedRadius = ConvertSolarPosToRadius(solarPosition);
-
-                upper = orbitRadius + upperBoundary;
-                lower = orbitRadius - lowerBoundary;
-
-                if (clickedRadius >= lower && clickedRadius <= upper)
+        mousePosition = mouseInput.GetScreenPosition();
+        solarPosition = ConvertToSolarPosition(mousePosition);
+        inputRadius = ConvertSolarPosToRadius(solarPosition);
+        
+        upper = orbitRadius + upperBoundary;
+        lower = orbitRadius - lowerBoundary;
+        
+        if (inputRadius >= lower && inputRadius <= upper)
+        {
+            anim.SetBool("hover", shipCtrl.isMoving);
+            if (Input.GetMouseButtonDown(0))
+            { 
+                if (shipCtrl.isMoving)
                 {
                     ship.SendMessage("SetNewPosition", solarPosition);
                 }
             }
+        } else
+        {
+            anim.SetBool("hover", false);
         }
     }
 

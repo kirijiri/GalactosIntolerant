@@ -23,6 +23,7 @@ public class planetControl : MonoBehaviour
     private tinker tinker;
     private phoneMessages phoneMessaging;
     private followerCount followerCount;
+    private planetSound sound;
 
     // tinker
     // Option: restore speed
@@ -35,10 +36,6 @@ public class planetControl : MonoBehaviour
     private float acceleration;
     private bool dbug;
     private bool flickOnOuterBand;
-    
-    //-------------------------------------------------------------------
-
-	public AudioClip fluck;
 
 
 
@@ -47,6 +44,7 @@ public class planetControl : MonoBehaviour
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         phoneMessaging = GameObject.Find("messages").GetComponent<phoneMessages>();
         followerCount = GameObject.Find("follower_count").GetComponent<followerCount>();
+        sound = GetComponent<planetSound>();
     }
 
     void Update()
@@ -118,6 +116,7 @@ public class planetControl : MonoBehaviour
 
     void OnMouseDown()
     {
+
         // store data
         storedPosition = transform.position;
         storedVelocity = rigidbody2D.velocity;
@@ -126,6 +125,8 @@ public class planetControl : MonoBehaviour
 
         // pause
         rigidbody2D.velocity = new Vector3(0, 0, 0);
+
+        Holding();
     }
     
     void OnMouseDrag()
@@ -160,9 +161,14 @@ public class planetControl : MonoBehaviour
         // decrease follower count
         followerCount.UpdateDeceaseCount(gameObject);
 
-		//should be playing audio
-		audio.Play();
+        // play any audio 
+        sound.AudioFlick();
 	}
+
+    private void Holding(){
+        // Play any audio
+        sound.AudioHold();
+    }
 
     private void Release()
     {

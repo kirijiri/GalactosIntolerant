@@ -17,14 +17,4 @@ public class planetAnimation : MonoBehaviour {
 	void Update(){
         anim.SetFloat("decay", (float)(settings.population / settings.maxPopulation));
     }
-
-    public void Gravity(bool active){
-        if (active)
-        {
-            spriteRenderer.color = Color.red;
-        } else
-        {
-            spriteRenderer.color = Color.white;
-        }
-    }
 }
