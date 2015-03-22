@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: T_HtO_CC
+  m_Name: t_03_l2h
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -18,20 +18,14 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300026, guid: 1d5a9def5d78519469cd21e9431ed70e, type: 3}
-    - time: .0625
-      value: {fileID: 21300028, guid: 1d5a9def5d78519469cd21e9431ed70e, type: 3}
+      value: {fileID: 21300014, guid: fe31d065b3387f84c8a5e4e18196dd1a, type: 3}
     - time: .125
-      value: {fileID: 21300030, guid: 1d5a9def5d78519469cd21e9431ed70e, type: 3}
-    - time: .1875
-      value: {fileID: 21300032, guid: 1d5a9def5d78519469cd21e9431ed70e, type: 3}
-    - time: .25
-      value: {fileID: 21300034, guid: 1d5a9def5d78519469cd21e9431ed70e, type: 3}
+      value: {fileID: 21300016, guid: fe31d065b3387f84c8a5e4e18196dd1a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 16
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -45,15 +39,12 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300026, guid: 1d5a9def5d78519469cd21e9431ed70e, type: 3}
-    - {fileID: 21300028, guid: 1d5a9def5d78519469cd21e9431ed70e, type: 3}
-    - {fileID: 21300030, guid: 1d5a9def5d78519469cd21e9431ed70e, type: 3}
-    - {fileID: 21300032, guid: 1d5a9def5d78519469cd21e9431ed70e, type: 3}
-    - {fileID: 21300034, guid: 1d5a9def5d78519469cd21e9431ed70e, type: 3}
+    - {fileID: 21300014, guid: fe31d065b3387f84c8a5e4e18196dd1a, type: 3}
+    - {fileID: 21300016, guid: fe31d065b3387f84c8a5e4e18196dd1a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .3125
+    m_StopTime: .25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

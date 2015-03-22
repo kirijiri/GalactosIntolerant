@@ -3,6 +3,7 @@ using System.Collections;
 
 public class thrustAnimation : MonoBehaviour
 {
+    private shipControl shipCtrl;
     private Animator anim;
     private float currAccel;
     private float avgAccel;
@@ -24,6 +25,7 @@ public class thrustAnimation : MonoBehaviour
         anim = this.GetComponent<Animator>();
         lastPos = transform.position;
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+        shipCtrl = GameObject.Find("ship").GetComponent<shipControl>();
     }
 
     void Update()
@@ -32,7 +34,7 @@ public class thrustAnimation : MonoBehaviour
 
         // calculate the change in velocity
         currVelocity = transform.position - lastPos;
-        currAccel = Mathf.Abs( currVelocity.magnitude - lastVelocity.magnitude );
+        currAccel = Mathf.Abs(currVelocity.magnitude - lastVelocity.magnitude);
 
         // work out direction of acceleration
         if (currAccel > 0.0f)
@@ -50,23 +52,37 @@ public class thrustAnimation : MonoBehaviour
         accelQueue.Enqueue(currAccel * accelScale);
         if (accelQueue.Count > queueSize)
         {
-            accelQueue.Dequeue ();
+            accelQueue.Dequeue();
         }
 
         // calulate average in queue
         avgAccel = 0.0f;
-        foreach(float a in accelQueue)
+        foreach (float a in accelQueue)
         {
             avgAccel += a;
         }
         avgAccel /= accelQueue.Count;
 
         // set in animator
-        anim.SetFloat("accel", avgAccel);
+        SetInAnim(avgAccel);
 
         // store data for next check
         lastPos = transform.position;
         lastVelocity = currVelocity;
+
+    }
+
+    void SetInAnim(float accel)
+    {
+        if (shipCtrl.isMoving)
+        {
+            anim.SetBool("stop", false);
+            anim.SetFloat("accel", avgAccel);
+        } else
+        {
+            anim.SetBool("stop", true);
+            anim.SetFloat("accel", 0.0f);
+        }
     }
 
     void UpdateTinker()

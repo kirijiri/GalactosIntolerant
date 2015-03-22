@@ -27,6 +27,9 @@ TextureImporter:
     21300044: ship_thruster_sheet_256_22
     21300046: ship_thruster_sheet_256_23
     21300048: ship_thruster_sheet_256_24
+    21300050: ship_thruster_sheet_256_9
+    21300052: ship_thruster_sheet_256_17
+    21300054: ship_thruster_sheet_256_25
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -116,7 +119,7 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ship_thruster_sheet_256_5
       rect:
@@ -156,9 +159,9 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: HIGH
+    - name: ship_thruster_sheet_256_9
       rect:
         serializedVersion: 2
         x: 64
@@ -166,7 +169,7 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ship_thruster_sheet_256_10
       rect:
@@ -176,7 +179,7 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ship_thruster_sheet_256_11
       rect:
@@ -186,7 +189,7 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ship_thruster_sheet_256_12
       rect:
@@ -196,7 +199,7 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ship_thruster_sheet_256_13
       rect:
@@ -206,7 +209,7 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ship_thruster_sheet_256_14
       rect:
@@ -216,7 +219,7 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ship_thruster_sheet_256_15
       rect:
@@ -226,7 +229,7 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: ship_thruster_sheet_256_16
       rect:
@@ -236,9 +239,9 @@ TextureImporter:
         width: 64
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: 
+    - name: ship_thruster_sheet_256_17
       rect:
         serializedVersion: 2
         x: 64
@@ -251,7 +254,7 @@ TextureImporter:
     - name: ship_thruster_sheet_256_18
       rect:
         serializedVersion: 2
-        x: 192
+        x: 128
         y: 96
         width: 64
         height: 32
@@ -261,8 +264,8 @@ TextureImporter:
     - name: ship_thruster_sheet_256_19
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 192
+        y: 96
         width: 64
         height: 32
       alignment: 0
@@ -271,7 +274,7 @@ TextureImporter:
     - name: ship_thruster_sheet_256_20
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 64
         width: 64
         height: 32
@@ -281,7 +284,7 @@ TextureImporter:
     - name: ship_thruster_sheet_256_21
       rect:
         serializedVersion: 2
-        x: 128
+        x: 64
         y: 64
         width: 64
         height: 32
@@ -291,7 +294,7 @@ TextureImporter:
     - name: ship_thruster_sheet_256_22
       rect:
         serializedVersion: 2
-        x: 192
+        x: 128
         y: 64
         width: 64
         height: 32
@@ -301,8 +304,8 @@ TextureImporter:
     - name: ship_thruster_sheet_256_23
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 192
+        y: 64
         width: 64
         height: 32
       alignment: 0
@@ -311,28 +314,18 @@ TextureImporter:
     - name: ship_thruster_sheet_256_24
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 32
         width: 64
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: 
+    - name: ship_thruster_sheet_256_25
       rect:
         serializedVersion: 2
-        x: 128
-        y: 96
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: EMPTY
-      rect:
-        serializedVersion: 2
-        x: 157
-        y: 15
+        x: 64
+        y: 32
         width: 64
         height: 32
       alignment: 0
