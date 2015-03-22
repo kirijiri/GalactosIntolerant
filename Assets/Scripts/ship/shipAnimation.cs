@@ -5,9 +5,10 @@ public class shipAnimation : MonoBehaviour
 {
     private Animator anim;
     private Animator hoverAnim;
+    private Animator guideAnim;
     private GameObject hover;
-    private SpriteRenderer hoverSprite;
     private GameObject[] planets;
+    private SpriteRenderer hoverSprite;
     private bool hold;
     private bool flick;
     private bool over ;
@@ -24,8 +25,9 @@ public class shipAnimation : MonoBehaviour
         anim = this.GetComponent<Animator>();
         hover = GameObject.Find("shipHover");
         hoverAnim = hover.GetComponent<Animator>();
-        hoverSprite = hover.GetComponent<SpriteRenderer>();
+        guideAnim = GameObject.Find("beamGuide").GetComponent<Animator>();
         planets = GameObject.FindGameObjectsWithTag("Planet");
+        hoverSprite = hover.GetComponent<SpriteRenderer>();
         hoverSprite.enabled = false;
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
     }
@@ -65,15 +67,19 @@ public class shipAnimation : MonoBehaviour
 
     public void GuideOn()
     {
+        guideAnim.SetBool("enable", true);
     }
 
     public void GuideOff()
     {
+        guideAnim.SetBool("enable", false);
     }
 
     public void GuideDetails(float dist, float angle)
     {
-
+        print(dist);
+        guideAnim.SetBool("inAngle", angle < beamActivateAngle);
+        guideAnim.SetFloat("dist", ((dist * 200.0f) - minDragDistance) / (maxGuideDragDistance - minDragDistance));
     }
 
     // PRIVATE --------------------------------------------------------------------------------
