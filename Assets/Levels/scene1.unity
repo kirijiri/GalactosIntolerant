@@ -250,8 +250,8 @@ MonoBehaviour:
   GBEffectThreshold: .300000012
   GBAlignmentThreshold: .0500000007
   GBTimeout: 2
-  GBMinDragDistance: 30
-  GBMaxGuideDragDistance: 100
+  GBMinGuideDistance: 30
+  GBMaxGuideDistance: 64
   messageOptions: '--- MESSAGE OPTIONS ---'
   idleTimer: 7
   criticalPopulationPercentage: 30

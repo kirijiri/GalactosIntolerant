@@ -20,8 +20,8 @@ public class shipAnimation : MonoBehaviour
     // tinkered
     private tinker tinker;
     private float beamActivateAngle;
-    private float minDragDistance;
-    private float maxGuideDragDistance;
+    private float minGuideDistance;
+    private float maxGuideDistance;
 
     // Use this for initialization
     void Start()
@@ -99,7 +99,7 @@ public class shipAnimation : MonoBehaviour
     public void GuideDetails(float dist, float angle)
     {
         guideAnim.SetBool("inAngle", angle < beamActivateAngle);
-        guideAnim.SetFloat("dist", ((dist * 200.0f) - minDragDistance) / (maxGuideDragDistance - minDragDistance));
+        guideAnim.SetFloat("dist", ((dist * 200.0f) - minGuideDistance) / (maxGuideDistance - minGuideDistance));
     }
 
     // PRIVATE --------------------------------------------------------------------------------
@@ -107,8 +107,8 @@ public class shipAnimation : MonoBehaviour
     void UpdateTinker()
     {
         beamActivateAngle = tinker.GBActivateAngle;
-        minDragDistance = tinker.GBMinDragDistance;
-        maxGuideDragDistance = tinker.GBMaxGuideDragDistance;
+        minGuideDistance = tinker.GBMinGuideDistance;
+        maxGuideDistance = tinker.GBMaxGuideDistance;
     }
 
     private bool IsHolding()

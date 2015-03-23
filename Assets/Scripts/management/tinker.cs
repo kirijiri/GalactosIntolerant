@@ -36,8 +36,8 @@ public class tinker : MonoBehaviour
     public float GBEffectThreshold = 0.3f;
     public float GBAlignmentThreshold = 0.05f;
     public float GBTimeout = 2.0f;
-    public float GBMinDragDistance = 30f;
-    public float GBMaxGuideDragDistance = 100f;
+    public float GBMinGuideDistance = 30f;
+    public float GBMaxGuideDistance = 64f;
 
     // messages
     public string messageOptions = "--- MESSAGE OPTIONS ---";

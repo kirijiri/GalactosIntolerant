@@ -39,7 +39,7 @@ public class shipControl : MonoBehaviour
     void UpdateTinker()
     {
         beamActivateAngle = tinker.GBActivateAngle;
-        minDragDistance = tinker.GBMinDragDistance / 200.0f;
+        minDragDistance = tinker.GBMaxGuideDistance / 200.0f;
     }
     
     // events -------------------------------------------------------------
