@@ -15,4 +15,9 @@ public class gravityBeamAnimation : MonoBehaviour {
 		sunAnimation.die = true;
         anim.SetBool("on", true);
 	}
+
+    public bool IsFinished()
+    {
+        return anim.GetCurrentAnimatorStateInfo(0).nameHash == -1975081366;
+    }
 }

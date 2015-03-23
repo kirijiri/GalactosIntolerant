@@ -27,10 +27,8 @@ public class gravityBeam : MonoBehaviour
         if (isActive)
         {
             animationCtrl.BeamAnimationOn();
-            timer += Time.deltaTime;
-            if (timer >= tinker.GBTimeout)
+            if (animationCtrl.IsFinished())
             {
-                timer = 0;
                 isActive = false;
                 available = false;
             }

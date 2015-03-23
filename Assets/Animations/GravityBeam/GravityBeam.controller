@@ -86,7 +86,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: gameOver(empty)
+  m_Name: FINISHED
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -127,16 +127,16 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
+      first: {fileID: 110269582}
+      second:
+      - {fileID: 110107370}
+    data:
       first: {fileID: 110234772}
       second:
       - {fileID: 110156898}
     data:
       first: {fileID: 110266612}
       second: []
-    data:
-      first: {fileID: 110269582}
-      second:
-      - {fileID: 110107370}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -96, y: 12, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
