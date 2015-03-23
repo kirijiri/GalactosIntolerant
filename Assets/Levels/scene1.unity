@@ -244,7 +244,7 @@ MonoBehaviour:
   shipClickLowerBoundary: 20
   shipAnimRestThreshold: 5
   thrusterSmooth: 20
-  thrusterAccelScale: 200
+  thrusterAccelScale: 15
   beamOptions: '--- BEAM OPTIONS ---'
   GBActivateAngle: 25
   GBEffectThreshold: .300000012

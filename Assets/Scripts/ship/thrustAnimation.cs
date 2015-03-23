@@ -33,7 +33,7 @@ public class thrustAnimation : MonoBehaviour
         UpdateTinker();
 
         // calculate the change in velocity
-        currVelocity = transform.position - lastPos;
+        currVelocity = (transform.position - lastPos) / Time.deltaTime;
         currAccel = Mathf.Abs(currVelocity.magnitude - lastVelocity.magnitude);
 
         // work out direction of acceleration
@@ -49,7 +49,7 @@ public class thrustAnimation : MonoBehaviour
         }
 
         // add the acceleration to the queue
-        accelQueue.Enqueue(currAccel * accelScale);
+        accelQueue.Enqueue(currAccel * accelScale );
         if (accelQueue.Count > queueSize)
         {
             accelQueue.Dequeue();

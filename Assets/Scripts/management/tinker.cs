@@ -28,7 +28,7 @@ public class tinker : MonoBehaviour
     public float shipClickLowerBoundary = 20f;
     public float shipAnimRestThreshold = 5.0f;
     public int thrusterSmooth = 20;
-    public float thrusterAccelScale = 200f;
+    public float thrusterAccelScale = 15f;
 
     // gravity beam
 	public string beamOptions = "--- BEAM OPTIONS ---";
