@@ -20,12 +20,14 @@ public class planetSound : MonoBehaviour {
     public void AudioFlick()
     {
         //should be playing audio
-        audio.Play();
+		audio.Stop();
+        audio.PlayOneShot(flicked);
     }
 
     public void AudioHold()
     {
-
+		audio.Stop();
+		audio.PlayOneShot(held);
     }
 
 }
