@@ -69,11 +69,17 @@ public class scoring : MonoBehaviour
     public void UpdateDeceaseCount()
     {
         double followers = 0;
+        double population = 0;
+        double dead = 0;
         for (int i = 0; i < planets.Length; i++)
         {
             settings = planets[i].GetComponent<planetSettings>();
             followers += (settings.population * settings.followers);
+            population += settings.population;
+            dead += (settings.maxPopulation - settings.population);
         }
         gameManager.Instance.followers = followers;
+        gameManager.Instance.population = population;
+        gameManager.Instance.dead = dead;
     }
 }

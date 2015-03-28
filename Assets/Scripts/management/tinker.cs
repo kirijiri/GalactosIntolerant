@@ -62,6 +62,8 @@ public class tinker : MonoBehaviour
     public float followerWidth = 100;
     public float followerHeight = 50;
     public int followerFontSize = 30;
+    public float likesPercentage = 30.0f;
+    public float childrenPercentage = 30.0f;
 
     public string snapshotOptions = "--- SNAPSHOT OPTIONS ---";
     public float flashFadeInSpeed = 10.0f;
