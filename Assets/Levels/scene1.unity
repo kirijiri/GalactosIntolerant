@@ -357,7 +357,6 @@ MonoBehaviour:
   followerWidth: 100
   followerHeight: 50
   followerFontSize: 30
-  populationDiesPercentage: 30
   snapshotOptions: '--- SNAPSHOT OPTIONS ---'
   flashFadeInSpeed: 10
   flashFadeOutSpeed: 10
@@ -552,6 +551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969613b04c1b5734fbfe01e45cc53f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initVelocity: {x: 0, y: 0}
+  bleedMultilier: 1
+  do_kill_people: 0
 --- !u!114 &131670821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +573,9 @@ MonoBehaviour:
   maxPopulation: 0
   followers: 0
   planetName: 
+  flickUpDeathPercentage: .300000012
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 10
   biome: 
   race: 
   look: 
@@ -1261,6 +1266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawShipDiameter: 0
+  showPlanetDecayColors: 0
+  showPlanetColors: 0
 --- !u!4 &555966793
 Transform:
   m_ObjectHideFlags: 0
@@ -1962,6 +1969,7 @@ GameObject:
   - 81: {fileID: 1060718926}
   - 114: {fileID: 1060718931}
   - 82: {fileID: 1060718932}
+  - 114: {fileID: 1060718933}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2103,6 +2111,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1060718933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060718925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8655ba3b64612fd48a91585526cf804f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1063884279
 GameObject:
   m_ObjectHideFlags: 0
