@@ -22,13 +22,13 @@ public class planetControl : MonoBehaviour
     // 
     private tinker tinker;
     private phoneMessages phoneMessaging;
-    private followerCount followerCount;
+    private scoring scoring;
     private planetSound sound;
     private planetAnimation anim;
 
     // tinker
     // Option: restore speed
-    private bool restoreSpeed;
+    private bool useForcesOption;
     private float innerBand;
     private float outerBand;
     private float maxSecForDrag;
@@ -42,7 +42,7 @@ public class planetControl : MonoBehaviour
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         phoneMessaging = GameObject.Find("messages").GetComponent<phoneMessages>();
-        followerCount = GameObject.Find("follower_count").GetComponent<followerCount>();
+        scoring = GameObject.Find("Main Camera").GetComponent<scoring>();
         sound = GetComponent<planetSound>();
         anim = GetComponent<planetAnimation>();
     }
@@ -113,10 +113,16 @@ public class planetControl : MonoBehaviour
             }
         }
 
-        // update animation
-        anim.Holding(held || drag);
+        if (held)
+        {
+            scoring.IncreaseDeaths(gameObject);
+        }
+        if (!held)
+        {
+            scoring.DecreaseDeaths(gameObject);
+        }
 
-        // restore speed if needed
+		// restore speed if needed
         if (!held && !drag && restoreSpeed)
         {
             RestoreSpeed();
@@ -125,7 +131,7 @@ public class planetControl : MonoBehaviour
     
     void UpdateTinker()
     {
-        restoreSpeed = tinker.PRestoreSpeed;
+        useForcesOption = tinker.PRestoreSpeed;
         innerBand = tinker.PInnerBand;
         outerBand = tinker.POuterBand;
         maxSecForDrag = tinker.PMaxSecsForDrag;
@@ -180,11 +186,11 @@ public class planetControl : MonoBehaviour
         // send message to phone
         phoneMessaging.SendNewMessage(gameObject);
 
-        // decrease follower count
-        followerCount.UpdateDeceaseCount(gameObject);
-
         // play any audio 
         sound.AudioFlick();
+
+        // kill people on flick
+        scoring.KillPeople(gameObject);
     }
 
     private void Release()

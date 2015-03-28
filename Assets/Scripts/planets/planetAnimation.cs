@@ -9,6 +9,7 @@ public class planetAnimation : MonoBehaviour {
     private Animator holdAnim;
 
     private planetSettings settings;
+    private SpriteRenderer spriteRenderer;
 
 	// Use this for initialization
 	void Start () {

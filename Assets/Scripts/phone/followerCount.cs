@@ -13,26 +13,17 @@ public class followerCount : MonoBehaviour
     private float w;
     private float h;
     private GUIStyle textStyle;
-    private GameObject[] planets;
     private tinker tinker;
 
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
-        planets = GameObject.FindGameObjectsWithTag("Planet");
 
         // define message font
         textStyle = new GUIStyle();
         textStyle.normal.textColor = Color.black;
         textStyle.wordWrap = true;
         textStyle.font = (Font)Resources.Load("Fonts/MunroSmall");
-
-        double followers = 0;
-        for (int i = 0; i < planets.Length; i++)
-        {
-            followers += (planets [i].GetComponent<planetSettings>().population * planets [i].GetComponent<planetSettings>().followers);
-        }
-        gameManager.Instance.followers = followers;
     }
     
     void FixedUpdate()
@@ -65,22 +56,4 @@ public class followerCount : MonoBehaviour
         GUI.Label(textRect, "Followers: " + gameManager.Instance.followers.ToString("F0"), textStyle);
     }
 
-    public void UpdateDeceaseCount(GameObject planet)
-    {
-        double dead = planet.GetComponent<planetSettings>().maxPopulation / 100 * tinker.populationDiesPercentage;
-        planet.GetComponent<planetSettings>().population = planet.GetComponent<planetSettings>().population - dead;
-
-        // planet dead
-        if (planet.GetComponent<planetSettings>().population < 0.0f)
-        {  
-            planet.GetComponent<planetSettings>().population = 0.0f;
-        }
-
-        double followers = 0;
-        for (int i = 0; i < planets.Length; i++)
-        {
-            followers += (planets [i].GetComponent<planetSettings>().population * planets [i].GetComponent<planetSettings>().followers);
-        }
-        gameManager.Instance.followers = followers;
-    }
 }

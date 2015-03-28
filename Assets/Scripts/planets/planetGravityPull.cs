@@ -67,7 +67,7 @@ public class planetGravityPull : MonoBehaviour
 
         // colour the planets when in the threshold and trigger pull
         isAligned = false;
-        //planetLook.standard(gameObject);
+        planetLook.standard(gameObject);
         if (beamDist < gbEffectThreshold)
         {
             // stop gravity beam at sun
@@ -77,13 +77,13 @@ public class planetGravityPull : MonoBehaviour
 
             if (gravityBeam.isActive && gravityBeam.available)
             {
-                //planetLook.gravity(gameObject);
+                planetLook.gravity(gameObject);
                 gravityPull(beam, beamIntersectPoint);
             }
 
             if (beamDist < gbAlignmentThreshold)
             {
-                //planetLook.aligned(gameObject);
+                planetLook.aligned(gameObject);
                 isAligned = true;
             }
         }
