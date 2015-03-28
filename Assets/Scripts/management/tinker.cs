@@ -17,7 +17,6 @@ public class tinker : MonoBehaviour
     public float PMaxSecsForHold = 3f;
     public float PForceMult = 0.02f;
     public float PAcceleration = 0.25f;
-    public bool PRestoreSpeed = false;
     public bool PRandomiseInit = true;
 
     // ship
@@ -62,6 +61,8 @@ public class tinker : MonoBehaviour
     public float followerWidth = 100;
     public float followerHeight = 50;
     public int followerFontSize = 30;
+    public float likesPercentage = 30.0f;
+    public float childrenPercentage = 30.0f;
 
     public string snapshotOptions = "--- SNAPSHOT OPTIONS ---";
     public float flashFadeInSpeed = 10.0f;

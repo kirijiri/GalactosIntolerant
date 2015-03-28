@@ -7,6 +7,7 @@ public class planetInit : MonoBehaviour
 {
     // velocity that the planet tries to maintain
     public Vector2 initVelocity;
+    private Vector3 initDirection;
     public float bleedMultilier = 1.0f;
     public bool do_kill_people = false;
 
@@ -20,7 +21,6 @@ public class planetInit : MonoBehaviour
     private Vector3 posDiff;
     private SpriteRenderer sprRen;
     private tinker tinker;
-    private Animator anim;
 
     //tinkered
     private float speedMult;
@@ -31,7 +31,7 @@ public class planetInit : MonoBehaviour
     void Awake()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
-        anim = GetComponent<Animator>();
+        sun = GameObject.Find("sun");
     }
 
     void Start()
@@ -46,14 +46,13 @@ public class planetInit : MonoBehaviour
 
         if (randomiseInitialPosition)
         {
-            Random.seed = System.DateTime.Now.Minute + System.DateTime.Now.Millisecond + transform.GetHashCode();
-            posDiff = new Vector3(Random.Range(-1.0f,1.0f), Random.Range(-1.0f,1.0f), 0.0f).normalized;
+            posDiff = new Vector3(Random.Range(-1.0f,1.0f), Random.Range(-1.0f,1.0f), 0.0f);
         }
         else
         {
-            posDiff = transform.localPosition.normalized;
+            posDiff = transform.localPosition;
         }
-        posDiff *= orbitRadius / 200;
+        posDiff = posDiff.normalized * (orbitRadius / 200);
 
         // setup physics
         HingeSetup();
@@ -81,14 +80,13 @@ public class planetInit : MonoBehaviour
     private void HingeSetup()
     {
         HingeJoint2D hinge = gameObject.GetComponent<HingeJoint2D>();
+        hinge.connectedBody = sun.rigidbody2D;
         hinge.anchor = new Vector2(posDiff.x, posDiff.y);
     }
 
     private void InitVelocity()
     {
-        Vector3 initDirection = posDiff.normalized;
-        initDirection = Quaternion.AngleAxis(90, new Vector3(0, 1, 0)) * initDirection;
-
+        initDirection = Quaternion.AngleAxis(90, new Vector3(0, 0, 1)) * posDiff.normalized;
         rigidbody2D.velocity = initDirection * initSpeed;
     }
 

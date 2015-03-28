@@ -15,6 +15,15 @@ public class score : MonoBehaviour
     
     // UI elements
     private Text planetAlignText;
+    private Text likesText;
+    private Text followersText;
+    private Text populationText;
+    private Text deathText;
+    private Text childrenText;
+
+    private float likesPercentage;
+    private float childrenPercentage;
+
     private tinker tinker;
 
     //-------------------------------------------------------------------
@@ -22,9 +31,16 @@ public class score : MonoBehaviour
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+        likesPercentage = tinker.likesPercentage;
+        childrenPercentage = tinker.childrenPercentage;
 
         // get UI elements
-
+        planetAlignText = GameObject.Find("planetAligned").GetComponent<Text>();
+        likesText = GameObject.Find("likes").GetComponent<Text>();
+        followersText = GameObject.Find("followers").GetComponent<Text>();
+        populationText = GameObject.Find("population").GetComponent<Text>();
+        deathText = GameObject.Find("death").GetComponent<Text>();
+        childrenText = GameObject.Find("children").GetComponent<Text>();
     }
 
     void Update()
@@ -34,6 +50,11 @@ public class score : MonoBehaviour
 
         // show score
         planetAlignText.text = "You aligned " + gameManager.Instance.alignedPlanetCount + " planets";
+        likesText.text = (gameManager.Instance.followers * likesPercentage).ToString(); 
+        followersText.text = gameManager.Instance.followers.ToString(); 
+        populationText.text =  gameManager.Instance.population.ToString(); 
+        deathText.text = gameManager.Instance.dead.ToString(); 
+        childrenText.text = (gameManager.Instance.dead * childrenPercentage).ToString();
     }
 
     void OnGUI()
