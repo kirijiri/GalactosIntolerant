@@ -11,7 +11,6 @@ public class score : MonoBehaviour
 
     // flash animation
     private bool doSnapshot = true;
-    private float time;
     private float fadeSpeed;
     
     // UI elements
@@ -25,9 +24,7 @@ public class score : MonoBehaviour
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
 
         // get UI elements
-        planetAlignText = GameObject.Find("planetAligned").GetComponent<Text>();
 
-        time = Time.time;
     }
 
     void Update()
@@ -48,13 +45,13 @@ public class score : MonoBehaviour
 
         Texture2D tx;
         tx = new Texture2D(1, 1);          
-        Color lerpedColor = Color.Lerp(Color.white, Color.clear, (Time.time - time) * fadeSpeed);
+        Color lerpedColor = Color.Lerp(Color.white, Color.clear, Time.timeSinceLevelLoad * fadeSpeed);
         tx.SetPixel(1, 1, lerpedColor);    
         tx.Apply();                        
         
         GUI.DrawTexture(screenRect, tx); 
 
         // skip draw routine
-        if ((Time.time - time) >= 1) doSnapshot = false;
+        if (Time.timeSinceLevelLoad >= 1) doSnapshot = false;
     }
 }
