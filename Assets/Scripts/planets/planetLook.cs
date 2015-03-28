@@ -8,7 +8,7 @@ public static class planetLook
         debug debug = GameObject.Find("debug").GetComponent<debug>();
         if (!debug.showPlanetColors) return;
 
-        SpriteRenderer spriteRenderer = go.GetComponent<planetInit>().planetGraphic.GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = go.transform.Find("planet_graphic").GetComponent<SpriteRenderer>();
         spriteRenderer.color = Color.red;
     }
     
@@ -17,7 +17,7 @@ public static class planetLook
         debug debug = GameObject.Find("debug").GetComponent<debug>();
         if (!debug.showPlanetColors) return;
 
-        SpriteRenderer spriteRenderer = go.GetComponent<planetInit>().planetGraphic.GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = go.transform.Find("planet_graphic").GetComponent<SpriteRenderer>();
         spriteRenderer.color = Color.blue;
     }
 
@@ -26,7 +26,7 @@ public static class planetLook
         debug debug = GameObject.Find("debug").GetComponent<debug>();
         if (!debug.showPlanetColors) return;
         
-        SpriteRenderer spriteRenderer = go.GetComponent<planetInit>().planetGraphic.GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = go.transform.Find("planet_graphic").GetComponent<SpriteRenderer>();
         spriteRenderer.color = Color.white;
 
         if (debug.showPlanetDecayColors)
