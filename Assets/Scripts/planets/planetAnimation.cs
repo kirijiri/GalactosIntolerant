@@ -3,49 +3,44 @@ using System.Collections;
 
 public class planetAnimation : MonoBehaviour {
     private Animator planetAnim;
-    private Animator fxAnim;
+    private Animator glowAnim;
+    private Animator elecOverAnim;
+    private Animator elecUnderAnim;
+    private Animator holdAnim;
+
     private planetSettings settings;
 
 	// Use this for initialization
 	void Start () {
         planetAnim = transform.Find("planet_graphic").GetComponent<Animator>();
-        fxAnim = transform.Find("fx_graphic").GetComponent<Animator>();
+        glowAnim = transform.Find("glow_graphic").GetComponent<Animator>();
+        elecOverAnim = transform.Find("elecOver_graphic").GetComponent<Animator>();
+        elecUnderAnim = transform.Find("elecUnder_graphic").GetComponent<Animator>();
+        holdAnim = transform.Find("hold_graphic").GetComponent<Animator>();
+        
         settings = GetComponent<planetSettings>();
 	}
 	
-	// Update is called once per frame
 	void Update()
     {
         planetAnim.SetFloat("decay", (float)(settings.population / settings.maxPopulation));
     }
 
-    public void Hover()
+    public void Holding(bool hold)
     {
-
+        holdAnim.SetBool("hold", hold);
     }
 
-    public void Hold()
+    public void InBeam(bool inBeam)
     {
-
+        elecOverAnim.SetBool("inBeam", inBeam);
+        elecUnderAnim.SetBool("inBeam", inBeam);
+        glowAnim.SetBool("inBeam", inBeam);
     }
-
-    public void Flick()
+    
+    public void Aligned(bool aligned)
     {
-
-    }
-
-    public void FXOff()
-    {
-
-    }
-
-    public void GravityOn()
-    {
-
-    }
-
-    public void Aligned()
-    {
-
+        elecOverAnim.SetBool("aligned", aligned);
+        elecUnderAnim.SetBool("aligned", aligned);
     }
 }

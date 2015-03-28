@@ -24,6 +24,7 @@ public class planetControl : MonoBehaviour
     private phoneMessages phoneMessaging;
     private followerCount followerCount;
     private planetSound sound;
+    private planetAnimation anim;
 
     // tinker
     // Option: restore speed
@@ -37,14 +38,13 @@ public class planetControl : MonoBehaviour
     private bool dbug;
     private bool flickOnOuterBand;
 
-
-
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         phoneMessaging = GameObject.Find("messages").GetComponent<phoneMessages>();
         followerCount = GameObject.Find("follower_count").GetComponent<followerCount>();
         sound = GetComponent<planetSound>();
+        anim = GetComponent<planetAnimation>();
     }
 
     void Update()
@@ -64,19 +64,31 @@ public class planetControl : MonoBehaviour
         // flicking control
         if (drag && InputReleased())
         {
-			if (dbug) {print("FLICKED " + transform.name);}
+            if (dbug)
+            {
+                print("FLICKED " + transform.name);
+            }
             Flick();
         } else if (drag && GetElapsedTime(dragStartTime) > maxSecForDrag)
         { 
-            if (dbug) {print("DRAG TIMER RAN OUT " + transform.name);}
+            if (dbug)
+            {
+                print("DRAG TIMER RAN OUT " + transform.name);
+            }
             Release();
         } else if (held && InputReleased())
         {
-            if (dbug) {print("HELD AND RELEASED " + transform.name);}
+            if (dbug)
+            {
+                print("HELD AND RELEASED " + transform.name);
+            }
             Release();
         } else if (held && GetElapsedTime(holdStartTime) > maxSecForHold)
         {
-            if (dbug) {print("HOLD TIMER RAN OUT "  + transform.name);}
+            if (dbug)
+            {
+                print("HOLD TIMER RAN OUT " + transform.name);
+            }
             Release();
         }
 
@@ -84,19 +96,29 @@ public class planetControl : MonoBehaviour
         {
             CalculateNewVelocity();
             // release if dragged too far
-            if (newVelocity.magnitude > (outerBand / 200)){
-                if (dbug) {print("DRAGGED TOO FAR " + transform.name);}
-                if (flickOnOuterBand){
+            if (newVelocity.magnitude > (outerBand / 200))
+            {
+                if (dbug)
+                {
+                    print("DRAGGED TOO FAR " + transform.name);
+                }
+                if (flickOnOuterBand)
+                {
                     Flick();
-                }else{
+                } else
+                {
                     Release();
                 }
                 return;
             }
         }
 
+        // update animation
+        anim.Holding(held || drag);
 
-        if (!held && !drag && restoreSpeed){
+        // restore speed if needed
+        if (!held && !drag && restoreSpeed)
+        {
             RestoreSpeed();
         }
     }
@@ -111,7 +133,7 @@ public class planetControl : MonoBehaviour
         forceMult = tinker.PForceMult;
         acceleration = tinker.PAcceleration;
         dbug = tinker.printPlanetControls;
-        flickOnOuterBand= tinker.PFlickOnOuterBand;
+        flickOnOuterBand = tinker.PFlickOnOuterBand;
     }
 
     void OnMouseDown()
@@ -126,7 +148,7 @@ public class planetControl : MonoBehaviour
         // pause
         rigidbody2D.velocity = new Vector3(0, 0, 0);
 
-        Holding();
+        sound.AudioHold();
     }
     
     void OnMouseDrag()
@@ -134,7 +156,7 @@ public class planetControl : MonoBehaviour
         float dist = Vector3.Distance(storedPosition, InputPosition());
         float radius = GetComponent<CircleCollider2D>().radius;
 
-        if (dist < radius + (innerBand /200))
+        if (dist < radius + (innerBand / 200))
         { 
             drag = false;
             held = true;
@@ -163,11 +185,6 @@ public class planetControl : MonoBehaviour
 
         // play any audio 
         sound.AudioFlick();
-	}
-
-    private void Holding(){
-        // Play any audio
-        sound.AudioHold();
     }
 
     private void Release()
@@ -200,8 +217,11 @@ public class planetControl : MonoBehaviour
             {
                 newForce = storedVelocity.normalized * diffMagnitude;
             }
-			newForce *= acceleration;
-			if (dbug) { Debug.DrawLine(transform.position, transform.position + newForce, Color.red, 0, false); } 
+            newForce *= acceleration;
+            if (dbug)
+            {
+                Debug.DrawLine(transform.position, transform.position + newForce, Color.red, 0, false);
+            } 
             rigidbody2D.AddForce(newForce);
         }
     }

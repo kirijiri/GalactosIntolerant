@@ -19,7 +19,7 @@ public class planetGravityPull : MonoBehaviour
     private Vector3 beamIntersectPoint;
     private bool gravityBeamActive;
     private Vector3 planetDist;
-    private planetAnimation animation;
+    private planetAnimation anim;
     
     // settings objects
     private gravityBeam gravityBeam;
@@ -36,7 +36,7 @@ public class planetGravityPull : MonoBehaviour
 
         // gravity beam
         gravityBeam = GameObject.Find("gravityBeam").GetComponent<gravityBeam>();
-        animation = GetComponent<planetAnimation>();
+        anim = GetComponent<planetAnimation>();
 
         // settings
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
@@ -87,6 +87,10 @@ public class planetGravityPull : MonoBehaviour
                 isAligned = true;
             }
         }
+
+        // set animation
+        anim.InBeam((beamDist < gbEffectThreshold) && gravityBeam.isActive);
+        anim.Aligned(isAligned);
     }
 
     void UpdateTinker()
