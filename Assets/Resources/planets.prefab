@@ -420,10 +420,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .75
+  speed: .349999994
   size: 14
   orbitRadius: 200
-  population: 0
+  population: 5e+07
   maxPopulation: 0
   followers: 0
   planetName: 
@@ -434,9 +434,41 @@ MonoBehaviour:
   race: 
   look: 
   note: 
-  idleMessages: []
-  minorMessages: []
-  majorMessages: []
+  idleMessages:
+  - Support the soldier ants!
+  - Queen issues addendum to slavery act of...
+  - New production tithes issued for the 4th quarter...
+  - "New batch of royal babies has crowds spasming in exquisite joy. Pheromone effects
+    are set to end in 3 days...  \r\n"
+  - "Southern festival plans on schedule this summer for our brothers among the stars!
+    Drone attendance punishable by death. \r\n"
+  minorMessages:
+  - "Royal decree pulls surface colonies back to hive as scientists struggle to explain
+    recent shifts to the axial tilt of...\r\n"
+  - "Southern festival cancelled due to fears of meteor shower during what the government
+    is calling...\r\nSouthern festival cancelled due to fears of meteor shower during
+    what the government is calling...\r\n"
+  - "Food shortages continue as beleaguered Kiplah awaits late rain season to...\r\n"
+  - "Fears mount as crop counts continue to come up short. In a royal address concerning
+    the crisis the Queen is expected to announce...\r\n"
+  - "After initial disruption some experts believe that rising temperature could have
+    long term benefits...\r\n"
+  - Crowds ignore pleas to remain calm, fleeing to the equator to escape "the...
+  - The markets close after record low today as the inexplicably low temperatures
+    force many high hive businesses to...
+  majorMessages:
+  - "Rationing set to intensify in race to feed the dying continent, many experts
+    believe it\u2019s already too late..."
+  - "Soldier drones employ deadly force at hive gates as mass rioting erupts. It\u2019s
+    still unclear who gave the order to..."
+  - Queen moved to undisclosed location amidst the largest communications blackout
+    on record...
+  - Sweating it out! Surface temperatures rise to boiling point as tensions match!
+  - "All contact lost with surface, deeper tunneling is \u201Cjust buying time\"..."
+  - Medical facilities hopelessly overcrowded, crematoriums hopelessly overcrowded,
+    refugee centers on Pheriso cannot...
+  - "ROYAL DECREE DEMANDS ALL SOLDIER DRONES MAKE WAY TO CAPITAL IMMEDIATELY. ALL
+    WORKER DRONES TO HOLD POSITION UNTIL FURTHER NOTICE. MESSAGE REPEATS: ROYAL DECREE\u2026"
 --- !u!114 &11432958
 MonoBehaviour:
   m_ObjectHideFlags: 1

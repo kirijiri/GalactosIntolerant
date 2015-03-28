@@ -25,6 +25,7 @@ public class planetInit : MonoBehaviour
     //tinkered
     private float speedMult;
     private bool randomiseInitialPosition;
+    private bool randomiseInitialDirection;
 
     //-------------------------------------------------------------------
 
@@ -73,6 +74,7 @@ public class planetInit : MonoBehaviour
     void UpdateTinker(){
         speedMult = tinker.PInitSpeedMultiplier;
         randomiseInitialPosition = tinker.PRandomiseInit;
+        randomiseInitialDirection = tinker.PRandomiseDirection;
     }
 
     //------------------------------------------------------------------- physics
@@ -87,6 +89,10 @@ public class planetInit : MonoBehaviour
     private void InitVelocity()
     {
         initDirection = Quaternion.AngleAxis(90, new Vector3(0, 0, 1)) * posDiff.normalized;
+        if (randomiseInitialDirection && Random.Range(-1.0f, 1.0f) < 0)
+        {
+            initSpeed *= -1;
+        }
         rigidbody2D.velocity = initDirection * initSpeed;
     }
 
