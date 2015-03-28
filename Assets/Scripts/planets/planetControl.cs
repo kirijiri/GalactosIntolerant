@@ -128,7 +128,7 @@ public class planetControl : MonoBehaviour
     
     void UpdateTinker()
     {
-        useForcesOption = tinker.PUseForcesOption;
+        useForcesOption = tinker.PRestoreSpeed;
         innerBand = tinker.PInnerBand;
         outerBand = tinker.POuterBand;
         maxSecForDrag = tinker.PMaxSecsForDrag;
