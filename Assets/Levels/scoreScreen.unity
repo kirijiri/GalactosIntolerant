@@ -765,7 +765,7 @@ MonoBehaviour:
   printPlanetControls: 0
   PInitSpeedMultiplier: 1
   PInnerBand: 0
-  POuterBand: 200
+  POuterBand: 500
   PFlickOnOuterBand: 0
   PMaxSecsForDrag: 3
   PMaxSecsForHold: 3
@@ -773,9 +773,10 @@ MonoBehaviour:
   PAcceleration: .25
   PRestoreSpeed: 0
   PRandomiseInit: 1
+  PRandomiseDirection: 1
   shipOptions: '--- SHIP OPTIONS ---'
-  shipAcceleration: 5
-  shipDeceleration: 10
+  shipAcceleration: .5
+  shipDeceleration: 3
   shipOrbitRadius: 236
   shipClickUpperBoundary: 80
   shipClickLowerBoundary: 20
@@ -786,11 +787,11 @@ MonoBehaviour:
   GBActivateAngle: 45
   GBEffectThreshold: .300000012
   GBAlignmentThreshold: .0500000007
-  GBTimeout: 3
+  GBTimeout: 2
   GBMinGuideDistance: 30
   GBMaxGuideDistance: 64
   messageOptions: '--- MESSAGE OPTIONS ---'
-  idleTimer: 3
+  idleTimer: 7
   criticalPopulationPercentage: 30
   messageAnimOptions: '--- MESSAGE ANIMATION OPTIONS ---'
   messageMargins:
@@ -812,8 +813,8 @@ MonoBehaviour:
   followerWidth: 100
   followerHeight: 50
   followerFontSize: 30
-  likesPercentage: 30
-  childrenPercentage: 30
+  likesPercentage: .300000012
+  childrenPercentage: .300000012
   snapshotOptions: '--- SNAPSHOT OPTIONS ---'
   flashFadeInSpeed: 10
   flashFadeOutSpeed: 10

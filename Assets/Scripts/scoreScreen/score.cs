@@ -50,11 +50,11 @@ public class score : MonoBehaviour
 
         // show score
         planetAlignText.text = "You aligned " + gameManager.Instance.alignedPlanetCount + " planets";
-        likesText.text = (gameManager.Instance.followers * likesPercentage).ToString(); 
-        followersText.text = gameManager.Instance.followers.ToString(); 
-        populationText.text =  gameManager.Instance.population.ToString(); 
-        deathText.text = gameManager.Instance.dead.ToString(); 
-        childrenText.text = (gameManager.Instance.dead * childrenPercentage).ToString();
+        likesText.text =  string.Format("{0:0}", gameManager.Instance.followers * likesPercentage); 
+        followersText.text = string.Format("{0:0}", gameManager.Instance.followers); 
+        populationText.text =  string.Format("{0:0}", gameManager.Instance.population); 
+        deathText.text = string.Format("{0:0}", gameManager.Instance.dead); 
+        childrenText.text = string.Format("{0:0}", gameManager.Instance.dead * childrenPercentage);
     }
 
     void OnGUI()
