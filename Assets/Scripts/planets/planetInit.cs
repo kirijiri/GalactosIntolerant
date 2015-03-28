@@ -8,7 +8,12 @@ public class planetInit : MonoBehaviour
     // graphic object to be able to rotate the  
     // planet independent from the sprite
     public GameObject planetGraphic;
-    
+
+    // velocity that the planet tries to maintain
+    public Vector2 initVelocity;
+    public float bleedMultilier = 1.0f;
+    public bool do_kill_people = false;
+
     // get planet settings from settings class (easier to set up)
     private planetSettings planetSettings;
 
@@ -62,6 +67,11 @@ public class planetInit : MonoBehaviour
 
     void Update(){
         UpdateTinker();
+
+        if (initVelocity.magnitude == 0 && Time.timeSinceLevelLoad > 1)
+        {
+            initVelocity = rigidbody2D.velocity;
+        }
     }
 
     void UpdateTinker(){

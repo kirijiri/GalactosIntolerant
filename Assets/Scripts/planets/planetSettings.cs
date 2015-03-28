@@ -15,6 +15,11 @@ public class planetSettings : MonoBehaviour
     public string planetName = "";
     public int size = 14;
 
+    // scoring
+    public float flickUpDeathPercentage = 0.3f;
+    public float bleedPercentage = 0.005f;
+    public float holdDownBleedMultilier = 10f;
+
     // flavour
     public string biome = "";
     public string race = "";
@@ -23,8 +28,4 @@ public class planetSettings : MonoBehaviour
     public string[] idleMessages;
     public string[] minorMessages;
     public string[] majorMessages;
-
-    void Start(){
-        maxPopulation = population;
-    }
 }

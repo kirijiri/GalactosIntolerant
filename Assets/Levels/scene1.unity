@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &36719266
 GameObject:
@@ -276,7 +275,6 @@ MonoBehaviour:
   followerWidth: 100
   followerHeight: 50
   followerFontSize: 30
-  populationDiesPercentage: 30
   snapshotOptions: '--- SNAPSHOT OPTIONS ---'
   flashFadeInSpeed: 10
   flashFadeOutSpeed: 10
@@ -1148,6 +1146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGraphic: {fileID: 0}
+  initVelocity: {x: 0, y: 0}
+  bleedMultilier: 1
+  do_kill_people: 0
 --- !u!58 &536487402
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1238,6 +1239,9 @@ MonoBehaviour:
   followers: .039999999100000003
   planetName: 
   size: 18
+  flickUpDeathPercentage: .300000012
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 10
   biome: Desert
   race: Sharktang
   look: Desert nomad shark horses - mussled for high gravity, may attack player
@@ -1402,6 +1406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawShipDiameter: 0
+  showPlanetDecayColors: 0
+  showPlanetColors: 0
 --- !u!4 &555966793
 Transform:
   m_ObjectHideFlags: 0
@@ -1545,6 +1551,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGraphic: {fileID: 0}
+  initVelocity: {x: 0, y: 0}
+  bleedMultilier: 1
+  do_kill_people: 0
 --- !u!58 &579743644
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1635,6 +1644,9 @@ MonoBehaviour:
   followers: .090000003600000003
   planetName: 
   size: 14
+  flickUpDeathPercentage: .300000012
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 10
   biome: Artificial Habitat
   race: Rocket Space Bats
   look: Rocket Space Bats
@@ -2022,6 +2034,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGraphic: {fileID: 0}
+  initVelocity: {x: 0, y: 0}
+  bleedMultilier: 1
+  do_kill_people: 0
 --- !u!58 &816915854
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2112,6 +2127,9 @@ MonoBehaviour:
   followers: .119999997
   planetName: 
   size: 16
+  flickUpDeathPercentage: .300000012
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 10
   biome: Jungle
   race: Throngx
   look: Ant men with togas, 4 arms, 2 legs, large compound eyes and mandables.
@@ -2657,6 +2675,7 @@ GameObject:
   - 81: {fileID: 1060718926}
   - 114: {fileID: 1060718931}
   - 82: {fileID: 1060718932}
+  - 114: {fileID: 1060718933}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2798,6 +2817,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1060718933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060718925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8655ba3b64612fd48a91585526cf804f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1167472641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,6 +3101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGraphic: {fileID: 0}
+  initVelocity: {x: 0, y: 0}
+  bleedMultilier: 1
+  do_kill_people: 0
 --- !u!58 &1315941547
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3161,6 +3194,9 @@ MonoBehaviour:
   followers: .079999998200000005
   planetName: 
   size: 14
+  flickUpDeathPercentage: .300000012
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 10
   biome: Lava Hellscape
   race: Magmatoels
   look: Impossible towering silicon lava beasts, type slowly in all caps.
@@ -3879,6 +3915,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetGraphic: {fileID: 0}
+  initVelocity: {x: 0, y: 0}
+  bleedMultilier: 1
+  do_kill_people: 0
 --- !u!58 &1545869389
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3969,6 +4008,9 @@ MonoBehaviour:
   followers: .079999998200000005
   planetName: 
   size: 20
+  flickUpDeathPercentage: .300000012
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 10
   biome: Gas
   race: Bil'us
   look: ' Highly compressed gas bubble.'
