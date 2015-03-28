@@ -31,6 +31,7 @@ public class planetInit : MonoBehaviour
     void Awake()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+        sun = GameObject.Find("sun");
         anim = GetComponent<Animator>();
     }
 
@@ -80,6 +81,7 @@ public class planetInit : MonoBehaviour
     private void HingeSetup()
     {
         HingeJoint2D hinge = gameObject.GetComponent<HingeJoint2D>();
+        hinge.connectedBody = sun.rigidbody2D;
         hinge.anchor = new Vector2(posDiff.x, posDiff.y);
     }
 
