@@ -5,6 +5,7 @@ public class thrustAnimation : MonoBehaviour
 {
     private shipControl shipCtrl;
     private Animator anim;
+    private shipSound shipAudio;
     private float currAccel;
     private float avgAccel;
     private bool clockwise;
@@ -26,6 +27,7 @@ public class thrustAnimation : MonoBehaviour
         lastPos = transform.position;
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         shipCtrl = GameObject.Find("ship").GetComponent<shipControl>();
+        shipAudio = GameObject.Find("ship").GetComponent<shipSound>();
     }
 
     void Update()
@@ -49,7 +51,7 @@ public class thrustAnimation : MonoBehaviour
         }
 
         // add the acceleration to the queue
-        accelQueue.Enqueue(currAccel * accelScale );
+        accelQueue.Enqueue(currAccel * accelScale);
         if (accelQueue.Count > queueSize)
         {
             accelQueue.Dequeue();
@@ -69,7 +71,6 @@ public class thrustAnimation : MonoBehaviour
         // store data for next check
         lastPos = transform.position;
         lastVelocity = currVelocity;
-
     }
 
     void SetInAnim(float accel)
@@ -78,10 +79,12 @@ public class thrustAnimation : MonoBehaviour
         {
             anim.SetBool("stop", false);
             anim.SetFloat("accel", avgAccel);
+            shipAudio.AudioThrusterNormal(avgAccel);
         } else
         {
             anim.SetBool("stop", true);
             anim.SetFloat("accel", 0.0f);
+            shipAudio.AudioThrusterEmergency();
         }
     }
 

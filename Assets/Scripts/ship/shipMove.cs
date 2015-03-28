@@ -22,10 +22,6 @@ public class shipMove : MonoBehaviour
     float decelerationRate;
     float restThreshold;
 
-        
-
-    // public vars
-
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
@@ -63,7 +59,7 @@ public class shipMove : MonoBehaviour
             {
                 return;
             }
-			
+            
             moveAngle = GetMoveAngle();
             transform.localPosition = Quaternion.Euler(0, 0, moveAngle) * transform.localPosition;
             tarAngle -= moveAngle;
@@ -83,6 +79,4 @@ public class shipMove : MonoBehaviour
         angle = angle * Mathf.Sign(Vector3.Cross(from, to).z);
         return angle;
     }
-
-
 }

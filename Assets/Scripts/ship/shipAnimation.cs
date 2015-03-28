@@ -15,7 +15,7 @@ public class shipAnimation : MonoBehaviour
     private SpriteRenderer hoverSprite;
     private bool hold;
     private bool flick;
-    private bool over ;
+    private bool over;
 
     // tinkered
     private tinker tinker;
@@ -43,9 +43,8 @@ public class shipAnimation : MonoBehaviour
         coneRSpriteRend.enabled = false;
     }
 
-
-
-    void Update(){
+    void Update()
+    {
         UpdateTinker();
 
         // cone guide
@@ -53,12 +52,13 @@ public class shipAnimation : MonoBehaviour
         coneR.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, beamActivateAngle));
     }
 
-
-    void OnMouseOver(){
+    void OnMouseOver()
+    {
         hoverSprite.enabled = true;
     }
 
-    void OnMouseExit(){
+    void OnMouseExit()
+    {
         hoverSprite.enabled = false;
     }
 
