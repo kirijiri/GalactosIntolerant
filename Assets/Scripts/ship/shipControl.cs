@@ -49,7 +49,6 @@ public class shipControl : MonoBehaviour
         storedPosition = transform.position;
         isMoving = false;
         shipAnim.Open();
-        shipAnim.GuideOn();
     }
 
     void OnMouseDrag()
@@ -69,15 +68,21 @@ public class shipControl : MonoBehaviour
             if (GetDragAngle() < beamActivateAngle)
             {
                 ActivateGravityBeam();
-                shipAnim.GuideOff();
             }
           
         }
             
         isMoving = true;
-        shipAnim.Close();
-        shipAnim.GuideOff();
         isBeingDragged = false;
+
+        if (gravityBeamActivated)
+        {
+            shipAnim.Fire();
+        }
+        else
+        {
+            shipAnim.Close();
+        }
     }
 
     void OnMouseOver()

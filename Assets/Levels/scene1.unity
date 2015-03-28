@@ -205,7 +205,7 @@ SpriteRenderer:
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2f8db4c56de40804cae2d4640c5a44b2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: .549019635}
 --- !u!1 &49757468
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,7 +767,7 @@ GameObject:
   - 114: {fileID: 131670815}
   - 82: {fileID: 131670814}
   m_Layer: 0
-  m_Name: planet_200
+  m_Name: planet_throngx_200
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1181,7 +1181,7 @@ SpriteRenderer:
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c68849babffba9047bb13d7ac8003869, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: .784313738}
 --- !u!95 &161563099
 Animator:
   serializedVersion: 3
@@ -2065,7 +2065,7 @@ SpriteRenderer:
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bc6fa5b08c67a7647ae64e0df2aee1e2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: .549019635}
 --- !u!1 &610153776
 GameObject:
   m_ObjectHideFlags: 0
@@ -3889,7 +3889,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 132958, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Name
-      value: planet_200
+      value: planet_throngx_200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -5362,7 +5362,7 @@ SpriteRenderer:
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b19981bfc241c254987966cc07ef17b5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: .549019635}
 --- !u!1 &1647452838
 GameObject:
   m_ObjectHideFlags: 0
@@ -5573,7 +5573,7 @@ SpriteRenderer:
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7e30d6ee568566d4186064543733d9ab, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: .549019635}
 --- !u!1 &1765353874
 GameObject:
   m_ObjectHideFlags: 0
@@ -6197,7 +6197,7 @@ SpriteRenderer:
   m_SortingLayerID: 2770083797
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4601a3d128ba838468157981985cfa6c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: .549019635}
 --- !u!1 &2127550690
 GameObject:
   m_ObjectHideFlags: 0

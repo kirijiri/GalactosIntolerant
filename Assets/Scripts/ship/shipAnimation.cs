@@ -76,6 +76,7 @@ public class shipAnimation : MonoBehaviour
         hoverAnim.SetBool("open", true);
         coneLSpriteRend.enabled = true;
         coneRSpriteRend.enabled = true;
+        guideAnim.SetBool("enable", true);
     }
 
     public void Close()
@@ -84,15 +85,13 @@ public class shipAnimation : MonoBehaviour
         hoverAnim.SetBool("open", false);
         coneLSpriteRend.enabled = false;
         coneRSpriteRend.enabled = false;
+        guideAnim.SetBool("enable", false);
     }
 
-    public void GuideOn()
+    public void Fire()
     {
-        guideAnim.SetBool("enable", true);
-    }
-
-    public void GuideOff()
-    {
+        coneLSpriteRend.enabled = false;
+        coneRSpriteRend.enabled = false;
         guideAnim.SetBool("enable", false);
     }
 
