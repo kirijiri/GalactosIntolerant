@@ -46,14 +46,13 @@ public class planetInit : MonoBehaviour
 
         if (randomiseInitialPosition)
         {
-            Random.seed = System.DateTime.Now.Minute + System.DateTime.Now.Millisecond + transform.GetHashCode();
-            posDiff = new Vector3(Random.Range(-1.0f,1.0f), Random.Range(-1.0f,1.0f), 0.0f).normalized;
+            posDiff = new Vector3(Random.Range(-1.0f,1.0f), Random.Range(-1.0f,1.0f), 0.0f);
         }
         else
         {
-            posDiff = transform.localPosition.normalized;
+            posDiff = transform.localPosition;
         }
-        posDiff *= orbitRadius / 200;
+        posDiff = posDiff.normalized * (orbitRadius / 200);
 
         // setup physics
         HingeSetup();
