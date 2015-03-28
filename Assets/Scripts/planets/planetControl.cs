@@ -113,7 +113,6 @@ public class planetControl : MonoBehaviour
             }
         }
 
-
         // scoring
         if (held)
         {

@@ -7,6 +7,7 @@ public class planetInit : MonoBehaviour
 {
     // velocity that the planet tries to maintain
     public Vector2 initVelocity;
+    private Vector3 initDirection;
     public float bleedMultilier = 1.0f;
     public bool do_kill_people = false;
 
@@ -20,7 +21,6 @@ public class planetInit : MonoBehaviour
     private Vector3 posDiff;
     private SpriteRenderer sprRen;
     private tinker tinker;
-    private Animator anim;
 
     //tinkered
     private float speedMult;
@@ -32,7 +32,6 @@ public class planetInit : MonoBehaviour
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         sun = GameObject.Find("sun");
-        anim = GetComponent<Animator>();
     }
 
     void Start()
@@ -87,9 +86,7 @@ public class planetInit : MonoBehaviour
 
     private void InitVelocity()
     {
-        Vector3 initDirection = posDiff.normalized;
-        initDirection = Quaternion.AngleAxis(90, new Vector3(0, 1, 0)) * initDirection;
-
+        initDirection = Quaternion.AngleAxis(90, new Vector3(0, 0, 1)) * posDiff.normalized;
         rigidbody2D.velocity = initDirection * initSpeed;
     }
 
