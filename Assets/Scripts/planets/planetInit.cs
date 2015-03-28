@@ -5,10 +5,6 @@ using System.Collections;
 
 public class planetInit : MonoBehaviour
 {
-    // graphic object to be able to rotate the  
-    // planet independent from the sprite
-    public GameObject planetGraphic;
-    
     // get planet settings from settings class (easier to set up)
     private planetSettings planetSettings;
 
@@ -23,6 +19,7 @@ public class planetInit : MonoBehaviour
 
     //tinkered
     private float speedMult;
+    private bool randomiseInitialPosition;
 
     //-------------------------------------------------------------------
 
@@ -32,7 +29,6 @@ public class planetInit : MonoBehaviour
         sprRen = GetComponent<SpriteRenderer>();
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         anim = GetComponent<Animator>();
-        MakeImagePrefab();
     }
 
     void Start()
@@ -40,18 +36,23 @@ public class planetInit : MonoBehaviour
         UpdateTinker();
 
         // get settings 
+        sun = GameObject.Find("sun");
         planetSettings = GetComponent<planetSettings>();
         planetSettings.maxPopulation = planetSettings.population;
         initSpeed = planetSettings.speed * speedMult;
         orbitRadius = planetSettings.orbitRadius;
 
-        // get pos from sun
-        sun = GameObject.Find("sun");
-        posDiff = (sun.transform.position - transform.position);
-        posDiff.z = 0;
-
         // resize the posDiff to snap to the radius
-        posDiff = posDiff.normalized * (orbitRadius / 100 / 2);
+        if (randomiseInitialPosition)
+        {
+            Random.seed = System.DateTime.Now.Minute + System.DateTime.Now.Millisecond + transform.GetHashCode();
+            posDiff = new Vector3(Random.Range(-1.0f,1.0f), Random.Range(-1.0f,1.0f), 0.0f).normalized;
+        }
+        else
+        {
+            posDiff = transform.localPosition.normalized;
+        }
+        posDiff *= orbitRadius / 200;
 
         // setup physics
         HingeSetup();
@@ -60,12 +61,15 @@ public class planetInit : MonoBehaviour
         IgnoreCollisions();
     }
 
-    void Update(){
+    void Update()
+    {
         UpdateTinker();
     }
 
-    void UpdateTinker(){
+    void UpdateTinker()
+    {
         speedMult = tinker.PInitSpeedMultiplier;
+        randomiseInitialPosition = tinker.PRandomiseInit;
     }
 
     //------------------------------------------------------------------- physics
@@ -73,28 +77,20 @@ public class planetInit : MonoBehaviour
     private void HingeSetup()
     {
         HingeJoint2D hinge = gameObject.GetComponent<HingeJoint2D>();
-        Vector3 scale = transform.localScale;
-
-        // edit the hinge
-        hinge.anchor = new Vector2(posDiff.x / (1 * scale.x), posDiff.y / (1 * scale.x));
-        hinge.connectedBody = sun.rigidbody2D;
+        hinge.anchor = new Vector2(-posDiff.x, -posDiff.y);
     }
 
     private void InitVelocity()
     {
         Vector3 initDirection = posDiff.normalized;
         initDirection = Quaternion.AngleAxis(90, new Vector3(0, 1, 0)) * initDirection;
-
         rigidbody2D.velocity = initDirection * initSpeed;
     }
 
     private void ColliderSetup()
     {
         CircleCollider2D collider = gameObject.GetComponent<CircleCollider2D>();
-        string sprName = sprRen.sprite.name.ToString();
-        float sprRad = System.Convert.ToSingle(sprName.Split('_') [2]);
-
-        collider.radius = sprRad / 100 / 2;
+        collider.radius = planetSettings.size / 200.0f;
     }
 
     private void IgnoreCollisions()
@@ -108,20 +104,5 @@ public class planetInit : MonoBehaviour
         }
         GameObject satellite = GameObject.Find("ship");
         Physics2D.IgnoreCollision(satellite.collider2D, collider2D);
-    }
-
-    //------------------------------------------------------------------- sprite
-
-    private void MakeImagePrefab()
-    {
-        planetGraphic = Instantiate(Resources.Load("image_prefab")) as GameObject;
-        
-        // setup a image prefab, then turn off sprite
-        planetGraphic.name = name + "_IMAGE";
-        planetGraphic.GetComponent<SpriteRenderer>().sprite = sprRen.sprite;
-        planetGraphic.GetComponent<planetImageSpriteControl>().parent = gameObject;
-        planetGraphic.GetComponent<Animator>().runtimeAnimatorController = anim.runtimeAnimatorController;
-
-        sprRen.enabled = false;
     }
 }

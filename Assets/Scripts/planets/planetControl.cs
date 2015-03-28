@@ -27,7 +27,7 @@ public class planetControl : MonoBehaviour
 
     // tinker
     // Option: restore speed
-    private bool useForcesOption;
+    private bool restoreSpeed;
     private float innerBand;
     private float outerBand;
     private float maxSecForDrag;
@@ -96,14 +96,14 @@ public class planetControl : MonoBehaviour
         }
 
 
-        if (!held && !drag && useForcesOption){
+        if (!held && !drag && restoreSpeed){
             RestoreSpeed();
         }
     }
     
     void UpdateTinker()
     {
-        useForcesOption = tinker.PUseForcesOption;
+        restoreSpeed = tinker.PRestoreSpeed;
         innerBand = tinker.PInnerBand;
         outerBand = tinker.POuterBand;
         maxSecForDrag = tinker.PMaxSecsForDrag;
