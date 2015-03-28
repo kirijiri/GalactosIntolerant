@@ -28,7 +28,7 @@ public class planetControl : MonoBehaviour
 
     // tinker
     // Option: restore speed
-    private bool useForcesOption;
+    private bool restoreSpeed;
     private float innerBand;
     private float outerBand;
     private float maxSecForDrag;
@@ -113,6 +113,8 @@ public class planetControl : MonoBehaviour
             }
         }
 
+
+        // scoring
         if (held)
         {
             scoring.IncreaseDeaths(gameObject);
@@ -121,6 +123,9 @@ public class planetControl : MonoBehaviour
         {
             scoring.DecreaseDeaths(gameObject);
         }
+
+        // animation
+        anim.Holding(held || drag);
 
 		// restore speed if needed
         if (!held && !drag && restoreSpeed)
@@ -131,7 +136,7 @@ public class planetControl : MonoBehaviour
     
     void UpdateTinker()
     {
-        useForcesOption = tinker.PRestoreSpeed;
+        restoreSpeed = tinker.PRestoreSpeed;
         innerBand = tinker.PInnerBand;
         outerBand = tinker.POuterBand;
         maxSecForDrag = tinker.PMaxSecsForDrag;
