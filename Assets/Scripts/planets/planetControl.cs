@@ -12,6 +12,7 @@ public class planetControl : MonoBehaviour
     private float targetSpeed;
     private bool returnToTargetSpeed;
     private bool targetSpeedClockwise;
+    private bool needToAccelerate = true;
 
     // controls
     public bool held = false;
@@ -25,10 +26,9 @@ public class planetControl : MonoBehaviour
     private scoring scoring;
     private planetSound sound;
     private planetAnimation anim;
+    private planetInit planetInit;
 
     // tinker
-    // Option: restore speed
-    private bool restoreSpeed;
     private float innerBand;
     private float outerBand;
     private float maxSecForDrag;
@@ -45,11 +45,20 @@ public class planetControl : MonoBehaviour
         scoring = GameObject.Find("Main Camera").GetComponent<scoring>();
         sound = GetComponent<planetSound>();
         anim = GetComponent<planetAnimation>();
+        planetInit = GetComponent<planetInit>();
     }
 
     void Update()
     {
         UpdateTinker();
+
+        // grab init velocity when it's there
+        if (storedVelocity.magnitude == 0 && planetInit.initVelocity.magnitude > 0)
+        {
+            storedVelocity = planetInit.initVelocity;
+        }
+
+        // debug printing
         if (dbug)
         {
             if (drag)
@@ -127,7 +136,7 @@ public class planetControl : MonoBehaviour
         anim.Holding(held || drag);
 
 		// restore speed if needed
-        if (!held && !drag && restoreSpeed)
+        if (!held && !drag && needToAccelerate)
         {
             RestoreSpeed();
         }
@@ -135,7 +144,6 @@ public class planetControl : MonoBehaviour
     
     void UpdateTinker()
     {
-        restoreSpeed = tinker.PRestoreSpeed;
         innerBand = tinker.PInnerBand;
         outerBand = tinker.POuterBand;
         maxSecForDrag = tinker.PMaxSecsForDrag;
@@ -195,13 +203,16 @@ public class planetControl : MonoBehaviour
 
         // kill people on flick
         scoring.KillPeople(gameObject);
+
+        // 
+        needToAccelerate = false;
     }
 
     private void Release()
     {
-        rigidbody2D.velocity = storedVelocity.normalized * acceleration;
         ResetControlFlags();
         ResetTimers();
+        needToAccelerate = true;
     }
 
     private float GetElapsedTime(float start)
@@ -218,15 +229,24 @@ public class planetControl : MonoBehaviour
     {
         if (storedVelocity.magnitude > 0.01)
         {
+            // if we're at the right speed, ignore
+            if (rigidbody2D.velocity.magnitude == storedVelocity.magnitude)
+            {
+                needToAccelerate = false;
+                return;
+            }
+
             diffMagnitude = storedVelocity.magnitude - rigidbody2D.velocity.magnitude;
             // if the current velocity is too small, use the stored velocity
             if (rigidbody2D.velocity.magnitude > 0.01)
             {
-                newForce = rigidbody2D.velocity.normalized * diffMagnitude;
+                newForce = rigidbody2D.velocity;
             } else
             {
-                newForce = storedVelocity.normalized * diffMagnitude;
+                newForce = storedVelocity;
             }
+            newForce = newForce.normalized  * diffMagnitude;
+
             newForce *= acceleration;
             if (dbug)
             {
