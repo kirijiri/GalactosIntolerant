@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(CircleCollider2D))]
-
-// This will start the first level
-
 public class start : MonoBehaviour
 {
-    void OnMouseDown()
+    void Update()
     {
-        sceneManager.GoToLevel1Screen();
+        if (Input.anyKey)
+        {
+            sceneManager.GoToLevel1Screen();
+        }
     }
 }
