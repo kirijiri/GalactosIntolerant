@@ -17,7 +17,8 @@ public class tinker : MonoBehaviour
     public float PMaxSecsForHold = 3f;
     public float PForceMult = 0.02f;
     public float PAcceleration = 0.25f;
-    public bool PUseForcesOption = true;
+    public bool PRestoreSpeed = false;
+    public bool PRandomiseInit = true;
 
     // ship
 	public string shipOptions = "--- SHIP OPTIONS ---";
