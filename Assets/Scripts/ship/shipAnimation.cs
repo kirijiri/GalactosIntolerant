@@ -15,13 +15,17 @@ public class shipAnimation : MonoBehaviour
     private SpriteRenderer hoverSprite;
     private bool hold;
     private bool flick;
-    private bool over;
+    private bool over ;
+    private float dragFraction;
+    private sunAnimation sunAnim;
 
     // tinkered
     private tinker tinker;
     private float beamActivateAngle;
     private float minGuideDistance;
     private float maxGuideDistance;
+    private float shakeAmount;
+    private float dragShakeFraction;
 
     // Use this for initialization
     void Start()
@@ -34,6 +38,7 @@ public class shipAnimation : MonoBehaviour
         hoverSprite = hover.GetComponent<SpriteRenderer>();
         hoverSprite.enabled = false;
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
+        sunAnim = GameObject.Find("sun").GetComponent<sunAnimation>();
 
         coneL = GameObject.Find("cone_L_OFS");
         coneR = GameObject.Find("cone_R_OFS");
@@ -76,6 +81,7 @@ public class shipAnimation : MonoBehaviour
         hoverAnim.SetBool("open", true);
         coneLSpriteRend.enabled = true;
         coneRSpriteRend.enabled = true;
+        guideAnim.SetBool("enable", true);
     }
 
     public void Close()
@@ -84,28 +90,32 @@ public class shipAnimation : MonoBehaviour
         hoverAnim.SetBool("open", false);
         coneLSpriteRend.enabled = false;
         coneRSpriteRend.enabled = false;
-    }
-
-    public void GuideOn()
-    {
-        guideAnim.SetBool("enable", true);
-    }
-
-    public void GuideOff()
-    {
         guideAnim.SetBool("enable", false);
+        sunAnim.shake = 0.0f;
+    }
+
+    public void Fire()
+    {
+        coneLSpriteRend.enabled = false;
+        coneRSpriteRend.enabled = false;
+        guideAnim.SetBool("enable", false);
+        sunAnim.shake = Mathf.Max(shakeAmount, sunAnim.shake);
     }
 
     public void GuideDetails(float dist, float angle)
     {
         guideAnim.SetBool("inAngle", angle < beamActivateAngle);
-        guideAnim.SetFloat("dist", ((dist * 200.0f) - minGuideDistance) / (maxGuideDistance - minGuideDistance));
+        dragFraction = ((dist * 200.0f) - minGuideDistance) / (maxGuideDistance - minGuideDistance);
+        guideAnim.SetFloat("dist", dragFraction);
+        sunAnim.shake = dragFraction * dragShakeFraction * shakeAmount;
     }
 
     // PRIVATE --------------------------------------------------------------------------------
 
     void UpdateTinker()
     {
+        shakeAmount = tinker.GBShakeAmount;
+        dragShakeFraction = tinker.GBDragShakeFraction;
         beamActivateAngle = tinker.GBActivateAngle;
         minGuideDistance = tinker.GBMinGuideDistance;
         maxGuideDistance = tinker.GBMaxGuideDistance;

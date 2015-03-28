@@ -16,11 +16,13 @@ public class shipControl : MonoBehaviour
     private tinker tinker;
     private float beamActivateAngle;
     private float minDragDistance;
+    private float shakeAmount;
 
     // gravity beam
     private gravityBeam gravityBeam;
     private shipAnimation shipAnim;
     private thrustAnimation thusterAnimation;
+
 
     //-------------------------------------------------------------------
     
@@ -49,7 +51,6 @@ public class shipControl : MonoBehaviour
         storedPosition = transform.position;
         isMoving = false;
         shipAnim.Open();
-        shipAnim.GuideOn();
     }
 
     void OnMouseDrag()
@@ -58,7 +59,6 @@ public class shipControl : MonoBehaviour
         isBeingDragged = true;
 
         shipAnim.GuideDetails(GetDragDistance(), GetDragAngle());
-
     }
     
     void OnMouseUp()
@@ -69,15 +69,12 @@ public class shipControl : MonoBehaviour
             if (GetDragAngle() < beamActivateAngle)
             {
                 ActivateGravityBeam();
-                shipAnim.GuideOff();
             }
-          
         }
             
         isMoving = true;
-        shipAnim.Close();
-        shipAnim.GuideOff();
         isBeingDragged = false;
+        shipAnim.Fire();
     }
 
     void OnMouseOver()
