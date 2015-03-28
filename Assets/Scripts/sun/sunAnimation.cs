@@ -11,7 +11,8 @@ public class sunAnimation : MonoBehaviour {
 	private Animator sunBackAnim; 
 	private Animator sunFrontAnim;
 	private Animator sunWayBackAnim; 
-
+    private Vector3 initPosition;
+    public float shake = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,8 @@ public class sunAnimation : MonoBehaviour {
 		sunBackAnim = sunBack.GetComponent<Animator>();
 		sunFrontAnim = sunFront.GetComponent<Animator>();
 		sunWayBackAnim = sunWayBack.GetComponent<Animator>();
+
+        initPosition = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -35,5 +38,10 @@ public class sunAnimation : MonoBehaviour {
 			sunFrontAnim.SetBool ("death", true);
 			sunWayBackAnim.SetBool ("death", true);
 		}
+        if (shake > 0)
+        {
+            transform.position = initPosition + ( new Vector3( Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0) * shake);
+        }
 	}
+
 }

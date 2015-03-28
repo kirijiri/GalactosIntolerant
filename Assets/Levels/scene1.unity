@@ -335,6 +335,8 @@ MonoBehaviour:
   GBTimeout: 2
   GBMinGuideDistance: 30
   GBMaxGuideDistance: 64
+  GBShakeAmount: .00999999978
+  GBDragShakeFraction: .25
   messageOptions: '--- MESSAGE OPTIONS ---'
   idleTimer: 7
   criticalPopulationPercentage: 30
@@ -3984,6 +3986,7 @@ GameObject:
   - 114: {fileID: 1060718931}
   - 82: {fileID: 1060718932}
   - 114: {fileID: 1060718933}
+  - 114: {fileID: 1060718934}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4134,6 +4137,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8655ba3b64612fd48a91585526cf804f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1060718934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060718925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6585bc4291ad1a144bf717f030f8f10b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1063884279
@@ -4691,6 +4705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   die: 0
+  shake: 0
 --- !u!1 &1370031461
 GameObject:
   m_ObjectHideFlags: 0
