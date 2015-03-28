@@ -9,7 +9,6 @@ public class restart : MonoBehaviour
 {
     void OnMouseDown()
     {
-        print ("hi");
         sceneManager.GoToLevel1Screen();
     }
 }
