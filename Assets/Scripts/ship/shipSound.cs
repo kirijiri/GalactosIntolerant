@@ -10,10 +10,14 @@ public class shipSound : MonoBehaviour
     public AudioClip beamOffToCharge;
     public AudioClip beamCharge;
     public AudioClip beamChargeToFiring;
-    public AudioClip beamFiring;
     public AudioClip beamFiringToOff;
+    public AudioClip beamChargeToOff;
 
-    private bool play_thruster_normal = false;
+    private AudioSource thusterNormalSource;
+    private AudioSource thusterEmergencySource;
+
+    private bool playing_thruster_normal = false;
+    private bool playing_thruster_emergency = false;
     private bool isMoving;
 
     private enum Fade {In, Out};
@@ -23,47 +27,71 @@ public class shipSound : MonoBehaviour
     public void Start()
     {
         defaultVolume = audio.volume;
+
+        thusterNormalSource = (AudioSource) gameObject.AddComponent("AudioSource");
+        thusterNormalSource.clip = thrusterNormal;
+        thusterNormalSource.playOnAwake = false;
+        
+        thusterEmergencySource = (AudioSource) gameObject.AddComponent("AudioSource");
+        thusterEmergencySource.clip = thrusterEmergency;
+        thusterEmergencySource.playOnAwake = false;
     }
+
+// thruster normal -------------------------------------------------------------
+
+    // gets called every frame
     public void AudioThrusterNormal(float accel)
     {
-        isMoving = (accel > 0.05f || accel < -0.05f);
-        if (!play_thruster_normal && isMoving)
+        isMoving = (accel > 0.08f || accel < -0.08f);
+        if (!playing_thruster_normal && isMoving)
         {
+            playing_thruster_normal = true;
             StartCoroutine(PlayAudioThrusterNormal());
-            play_thruster_normal = true;
         }
-        if (play_thruster_normal && !isMoving)
+        if (playing_thruster_normal && !isMoving)
         {
+            playing_thruster_normal = false;
             StopAudioThrusterNormal();
         }
     }
 
     private IEnumerator PlayAudioThrusterNormal()
     {
-        audio.clip = thrusterNormal;
-        audio.volume = defaultVolume;
+        thusterNormalSource.Stop();
+        thusterNormalSource.volume = defaultVolume;
+        thusterNormalSource.Play();
+        yield return new WaitForSeconds (thusterNormalSource.clip.length);
 
-        audio.Play();
-        yield return new WaitForSeconds (audio.clip.length);
-        play_thruster_normal = false;
+        thusterNormalSource.Stop();
+        playing_thruster_normal = false;
     }
 
     private void StopAudioThrusterNormal()
     {
-        play_thruster_normal = false;
-        StartCoroutine(FadeAudio(fadeTime, Fade.Out));
-        print ("force stop fade");
-        //audio.clip = thrusterNormal;
-        //audio.Stop();
-    }
-    
-    public void AudioThrusterEmergency()
-    {
-        audio.Stop();
-        audio.PlayOneShot(thrusterEmergency);
+        StartCoroutine(FadeAudio(thusterNormalSource, fadeTime, Fade.Out));
     }
 
-    private IEnumerator FadeAudio (float timer, Fade fadeType) 
+// thruster emergency -------------------------------------------------------------
+
+    // gets called every frame
+    public void AudioThrusterEmergency()
+    {
+        if (playing_thruster_normal && !playing_thruster_emergency)
+        {
+            playing_thruster_normal = false;
+            playing_thruster_emergency = true;
+            PlayAudioThrusterEmergency();
+        }
+    }
+
+    public void PlayAudioThrusterEmergency()
+    {
+        thusterEmergencySource.Stop();
+        thusterEmergencySource.Play();
+        playing_thruster_emergency = false;
+    }
+
+    private IEnumerator FadeAudio (AudioSource source, float timer, Fade fadeType) 
     {
         float start = fadeType == Fade.In? 0.0F : 1.0F;
         float end = fadeType == Fade.In? 1.0F : 0.0F;
@@ -72,8 +100,9 @@ public class shipSound : MonoBehaviour
         
         while (i <= 1.0F) {
             i += step * Time.deltaTime;
-            audio.volume = Mathf.Lerp(start, end, i);
+            source.volume = Mathf.Lerp(start, end, i);
             yield return new WaitForSeconds(step * Time.deltaTime);
         }
+        source.Stop();
     }
 }

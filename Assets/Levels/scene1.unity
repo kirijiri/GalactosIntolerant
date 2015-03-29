@@ -5486,11 +5486,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrusterNormal: {fileID: 8300000, guid: 7a55851476a23dd4daf017263e947182, type: 3}
   thrusterEmergency: {fileID: 8300000, guid: 509e24a1dcf6f3a498356bf520ff49a3, type: 3}
-  beamOffToCharge: {fileID: 0}
-  beamCharge: {fileID: 0}
-  beamChargeToFiring: {fileID: 0}
-  beamFiring: {fileID: 0}
-  beamFiringToOff: {fileID: 0}
+  beamOffToCharge: {fileID: 8300000, guid: ccc61858fad85694b82ab46527b0f62e, type: 3}
+  beamCharge: {fileID: 8300000, guid: ed81aa4801a7c6844bcae57a159ce891, type: 3}
+  beamChargeToFiring: {fileID: 8300000, guid: bfd188f5cc2a9fc4c930cbf797c6266a, type: 3}
+  beamFiringToOff: {fileID: 8300000, guid: 28c2b53f544d3684999bccc2af27f77c, type: 3}
+  beamChargeToOff: {fileID: 8300000, guid: cf860fa862693504888034ea0097502c, type: 3}
 --- !u!82 &1449354002
 AudioSource:
   m_ObjectHideFlags: 0

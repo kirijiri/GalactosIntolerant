@@ -35,8 +35,6 @@ public class scoring : MonoBehaviour
             if (init.do_kill_people && settings.population > 0.0f)
             {
                 diffMagnitude = Mathf.Abs(init.initVelocity.magnitude - planet.rigidbody2D.velocity.magnitude);
-                //print ("planet" + i + ": " + diffMagnitude + "     " + settings.bleedPercentage * init.bleedMultilier);
-                //print (settings.maxPopulation + " --- " + settings.population + " - " + diffMagnitude * (settings.maxPopulation * settings.bleedPercentage * init.bleedMultilier));
                 settings.population -= diffMagnitude * (settings.maxPopulation * settings.bleedPercentage * init.bleedMultilier);
 
                 // planet dead
@@ -64,6 +62,9 @@ public class scoring : MonoBehaviour
     {
         settings = planet.GetComponent<planetSettings>();
         settings.population -= settings.maxPopulation * settings.flickUpDeathPercentage;
+        
+        if (settings.population < 0.0f)
+            settings.population = 0.0f;
     }
 
     public void UpdateDeceaseCount()

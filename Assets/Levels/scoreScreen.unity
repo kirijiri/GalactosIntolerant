@@ -732,8 +732,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .6508708, y: .194910154}
-  m_Center: {x: -52.4277649, y: -15.082901}
+  m_Size: {x: 1.21694875, y: .471658587}
+  m_Center: {x: -53.0755005, y: -15.4728546}
 --- !u!1 &920232675
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +790,8 @@ MonoBehaviour:
   GBTimeout: 2
   GBMinGuideDistance: 30
   GBMaxGuideDistance: 64
+  GBShakeAmount: .00999999978
+  GBDragShakeFraction: .25
   messageOptions: '--- MESSAGE OPTIONS ---'
   idleTimer: 7
   criticalPopulationPercentage: 30
@@ -843,6 +845,7 @@ GameObject:
   - 124: {fileID: 945239588}
   - 81: {fileID: 945239587}
   - 114: {fileID: 945239592}
+  - 114: {fileID: 945239593}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -924,6 +927,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab87accc08d8240458b1fc0274d74f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &945239593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 945239586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6585bc4291ad1a144bf717f030f8f10b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1105695302
