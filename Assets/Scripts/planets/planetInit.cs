@@ -9,6 +9,7 @@ public class planetInit : MonoBehaviour
     public Vector2 initVelocity;
     private Vector3 initDirection;
     public float bleedMultilier = 1.0f;
+    public float gravityBleedMultilier = 1.0f;
     public bool do_kill_people = false;
 
     // get planet settings from settings class (easier to set up)

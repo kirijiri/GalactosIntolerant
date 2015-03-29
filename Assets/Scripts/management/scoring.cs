@@ -32,10 +32,16 @@ public class scoring : MonoBehaviour
             planet = planets[i];
             settings = planet.GetComponent<planetSettings>();
             init = planet.GetComponent<planetInit>();
+
+            // choose the bigger evil of hold/gravity
+            float bleed = 1.0f;
+            if (init.gravityBleedMultilier > bleed) bleed = init.gravityBleedMultilier;
+            else if (init.bleedMultilier > bleed) bleed = init.bleedMultilier;
+
             if (init.do_kill_people && settings.population > 0.0f)
             {
                 diffMagnitude = Mathf.Abs(init.initVelocity.magnitude - planet.rigidbody2D.velocity.magnitude);
-                settings.population -= diffMagnitude * (settings.maxPopulation * settings.bleedPercentage * init.bleedMultilier);
+                settings.population -= diffMagnitude * (settings.maxPopulation * settings.bleedPercentage * bleed);
 
                 // planet dead
                 if (settings.population < 0.0f)
@@ -65,6 +71,17 @@ public class scoring : MonoBehaviour
         
         if (settings.population < 0.0f)
             settings.population = 0.0f;
+    }
+
+    public void IncreaseDeathsGravity(GameObject planet)
+    {
+        planet.GetComponent<planetInit>().gravityBleedMultilier = planet.GetComponent<planetSettings>().gravityBeamBleedMultiplier;
+        planet.GetComponent<planetInit>().do_kill_people = true;
+    }
+
+    public void DecreaseDeathsGravity(GameObject planet)
+    {
+        planet.GetComponent<planetInit>().gravityBleedMultilier = 1.0f;
     }
 
     public void UpdateDeceaseCount()
