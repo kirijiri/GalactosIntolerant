@@ -43,7 +43,7 @@ public class planetControl : MonoBehaviour
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         phoneMessaging = GameObject.Find("messages").GetComponent<phoneMessages>();
         scoring = GameObject.Find("Main Camera").GetComponent<scoring>();
-        sound = GetComponent<planetSound>();
+        sound = GameObject.Find("planets").GetComponent<planetSound>();
         anim = GetComponent<planetAnimation>();
         planetInit = GetComponent<planetInit>();
     }
@@ -213,6 +213,8 @@ public class planetControl : MonoBehaviour
         ResetControlFlags();
         ResetTimers();
         needToAccelerate = true;
+        
+        sound.AudioHoldRelease();
     }
 
     private float GetElapsedTime(float start)

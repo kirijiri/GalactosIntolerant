@@ -1,33 +1,66 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class planetSound : MonoBehaviour {
+[RequireComponent(typeof(AudioSource))]
+
+public class planetSound : MonoBehaviour 
+{
     public AudioClip flicked;
     public AudioClip held;
+    public AudioClip flickedDamaged;
+    public AudioClip heldDamaged;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    private AudioClip curFlicked;
+    private AudioClip curHeld;
+    
+    private enum Fade {In, Out};
+    private float fadeTime = 1.0f;
+    private float defaultVolume;
 
-    // PUBLIC -----------------------------------------------------------------
+    private void Start()
+    {
+        curFlicked = flicked;
+        curHeld = held;
+        defaultVolume = audio.volume;
+    }
 
     public void AudioFlick()
     {
-        //should be playing audio
-		audio.Stop();
+        audio.Stop();
+        audio.volume = defaultVolume;
         audio.PlayOneShot(flicked);
     }
 
     public void AudioHold()
     {
 		audio.Stop();
+        audio.volume = defaultVolume;
 		audio.PlayOneShot(held);
     }
 
+    public void AudioHoldRelease()
+    {
+        StartCoroutine(FadeAudio(audio, fadeTime, Fade.Out));
+    }
+
+    public void AudioToDamageSounds()
+    {
+        curFlicked = flickedDamaged;
+        curHeld = heldDamaged;
+    }
+    
+    private IEnumerator FadeAudio (AudioSource source, float timer, Fade fadeType) 
+    {
+        float start = fadeType == Fade.In? 0.0F : 1.0F;
+        float end = fadeType == Fade.In? 1.0F : 0.0F;
+        float i = 0.0F;
+        float step = 1.0F/timer;
+        
+        while (i <= 1.0F) {
+            i += step * Time.deltaTime;
+            source.volume = Mathf.Lerp(start, end, i);
+            yield return new WaitForSeconds(step * Time.deltaTime);
+        }
+        source.Stop();
+    }
 }
