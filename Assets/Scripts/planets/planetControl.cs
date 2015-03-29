@@ -161,7 +161,6 @@ public class planetControl : MonoBehaviour
         storedPosition = transform.position;
         storedVelocity = rigidbody2D.velocity;
         holdStartTime = Time.time;
-        dragStartTime = Time.time;
 
         // pause
         rigidbody2D.velocity = new Vector3(0, 0, 0);
@@ -180,6 +179,11 @@ public class planetControl : MonoBehaviour
             held = true;
         } else
         {
+			// only capture drag time when first start dragging
+			if (!drag)
+			{
+				dragStartTime = Time.time;
+			}
             drag = true;
             held = false;
         }
