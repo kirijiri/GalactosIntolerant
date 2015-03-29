@@ -5201,8 +5201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3366ad48a43ebf141bd88c2700e96c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrusterNormal: {fileID: 8300000, guid: 02f02d63789374342811b0c6e16d69d2, type: 3}
-  thrusterEmergency: {fileID: 8300000, guid: 0ab645bda015f024c88eec3212811772, type: 3}
+  thrusterNormal: {fileID: 8300000, guid: 7a55851476a23dd4daf017263e947182, type: 3}
+  thrusterEmergency: {fileID: 8300000, guid: 509e24a1dcf6f3a498356bf520ff49a3, type: 3}
   beamOffToCharge: {fileID: 0}
   beamCharge: {fileID: 0}
   beamChargeToFiring: {fileID: 0}
