@@ -20,7 +20,10 @@ public class tinker : MonoBehaviour
     public bool PRestoreSpeed = false;
     public bool PRandomiseInit = true;
     public bool PRandomiseDirection = true;
-
+	public bool PRandomiseSpeed = true;
+	public float PRandomLowerSpeed = 0.25f;
+	public float PRandomUpperSpeed = 0.38f;
+    
     // ship
 	public string shipOptions = "--- SHIP OPTIONS ---";
     public float shipAcceleration = 0.5f;

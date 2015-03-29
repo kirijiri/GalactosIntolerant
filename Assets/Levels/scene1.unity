@@ -319,6 +319,9 @@ MonoBehaviour:
   PRestoreSpeed: 0
   PRandomiseInit: 1
   PRandomiseDirection: 1
+  PRandomiseSpeed: 1
+  PRandomLowerSpeed: .25
+  PRandomUpperSpeed: .379999995
   shipOptions: '--- SHIP OPTIONS ---'
   shipAcceleration: .5
   shipDeceleration: 3
