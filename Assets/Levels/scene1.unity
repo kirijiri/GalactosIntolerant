@@ -141,7 +141,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1870004305
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: fddbe218bab0d164aa5172c5a715dc3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0fe5aefe1bdc1a8488ffadb3501a6407, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &8389102
 MonoBehaviour:
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .349999994
+  speed: .319999993
   size: 16
   orbitRadius: 92
   population: 1.36e+10
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .349999994
+  speed: .109999999
   size: 18
   orbitRadius: 200
   population: 8899999744
@@ -3661,7 +3661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .349999994
+  speed: .289999992
   size: 14
   orbitRadius: 164
   population: 17799999488
@@ -3990,6 +3990,15 @@ Prefab:
       propertyPath: followers
       value: .079999998211860657
       objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: speed
+      value: .109999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 21232962, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0fe5aefe1bdc1a8488ffadb3501a6407,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 131670812}
@@ -5059,6 +5068,10 @@ Prefab:
       propertyPath: planetName
       value: Omis
       objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: speed
+      value: .349999994
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 878401004}
@@ -5228,6 +5241,10 @@ Prefab:
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: planetName
       value: Selachii
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: speed
+      value: .319999993
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -5850,6 +5867,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b4614a5f7aee8f74c88ea4f4fe75c2a7, type: 2}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: speed
+      value: .289999992
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 1007691865}
@@ -6344,7 +6365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .349999994
+  speed: .239999995
   size: 16
   orbitRadius: 128
   population: 20999999488
@@ -6604,6 +6625,10 @@ Prefab:
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: planetName
       value: Focida
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: speed
+      value: .239999995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
