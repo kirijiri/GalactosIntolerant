@@ -335,7 +335,7 @@ MonoBehaviour:
   GBTimeout: 2
   GBMinGuideDistance: 30
   GBMaxGuideDistance: 64
-  GBShakeAmount: .00999999978
+  GBShakeAmount: 0
   GBBackDropShakeAmount: 1
   GBDragShakeFraction: .25
   messageOptions: '--- MESSAGE OPTIONS ---'
@@ -640,6 +640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initVelocity: {x: 0, y: 0}
   bleedMultilier: 1
+  gravityBleedMultilier: 1
   do_kill_people: 0
 --- !u!114 &122412043
 MonoBehaviour:
@@ -663,6 +664,7 @@ MonoBehaviour:
   flickUpDeathPercentage: .300000012
   bleedPercentage: .00499999989
   holdDownBleedMultilier: 10
+  gravityBeamBleedMultiplier: 30
   biome: 
   race: 
   look: 
@@ -926,6 +928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initVelocity: {x: 0, y: 0}
   bleedMultilier: 1
+  gravityBleedMultilier: 1
   do_kill_people: 0
 --- !u!114 &131670821
 MonoBehaviour:
@@ -949,6 +952,7 @@ MonoBehaviour:
   flickUpDeathPercentage: .300000012
   bleedPercentage: .00499999989
   holdDownBleedMultilier: 10
+  gravityBeamBleedMultiplier: 30
   biome: 
   race: 
   look: 
@@ -3056,6 +3060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initVelocity: {x: 0, y: 0}
   bleedMultilier: 1
+  gravityBleedMultilier: 1
   do_kill_people: 0
 --- !u!114 &878401013
 MonoBehaviour:
@@ -3079,6 +3084,7 @@ MonoBehaviour:
   flickUpDeathPercentage: .300000012
   bleedPercentage: .00499999989
   holdDownBleedMultilier: 10
+  gravityBeamBleedMultiplier: 30
   biome: 
   race: 
   look: 
@@ -3648,6 +3654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initVelocity: {x: 0, y: 0}
   bleedMultilier: 1
+  gravityBleedMultilier: 1
   do_kill_people: 0
 --- !u!114 &1007691874
 MonoBehaviour:
@@ -3671,6 +3678,7 @@ MonoBehaviour:
   flickUpDeathPercentage: .300000012
   bleedPercentage: .00499999989
   holdDownBleedMultilier: 10
+  gravityBeamBleedMultiplier: 30
   biome: 
   race: 
   look: 
@@ -4083,6 +4091,7 @@ GameObject:
   - 82: {fileID: 1060718932}
   - 114: {fileID: 1060718933}
   - 114: {fileID: 1060718934}
+  - 114: {fileID: 1060718935}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4246,6 +4255,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6585bc4291ad1a144bf717f030f8f10b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1060718935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060718925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209e2594cb5715142b852da5050c5410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundDamaged: {fileID: 8300000, guid: 703e530b11a45e74eb82f77a38110972, type: 3}
 --- !u!1 &1063884279
 GameObject:
   m_ObjectHideFlags: 0
@@ -5491,6 +5512,13 @@ MonoBehaviour:
   beamChargeToFiring: {fileID: 8300000, guid: bfd188f5cc2a9fc4c930cbf797c6266a, type: 3}
   beamFiringToOff: {fileID: 8300000, guid: 28c2b53f544d3684999bccc2af27f77c, type: 3}
   beamChargeToOff: {fileID: 8300000, guid: cf860fa862693504888034ea0097502c, type: 3}
+  thrusterNormalVolume: 1
+  thrusterEmergencyVolume: 1
+  beamOffToChargeVolume: 1
+  beamChargeVolume: 1
+  beamChargeToFiringVolume: 1
+  beamFiringToOffVolume: 1
+  beamChargeToOffVolume: 1
 --- !u!82 &1449354002
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6331,6 +6359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initVelocity: {x: 0, y: 0}
   bleedMultilier: 1
+  gravityBleedMultilier: 1
   do_kill_people: 0
 --- !u!114 &1781363817
 MonoBehaviour:
@@ -6354,6 +6383,7 @@ MonoBehaviour:
   flickUpDeathPercentage: .300000012
   bleedPercentage: .00499999989
   holdDownBleedMultilier: 10
+  gravityBeamBleedMultiplier: 30
   biome: 
   race: 
   look: 

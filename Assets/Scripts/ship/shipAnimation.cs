@@ -18,6 +18,7 @@ public class shipAnimation : MonoBehaviour
     private bool over ;
     private float dragFraction;
     private sunAnimation sunAnim;
+    private shipSound shipAudio;
 
     // tinkered
     private tinker tinker;
@@ -39,6 +40,7 @@ public class shipAnimation : MonoBehaviour
         hoverSprite.enabled = false;
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         sunAnim = GameObject.Find("sun").GetComponent<sunAnimation>();
+        shipAudio = GameObject.Find("ship").GetComponent<shipSound>();
 
         coneL = GameObject.Find("cone_L_OFS");
         coneR = GameObject.Find("cone_R_OFS");
@@ -77,6 +79,9 @@ public class shipAnimation : MonoBehaviour
 
     public void Open()
     {
+        // charge sound (beamOffToCharge -> beamCharge loop)
+        shipAudio.AudioBeamOpen();
+
         anim.SetBool("open", true);
         hoverAnim.SetBool("open", true);
         coneLSpriteRend.enabled = true;
@@ -86,6 +91,9 @@ public class shipAnimation : MonoBehaviour
 
     public void Close()
     {
+        // cancel charge sound (beamChargeToOff)
+        shipAudio.AudioBeamCancel();
+
         anim.SetBool("open", false);
         hoverAnim.SetBool("open", false);
         coneLSpriteRend.enabled = false;
@@ -96,6 +104,9 @@ public class shipAnimation : MonoBehaviour
 
     public void Fire()
     {
+        // fire beam sound (beamChargeToFiring + beamFiringToOff)
+        shipAudio.AudioBeamFire();
+
         coneLSpriteRend.enabled = false;
         coneRSpriteRend.enabled = false;
         guideAnim.SetBool("enable", false);

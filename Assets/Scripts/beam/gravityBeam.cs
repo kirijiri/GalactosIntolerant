@@ -9,6 +9,7 @@ public class gravityBeam : MonoBehaviour
     private GameObject[] planets;
     private gravityBeamAnimation animationCtrl;
     private shipAnimation shipAnim;
+    private backgroundSound backgroundAudio;
     private float timer = 0;
 
     // settings objects
@@ -22,6 +23,7 @@ public class gravityBeam : MonoBehaviour
         animationCtrl = this.GetComponent<gravityBeamAnimation>();
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         shipAnim = GameObject.Find("ship").GetComponent<shipAnimation>();
+        backgroundAudio = GameObject.Find("Main Camera").GetComponent<backgroundSound>();
     }
 
     void Update()
@@ -34,6 +36,7 @@ public class gravityBeam : MonoBehaviour
                 isActive = false;
                 available = false;
                 shipAnim.Close();
+                backgroundAudio.AudioToDamageSounds();
             }
         }
     }
