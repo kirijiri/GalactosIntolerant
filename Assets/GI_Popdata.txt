@@ -1,0 +1,45 @@
+
+startplanet
+name=Omis
+size=tiny
+race=Magmatoels
+population=3.8
+follow=0.08
+wikitext=With it's close proximity to our star Omis has always been blessed with an abundance of mineral wealth, solar and geothermal power. Unlike Focida, the Magmatoels largely escaped subjugation by outside influences due to the unforgiving environment to most life. Famously it was an Omis summer that stymied the Xilian advance of ‘32 ending the 3rd stellar war. Recent technology has enabled the tourist industry to flourish planet wide, popular with those who enjoy the truly alien scenery and meeting the sentient molten metal locals.
+endplanet
+
+startplanet
+name=Selachii
+size=Large
+race=Sharktang
+population=13.6
+follow=0.04
+wikitext=Primarily desert, the native Sharktang are the pinnacle of a surprisingly diverse and fearsome ecosystem. They are adapted to detect their prey a combination of smell and electrolocation before swimming through the sands to hunt them down. Historic attempts to settle other planets resulted in a series of brutal reprisals, destroying much of the planet’s infrastructure. Present day Selachii is on the track to recovery after the various clans have united under a single khan.
+endplanet
+
+startplanet
+name=Focida
+size=Medium
+race=Throngx
+population=21
+follow=0.12
+wikitext=Focida workmanship is well regarded and ubiquitous system wide. In Focida’s jungles and hives the drones ply their respective trades from birth to death with single minded focus. The Throngx people have suffered much war as various interplanetary interests vie for control over their powerful economic might but the drones remain uniformly behind their queen. Although life here is austere the various festivals are popular attractions (although no drones attend, the festivals are purely for visiting extraterrestrials.)
+endplanet
+
+startplanet
+name=Gem
+size=Huge
+race=Bil'us
+population=8.9
+follow=0.08
+wikitext=Focida workmanship is well regarded and ubiquitous system wide. In Focida’s jungles and hives the drones ply their respective trades from birth to death with single minded focus. The Throngx people have suffered much war as various interplanetary interests vie for control over their powerful economic might but the drones remain uniformly behind their queen. Although life here is austere the various festivals are popular attractions (although no drones attend, the festivals are purely for visiting extraterrestrials.)
+endplanet
+
+startplanet
+name=Roxbrus
+size=Small
+race=Rocket Space Bats
+population=17.8
+follow=0.09
+wikitext=Many argue that The Roxbrus is not a planet at all but a glorified ship, however it is a fixed and influential feature included in any guide worth it’s salt. The strikingly named Rocket Space Bats were transformed by the intervention of an unknown powerful entity. This awesome being did not see fit to cure the Bat’s blindness, or hone their minds, instead choosing to equip them for self sustained space flight with rocket boosters. The Bats constructed The Roxbrus and pillaged their way across the galaxy, parking up for a break on the outskirts of our system approximately 500 years ago.
+endplanet
