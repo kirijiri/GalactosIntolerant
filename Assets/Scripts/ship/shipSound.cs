@@ -10,8 +10,8 @@ public class shipSound : MonoBehaviour
     public AudioClip beamOffToCharge;
     public AudioClip beamCharge;
     public AudioClip beamChargeToFiring;
-    public AudioClip beamFiring;
     public AudioClip beamFiringToOff;
+    public AudioClip beamChargeToOff;
 
     private AudioSource thusterNormalSource;
     private AudioSource thusterEmergencySource;
