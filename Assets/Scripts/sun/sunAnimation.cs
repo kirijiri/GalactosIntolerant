@@ -7,12 +7,18 @@ public class sunAnimation : MonoBehaviour {
 	private GameObject sunBack;
 	private GameObject sunFront;
 	private GameObject sunWayBack;
+    private GameObject backdrop;
 	private Animator sunAnim; 
 	private Animator sunBackAnim; 
 	private Animator sunFrontAnim;
 	private Animator sunWayBackAnim; 
     private Vector3 initPosition;
+    private Vector3 shakePosition;
     public float shake = 0.0f;
+
+    // tinker
+    private tinker tinker;
+    private float backdropShakeAmount;
 
 	// Use this for initialization
 	void Start () {
@@ -25,11 +31,16 @@ public class sunAnimation : MonoBehaviour {
 		sunFrontAnim = sunFront.GetComponent<Animator>();
 		sunWayBackAnim = sunWayBack.GetComponent<Animator>();
 
+        backdrop = GameObject.Find("backdrop");
+        tinker = GameObject.Find("tinker").GetComponent<tinker>();
+
         initPosition = transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        UpdateTinker();
+
 		if (!dead && die) 
 		{
 			dead = true;
@@ -40,8 +51,18 @@ public class sunAnimation : MonoBehaviour {
 		}
         if (shake > 0)
         {
-            transform.position = initPosition + ( new Vector3( Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0) * shake);
+            // backdrop
+            shakePosition = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0);
+            backdrop.transform.position = shakePosition  * (shake * backdropShakeAmount);
+
+            // sun
+            shakePosition = new Vector3( Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0 );
+            transform.position = initPosition + ( shakePosition * shake);
         }
 	}
 
+    void UpdateTinker()
+    {
+        backdropShakeAmount = tinker.GBBackDropShakeAmount;
+    }
 }

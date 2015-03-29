@@ -240,7 +240,7 @@ Transform:
   - {fileID: 321762978}
   - {fileID: 610153778}
   - {fileID: 933412369}
-  m_Father: {fileID: 1051774920}
+  m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!95 &49757470
 Animator:
@@ -336,6 +336,7 @@ MonoBehaviour:
   GBMinGuideDistance: 30
   GBMaxGuideDistance: 64
   GBShakeAmount: .00999999978
+  GBBackDropShakeAmount: 1
   GBDragShakeFraction: .25
   messageOptions: '--- MESSAGE OPTIONS ---'
   idleTimer: 7
@@ -376,7 +377,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &68523964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,7 +1755,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &477664810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,7 +2005,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &579585161
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,9 +4065,8 @@ Transform:
   m_Children:
   - {fileID: 902252252}
   - {fileID: 2026440803}
-  - {fileID: 49757469}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1060718925
 GameObject:
   m_ObjectHideFlags: 0
