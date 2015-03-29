@@ -655,10 +655,10 @@ MonoBehaviour:
   speed: .349999994
   size: 16
   orbitRadius: 92
-  population: 5e+07
+  population: 1.36e+10
   maxPopulation: 0
-  followers: 0
-  planetName: 
+  followers: .039999999105930328
+  planetName: Selachii
   flickUpDeathPercentage: .300000012
   bleedPercentage: .00499999989
   holdDownBleedMultilier: 10
@@ -941,10 +941,10 @@ MonoBehaviour:
   speed: .349999994
   size: 18
   orbitRadius: 200
-  population: 5e+07
+  population: 8899999744
   maxPopulation: 0
-  followers: 0
-  planetName: 
+  followers: .079999998211860657
+  planetName: Gem
   flickUpDeathPercentage: .300000012
   bleedPercentage: .00499999989
   holdDownBleedMultilier: 10
@@ -3071,10 +3071,10 @@ MonoBehaviour:
   speed: .349999994
   size: 14
   orbitRadius: 56
-  population: 5e+07
+  population: 3.8e+09
   maxPopulation: 0
-  followers: 0
-  planetName: 
+  followers: .079999998211860657
+  planetName: Omis
   flickUpDeathPercentage: .300000012
   bleedPercentage: .00499999989
   holdDownBleedMultilier: 10
@@ -3663,10 +3663,10 @@ MonoBehaviour:
   speed: .349999994
   size: 14
   orbitRadius: 164
-  population: 5e+07
+  population: 17799999488
   maxPopulation: 0
-  followers: 0
-  planetName: 
+  followers: .090000003576278687
+  planetName: Roxbrus
   flickUpDeathPercentage: .300000012
   bleedPercentage: .00499999989
   holdDownBleedMultilier: 10
@@ -3976,6 +3976,18 @@ Prefab:
       propertyPath: majorMessages.Array.data[5]
       value: WARNING! - DO NOT ATTEMPT ATMOSPERIC EGRESS! - Habitat collisions have
         lead to ablation cascade. Unarmored habs are advised to...
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: planetName
+      value: Gem
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: population
+      value: 8899999744
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: followers
+      value: .079999998211860657
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -5035,6 +5047,18 @@ Prefab:
       value: "Boninite refugee centre didn\u2019t receive any survivors today as their
         have been no transports returning from the 3rd zone of..."
       objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: population
+      value: 3.8e+09
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: followers
+      value: .079999998211860657
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: planetName
+      value: Omis
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 878401004}
@@ -5192,6 +5216,18 @@ Prefab:
       propertyPath: majorMessages.Array.data[4]
       value: 'Solar wind (?) magnetosphere destroyed (?) ionosphere stripped (?) require
         evacuation (?)... '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: population
+      value: 1.36e+10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: followers
+      value: .039999999105930328
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: planetName
+      value: Selachii
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -5782,6 +5818,18 @@ Prefab:
       propertyPath: majorMessages.Array.data[5]
       value: 'Colony Cloud: Loss of connection, Request report - Bounties posted...'
       objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: population
+      value: 17799999488
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: followers
+      value: .090000003576278687
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: planetName
+      value: Roxbrus
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 1007691865}
@@ -6279,10 +6327,10 @@ MonoBehaviour:
   speed: .349999994
   size: 16
   orbitRadius: 128
-  population: 5e+07
+  population: 20999999488
   maxPopulation: 0
-  followers: 0
-  planetName: 
+  followers: .11999999731779099
+  planetName: Focida
   flickUpDeathPercentage: .300000012
   bleedPercentage: .00499999989
   holdDownBleedMultilier: 10
@@ -6524,6 +6572,18 @@ Prefab:
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: size
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: population
+      value: 20999999488
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: followers
+      value: .11999999731779099
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: planetName
+      value: Focida
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
