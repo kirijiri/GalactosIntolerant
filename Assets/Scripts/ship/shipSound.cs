@@ -42,7 +42,7 @@ public class shipSound : MonoBehaviour
     // gets called every frame
     public void AudioThrusterNormal(float accel)
     {
-        isMoving = (accel > 0.005f || accel < -0.005f);
+        isMoving = (accel > 0.08f || accel < -0.08f);
         if (!playing_thruster_normal && isMoving)
         {
             playing_thruster_normal = true;
