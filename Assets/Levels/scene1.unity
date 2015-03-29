@@ -323,7 +323,7 @@ MonoBehaviour:
   shipAcceleration: .5
   shipDeceleration: 3
   shipOrbitRadius: 236
-  shipClickUpperBoundary: 80
+  shipClickUpperBoundary: 50
   shipClickLowerBoundary: 20
   shipAnimRestThreshold: 5
   thrusterSmooth: 20
