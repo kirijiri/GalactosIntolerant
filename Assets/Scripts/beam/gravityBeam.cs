@@ -8,6 +8,7 @@ public class gravityBeam : MonoBehaviour
 
     private GameObject[] planets;
     private gravityBeamAnimation animationCtrl;
+    private Animator phoneButtonAnim;
     private shipAnimation shipAnim;
     private float timer = 0;
 
@@ -22,6 +23,7 @@ public class gravityBeam : MonoBehaviour
         animationCtrl = this.GetComponent<gravityBeamAnimation>();
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         shipAnim = GameObject.Find("ship").GetComponent<shipAnimation>();
+        phoneButtonAnim = GameObject.Find("phone_button").GetComponent<Animator>();
     }
 
     void Update()
@@ -29,6 +31,7 @@ public class gravityBeam : MonoBehaviour
         if (isActive)
         {
             animationCtrl.BeamAnimationOn();
+            phoneButtonAnim.SetBool("active", true);
             if (animationCtrl.IsFinished())
             {
                 isActive = false;

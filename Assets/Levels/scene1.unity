@@ -1636,8 +1636,9 @@ GameObject:
   - 212: {fileID: 359556502}
   - 58: {fileID: 359556505}
   - 114: {fileID: 359556504}
+  - 95: {fileID: 359556506}
   m_Layer: 0
-  m_Name: phone_button_32
+  m_Name: phone_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1699,6 +1700,21 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .159999996
   m_Center: {x: 0, y: 0}
+--- !u!95 &359556506
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 359556501}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4329aa55d9fb0d4449be588d6af98983, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &375091113
 GameObject:
   m_ObjectHideFlags: 0
