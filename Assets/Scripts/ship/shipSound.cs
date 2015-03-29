@@ -19,10 +19,13 @@ public class shipSound : MonoBehaviour
         thrusterCooldownTimer = Time.time;
     }
 
-    public void AudioThrusterNormal(float accel)
+    public IEnumerator AudioThrusterNormal(float accel)
     {
         print ("here" + accel);
 
+        audio.clip = thrusterNormal;
+        audio.Play();
+        yield return new WaitForSeconds (audio.clip.length);
 
         //if (Time.time - thrusterCooldownTimer < 2) return;
         //audio.Stop();
