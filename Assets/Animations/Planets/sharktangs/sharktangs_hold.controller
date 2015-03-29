@@ -86,11 +86,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_15_hold
+  m_Name: sharktangs_15_hold
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 16eae8098c4a22b4393aceaf98bf122a, type: 2}
+  - {fileID: 7400000, guid: 23b4a37594243a54e9d55812def1de0d, type: 2}
   m_ParentStateMachine: {fileID: 110727598}
   m_Position: {x: -60, y: 120, z: 0}
   m_IKOnFeet: 0

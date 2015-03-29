@@ -171,7 +171,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_10_glowStop
+  m_Name: bats_10_glowStop
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -186,7 +186,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_09_glow
+  m_Name: bats_09_glow
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -201,7 +201,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_08_glowStart
+  m_Name: bats_08_glowStart
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -231,7 +231,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_07_flash
+  m_Name: bats_07_flash
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:

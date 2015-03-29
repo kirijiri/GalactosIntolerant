@@ -119,11 +119,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_05
+  m_Name: billius_05
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 13c98181c6bc007488b8bc2c0cafea32, type: 2}
+  - {fileID: 7400000, guid: 83e6f714d492aac40bcae48a91f2a9a2, type: 2}
   m_ParentStateMachine: {fileID: 110724310}
   m_Position: {x: 96, y: 168, z: 0}
   m_IKOnFeet: 0
@@ -134,11 +134,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_04
+  m_Name: billius_04
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: bad001d4934e0ac41b4a264fdd4b18e4, type: 2}
+  - {fileID: 7400000, guid: 7ef0f19d0ea58f143a2c2d019b5ef313, type: 2}
   m_ParentStateMachine: {fileID: 110724310}
   m_Position: {x: 96, y: 84, z: 0}
   m_IKOnFeet: 0
@@ -149,11 +149,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_03
+  m_Name: billius_03
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: d5d4def23f636464884572e5743d67ef, type: 2}
+  - {fileID: 7400000, guid: 16962b672882aa741b9f80284e48a550, type: 2}
   m_ParentStateMachine: {fileID: 110724310}
   m_Position: {x: 96, y: 0, z: 0}
   m_IKOnFeet: 0
@@ -164,11 +164,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_02
+  m_Name: billius_02
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: fcf35d9ac9cccad438ab6da3801de5cf, type: 2}
+  - {fileID: 7400000, guid: 34c906cd1ea49334db140475e30fe2f2, type: 2}
   m_ParentStateMachine: {fileID: 110724310}
   m_Position: {x: 96, y: -72, z: 0}
   m_IKOnFeet: 0
@@ -179,11 +179,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_01
+  m_Name: billius_01
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 76495361202641d43b41587209b55996, type: 2}
+  - {fileID: 7400000, guid: 250a841edf154fd4f8acc539d308723c, type: 2}
   m_ParentStateMachine: {fileID: 110724310}
   m_Position: {x: 96, y: -156, z: 0}
   m_IKOnFeet: 0

@@ -119,11 +119,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_05
+  m_Name: sharktangs_05
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 13c98181c6bc007488b8bc2c0cafea32, type: 2}
+  - {fileID: 7400000, guid: 5cb68cd7f71551b4588be09168d575cd, type: 2}
   m_ParentStateMachine: {fileID: 110724310}
   m_Position: {x: 96, y: 168, z: 0}
   m_IKOnFeet: 0
@@ -134,11 +134,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_04
+  m_Name: sharktangs_04
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: bad001d4934e0ac41b4a264fdd4b18e4, type: 2}
+  - {fileID: 7400000, guid: e7faed53916dd404dae17d645efe896d, type: 2}
   m_ParentStateMachine: {fileID: 110724310}
   m_Position: {x: 96, y: 84, z: 0}
   m_IKOnFeet: 0
@@ -149,11 +149,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_03
+  m_Name: sharktangs_03
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: d5d4def23f636464884572e5743d67ef, type: 2}
+  - {fileID: 7400000, guid: 79c76cd2c56003043b5e6764f6f0f193, type: 2}
   m_ParentStateMachine: {fileID: 110724310}
   m_Position: {x: 96, y: 0, z: 0}
   m_IKOnFeet: 0
@@ -164,11 +164,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_02
+  m_Name: sharktangs_02
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: fcf35d9ac9cccad438ab6da3801de5cf, type: 2}
+  - {fileID: 7400000, guid: 91f25b2ccd725b540b1616a0061fae75, type: 2}
   m_ParentStateMachine: {fileID: 110724310}
   m_Position: {x: 96, y: -72, z: 0}
   m_IKOnFeet: 0
@@ -179,11 +179,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_01
+  m_Name: sharktangs_01
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 76495361202641d43b41587209b55996, type: 2}
+  - {fileID: 7400000, guid: 8456e36656d36254da8d4ad6745bd8ee, type: 2}
   m_ParentStateMachine: {fileID: 110724310}
   m_Position: {x: 96, y: -156, z: 0}
   m_IKOnFeet: 0

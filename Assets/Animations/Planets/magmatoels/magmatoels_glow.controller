@@ -171,11 +171,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_10_glowStop
+  m_Name: magmatoels_10_glowStop
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 170e98cb07ed4a04faca2ecf8ca11ef6, type: 2}
+  - {fileID: 7400000, guid: d1aceaa28a141d84c9659341789a1785, type: 2}
   m_ParentStateMachine: {fileID: 110727598}
   m_Position: {x: -252, y: 168, z: 0}
   m_IKOnFeet: 0
@@ -186,11 +186,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_09_glow
+  m_Name: magmatoels_09_glow
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 014701e3305b47b4e89d934b46980aab, type: 2}
+  - {fileID: 7400000, guid: 7fa0c5a710c08f24585c9ff866367e45, type: 2}
   m_ParentStateMachine: {fileID: 110727598}
   m_Position: {x: -120, y: 96, z: 0}
   m_IKOnFeet: 0
@@ -201,11 +201,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_08_glowStart
+  m_Name: magmatoels_08_glowStart
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: bb5e86371cb420c448101b9a55e0e680, type: 2}
+  - {fileID: 7400000, guid: f68a477ba86ec3a4a8fed7de534ac96d, type: 2}
   m_ParentStateMachine: {fileID: 110727598}
   m_Position: {x: -252, y: 24, z: 0}
   m_IKOnFeet: 0
@@ -231,11 +231,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_07_flash
+  m_Name: magmatoels_07_flash
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: e870cadbcf8c2bb4a8f75775df05345a, type: 2}
+  - {fileID: 7400000, guid: bf4f065f48fb2ff44b001d2b8e3a3ac8, type: 2}
   m_ParentStateMachine: {fileID: 110727598}
   m_Position: {x: 36, y: 24, z: 0}
   m_IKOnFeet: 0
