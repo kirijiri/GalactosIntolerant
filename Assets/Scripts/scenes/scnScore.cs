@@ -21,4 +21,9 @@ public class scnScore : MonoBehaviour
     {
         Debug.Log("OnStateChange!");
     }
+
+    public void loadLevel()
+    {
+        sceneManager.GoToLevel1Screen();
+    }
 }
