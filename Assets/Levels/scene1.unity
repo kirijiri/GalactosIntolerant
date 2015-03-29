@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .349999994
-  size: 14
+  size: 16
   orbitRadius: 92
   population: 5e+07
   maxPopulation: 0
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .349999994
-  size: 14
+  size: 18
   orbitRadius: 200
   population: 5e+07
   maxPopulation: 0
@@ -2683,7 +2683,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1870004305
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: fddbe218bab0d164aa5172c5a715dc3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e3bcdfd266cc4849a694d3839acb4e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &794572351
 MonoBehaviour:
@@ -3913,6 +3913,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 9018e630ddc0f2940b3bc30ed648c8a3, type: 2}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: size
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 131670812}
@@ -4874,6 +4878,11 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: fc53c8d3615657c48b424402fb2f8b75, type: 2}
+    - target: {fileID: 21232962, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e3bcdfd266cc4849a694d3839acb4e6,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 878401004}
@@ -4946,6 +4955,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3bfc540d7f3e4e848a2a7a827dd829ba, type: 2}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: size
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 122412034}
@@ -5955,7 +5968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .349999994
-  size: 14
+  size: 16
   orbitRadius: 128
   population: 5e+07
   maxPopulation: 0
@@ -6199,6 +6212,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2291b6b58cea5bb43bd1ef6b5f974323, type: 2}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: size
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 1781363808}
