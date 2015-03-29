@@ -69,12 +69,18 @@ public class shipControl : MonoBehaviour
             if (GetDragAngle() < beamActivateAngle)
             {
                 ActivateGravityBeam();
+                shipAnim.Fire();
+            } else
+            {
+                shipAnim.Close();
             }
+        } else
+        {
+            shipAnim.Close();
         }
-            
+
         isMoving = true;
         isBeingDragged = false;
-        shipAnim.Fire();
     }
 
     void OnMouseOver()
