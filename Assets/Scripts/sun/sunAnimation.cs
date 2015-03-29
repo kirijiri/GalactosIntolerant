@@ -19,6 +19,7 @@ public class sunAnimation : MonoBehaviour {
     // tinker
     private tinker tinker;
     private float backdropShakeAmount;
+	private bool shakeIt;
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +50,11 @@ public class sunAnimation : MonoBehaviour {
 			sunFrontAnim.SetBool ("death", true);
 			sunWayBackAnim.SetBool ("death", true);
 		}
-        if (shake > 0)
+		if (!shakeIt) {
+			shake = 0;
+		}
+
+		if (shakeIt && shake > 0)
         {
             // backdrop
             shakePosition = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0);
@@ -63,6 +68,7 @@ public class sunAnimation : MonoBehaviour {
 
     void UpdateTinker()
     {
+		shakeIt = tinker.GBShakeIt;
         backdropShakeAmount = tinker.GBBackDropShakeAmount;
     }
 }

@@ -314,7 +314,7 @@ MonoBehaviour:
   PFlickOnOuterBand: 0
   PMaxSecsForDrag: 3
   PMaxSecsForHold: 3
-  PForceMult: .0199999996
+  PForceMult: .00999999978
   PAcceleration: .25
   PRestoreSpeed: 0
   PRandomiseInit: 1
@@ -338,7 +338,7 @@ MonoBehaviour:
   GBTimeout: 2
   GBMinGuideDistance: 30
   GBMaxGuideDistance: 64
-  GBShakeAmount: 0
+  GBShakeAmount: .00999999978
   GBBackDropShakeAmount: 1
   GBDragShakeFraction: .25
   messageOptions: '--- MESSAGE OPTIONS ---'
