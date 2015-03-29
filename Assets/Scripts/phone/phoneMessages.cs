@@ -35,7 +35,7 @@ public class phoneMessages : MonoBehaviour
 
         // show idle message from random planet every couple of seconds
         timer += Time.deltaTime;
-        if (timer > idleTimer)
+        if (phoneAnimation.numMessages < tinker.initialMessageCount || timer > idleTimer)
         {
             timer = 0;
 

@@ -62,6 +62,7 @@ public class tinker : MonoBehaviour
     public float bgWidth = 480.0f;
     public float bgHeight = 270.0f;
     public int fontSize = 22;
+    public int initialMessageCount = 3;
 
     public string scoreOptions = "--- SCORE OPTIONS ---";
     public float followerX = 15;

@@ -26,6 +26,8 @@ public class phoneAnimation : MonoBehaviour
     private tinker tinker;
     private GUIStyle textStyle;
 
+    public int numMessages = 0;
+
     void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
@@ -79,6 +81,8 @@ public class phoneAnimation : MonoBehaviour
 
     public void AddNewMessage(string message)
     {
+        numMessages += 1;
+
         // create new message box
         newMessage = new messageBox();
         newMessage.CreateTexture();
@@ -108,6 +112,7 @@ public class phoneAnimation : MonoBehaviour
         foreach (messageBox box in messageToRemove)
         {
             messageBoxes.Remove(box);
+            numMessages -= 1;
         }
 
         messageBoxes.Insert(0, newMessage);
