@@ -5,10 +5,10 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_hold
+  m_Name: magmatoels_hover
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: hold
+  - m_Name: hover
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -17,7 +17,7 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
-    m_StateMachine: {fileID: 110727598}
+    m_StateMachine: {fileID: 110732462}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
@@ -26,98 +26,98 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &110175130
+--- !u!1101 &110153366
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110298176}
-  m_DstState: {fileID: 110254154}
-  m_TransitionDuration: .25
+  m_SrcState: {fileID: 110224140}
+  m_DstState: {fileID: 110289734}
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: hold
+    m_ConditionEvent: hover
     m_EventTreshold: 0
-    m_ExitTime: .75
+    m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1101 &110197522
+--- !u!1101 &110182858
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110254154}
-  m_DstState: {fileID: 110298176}
-  m_TransitionDuration: .100000001
+  m_SrcState: {fileID: 110289734}
+  m_DstState: {fileID: 110224140}
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: hold
+    m_ConditionEvent: hover
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1102 &110254154
+--- !u!1102 &110224140
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: start
+  m_Name: magmatoels_06_highlight
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 92c00873871801a458821c5353a54458, type: 2}
+  m_ParentStateMachine: {fileID: 110732462}
+  m_Position: {x: 94, y: 174, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110289734
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: New State
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 0}
-  m_ParentStateMachine: {fileID: 110727598}
-  m_Position: {x: -60, y: 36, z: 0}
+  m_ParentStateMachine: {fileID: 110732462}
+  m_Position: {x: 96, y: 96, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110298176
-State:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_15_hold
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: 00abdc1c31e7fc04d9da572760fe0221, type: 2}
-  m_ParentStateMachine: {fileID: 110727598}
-  m_Position: {x: -60, y: 120, z: 0}
-  m_IKOnFeet: 0
-  m_Mirror: 0
-  m_Tag: 
---- !u!1107 &110727598
+--- !u!1107 &110732462
 StateMachine:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110254154}
+  m_DefaultState: {fileID: 110289734}
   m_States:
-  - {fileID: 110254154}
-  - {fileID: 110298176}
+  - {fileID: 110289734}
+  - {fileID: 110224140}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110254154}
+      first: {fileID: 110224140}
       second:
-      - {fileID: 110197522}
+      - {fileID: 110153366}
     data:
-      first: {fileID: 110298176}
+      first: {fileID: 110289734}
       second:
-      - {fileID: 110175130}
+      - {fileID: 110182858}
   m_MotionSetCount: 1
-  m_AnyStatePosition: {x: -240, y: 60, z: 0}
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

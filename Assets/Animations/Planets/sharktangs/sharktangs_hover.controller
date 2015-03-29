@@ -5,10 +5,10 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_hold
+  m_Name: sharktangs_hover
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: hold
+  - m_Name: hover
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -17,7 +17,7 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
-    m_StateMachine: {fileID: 110727598}
+    m_StateMachine: {fileID: 110779602}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
@@ -26,98 +26,98 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &110175130
+--- !u!1101 &110148368
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110298176}
-  m_DstState: {fileID: 110254154}
-  m_TransitionDuration: .25
+  m_SrcState: {fileID: 110202610}
+  m_DstState: {fileID: 110279332}
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: hold
+    m_ConditionEvent: hover
     m_EventTreshold: 0
     m_ExitTime: .75
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1101 &110197522
+--- !u!1101 &110194678
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110254154}
-  m_DstState: {fileID: 110298176}
-  m_TransitionDuration: .100000001
+  m_SrcState: {fileID: 110279332}
+  m_DstState: {fileID: 110202610}
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: hold
+    m_ConditionEvent: hover
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1102 &110254154
+--- !u!1102 &110202610
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: start
+  m_Name: sharktangs_06_highlight
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 706a926ceb673d24387f92dd7ccd6389, type: 2}
+  m_ParentStateMachine: {fileID: 110779602}
+  m_Position: {x: 144, y: 228, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110279332
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: New State
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 0}
-  m_ParentStateMachine: {fileID: 110727598}
-  m_Position: {x: -60, y: 36, z: 0}
+  m_ParentStateMachine: {fileID: 110779602}
+  m_Position: {x: 144, y: 168, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110298176
-State:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: throngx_15_hold
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: 00abdc1c31e7fc04d9da572760fe0221, type: 2}
-  m_ParentStateMachine: {fileID: 110727598}
-  m_Position: {x: -60, y: 120, z: 0}
-  m_IKOnFeet: 0
-  m_Mirror: 0
-  m_Tag: 
---- !u!1107 &110727598
+--- !u!1107 &110779602
 StateMachine:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110254154}
+  m_DefaultState: {fileID: 110279332}
   m_States:
-  - {fileID: 110254154}
-  - {fileID: 110298176}
+  - {fileID: 110279332}
+  - {fileID: 110202610}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110254154}
+      first: {fileID: 110202610}
       second:
-      - {fileID: 110197522}
+      - {fileID: 110148368}
     data:
-      first: {fileID: 110298176}
+      first: {fileID: 110279332}
       second:
-      - {fileID: 110175130}
+      - {fileID: 110194678}
   m_MotionSetCount: 1
-  m_AnyStatePosition: {x: -240, y: 60, z: 0}
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
