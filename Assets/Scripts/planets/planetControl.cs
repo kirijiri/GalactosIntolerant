@@ -185,6 +185,16 @@ public class planetControl : MonoBehaviour
         }
     }
 
+    void OnMouseOver()
+    {
+        anim.Hover(true);
+    }
+    
+    void OnMouseExit()
+    {
+        anim.Hover(false);
+    }
+
     //------------------------------------------------------------------- 
 
     private void Flick()

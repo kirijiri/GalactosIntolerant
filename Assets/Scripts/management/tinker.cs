@@ -26,7 +26,7 @@ public class tinker : MonoBehaviour
     public float shipAcceleration = 0.5f;
     public float shipDeceleration = 3f;
     public float shipOrbitRadius = 236f;
-    public float shipClickUpperBoundary = 80f;
+    public float shipClickUpperBoundary = 50f;
     public float shipClickLowerBoundary = 20f;
     public float shipAnimRestThreshold = 5.0f;
     public int thrusterSmooth = 20;

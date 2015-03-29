@@ -7,6 +7,7 @@ public class planetAnimation : MonoBehaviour {
     private Animator elecOverAnim;
     private Animator elecUnderAnim;
     private Animator holdAnim;
+    private Animator hoverAnim;
 
     private planetSettings settings;
     private SpriteRenderer spriteRenderer;
@@ -18,6 +19,7 @@ public class planetAnimation : MonoBehaviour {
         elecOverAnim = transform.Find("elecOver_graphic").GetComponent<Animator>();
         elecUnderAnim = transform.Find("elecUnder_graphic").GetComponent<Animator>();
         holdAnim = transform.Find("hold_graphic").GetComponent<Animator>();
+        hoverAnim = transform.Find("hover_graphic").GetComponent<Animator>();
         
         settings = GetComponent<planetSettings>();
 	}
@@ -43,5 +45,10 @@ public class planetAnimation : MonoBehaviour {
     {
         elecOverAnim.SetBool("aligned", aligned);
         elecUnderAnim.SetBool("aligned", aligned);
+    }
+
+    public void Hover(bool hovering)
+    {
+        hoverAnim.SetBool("hover", hovering);
     }
 }

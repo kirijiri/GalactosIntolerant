@@ -113,7 +113,7 @@ public class shipControl : MonoBehaviour
         gravityBeamActivated = true;
         gravityBeam.isActive = true;
 
-        snapshot snapshot = GameObject.Find("phone_button_32").GetComponent<snapshot>();
+        snapshot snapshot = GameObject.Find("phone_button").GetComponent<snapshot>();
         snapshot.renderer.enabled = true;
     }
 }
