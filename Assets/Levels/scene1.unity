@@ -5830,6 +5830,26 @@ Prefab:
       propertyPath: planetName
       value: Roxbrus
       objectReference: {fileID: 0}
+    - target: {fileID: 9532962, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c5e14310fcf535e49a2f8f913ad0d7fa, type: 2}
+    - target: {fileID: 9575454, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d1c5228df4a8dfd4e8b90a38c1b77505, type: 2}
+    - target: {fileID: 9575456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 70f27e4cdd176164ab0e4159a98ad174, type: 2}
+    - target: {fileID: 9575452, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 53aa4a081ee115d48b28073ce48bb709, type: 2}
+    - target: {fileID: 9532964, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b4614a5f7aee8f74c88ea4f4fe75c2a7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 1007691865}
