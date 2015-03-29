@@ -18,7 +18,8 @@ public class planetSettings : MonoBehaviour
     // scoring
     public float flickUpDeathPercentage = 0.3f;
     public float bleedPercentage = 0.005f;
-    public float holdDownBleedMultilier = 10f;
+    public float holdDownBleedMultilier = 10.0f;
+    public float gravityBeamBleedMultiplier = 30.0f;
 
     // flavour
     public string biome = "";

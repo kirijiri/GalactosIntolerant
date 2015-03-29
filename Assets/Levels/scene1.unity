@@ -141,7 +141,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 1870004305
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: fddbe218bab0d164aa5172c5a715dc3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0fe5aefe1bdc1a8488ffadb3501a6407, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &8389102
 MonoBehaviour:
@@ -418,7 +418,7 @@ Animator:
   m_GameObject: {fileID: 68523964}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0560280fa12c96c44b61b93253a2ea72, type: 2}
+  m_Controller: {fileID: 9100000, guid: f8dca9441a9d9be4985ca02b152b3df6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .349999994
+  speed: .319999993
   size: 16
   orbitRadius: 92
   population: 1.36e+10
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .349999994
+  speed: .109999999
   size: 18
   orbitRadius: 200
   population: 8899999744
@@ -1069,7 +1069,7 @@ Animator:
   m_GameObject: {fileID: 156655532}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: db6fd2087f4aa8841abbdbc55bdb82f9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9b229af251e6e5f4fb3056eb8ec9cfba, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1228,7 +1228,7 @@ Animator:
   m_GameObject: {fileID: 315364108}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: abe7b8b0338f9dd478168b777886fbf7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1db3aa0328e444245b745b08ba0c9797, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1561,7 +1561,7 @@ Animator:
   m_GameObject: {fileID: 389498126}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3bfc540d7f3e4e848a2a7a827dd829ba, type: 2}
+  m_Controller: {fileID: 9100000, guid: ae713a798cd8f8240a7d0571e11a8467, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2240,7 +2240,7 @@ Animator:
   m_GameObject: {fileID: 685309245}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7eaaed0c5fd4c1a47af8959bb9008e24, type: 2}
+  m_Controller: {fileID: 9100000, guid: 83fb33cc7d33c3b4095c39d3eafcc664, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3345,7 +3345,7 @@ Animator:
   m_GameObject: {fileID: 972699015}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6f5cdf300c0f45d4c84d0eb08300d2e7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2b9c6bd4997403641bc9fd662b0566ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3661,7 +3661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .349999994
+  speed: .289999992
   size: 14
   orbitRadius: 164
   population: 17799999488
@@ -3990,6 +3990,15 @@ Prefab:
       propertyPath: followers
       value: .079999998211860657
       objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: speed
+      value: .109999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 21232962, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0fe5aefe1bdc1a8488ffadb3501a6407,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 131670812}
@@ -4514,7 +4523,7 @@ Animator:
   m_GameObject: {fileID: 1198873939}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c91551dd2e664c442a19b4b76948fa3c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 67fa369f2b49f204c9e54ead1c9ca662, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -4661,7 +4670,7 @@ Animator:
   m_GameObject: {fileID: 1262380699}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0df60fbdbd07b1e4291ccd0448398ec5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 17ecae26ac11b7b4282ea0b7d0ecd40f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -4842,7 +4851,7 @@ Animator:
   m_GameObject: {fileID: 1370031461}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ad8cc1c68f3f48348a34af028a3eb9a2, type: 2}
+  m_Controller: {fileID: 9100000, guid: a080dbf2fcec1f9418d18371c318321f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -5059,6 +5068,10 @@ Prefab:
       propertyPath: planetName
       value: Omis
       objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: speed
+      value: .349999994
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 878401004}
@@ -5122,23 +5135,23 @@ Prefab:
     - target: {fileID: 9532962, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: db6fd2087f4aa8841abbdbc55bdb82f9, type: 2}
+      objectReference: {fileID: 9100000, guid: 9b229af251e6e5f4fb3056eb8ec9cfba, type: 2}
     - target: {fileID: 9575454, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 0df60fbdbd07b1e4291ccd0448398ec5, type: 2}
+      objectReference: {fileID: 9100000, guid: 17ecae26ac11b7b4282ea0b7d0ecd40f, type: 2}
     - target: {fileID: 9575456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: c91551dd2e664c442a19b4b76948fa3c, type: 2}
+      objectReference: {fileID: 9100000, guid: 67fa369f2b49f204c9e54ead1c9ca662, type: 2}
     - target: {fileID: 9575452, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: abe7b8b0338f9dd478168b777886fbf7, type: 2}
+      objectReference: {fileID: 9100000, guid: 1db3aa0328e444245b745b08ba0c9797, type: 2}
     - target: {fileID: 9532964, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 3bfc540d7f3e4e848a2a7a827dd829ba, type: 2}
+      objectReference: {fileID: 9100000, guid: ae713a798cd8f8240a7d0571e11a8467, type: 2}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: size
       value: 16
@@ -5228,6 +5241,10 @@ Prefab:
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: planetName
       value: Selachii
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: speed
+      value: .319999993
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -5850,6 +5867,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b4614a5f7aee8f74c88ea4f4fe75c2a7, type: 2}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: speed
+      value: .289999992
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 1007691865}
@@ -6344,7 +6365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7e52aa39cf00a4a8778fb4336649c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .349999994
+  speed: .239999995
   size: 16
   orbitRadius: 128
   population: 20999999488
@@ -6572,23 +6593,23 @@ Prefab:
     - target: {fileID: 9532962, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: ad8cc1c68f3f48348a34af028a3eb9a2, type: 2}
+      objectReference: {fileID: 9100000, guid: a080dbf2fcec1f9418d18371c318321f, type: 2}
     - target: {fileID: 9575454, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7eaaed0c5fd4c1a47af8959bb9008e24, type: 2}
+      objectReference: {fileID: 9100000, guid: 83fb33cc7d33c3b4095c39d3eafcc664, type: 2}
     - target: {fileID: 9575456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6f5cdf300c0f45d4c84d0eb08300d2e7, type: 2}
+      objectReference: {fileID: 9100000, guid: 2b9c6bd4997403641bc9fd662b0566ec, type: 2}
     - target: {fileID: 9575452, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 0560280fa12c96c44b61b93253a2ea72, type: 2}
+      objectReference: {fileID: 9100000, guid: f8dca9441a9d9be4985ca02b152b3df6, type: 2}
     - target: {fileID: 9532964, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2291b6b58cea5bb43bd1ef6b5f974323, type: 2}
+      objectReference: {fileID: 9100000, guid: dcc897b5678f23147ae7c29766a6496c, type: 2}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: size
       value: 16
@@ -6604,6 +6625,10 @@ Prefab:
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: planetName
       value: Focida
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: speed
+      value: .239999995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -6817,7 +6842,7 @@ Animator:
   m_GameObject: {fileID: 2127550690}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2291b6b58cea5bb43bd1ef6b5f974323, type: 2}
+  m_Controller: {fileID: 9100000, guid: dcc897b5678f23147ae7c29766a6496c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
