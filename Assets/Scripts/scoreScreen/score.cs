@@ -7,7 +7,7 @@ using System.Collections;
 
 public class score : MonoBehaviour
 {
-    public int maxPlanetCount = 6;
+    public int maxPlanetCount = 5;
 	private double likes;
 
     // flash animation
@@ -29,7 +29,7 @@ public class score : MonoBehaviour
 
     //-------------------------------------------------------------------
 
-    void Start()
+	private void Start()
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         likesPercentage = tinker.likesPercentage;
@@ -44,7 +44,7 @@ public class score : MonoBehaviour
         childrenText = GameObject.Find("children").GetComponent<Text>();
     }
 
-    void Update()
+	private void Update()
     {
         // tinker update
         fadeSpeed = tinker.flashFadeOutSpeed;
@@ -64,7 +64,13 @@ public class score : MonoBehaviour
         childrenText.text = string.Format("{0:0}", gameManager.Instance.dead * childrenPercentage);
     }
 
-    void OnGUI()
+	private string customFormatting (string number)
+	{
+		print (number);
+		return number;
+	}
+
+	private void OnGUI()
     {
         if (!doSnapshot)
             return;
