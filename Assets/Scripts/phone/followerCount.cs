@@ -53,7 +53,8 @@ public class followerCount : MonoBehaviour
     void OnGUI()
     {
         textStyle.font = (Font)Resources.Load("Fonts/MunroSmall");
-        GUI.Label(textRect, "Followers: " + gameManager.Instance.followers.ToString("F0"), textStyle);
+        //GUI.Label(textRect, "Followers: " + gameManager.Instance.followers.ToString("F0"), textStyle);
+		GUI.Label(textRect, "Followers: " + gameManager.Instance.followers.ToString("#,##0"), textStyle);
     }
 
 }
