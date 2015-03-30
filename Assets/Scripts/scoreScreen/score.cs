@@ -7,7 +7,8 @@ using System.Collections;
 
 public class score : MonoBehaviour
 {
-    public int alignedPlanetCount;
+    public int maxPlanetCount = 6;
+	private double likes;
 
     // flash animation
     private bool doSnapshot = true;
@@ -48,9 +49,15 @@ public class score : MonoBehaviour
         // tinker update
         fadeSpeed = tinker.flashFadeOutSpeed;
 
+		// calculate likes
+		if (gameManager.Instance.alignedPlanetCount > 0)
+			likes = (gameManager.Instance.followers * likesPercentage) / (maxPlanetCount - gameManager.Instance.alignedPlanetCount);
+		else
+			likes = (gameManager.Instance.followers * likesPercentage) / (maxPlanetCount - gameManager.Instance.alignedPlanetCount);
+
         // show score
         planetAlignText.text = "You aligned " + gameManager.Instance.alignedPlanetCount + " planets";
-        likesText.text =  string.Format("{0:0}", gameManager.Instance.followers * likesPercentage); 
+		likesText.text =  string.Format("{0:0}", likes); 
         followersText.text = string.Format("{0:0}", gameManager.Instance.followers); 
         populationText.text =  string.Format("{0:0}", gameManager.Instance.population); 
         deathText.text = string.Format("{0:0}", gameManager.Instance.dead); 
