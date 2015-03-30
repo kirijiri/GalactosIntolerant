@@ -13,6 +13,7 @@ public class snapshot : MonoBehaviour
     private float fadeSpeed;
     private tinker tinker;
     private Animator phoneButtonAnim;
+    private snapshotSound snapshotAudio;
 
     //-------------------------------------------------------------------
 
@@ -21,6 +22,7 @@ public class snapshot : MonoBehaviour
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         gravityBeam = GameObject.Find("gravityBeam").GetComponent<gravityBeam>();
         phoneButtonAnim = GameObject.Find("phone_button").GetComponent<Animator>();
+        snapshotAudio = GameObject.Find("camera_sound").GetComponent<snapshotSound>();
 
         // make button invisible (gravity beam will make it visible)
         renderer.enabled = false;
@@ -36,6 +38,9 @@ public class snapshot : MonoBehaviour
         
         // save stats
         gameManager.Instance.alignedPlanetCount = gravityBeam.GetAlignedPlanetCount();
+        
+        // play sound
+        snapshotAudio.AudioSnapshot();
 
         // animate flash
         doSnapshot = true;
