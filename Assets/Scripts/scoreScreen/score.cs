@@ -25,6 +25,10 @@ public class score : MonoBehaviour
     private float likesPercentage;
     private float childrenPercentage;
 
+	// custom text formatting
+	private string[] formats = new string[4]{"", "K", "M", "B"};
+	private int count;
+
     private tinker tinker;
 
     //-------------------------------------------------------------------
@@ -42,11 +46,8 @@ public class score : MonoBehaviour
         populationText = GameObject.Find("population").GetComponent<Text>();
         deathText = GameObject.Find("death").GetComponent<Text>();
         childrenText = GameObject.Find("children").GetComponent<Text>();
-    }
 
-	private void Update()
-    {
-        // tinker update
+		// tinker update
         fadeSpeed = tinker.flashFadeOutSpeed;
 
 		// calculate likes
@@ -57,16 +58,31 @@ public class score : MonoBehaviour
 
         // show score
         planetAlignText.text = "You aligned " + gameManager.Instance.alignedPlanetCount + " planets";
-		likesText.text =  string.Format("{0:0}", likes); 
-        followersText.text = string.Format("{0:0}", gameManager.Instance.followers); 
-        populationText.text =  string.Format("{0:0}", gameManager.Instance.population); 
-        deathText.text = string.Format("{0:0}", gameManager.Instance.dead); 
-        childrenText.text = string.Format("{0:0}", gameManager.Instance.dead * childrenPercentage);
+		likesText.text = customFormatting(likes);
+		followersText.text = customFormatting(gameManager.Instance.followers);
+		populationText.text =  customFormatting(gameManager.Instance.population);
+		deathText.text = customFormatting(gameManager.Instance.dead);
+		childrenText.text = customFormatting(gameManager.Instance.dead * childrenPercentage);
     }
 
-	private string customFormatting (string number)
+	private string customFormatting (double number)
 	{
-		print (number);
+		count = 0;
+		number = recursive_formatting(number, ref count);
+		if (count > 0)
+			return (string.Format("{0:0.00}", number) + " " + formats[count]);
+		else
+			return (string.Format("{0:0}", number));
+	}
+			
+	private double recursive_formatting (double number, ref int count)
+	{
+		if ((number/1000 < 0.5) || (count+1 > formats.Length))
+		{
+			return number;
+		}
+		count++;
+		number = recursive_formatting((number/1000), ref count);
 		return number;
 	}
 
@@ -89,3 +105,4 @@ public class score : MonoBehaviour
         if (Time.timeSinceLevelLoad >= 1) doSnapshot = false;
     }
 }
+

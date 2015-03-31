@@ -41,7 +41,7 @@ public class scoring : MonoBehaviour
             if (init.do_kill_people && settings.population > 0.0f)
             {
                 diffMagnitude = Mathf.Abs(init.initVelocity.magnitude - planet.rigidbody2D.velocity.magnitude);
-                settings.population -= diffMagnitude * (settings.maxPopulation * settings.bleedPercentage * bleed);
+                settings.population -= diffMagnitude * (settings.maxPopulation * settings.bleedPercentage * bleed) * Time.deltaTime;
 
                 // planet dead
                 if (settings.population < 0.0f)
