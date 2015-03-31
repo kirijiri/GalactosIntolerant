@@ -26,7 +26,7 @@ public class score : MonoBehaviour
     private float childrenPercentage;
 
 	// custom text formatting
-	private string[] formats = new string[4]{"", "K", "M", "B"};
+	private string[] formats = new string[4]{"", "k", "m", "b"};
 	private int count;
 
     private tinker tinker;
@@ -70,7 +70,7 @@ public class score : MonoBehaviour
 		count = 0;
 		number = recursive_formatting(number, ref count);
 		if (count > 0)
-			return (string.Format("{0:0.00}", number) + " " + formats[count]);
+			return (string.Format("{0:0.00}", number) + "" + formats[count]);
 		else
 			return (string.Format("{0:0}", number));
 	}
