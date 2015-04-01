@@ -6,6 +6,6 @@ public class restart : MonoBehaviour
 {
     public void loadLevel()
     {
-        sceneManager.GoToLevel1Screen();
+		sceneManager.GoToTitleScreen();
     }
 }

@@ -662,9 +662,9 @@ MonoBehaviour:
   followers: .039999999105930328
   planetName: Selachii
   flickUpDeathPercentage: .100000001
-  bleedPercentage: 9.99999975e-06
+  bleedPercentage: .000500000024
   holdDownBleedMultilier: 5
-  gravityBeamBleedMultiplier: 30
+  gravityBeamBleedMultiplier: 80
   biome: 
   race: 
   look: 
@@ -876,9 +876,9 @@ MonoBehaviour:
   followers: .079999998211860657
   planetName: Gem
   flickUpDeathPercentage: .100000001
-  bleedPercentage: 9.99999975e-06
+  bleedPercentage: .000500000024
   holdDownBleedMultilier: 5
-  gravityBeamBleedMultiplier: 30
+  gravityBeamBleedMultiplier: 80
   biome: 
   race: 
   look: 
@@ -1518,9 +1518,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 779ad1a23036f9746ad399a803121883, type: 3}
+  m_SortingLayerID: 3331293113
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300008, guid: 30296ad74dcace047a26867deaf8d0c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &359556503
 Transform:
@@ -1905,7 +1905,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: 9.99999975e-06
+      value: .000500000024
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
@@ -1913,7 +1913,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 30
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -3310,9 +3310,9 @@ MonoBehaviour:
   followers: .079999998211860657
   planetName: Omis
   flickUpDeathPercentage: .100000001
-  bleedPercentage: 9.99999975e-06
+  bleedPercentage: .000500000024
   holdDownBleedMultilier: 5
-  gravityBeamBleedMultiplier: 30
+  gravityBeamBleedMultiplier: 80
   biome: 
   race: 
   look: 
@@ -3929,9 +3929,9 @@ MonoBehaviour:
   followers: .090000003576278687
   planetName: Roxbrus
   flickUpDeathPercentage: .100000001
-  bleedPercentage: 9.99999975e-06
+  bleedPercentage: .000500000024
   holdDownBleedMultilier: 5
-  gravityBeamBleedMultiplier: 30
+  gravityBeamBleedMultiplier: 80
   biome: 
   race: 
   look: 
@@ -4274,7 +4274,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: 9.99999975e-06
+      value: .000500000024
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
@@ -4282,7 +4282,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 30
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -4471,7 +4471,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: a03908c16e2b8eb45addf1dc6542efe2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .0500000007
+  m_Volume: .25999999
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5444,7 +5444,7 @@ Prefab:
       objectReference: {fileID: 9100000, guid: 7216d92a194d18b448bbb0f3c109a2c1, type: 2}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: 9.99999975e-06
+      value: .000500000024
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
@@ -5452,7 +5452,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 30
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: flickUpDeathPercentage
@@ -5643,7 +5643,7 @@ Prefab:
         type: 3}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: 9.99999975e-06
+      value: .000500000024
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
@@ -5651,7 +5651,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 30
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: flickUpDeathPercentage
@@ -6300,7 +6300,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: 9.99999975e-06
+      value: .000500000024
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
@@ -6308,7 +6308,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 30
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -6805,9 +6805,9 @@ MonoBehaviour:
   followers: .11999999731779099
   planetName: Focida
   flickUpDeathPercentage: .100000001
-  bleedPercentage: 9.99999975e-06
+  bleedPercentage: .000500000024
   holdDownBleedMultilier: 5
-  gravityBeamBleedMultiplier: 30
+  gravityBeamBleedMultiplier: 80
   biome: 
   race: 
   look: 

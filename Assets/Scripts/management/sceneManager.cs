@@ -15,4 +15,10 @@ public static class sceneManager
     {
         Application.LoadLevel("scene1");
     }
+
+	public static void GoToTitleScreen()
+	{
+		Application.LoadLevel("titleScreen");
+	}
+
 }

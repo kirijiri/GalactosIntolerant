@@ -24,6 +24,6 @@ public class scnScore : MonoBehaviour
 
     public void loadLevel()
     {
-        sceneManager.GoToLevel1Screen();
+        sceneManager.GoToTitleScreen();
     }
 }
