@@ -21,7 +21,7 @@ public class followerCount : MonoBehaviour
 
         // define message font
         textStyle = new GUIStyle();
-        textStyle.normal.textColor = Color.black;
+        textStyle.normal.textColor = Color.white;
         textStyle.wordWrap = true;
         textStyle.font = (Font)Resources.Load("Fonts/MunroSmall");
     }

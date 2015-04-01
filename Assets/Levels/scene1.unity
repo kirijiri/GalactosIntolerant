@@ -355,15 +355,15 @@ MonoBehaviour:
   messageVSpace: 5
   scrollSpeed: 2
   phoneWidth: 98
-  phoneHeight: 118
+  phoneHeight: 85
   phoneYOffset: 10
   bgWidth: 480
   bgHeight: 270
   fontSize: 22
   initialMessageCount: 3
   scoreOptions: '--- SCORE OPTIONS ---'
-  followerX: 15
-  followerY: 210
+  followerX: 18
+  followerY: 207
   followerWidth: 100
   followerHeight: 50
   followerFontSize: 30
