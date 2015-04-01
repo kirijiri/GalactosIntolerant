@@ -56,8 +56,6 @@ public class score : MonoBehaviour
 		else
 			likes = (gameManager.Instance.followers * likesPercentage) / (maxPlanetCount - gameManager.Instance.alignedPlanetCount);
 
-		print ("likes: " + likes + " followers:" + gameManager.Instance.followers + " population:" + gameManager.Instance.population + " dead: " + gameManager.Instance.dead + " children: " + childrenPercentage + " likesPercentage" + likesPercentage);
-
         // show score
         planetAlignText.text = "You aligned " + gameManager.Instance.alignedPlanetCount + " planets";
 		likesText.text = customFormatting(likes);
@@ -71,10 +69,8 @@ public class score : MonoBehaviour
 	{
 		count = 0;
 		number = recursive_formatting(number, ref count);
-		if (count > 0) {
-			print ("count: " + count + " - length:" + formats.Length + " - number:" + number);
+		if (count > 0) 
 			return (string.Format ("{0:0.00}", number) + "" + formats [count]);
-		}
 		else
 			return (string.Format("{0:0}", number));
 	}
