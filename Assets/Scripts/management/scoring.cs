@@ -7,6 +7,7 @@ public class scoring : MonoBehaviour
     private GameObject planet;
     private planetInit init;
     private planetSettings settings;
+	private planetsIndividualSound planetSounds;
     
     private float diffMagnitude;
 
@@ -49,9 +50,20 @@ public class scoring : MonoBehaviour
                     settings.population = 0.0f;
                 }
             }
+
+			PlayDamageSounds(settings, planet);
             UpdateDeceaseCount();   
         }
     }
+
+	private void PlayDamageSounds(planetSettings settings, GameObject planet)
+	{
+		planetSounds = planet.GetComponent<planetsIndividualSound>();
+		if ((settings.population / settings.maxPopulation) < 0.333)
+		{
+			planetSounds.AudioDamaged();
+		}
+	}
 
     public void IncreaseDeaths(GameObject planet)
     {

@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &8389098
 GameObject:
@@ -550,6 +549,8 @@ GameObject:
   - 114: {fileID: 122412040}
   - 114: {fileID: 122412039}
   - 114: {fileID: 122412038}
+  - 114: {fileID: 122412036}
+  - 82: {fileID: 122412037}
   m_Layer: 0
   m_Name: planet_sharktangs_92
   m_TagString: Planet
@@ -575,6 +576,78 @@ Transform:
   - {fileID: 183159027}
   m_Father: {fileID: 375091114}
   m_RootOrder: 3
+--- !u!114 &122412036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1386307799}
+  m_GameObject: {fileID: 122412034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b000c00e9447384cb8696370b4dadd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damaged: {fileID: 8300000, guid: 8f3f76076d4bb234a9833cdbdde843df, type: 3}
+--- !u!82 &122412037
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1386307799}
+  m_GameObject: {fileID: 122412034}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &122412038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,6 +837,8 @@ GameObject:
   - 114: {fileID: 131670818}
   - 114: {fileID: 131670817}
   - 114: {fileID: 131670816}
+  - 114: {fileID: 131670814}
+  - 82: {fileID: 131670815}
   m_Layer: 0
   m_Name: planet_billius_200
   m_TagString: Planet
@@ -789,6 +864,78 @@ Transform:
   - {fileID: 536026579}
   m_Father: {fileID: 375091114}
   m_RootOrder: 0
+--- !u!114 &131670814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1039000463}
+  m_GameObject: {fileID: 131670812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b000c00e9447384cb8696370b4dadd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damaged: {fileID: 0}
+--- !u!82 &131670815
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1039000463}
+  m_GameObject: {fileID: 131670812}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &131670816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,6 +2062,10 @@ Prefab:
       propertyPath: gravityBeamBleedMultiplier
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: aefbbd49c92547547905df83addbb148, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 1781363808}
@@ -3198,6 +3349,8 @@ GameObject:
   - 114: {fileID: 878401010}
   - 114: {fileID: 878401009}
   - 114: {fileID: 878401008}
+  - 114: {fileID: 878401006}
+  - 82: {fileID: 878401007}
   m_Layer: 0
   m_Name: planet_magmatoels_56
   m_TagString: Planet
@@ -3223,6 +3376,78 @@ Transform:
   - {fileID: 225466628}
   m_Father: {fileID: 375091114}
   m_RootOrder: 4
+--- !u!114 &878401006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1374473215}
+  m_GameObject: {fileID: 878401004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b000c00e9447384cb8696370b4dadd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damaged: {fileID: 8300000, guid: aefbbd49c92547547905df83addbb148, type: 3}
+--- !u!82 &878401007
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1374473215}
+  m_GameObject: {fileID: 878401004}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &878401008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3817,6 +4042,8 @@ GameObject:
   - 114: {fileID: 1007691871}
   - 114: {fileID: 1007691870}
   - 114: {fileID: 1007691869}
+  - 114: {fileID: 1007691867}
+  - 82: {fileID: 1007691868}
   m_Layer: 0
   m_Name: planet_bats_164
   m_TagString: Planet
@@ -3842,6 +4069,78 @@ Transform:
   - {fileID: 86122873}
   m_Father: {fileID: 375091114}
   m_RootOrder: 1
+--- !u!114 &1007691867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1571417881}
+  m_GameObject: {fileID: 1007691865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b000c00e9447384cb8696370b4dadd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damaged: {fileID: 8300000, guid: 68601eab7ee3cd74ea5f211dc65c529e, type: 3}
+--- !u!82 &1007691868
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1571417881}
+  m_GameObject: {fileID: 1007691865}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &1007691869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4283,6 +4582,10 @@ Prefab:
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
       value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: damaged
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -5458,6 +5761,10 @@ Prefab:
       propertyPath: flickUpDeathPercentage
       value: .200000003
       objectReference: {fileID: 0}
+    - target: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: aefbbd49c92547547905df83addbb148, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 878401004}
@@ -5657,6 +5964,10 @@ Prefab:
       propertyPath: flickUpDeathPercentage
       value: .200000003
       objectReference: {fileID: 0}
+    - target: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f3f76076d4bb234a9833cdbdde843df, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 122412034}
@@ -6310,6 +6621,10 @@ Prefab:
       propertyPath: gravityBeamBleedMultiplier
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: 68601eab7ee3cd74ea5f211dc65c529e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 1007691865}
@@ -6693,6 +7008,8 @@ GameObject:
   - 114: {fileID: 1781363814}
   - 114: {fileID: 1781363813}
   - 114: {fileID: 1781363812}
+  - 114: {fileID: 1781363810}
+  - 82: {fileID: 1781363811}
   m_Layer: 0
   m_Name: planet_throngx_128
   m_TagString: Planet
@@ -6718,6 +7035,78 @@ Transform:
   - {fileID: 1205785311}
   m_Father: {fileID: 375091114}
   m_RootOrder: 2
+--- !u!114 &1781363810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 451547865}
+  m_GameObject: {fileID: 1781363808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b000c00e9447384cb8696370b4dadd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damaged: {fileID: 8300000, guid: aefbbd49c92547547905df83addbb148, type: 3}
+--- !u!82 &1781363811
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 451547865}
+  m_GameObject: {fileID: 1781363808}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &1781363812
 MonoBehaviour:
   m_ObjectHideFlags: 0
