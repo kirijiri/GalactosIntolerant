@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &8389098
 GameObject:
@@ -600,7 +601,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .400000006
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -608,7 +609,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: 1
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -632,7 +633,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -735,7 +736,7 @@ MonoBehaviour:
   followers: .039999999105930328
   planetName: Selachii
   flickUpDeathPercentage: .200000003
-  bleedPercentage: .00499999989
+  bleedPercentage: .00700000022
   holdDownBleedMultilier: 50
   gravityBeamBleedMultiplier: 400
   biome: 
@@ -876,7 +877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b000c00e9447384cb8696370b4dadd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damaged: {fileID: 0}
+  damaged: {fileID: 8300000, guid: aefbbd49c92547547905df83addbb148, type: 3}
 --- !u!82 &131670815
 AudioSource:
   m_ObjectHideFlags: 0
@@ -888,7 +889,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .400000006
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -896,7 +897,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: 1
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -920,7 +921,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1023,7 +1024,7 @@ MonoBehaviour:
   followers: .079999998211860657
   planetName: Gem
   flickUpDeathPercentage: .200000003
-  bleedPercentage: .00499999989
+  bleedPercentage: .00700000022
   holdDownBleedMultilier: 50
   gravityBeamBleedMultiplier: 400
   biome: 
@@ -2052,7 +2053,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: .00499999989
+      value: .00700000022
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
@@ -2065,7 +2066,19 @@ Prefab:
     - target: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: damaged
       value: 
-      objectReference: {fileID: 8300000, guid: aefbbd49c92547547905df83addbb148, type: 3}
+      objectReference: {fileID: 8300000, guid: 8f3f76076d4bb234a9833cdbdde843df, type: 3}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Volume
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: Pan2D
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 1781363808}
@@ -3400,7 +3413,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .400000006
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3408,7 +3421,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: 1
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -3432,7 +3445,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3535,7 +3548,7 @@ MonoBehaviour:
   followers: .079999998211860657
   planetName: Omis
   flickUpDeathPercentage: .200000003
-  bleedPercentage: .00499999989
+  bleedPercentage: .00700000022
   holdDownBleedMultilier: 50
   gravityBeamBleedMultiplier: 400
   biome: 
@@ -4093,7 +4106,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .400000006
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4101,7 +4114,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: 1
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -4125,7 +4138,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4228,7 +4241,7 @@ MonoBehaviour:
   followers: .090000003576278687
   planetName: Roxbrus
   flickUpDeathPercentage: .200000003
-  bleedPercentage: .00499999989
+  bleedPercentage: .00700000022
   holdDownBleedMultilier: 50
   gravityBeamBleedMultiplier: 400
   biome: 
@@ -4573,7 +4586,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: .00499999989
+      value: .00700000022
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
@@ -4586,6 +4599,18 @@ Prefab:
     - target: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: damaged
       value: 
+      objectReference: {fileID: 8300000, guid: aefbbd49c92547547905df83addbb148, type: 3}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Volume
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: Pan2D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -5747,7 +5772,7 @@ Prefab:
       objectReference: {fileID: 9100000, guid: 7216d92a194d18b448bbb0f3c109a2c1, type: 2}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: .00499999989
+      value: .00700000022
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
@@ -5765,6 +5790,18 @@ Prefab:
       propertyPath: damaged
       value: 
       objectReference: {fileID: 8300000, guid: aefbbd49c92547547905df83addbb148, type: 3}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Volume
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: Pan2D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 878401004}
@@ -5950,7 +5987,7 @@ Prefab:
         type: 3}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: .00499999989
+      value: .00700000022
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
@@ -5968,6 +6005,18 @@ Prefab:
       propertyPath: damaged
       value: 
       objectReference: {fileID: 8300000, guid: 8f3f76076d4bb234a9833cdbdde843df, type: 3}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Volume
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: Pan2D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 122412034}
@@ -6611,7 +6660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: .00499999989
+      value: .00700000022
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
@@ -6625,6 +6674,18 @@ Prefab:
       propertyPath: damaged
       value: 
       objectReference: {fileID: 8300000, guid: 68601eab7ee3cd74ea5f211dc65c529e, type: 3}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: m_Volume
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: Pan2D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_RootGameObject: {fileID: 1007691865}
@@ -7047,7 +7108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b000c00e9447384cb8696370b4dadd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damaged: {fileID: 8300000, guid: aefbbd49c92547547905df83addbb148, type: 3}
+  damaged: {fileID: 8300000, guid: 8f3f76076d4bb234a9833cdbdde843df, type: 3}
 --- !u!82 &1781363811
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7059,7 +7120,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .400000006
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7067,7 +7128,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: 1
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -7091,7 +7152,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -7194,7 +7255,7 @@ MonoBehaviour:
   followers: .11999999731779099
   planetName: Focida
   flickUpDeathPercentage: .200000003
-  bleedPercentage: .00499999989
+  bleedPercentage: .00700000022
   holdDownBleedMultilier: 50
   gravityBeamBleedMultiplier: 400
   biome: 
