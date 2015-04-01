@@ -663,8 +663,8 @@ MonoBehaviour:
   planetName: Selachii
   flickUpDeathPercentage: .100000001
   bleedPercentage: 9.99999975e-06
-  holdDownBleedMultilier: 3
-  gravityBeamBleedMultiplier: 10
+  holdDownBleedMultilier: 5
+  gravityBeamBleedMultiplier: 30
   biome: 
   race: 
   look: 
@@ -877,8 +877,8 @@ MonoBehaviour:
   planetName: Gem
   flickUpDeathPercentage: .100000001
   bleedPercentage: 9.99999975e-06
-  holdDownBleedMultilier: 3
-  gravityBeamBleedMultiplier: 10
+  holdDownBleedMultilier: 5
+  gravityBeamBleedMultiplier: 30
   biome: 
   race: 
   look: 
@@ -1909,11 +1909,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -3311,8 +3311,8 @@ MonoBehaviour:
   planetName: Omis
   flickUpDeathPercentage: .100000001
   bleedPercentage: 9.99999975e-06
-  holdDownBleedMultilier: 3
-  gravityBeamBleedMultiplier: 10
+  holdDownBleedMultilier: 5
+  gravityBeamBleedMultiplier: 30
   biome: 
   race: 
   look: 
@@ -3930,8 +3930,8 @@ MonoBehaviour:
   planetName: Roxbrus
   flickUpDeathPercentage: .100000001
   bleedPercentage: 9.99999975e-06
-  holdDownBleedMultilier: 3
-  gravityBeamBleedMultiplier: 10
+  holdDownBleedMultilier: 5
+  gravityBeamBleedMultiplier: 30
   biome: 
   race: 
   look: 
@@ -4278,11 +4278,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -5448,11 +5448,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: flickUpDeathPercentage
@@ -5647,11 +5647,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: flickUpDeathPercentage
@@ -6304,11 +6304,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -6806,8 +6806,8 @@ MonoBehaviour:
   planetName: Focida
   flickUpDeathPercentage: .100000001
   bleedPercentage: 9.99999975e-06
-  holdDownBleedMultilier: 3
-  gravityBeamBleedMultiplier: 10
+  holdDownBleedMultilier: 5
+  gravityBeamBleedMultiplier: 30
   biome: 
   race: 
   look: 
