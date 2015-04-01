@@ -367,7 +367,7 @@ MonoBehaviour:
   followerWidth: 100
   followerHeight: 50
   followerFontSize: 30
-  likesPercentage: .300000012
+  likesPercentage: .100000001
   childrenPercentage: .300000012
   snapshotOptions: '--- SNAPSHOT OPTIONS ---'
   flashFadeInSpeed: 10
@@ -661,10 +661,10 @@ MonoBehaviour:
   maxPopulation: 0
   followers: .039999999105930328
   planetName: Selachii
-  flickUpDeathPercentage: .100000001
-  bleedPercentage: .000500000024
-  holdDownBleedMultilier: 5
-  gravityBeamBleedMultiplier: 80
+  flickUpDeathPercentage: .200000003
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 50
+  gravityBeamBleedMultiplier: 400
   biome: 
   race: 
   look: 
@@ -875,10 +875,10 @@ MonoBehaviour:
   maxPopulation: 0
   followers: .079999998211860657
   planetName: Gem
-  flickUpDeathPercentage: .100000001
-  bleedPercentage: .000500000024
-  holdDownBleedMultilier: 5
-  gravityBeamBleedMultiplier: 80
+  flickUpDeathPercentage: .200000003
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 50
+  gravityBeamBleedMultiplier: 400
   biome: 
   race: 
   look: 
@@ -1901,19 +1901,19 @@ Prefab:
       objectReference: {fileID: 9100000, guid: b91523690ad5853418f3da46232c21d5, type: 2}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: flickUpDeathPercentage
-      value: .100000001
+      value: .200000003
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: .000500000024
+      value: .00499999989
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 80
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -3309,10 +3309,10 @@ MonoBehaviour:
   maxPopulation: 0
   followers: .079999998211860657
   planetName: Omis
-  flickUpDeathPercentage: .100000001
-  bleedPercentage: .000500000024
-  holdDownBleedMultilier: 5
-  gravityBeamBleedMultiplier: 80
+  flickUpDeathPercentage: .200000003
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 50
+  gravityBeamBleedMultiplier: 400
   biome: 
   race: 
   look: 
@@ -3924,14 +3924,14 @@ MonoBehaviour:
   speed: .289999992
   size: 16
   orbitRadius: 164
-  population: 17799999488
+  population: 4899999744
   maxPopulation: 0
   followers: .090000003576278687
   planetName: Roxbrus
-  flickUpDeathPercentage: .100000001
-  bleedPercentage: .000500000024
-  holdDownBleedMultilier: 5
-  gravityBeamBleedMultiplier: 80
+  flickUpDeathPercentage: .200000003
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 50
+  gravityBeamBleedMultiplier: 400
   biome: 
   race: 
   look: 
@@ -4270,19 +4270,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: flickUpDeathPercentage
-      value: .100000001
+      value: .200000003
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: .000500000024
+      value: .00499999989
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 80
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -5444,19 +5444,19 @@ Prefab:
       objectReference: {fileID: 9100000, guid: 7216d92a194d18b448bbb0f3c109a2c1, type: 2}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: .000500000024
+      value: .00499999989
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 80
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: flickUpDeathPercentage
-      value: .100000001
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -5643,19 +5643,19 @@ Prefab:
         type: 3}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: .000500000024
+      value: .00499999989
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 80
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: flickUpDeathPercentage
-      value: .100000001
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -6255,7 +6255,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: population
-      value: 17799999488
+      value: 4899999744
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: followers
@@ -6296,19 +6296,19 @@ Prefab:
         type: 3}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: flickUpDeathPercentage
-      value: .100000001
+      value: .200000003
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: bleedPercentage
-      value: .000500000024
+      value: .00499999989
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: holdDownBleedMultilier
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: gravityBeamBleedMultiplier
-      value: 80
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -6804,10 +6804,10 @@ MonoBehaviour:
   maxPopulation: 0
   followers: .11999999731779099
   planetName: Focida
-  flickUpDeathPercentage: .100000001
-  bleedPercentage: .000500000024
-  holdDownBleedMultilier: 5
-  gravityBeamBleedMultiplier: 80
+  flickUpDeathPercentage: .200000003
+  bleedPercentage: .00499999989
+  holdDownBleedMultilier: 50
+  gravityBeamBleedMultiplier: 400
   biome: 
   race: 
   look: 
