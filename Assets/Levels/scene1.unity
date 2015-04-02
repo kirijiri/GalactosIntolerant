@@ -609,7 +609,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 1
+  Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -633,7 +633,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -897,7 +897,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 1
+  Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -921,7 +921,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2073,11 +2073,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: Pan2D
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -3421,7 +3421,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 1
+  Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -3445,7 +3445,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4114,7 +4114,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 1
+  Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -4138,7 +4138,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4606,11 +4606,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: Pan2D
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -4799,7 +4799,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: a03908c16e2b8eb45addf1dc6542efe2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .25999999
+  m_Volume: .0900000036
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5796,11 +5796,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: Pan2D
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -6011,11 +6011,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: Pan2D
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -6680,11 +6680,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: Pan2D
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -7128,7 +7128,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 1
+  Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -7152,7 +7152,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
