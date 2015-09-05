@@ -25,7 +25,7 @@ public class gravityBeam : MonoBehaviour
         animationCtrl = this.GetComponent<gravityBeamAnimation>();
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         shipAnim = GameObject.Find("ship").GetComponent<shipAnimation>();
-        backgroundAudio = GameObject.Find("Main Camera").GetComponent<backgroundSound>();
+        backgroundAudio = GameObject.Find("setup").GetComponent<backgroundSound>();
         planetAudio = GameObject.Find("planets").GetComponent<planetSound>();
         phoneButtonAnim = GameObject.Find("phone_button").GetComponent<Animator>();
     }

@@ -42,7 +42,7 @@ public class planetControl : MonoBehaviour
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         phoneMessaging = GameObject.Find("messages").GetComponent<phoneMessages>();
-        scoring = GameObject.Find("Main Camera").GetComponent<scoring>();
+        scoring = GameObject.Find("setup").GetComponent<scoring>();
         sound = GameObject.Find("planets").GetComponent<planetSound>();
         anim = GetComponent<planetAnimation>();
         planetInit = GetComponent<planetInit>();

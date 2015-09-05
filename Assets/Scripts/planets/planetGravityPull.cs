@@ -38,7 +38,7 @@ public class planetGravityPull : MonoBehaviour
         // gravity beam
         gravityBeam = GameObject.Find("gravityBeam").GetComponent<gravityBeam>();
         anim = GetComponent<planetAnimation>();
-        scoring = GameObject.Find("Main Camera").GetComponent<scoring>();
+        scoring = GameObject.Find("setup").GetComponent<scoring>();
 
         // settings
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
