@@ -36,9 +36,9 @@ public class snapshotSound : MonoBehaviour
 
     private IEnumerator PlayAudioSnapshot()
     {
-        audio.clip = snapshot;
-        audio.Play();
-        yield return new WaitForSeconds(audio.clip.length);
+        GetComponent<AudioSource>().clip = snapshot;
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
     }
 }
 

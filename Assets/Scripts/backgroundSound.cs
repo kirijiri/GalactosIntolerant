@@ -7,8 +7,8 @@ public class backgroundSound : MonoBehaviour
     
     public void AudioToDamageSounds()
     {
-        audio.Stop();
-        audio.clip = backgroundDamaged;
-        audio.Play();
+        GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().clip = backgroundDamaged;
+        GetComponent<AudioSource>().Play();
     }
 }

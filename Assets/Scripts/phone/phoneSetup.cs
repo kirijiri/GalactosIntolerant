@@ -90,7 +90,7 @@ public class phoneSetup : MonoBehaviour
 		
 		GUI.Label(_sizeRect, "GEWFWQWDQWDW", textStyle);
 
-		yield return new WaitForEndOfFrame(); // fix for: "ReadPixels was called to read pixels from system frame buffer, while not inside drawing frame."
+		//yield return new WaitForEndOfFrame(); // fix for: "ReadPixels was called to read pixels from system frame buffer, while not inside drawing frame."
 		Texture2D tx2d = new Texture2D (_tex.height, _tex.width, TextureFormat.RGB24, false);
 		RenderTexture.active = _tex;
 		tx2d.ReadPixels (_sizeRect, 0, 0);

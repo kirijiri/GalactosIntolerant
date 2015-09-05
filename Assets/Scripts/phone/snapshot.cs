@@ -25,12 +25,12 @@ public class snapshot : MonoBehaviour
         snapshotAudio = GameObject.Find("camera_sound").GetComponent<snapshotSound>();
 
         // make button invisible (gravity beam will make it visible)
-        renderer.enabled = false;
+        GetComponent<Renderer>().enabled = false;
     }
 
     void OnMouseDown()
     {
-        if (!renderer.enabled)
+        if (!GetComponent<Renderer>().enabled)
             return;
 
         if (!gravityBeam.isActive && gravityBeam.available) 

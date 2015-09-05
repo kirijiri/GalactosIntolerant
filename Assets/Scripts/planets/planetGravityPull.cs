@@ -111,7 +111,7 @@ public class planetGravityPull : MonoBehaviour
 
     private void gravityPull(Ray beam, Vector3 intersect)
     {
-        rigidbody2D.velocity = intersect - transform.position;
+        GetComponent<Rigidbody2D>().velocity = intersect - transform.position;
     }
 
     private static float DistanceToRay(Ray ray, Vector3 point)

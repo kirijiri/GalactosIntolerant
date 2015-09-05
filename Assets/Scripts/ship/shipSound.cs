@@ -39,23 +39,23 @@ public class shipSound : MonoBehaviour
 
     public void Start()
     {
-        thusterNormalSource = (AudioSource) gameObject.AddComponent("AudioSource");
+        thusterNormalSource = (AudioSource) gameObject.AddComponent<AudioSource>();
         thusterNormalSource.clip = thrusterNormal;
         thusterNormalSource.playOnAwake = false;
         
-        thusterEmergencySource = (AudioSource) gameObject.AddComponent("AudioSource");
+        thusterEmergencySource = (AudioSource) gameObject.AddComponent<AudioSource>();
         thusterEmergencySource.clip = thrusterEmergency;
         thusterEmergencySource.playOnAwake = false;
 
-        beamSource = (AudioSource) gameObject.AddComponent("AudioSource");
+        beamSource = (AudioSource) gameObject.AddComponent<AudioSource>();
         beamSource.playOnAwake = false;
         
-        beamChargeSource = (AudioSource) gameObject.AddComponent("AudioSource");
+        beamChargeSource = (AudioSource) gameObject.AddComponent<AudioSource>();
         beamChargeSource.clip = beamCharge;
         beamChargeSource.loop = true;
         beamChargeSource.playOnAwake = false;
         
-        beamFiringToOffSource = (AudioSource) gameObject.AddComponent("AudioSource");
+        beamFiringToOffSource = (AudioSource) gameObject.AddComponent<AudioSource>();
         beamFiringToOffSource.clip = beamFiringToOff;
         beamFiringToOffSource.loop = false;
         beamFiringToOffSource.playOnAwake = false;
@@ -148,8 +148,8 @@ public class shipSound : MonoBehaviour
         {
             StartCoroutine(FadeAudio(beamSource, 0.5f, Fade.Out));
             StartCoroutine(FadeAudio(beamChargeSource, 0.5f, Fade.Out));
-            audio.volume = beamChargeToOffVolume;
-            audio.PlayOneShot(beamChargeToOff);
+            GetComponent<AudioSource>().volume = beamChargeToOffVolume;
+            GetComponent<AudioSource>().PlayOneShot(beamChargeToOff);
         }
     }
 
