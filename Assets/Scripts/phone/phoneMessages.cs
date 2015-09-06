@@ -20,6 +20,8 @@ public class phoneMessages : MonoBehaviour
         
         planets = GameObject.FindGameObjectsWithTag("Planet");
         ResetPlanetTrack();
+
+		StartCoroutine(UpdateIdleMessages());
     }
 
     void ResetPlanetTrack()
@@ -28,9 +30,35 @@ public class phoneMessages : MonoBehaviour
         for (int i = 0; i < planets.Length; i++)
             planetsTrack.Add(i);
     }
+
+	IEnumerator UpdateIdleMessages ()
+	{
+		// get a random planet index that hasn't been used yet (if it runs out, fill up the list again)
+		// TODO: figure out how many messages are in each planet, the planets might not have to change,
+		// just the messages
+		if (planetsTrack.Count == 0)
+			ResetPlanetTrack();
+		int rand = Random.Range(0, planetsTrack.Count);
+		
+		// set idle message text
+		message = planets [rand].GetComponent<planetMessaging>().GetIdleMessage();
+		if (message == "")
+			StartCoroutine( UpdateIdleMessages() );
+		
+		// play animation
+		print (message);
+		//phoneAnimation.AddNewMessage(message);
+		
+		// remove planet from track list to not repeat it immidiately again
+		planetsTrack.RemoveAt(rand);
+
+		yield return new WaitForSeconds(2);
+		StartCoroutine( UpdateIdleMessages() );
+	}
     
     void Update()
     {
+		/*
         idleTimer = tinker.idleTimer;
 
         // show idle message from random planet every couple of seconds
@@ -57,6 +85,7 @@ public class phoneMessages : MonoBehaviour
             // remove planet from track list to not repeat it immidiately again
             planetsTrack.RemoveAt(rand);
         }
+        */
     }
 
     public void SendNewMessage(GameObject planet)

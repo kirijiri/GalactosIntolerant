@@ -93,22 +93,32 @@ public class phoneSetup : MonoBehaviour
 		_textComponent.fontSize = _textStyle.fontSize;
 
 		// update text every couple of seconds
-		StartCoroutine(UpdateNews());
+		StartCoroutine(UpdateIdleMessages());
 	}
 	
-	IEnumerator UpdateNews ()
+	IEnumerator UpdateIdleMessages ()
+	{
+		AddNewMessage(messages[Random.Range(0, messages.Count)]);
+
+		yield return new WaitForSeconds(2);
+		StartCoroutine( UpdateIdleMessages() );
+	}
+
+	public void AddNewMessage(string message)
+	{
+		StartCoroutine( CreateMessage(message) );
+	}
+	
+	IEnumerator CreateMessage (string message)
 	{
 		_message_height = _box_height - (_messageMargins[1] + _messageMargins[3]);
 		_cam.backgroundColor = new Color(Random.value, Random.value, Random.value);
-
-		// prepare next idle message
-		string message = messages[Random.Range(0, messages.Count)];
-		_textComponent.text = message;
 		
+		_textComponent.text = message;
+
 		_box_height = _textStyle.CalcHeight(new GUIContent (message), _message_width) + (_messageMargins[1] + _messageMargins[3]);
 		_textStyle.fontSize = _textComponent.fontSize;
-		print ("\n" + message + ":  " + _box_height);
-
+		
 		yield return new WaitForFixedUpdate(); // actually causes display of the message in the Text object
 		
 		//yield return new WaitForEndOfFrame(); // fix for: "ReadPixels was called to read pixels from system frame buffer, while not inside drawing frame."
@@ -120,11 +130,25 @@ public class phoneSetup : MonoBehaviour
 		RenderTexture.active = null;
 		
 		SpriteRenderer sr = new GameObject ("note").AddComponent<SpriteRenderer> ();
-		sr.sprite = Sprite.Create (tx2d, sizeRect, new Vector2 (0.0f, 0.0f));
+
+		sr.sprite = Sprite.Create (tx2d, sizeRect, new Vector2 (0.0F, 0.0F));
+
+		float pivotX = - sr.sprite.bounds.center.x;// / sr.sprite.bounds.extents.x / 2 + 0.5f;
+		float pivotY = - sr.sprite.bounds.center.y;// / sr.sprite.bounds.extents.y / 2 + 0.5f;
+		float pixelsToUnits = sr.sprite.textureRect.width / sr.sprite.bounds.size.x;
+		print (pivotX+ " " + pivotY + " " + pixelsToUnits);
+		print (sr.sprite.bounds.min );
+
+		sr.sprite = Sprite.Create (tx2d, sizeRect, sr.sprite.bounds.min , pixelsToUnits);
+
 		float scale = _phone_width/_tex.width;
 		sr.transform.localScale = new Vector3(scale, scale, 0);
+		sr.transform.localPosition = new Vector3(-2.26F, 0, 0);
 
-		yield return new WaitForSeconds(2);
-		StartCoroutine( UpdateNews() );
+		print ("------------>" + sr.sprite.bounds);
+		print ("------------>" + sr.sprite.pivot);
+
+		print (sr.sprite.rect);
+		print (_box_height*scale);
 	}
 }	
