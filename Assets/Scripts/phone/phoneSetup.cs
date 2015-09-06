@@ -9,7 +9,12 @@ public class phoneSetup : MonoBehaviour
 	private RenderTexture _tex;
 	private GUIStyle _textStyle;
 	private Text _textComponent;
-	private float _height;
+	private float _box_height;
+	private float _phone_width = 98;
+	private float[] _messageMargins = new float[4]{10.0f, 10.0f, 10.0f, 10.0f}; //left, top, right, bottom
+	private float _message_width;
+	private float _message_height;
+
 	
 	private List<string> messages = new List<string>();
 	
@@ -19,6 +24,7 @@ public class phoneSetup : MonoBehaviour
 		messages.Add("I'm testing things");
 		messages.Add("and more");
 		messages.Add("and nothing is better than this!!!");
+		messages.Add("and more dfhwgfkhjewgfwekjfhwejfkljhewjfhwefklhwe;fhwuseijfhej;qghjeqrgnjrk;egnjkdharhgj;bgkl;agdhjk");
 		
 		// Find the 'main' camera object.
 		GameObject original = GameObject.FindWithTag ("MainCamera");
@@ -54,7 +60,7 @@ public class phoneSetup : MonoBehaviour
 		_textStyle = new GUIStyle();
 		_textStyle.normal.textColor = Color.black;
 		_textStyle.wordWrap = true;
-		_textStyle.fontSize = 22;
+		_textStyle.fontSize = 100;
 		_textStyle.font = (Font)Resources.Load("MunroSmall");
 
 		// canvas
@@ -65,6 +71,10 @@ public class phoneSetup : MonoBehaviour
 		myCanvas.renderMode = RenderMode.ScreenSpaceCamera;
 		myCanvas.worldCamera = _cam;
 
+		_message_width = _tex.width - (_messageMargins[0] + _messageMargins[2]);
+		_message_height = _tex.height - (_messageMargins[1] + _messageMargins[3]);
+		_box_height = _tex.height;
+
 		// text
 		GameObject myText = new GameObject ("Text");
 		myText.layer = LayerMask.NameToLayer ("renderTexCam");
@@ -74,9 +84,9 @@ public class phoneSetup : MonoBehaviour
 
 		RectTransform _textRect = myText.GetComponent<RectTransform> ();
 		_textRect.localScale = new Vector3(1, 1, 1);
-		myText.transform.parent = myCanvas.transform;
-		_textRect.localPosition = new Vector3(-_tex.width/2+90/2, 0, 0);
-		_textRect.sizeDelta = new Vector2(90, _tex.height);
+		myText.transform.SetParent( myCanvas.transform );
+		_textRect.localPosition = new Vector3(_messageMargins[0], 0, 0); // add margin to text on left
+		_textRect.sizeDelta = new Vector2(_message_width - _messageMargins[2], _message_height - _messageMargins[3]); // add margin on right
 
 		_textComponent = myText.GetComponent<Text> ();
 		_textComponent.font = _textStyle.font;
@@ -88,27 +98,32 @@ public class phoneSetup : MonoBehaviour
 	
 	IEnumerator UpdateNews ()
 	{
+		_message_height = _box_height - (_messageMargins[1] + _messageMargins[3]);
 		_cam.backgroundColor = new Color(Random.value, Random.value, Random.value);
 
+		// prepare next idle message
+		string message = messages[Random.Range(0, messages.Count)];
+		_textComponent.text = message;
+		
+		_box_height = _textStyle.CalcHeight(new GUIContent (message), _message_width) + (_messageMargins[1] + _messageMargins[3]);
+		_textStyle.fontSize = _textComponent.fontSize;
+		print ("\n" + message + ":  " + _box_height);
+
+		yield return new WaitForFixedUpdate(); // actually causes display of the message in the Text object
+		
 		//yield return new WaitForEndOfFrame(); // fix for: "ReadPixels was called to read pixels from system frame buffer, while not inside drawing frame."
 		Texture2D tx2d = new Texture2D (_tex.height, _tex.width, TextureFormat.RGB24, false);
 		RenderTexture.active = _tex;
-		Rect sizeRect = new Rect (0, 0, 90, _height);
+		Rect sizeRect = new Rect (0, 0, _tex.width, _box_height);
 		tx2d.ReadPixels (sizeRect, 0, 0);
 		tx2d.Apply ();
 		RenderTexture.active = null;
 		
 		SpriteRenderer sr = new GameObject ("note").AddComponent<SpriteRenderer> ();
-		sr.sprite = Sprite.Create (tx2d, sizeRect, new Vector2 (0.5f, 0.5f));
+		sr.sprite = Sprite.Create (tx2d, sizeRect, new Vector2 (0.0f, 0.0f));
+		float scale = _phone_width/_tex.width;
+		sr.transform.localScale = new Vector3(scale, scale, 0);
 
-		// prepare next idle message
-		string message = messages[Random.Range(0, messages.Count)];
-		_textComponent.text = message;
-
-		_height = _textStyle.CalcHeight(new GUIContent (message), 90);
-		_textStyle.fontSize = _textComponent.fontSize;
-		print ("\n" + message + ":  " + _height);
-		
 		yield return new WaitForSeconds(2);
 		StartCoroutine( UpdateNews() );
 	}
