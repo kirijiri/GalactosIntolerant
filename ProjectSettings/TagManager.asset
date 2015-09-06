@@ -47,6 +47,9 @@ TagManager:
   - name: phone
     uniqueID: 3331293113
     locked: 0
+  - name: galacto
+    uniqueID: 2914525571
+    locked: 0
   - name: snapshot
     uniqueID: 2724913153
     locked: 0

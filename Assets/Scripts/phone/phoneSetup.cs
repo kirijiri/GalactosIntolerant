@@ -141,15 +141,25 @@ public class phoneSetup : MonoBehaviour
 
 		float scale = _phone_width/_tex.width;
 		note.transform.localScale = new Vector3(scale, scale, 0);
-		note.transform.localPosition = new Vector3(-2.26F, 0, 0);
+		note.transform.localPosition = new Vector3(-2.26F, 0.53F, 0);
 
 		/*
 		print (sr.sprite.rect);
 		print (sr.sprite.bounds);
-		print ("box height: "+ _box_height*scale);
-		*/
+         */
+        //print ("-------------> box height: "+ _box_height*scale);
 
-		note.AddComponent<message> ();
-		note.tag = "Note";
+        sr.sortingLayerName = "phone";
+
+        GameObject[] notes = GameObject.FindGameObjectsWithTag("Note");
+        foreach (GameObject n in notes)
+        {
+            //n.SendMessage("Move", _box_height*scale);
+            float spacing = 0.05f;
+            n.SendMessage("Move", sr.sprite.bounds.size.y*scale + spacing);
+        }
+
+        note.AddComponent<message> ();
+        note.tag = "Note";
 	}
 }	
