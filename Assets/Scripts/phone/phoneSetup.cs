@@ -129,7 +129,8 @@ public class phoneSetup : MonoBehaviour
 		tx2d.Apply ();
 		RenderTexture.active = null;
 
-		SpriteRenderer sr = new GameObject ("note").AddComponent<SpriteRenderer> ();
+		GameObject note = new GameObject ("note");
+		SpriteRenderer sr = note.AddComponent<SpriteRenderer> ();
 		sr.sprite = Sprite.Create (tx2d, sizeRect, new Vector2 (0.0F, 0.0F));
 
 		// pivot in the upper left corner
@@ -139,10 +140,16 @@ public class phoneSetup : MonoBehaviour
 		sr.sprite = Sprite.Create (tx2d, sizeRect, new Vector2 (pivotX, pivotY) , pixelsToUnits);
 
 		float scale = _phone_width/_tex.width;
-		sr.transform.localScale = new Vector3(scale, scale, 0);
-		sr.transform.localPosition = new Vector3(-2.26F, 0, 0);
+		note.transform.localScale = new Vector3(scale, scale, 0);
+		note.transform.localPosition = new Vector3(-2.26F, 0, 0);
 
+		/*
 		print (sr.sprite.rect);
+		print (sr.sprite.bounds);
 		print ("box height: "+ _box_height*scale);
+		*/
+
+		note.AddComponent<message> ();
+		note.tag = "Note";
 	}
 }	
