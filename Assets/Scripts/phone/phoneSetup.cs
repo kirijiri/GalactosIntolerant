@@ -128,27 +128,21 @@ public class phoneSetup : MonoBehaviour
 		tx2d.ReadPixels (sizeRect, 0, 0);
 		tx2d.Apply ();
 		RenderTexture.active = null;
-		
-		SpriteRenderer sr = new GameObject ("note").AddComponent<SpriteRenderer> ();
 
+		SpriteRenderer sr = new GameObject ("note").AddComponent<SpriteRenderer> ();
 		sr.sprite = Sprite.Create (tx2d, sizeRect, new Vector2 (0.0F, 0.0F));
 
-		float pivotX = - sr.sprite.bounds.center.x;// / sr.sprite.bounds.extents.x / 2 + 0.5f;
-		float pivotY = - sr.sprite.bounds.center.y;// / sr.sprite.bounds.extents.y / 2 + 0.5f;
+		// pivot in the upper left corner
+		float pivotX = - sr.sprite.bounds.center.x / sr.sprite.bounds.extents.x / 2 + 0.5f;
+		float pivotY = sr.sprite.bounds.center.y / sr.sprite.bounds.extents.y / 2 + 0.5f;
 		float pixelsToUnits = sr.sprite.textureRect.width / sr.sprite.bounds.size.x;
-		print (pivotX+ " " + pivotY + " " + pixelsToUnits);
-		print (sr.sprite.bounds.min );
-
-		sr.sprite = Sprite.Create (tx2d, sizeRect, sr.sprite.bounds.min , pixelsToUnits);
+		sr.sprite = Sprite.Create (tx2d, sizeRect, new Vector2 (pivotX, pivotY) , pixelsToUnits);
 
 		float scale = _phone_width/_tex.width;
 		sr.transform.localScale = new Vector3(scale, scale, 0);
 		sr.transform.localPosition = new Vector3(-2.26F, 0, 0);
 
-		print ("------------>" + sr.sprite.bounds);
-		print ("------------>" + sr.sprite.pivot);
-
 		print (sr.sprite.rect);
-		print (_box_height*scale);
+		print ("box height: "+ _box_height*scale);
 	}
 }	
