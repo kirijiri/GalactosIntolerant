@@ -159,11 +159,11 @@ public class planetControl : MonoBehaviour
 
         // store data
         storedPosition = transform.position;
-        storedVelocity = rigidbody2D.velocity;
+        storedVelocity = GetComponent<Rigidbody2D>().velocity;
         holdStartTime = Time.time;
 
         // pause
-        rigidbody2D.velocity = new Vector3(0, 0, 0);
+        GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
 
         sound.AudioHold();
     }
@@ -204,7 +204,7 @@ public class planetControl : MonoBehaviour
     private void Flick()
     {
         newForce = newVelocity.normalized / (GetElapsedTime(dragStartTime) / maxSecForDrag);
-        rigidbody2D.velocity = storedVelocity + (newForce * forceMult);
+        GetComponent<Rigidbody2D>().velocity = storedVelocity + (newForce * forceMult);
 
         ResetControlFlags();
         ResetTimers();
@@ -246,17 +246,17 @@ public class planetControl : MonoBehaviour
         if (storedVelocity.magnitude > 0.01)
         {
             // if we're at the right speed, ignore
-            if (rigidbody2D.velocity.magnitude == storedVelocity.magnitude)
+            if (GetComponent<Rigidbody2D>().velocity.magnitude == storedVelocity.magnitude)
             {
                 needToAccelerate = false;
                 return;
             }
 
-            diffMagnitude = storedVelocity.magnitude - rigidbody2D.velocity.magnitude;
+            diffMagnitude = storedVelocity.magnitude - GetComponent<Rigidbody2D>().velocity.magnitude;
             // if the current velocity is too small, use the stored velocity
-            if (rigidbody2D.velocity.magnitude > 0.01)
+            if (GetComponent<Rigidbody2D>().velocity.magnitude > 0.01)
             {
-                newForce = rigidbody2D.velocity;
+                newForce = GetComponent<Rigidbody2D>().velocity;
             } else
             {
                 newForce = storedVelocity;
@@ -268,7 +268,7 @@ public class planetControl : MonoBehaviour
             {
                 Debug.DrawLine(transform.position, transform.position + newForce, Color.red, 0, false);
             } 
-            rigidbody2D.AddForce(newForce);
+            GetComponent<Rigidbody2D>().AddForce(newForce);
         }
     }
 

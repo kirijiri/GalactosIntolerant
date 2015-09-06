@@ -71,7 +71,7 @@ public class planetInit : MonoBehaviour
 
         if (initVelocity.magnitude == 0 && Time.timeSinceLevelLoad > 1)
         {
-            initVelocity = rigidbody2D.velocity;
+            initVelocity = GetComponent<Rigidbody2D>().velocity;
         }
     }
 
@@ -90,7 +90,7 @@ public class planetInit : MonoBehaviour
     private void HingeSetup()
     {
         HingeJoint2D hinge = gameObject.GetComponent<HingeJoint2D>();
-        hinge.connectedBody = sun.rigidbody2D;
+        hinge.connectedBody = sun.GetComponent<Rigidbody2D>();
         hinge.anchor = new Vector2(posDiff.x, posDiff.y);
     }
 
@@ -106,7 +106,7 @@ public class planetInit : MonoBehaviour
         {
             initSpeed *= -1;
         }
-        rigidbody2D.velocity = initDirection * initSpeed;
+        GetComponent<Rigidbody2D>().velocity = initDirection * initSpeed;
     }
 
     private void ColliderSetup()
@@ -122,9 +122,9 @@ public class planetInit : MonoBehaviour
         // ignore all the planets
         foreach (GameObject planet in planets)
         {
-            Physics2D.IgnoreCollision(planet.collider2D, collider2D);
+            Physics2D.IgnoreCollision(planet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
         GameObject satellite = GameObject.Find("ship");
-        Physics2D.IgnoreCollision(satellite.collider2D, collider2D);
+        Physics2D.IgnoreCollision(satellite.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 }
