@@ -13,6 +13,8 @@ public class planetControl : MonoBehaviour
     private bool returnToTargetSpeed;
     private bool targetSpeedClockwise;
     private bool needToAccelerate = true;
+    private GameObject[] allPlanets;
+    private bool otherPlanetDragged = false;
 
     // controls
     public bool held = false;
@@ -46,6 +48,7 @@ public class planetControl : MonoBehaviour
         sound = GameObject.Find("planets").GetComponent<planetSound>();
         anim = GetComponent<planetAnimation>();
         planetInit = GetComponent<planetInit>();
+        allPlanets = GameObject.FindGameObjectsWithTag("Planet");
     }
 
     void Update()
@@ -191,7 +194,22 @@ public class planetControl : MonoBehaviour
 
     void OnMouseOver()
     {
-        anim.Hover(true);
+        // check to see whether a different planet is being dragged
+        otherPlanetDragged = false;
+        foreach (GameObject _planet in allPlanets)
+        {
+            if (_planet.GetComponent<planetControl>().drag)
+            {
+                otherPlanetDragged = true;
+                break;
+            }
+        }
+
+        // only show hover if another planet isn't being dragged
+        if (otherPlanetDragged == false)
+        {
+            anim.Hover(true);
+        }
     }
     
     void OnMouseExit()
