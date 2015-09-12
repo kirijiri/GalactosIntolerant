@@ -10,7 +10,7 @@ public class message : MonoBehaviour
     {
         if (_move_by > 0.0F)
         {
-            float step = 0.01F;
+            float step = 0.05F;
             gameObject.transform.position -= new Vector3(0, step, 0);
             _move_by -= step;
         }

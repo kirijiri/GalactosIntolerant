@@ -42,7 +42,7 @@ public class phoneSetup : MonoBehaviour
 		_cam.cullingMask = (1 << LayerMask.NameToLayer ("renderTexCam"));
 		
 		// create new render texture
-		_tex = new RenderTexture (1024, 1024, 32, RenderTextureFormat.ARGB32);
+		_tex = new RenderTexture (2048, 2048, 32, RenderTextureFormat.ARGB32);
 		_tex.Create ();
 		_cam.targetTexture = _tex;
 		
@@ -50,7 +50,7 @@ public class phoneSetup : MonoBehaviour
 		_textStyle = new GUIStyle();
 		_textStyle.normal.textColor = Color.black;
 		_textStyle.wordWrap = true;
-		_textStyle.fontSize = 100;
+		_textStyle.fontSize = 200;
 		_textStyle.font = (Font)Resources.Load("MunroSmall");
 
 		// canvas
@@ -100,6 +100,8 @@ public class phoneSetup : MonoBehaviour
 		
 		//yield return new WaitForEndOfFrame(); // fix for: "ReadPixels was called to read pixels from system frame buffer, while not inside drawing frame."
 		Texture2D tx2d = new Texture2D (_tex.height, _tex.width, TextureFormat.RGB24, false);
+		QualitySettings.antiAliasing = 0;
+		tx2d.filterMode = FilterMode.Point;
 		RenderTexture.active = _tex;
 		Rect sizeRect = new Rect (0, 0, _tex.width, _box_height);
 		tx2d.ReadPixels (sizeRect, 0, 0);
