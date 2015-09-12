@@ -13,8 +13,8 @@ public class planetsIndividualSound : MonoBehaviour
 		if (playOnce)
 		{
 			playOnce = false;
-			audio.Stop ();
-			audio.PlayOneShot (damaged);
+			GetComponent<AudioSource>().Stop ();
+			GetComponent<AudioSource>().PlayOneShot (damaged);
 		}
 	}
 }
