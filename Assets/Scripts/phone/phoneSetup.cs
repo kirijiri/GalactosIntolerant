@@ -106,10 +106,10 @@ public class phoneSetup : MonoBehaviour
 		SpriteRenderer sr = go.GetComponent<SpriteRenderer> ();
 
 		//Sprite[] spr_obj = Resources.LoadAll<Sprite>(Application.dataPath + "/Resources/Tweets/magmatoel_idle_001.png"); 
-		GameObject[] spr_obj = Resources.LoadAll<GameObject>("Tweets/galacto_idle_256"); 
+		GameObject[] spr_obj = Resources.LoadAll<GameObject>("Tweets/magmatoel_major_000"); 
 		print ("GameObject:" + spr_obj);
 
-		Texture2D tx2d = Resources.Load("Tweets/galacto_idle_256") as Texture2D;
+		Texture2D tx2d = Resources.Load("Tweets/magmatoel_major_000") as Texture2D;
 		Sprite new_spr = Sprite.Create(tx2d, new Rect (0, 0, tx2d.width, tx2d.height), new Vector2(0.5f, 0.5f));
 		sr.sprite = new_spr;
 
