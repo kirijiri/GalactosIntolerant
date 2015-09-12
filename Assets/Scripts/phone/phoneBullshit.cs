@@ -9,7 +9,7 @@ public class phoneBullshit : MonoBehaviour {
 	{
 		print (Application.dataPath);
 		print (Application.dataPath + "/Resources/");
-		string[] files = System.IO.Directory.GetFiles (Application.dataPath + "/Resources/");
+		string[] files = System.IO.Directory.GetFiles (Application.dataPath + "/Resources/", "*.*");
 		print(files);
 
 		DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/Resources");
@@ -23,7 +23,7 @@ public class phoneBullshit : MonoBehaviour {
 		}
 		*/
 
-		Texture2D[] textures = (Texture2D[]) Resources.LoadAll("Textures");
+		Object[] textures = (Object[]) Resources.LoadAll("Textures", typeof(Texture2D));
 		print (textures);
 	
 	}
