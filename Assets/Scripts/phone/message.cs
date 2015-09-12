@@ -5,14 +5,16 @@ public class message : MonoBehaviour
 {
     private float _move_by = 0;
     private float _spacing = 0.05f;
+	private float step = 1.0F; //0.05F;
+	private float i;
 
     void Update()
     {
         if (_move_by > 0.0F)
         {
-            float step = 0.05F;
-            gameObject.transform.position -= new Vector3(0, step, 0);
-            _move_by -= step;
+			i = step * Time.deltaTime;
+            gameObject.transform.position -= new Vector3(0, i, 0);
+            _move_by -= i;
         }
 
         // remove object when out of scope
