@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+// deprecated
+
 public class phoneAnimation : MonoBehaviour
 {
     private float screenHeight;

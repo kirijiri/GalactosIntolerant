@@ -4,6 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
+//TODO:
+// graphical queue: remember last created message and add to_move height (public) to own pos hight and move it with everything else
+
 public class phoneSetup : MonoBehaviour
 {
 	private Camera _cam;
@@ -105,19 +108,16 @@ public class phoneSetup : MonoBehaviour
 		GameObject go = Instantiate(Resources.Load("messages")) as GameObject; 
 		SpriteRenderer sr = go.GetComponent<SpriteRenderer> ();
 
-		//Sprite[] spr_obj = Resources.LoadAll<Sprite>(Application.dataPath + "/Resources/Tweets/magmatoel_idle_001.png"); 
-		GameObject[] spr_obj = Resources.LoadAll<GameObject>("Tweets/magmatoel_major_000"); 
-		print ("GameObject:" + spr_obj);
+		Texture2D[] tx2d_array = Resources.LoadAll<Texture2D>("Tweets");
+		print (tx2d_array.Length);
 
 		Texture2D tx2d = Resources.Load("Tweets/magmatoel_major_000") as Texture2D;
 		Sprite new_spr = Sprite.Create(tx2d, new Rect (0, 0, tx2d.width, tx2d.height), new Vector2(0.5f, 0.5f));
 		sr.sprite = new_spr;
-
-		//Texture2D tex = Resources.Load("magmatoel_idle_001.png") as Texture2D;
-		//Texture2D tex = (Texture2D)Resources.Load("magmatoel_idle_001.png", typeof(Texture2D));
-		//print (tex);
-
 		go.transform.parent = tweets.transform;
+
+		GameObject[] planets = GameObject.FindGameObjectsWithTag("Planet");
+		//print (planets.Length);
 
 		/*
         _cam.backgroundColor = new Color(Random.value, Random.value, Random.value);
