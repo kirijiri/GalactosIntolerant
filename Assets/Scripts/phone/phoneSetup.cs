@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 public class phoneSetup : MonoBehaviour
 {
@@ -13,7 +14,14 @@ public class phoneSetup : MonoBehaviour
 	private float _phone_width = 98;
 	private float[] _messageMargins = new float[4]{10.0f, 10.0f, 10.0f, 10.0f}; //left, top, right, bottom
 	private float _message_width;
-	
+
+	private GameObject tweets;
+
+	void Start () {
+		tweets = GameObject.Find ("tweets");
+	}
+
+	/*
 	void Awake ()
 	{
 		// Find the 'main' camera object.
@@ -82,6 +90,7 @@ public class phoneSetup : MonoBehaviour
 		_textComponent.font = _textStyle.font;
 		_textComponent.fontSize = _textStyle.fontSize;
 	}
+ 	*/
 	
 	public void AddNewMessage(string message)
 	{
@@ -92,6 +101,25 @@ public class phoneSetup : MonoBehaviour
 	{
         if (message.Length == 0) yield break;
 
+		
+		GameObject go = Instantiate(Resources.Load("messages")) as GameObject; 
+		SpriteRenderer sr = go.GetComponent<SpriteRenderer> ();
+
+		//Sprite[] spr_obj = Resources.LoadAll<Sprite>(Application.dataPath + "/Resources/Tweets/magmatoel_idle_001.png"); 
+		GameObject[] spr_obj = Resources.LoadAll<GameObject>("Tweets/galacto_idle_256"); 
+		print ("GameObject:" + spr_obj);
+
+		Texture2D tx2d = Resources.Load("Tweets/galacto_idle_256") as Texture2D;
+		Sprite new_spr = Sprite.Create(tx2d, new Rect (0, 0, tx2d.width, tx2d.height), new Vector2(0.5f, 0.5f));
+		sr.sprite = new_spr;
+
+		//Texture2D tex = Resources.Load("magmatoel_idle_001.png") as Texture2D;
+		//Texture2D tex = (Texture2D)Resources.Load("magmatoel_idle_001.png", typeof(Texture2D));
+		//print (tex);
+
+		go.transform.parent = tweets.transform;
+
+		/*
         _cam.backgroundColor = new Color(Random.value, Random.value, Random.value);
         _textComponent.text = message;
         _box_height = _textStyle.CalcHeight(new GUIContent (message), _message_width) + (_messageMargins[1] + _messageMargins[3]);
@@ -131,5 +159,7 @@ public class phoneSetup : MonoBehaviour
         // set attributes
         note.AddComponent<message> ();
         note.tag = "Note";
+        */
 	}
 }	
+
