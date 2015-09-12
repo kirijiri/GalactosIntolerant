@@ -111,6 +111,19 @@ public class phoneSetup : MonoBehaviour
 		Texture2D[] tx2d_array = Resources.LoadAll<Texture2D>("Tweets");
 		print (tx2d_array.Length);
 
+		foreach (Texture2D tx2d in tx2d_array) 
+		{
+			print (tx2d);
+			string[] splitArray = tx2d.ToString().Split('_');
+			foreach ( string split in splitArray)
+			{
+				Debug.Log(split);
+			}
+			/*
+			*/
+		}
+
+		/*
 		Texture2D tx2d = Resources.Load("Tweets/magmatoel_major_000") as Texture2D;
 		Sprite new_spr = Sprite.Create(tx2d, new Rect (0, 0, tx2d.width, tx2d.height), new Vector2(0.5f, 0.5f));
 		sr.sprite = new_spr;
@@ -118,6 +131,7 @@ public class phoneSetup : MonoBehaviour
 
 		GameObject[] planets = GameObject.FindGameObjectsWithTag("Planet");
 		//print (planets.Length);
+		*/
 
 		/*
         _cam.backgroundColor = new Color(Random.value, Random.value, Random.value);
@@ -162,4 +176,5 @@ public class phoneSetup : MonoBehaviour
         */
 	}
 }	
+
 
