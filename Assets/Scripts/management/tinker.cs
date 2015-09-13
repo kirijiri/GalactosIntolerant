@@ -7,7 +7,7 @@ using System.Collections;
 public class tinker : MonoBehaviour
 {
     // planets
-	public string planetOptions = "--- PLANET OPTIONS ---";
+    public string planetOptions = "--- PLANET OPTIONS ---";
     public bool printPlanetControls = false;
     public float PInitSpeedMultiplier = 1f;
     public float PInnerBand = 0f;
@@ -20,12 +20,12 @@ public class tinker : MonoBehaviour
     public bool PRestoreSpeed = false;
     public bool PRandomiseInit = true;
     public bool PRandomiseDirection = true;
-	public bool PRandomiseSpeed = true;
-	public float PRandomLowerSpeed = 0.25f;
-	public float PRandomUpperSpeed = 0.38f;
+    public bool PRandomiseSpeed = true;
+    public float PRandomLowerSpeed = 0.25f;
+    public float PRandomUpperSpeed = 0.38f;
     
     // ship
-	public string shipOptions = "--- SHIP OPTIONS ---";
+    public string shipOptions = "--- SHIP OPTIONS ---";
     public float shipAcceleration = 0.5f;
     public float shipDeceleration = 3f;
     public float shipOrbitRadius = 236f;
@@ -36,14 +36,14 @@ public class tinker : MonoBehaviour
     public float thrusterAccelScale = 3.0f;
 
     // gravity beam
-	public string beamOptions = "--- BEAM OPTIONS ---";
+    public string beamOptions = "--- BEAM OPTIONS ---";
     public float GBActivateAngle = 45f;
     public float GBEffectThreshold = 0.3f;
     public float GBAlignmentThreshold = 0.05f;
     public float GBTimeout = 2.0f;
     public float GBMinGuideDistance = 30f;
     public float GBMaxGuideDistance = 64f;
-	public bool GBShakeIt = true;
+    public bool GBShakeIt = true;
     public float GBShakeAmount = 0.01f;
     public float GBBackDropShakeAmount = 2.0f;
     public float GBDragShakeFraction = 0.25f;
@@ -52,7 +52,6 @@ public class tinker : MonoBehaviour
     public string messageOptions = "--- MESSAGE OPTIONS ---";
     public float idleTimer = 7.0f;
     public float criticalPopulationPercentage = 30.0f;
-
     public string messageAnimOptions = "--- MESSAGE ANIMATION OPTIONS ---";
     public float[] messageMargins = new float[4]{3.0f, 3.0f, 3.0f, 3.0f}; //left, top, right, bottom
     public float messageVSpace = 5.0f;
@@ -64,7 +63,6 @@ public class tinker : MonoBehaviour
     public float bgHeight = 270.0f;
     public int fontSize = 22;
     public int initialMessageCount = 3;
-
     public string scoreOptions = "--- SCORE OPTIONS ---";
     public float followerX = 15;
     public float followerY = 210;
@@ -73,7 +71,6 @@ public class tinker : MonoBehaviour
     public int followerFontSize = 30;
     public float likesPercentage = 0.3f;
     public float childrenPercentage = 0.3f;
-
     public string snapshotOptions = "--- SNAPSHOT OPTIONS ---";
     public float flashFadeInSpeed = 10.0f;
     public float flashFadeOutSpeed = 10.0f;

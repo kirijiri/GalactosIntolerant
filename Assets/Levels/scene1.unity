@@ -885,6 +885,10 @@ Prefab:
       propertyPath: Pan2D
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: race
+      value: throngx
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_IsPrefabParent: 0
@@ -1292,7 +1296,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 610153778}
   - 114: {fileID: 610153779}
-  - 114: {fileID: 610153777}
   m_Layer: 0
   m_Name: messages
   m_TagString: Untagged
@@ -1300,18 +1303,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &610153777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 610153776}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a144b03b17fc6af408cbf482286160ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numMessages: 0
 --- !u!4 &610153778
 Transform:
   m_ObjectHideFlags: 0
@@ -2022,6 +2013,10 @@ Prefab:
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: race
+      value: bilius
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -2799,6 +2794,10 @@ Prefab:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: race
+      value: magmatoel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_IsPrefabParent: 0
@@ -3011,6 +3010,10 @@ Prefab:
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: race
+      value: sharktang
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
@@ -3543,6 +3546,10 @@ Prefab:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11432956, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
+      propertyPath: race
+      value: bat
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
   m_IsPrefabParent: 0
@@ -4000,6 +4007,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1882247717}
   - 114: {fileID: 1882247718}
+  - 114: {fileID: 1882247719}
   m_Layer: 0
   m_Name: phone_setup
   m_TagString: Untagged
@@ -4028,6 +4036,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb638a26edc0fbc488abb2097d3083af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1882247719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1882247716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8303aaef2dd2645b40ca7cabb6015d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2026440802

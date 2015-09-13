@@ -8,20 +8,20 @@ public class phoneMessages : MonoBehaviour
     private GameObject[] planets;
     private float timer = 0;
     private List<int> planetsTrack;
-    private string message;
+    private Texture2D message;
     private float idleTimer;
-    private phoneSetup phoneAnimation;
+    private phoneSetup phone;
     private tinker tinker;
 
     void Start()
     {
-        phoneAnimation = GameObject.Find("phone_setup").GetComponent<phoneSetup>();
+        phone = GameObject.Find("phone_setup").GetComponent<phoneSetup>();
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         
         planets = GameObject.FindGameObjectsWithTag("Planet");
         ResetPlanetTrack();
 
-		StartCoroutine(UpdateIdleMessages());
+        StartCoroutine(UpdateIdleMessages());
     }
 
     void ResetPlanetTrack()
@@ -31,39 +31,39 @@ public class phoneMessages : MonoBehaviour
             planetsTrack.Add(i);
     }
 
-	IEnumerator UpdateIdleMessages ()
-	{
+    IEnumerator UpdateIdleMessages()
+    {
         yield return new WaitForSeconds(2);
 
-		// get a random planet index that hasn't been used yet (if it runs out, fill up the list again)
-		// TODO: figure out how many messages are in each planet, the planets might not have to change,
-		// just the messages
-		if (planetsTrack.Count == 0)
-			ResetPlanetTrack();
-		int rand = Random.Range(0, planetsTrack.Count);
-		
-		// set idle message text
-		message = planets [rand].GetComponent<planetMessaging>().GetIdleMessage();
-		if (message == "")
-			StartCoroutine( UpdateIdleMessages() );
-		
-		// play animation
-		phoneAnimation.AddNewMessage(message);
-		
-		// remove planet from track list to not repeat it immidiately again
-		planetsTrack.RemoveAt(rand);
+        // get a random planet index that hasn't been used yet (if it runs out, fill up the list again)
+        // TODO: figure out how many messages are in each planet, the planets might not have to change,
+        // just the messages
+        if (planetsTrack.Count == 0)
+            ResetPlanetTrack();
+        int rand = Random.Range(0, planetsTrack.Count);
+        
+        // set idle message text
+        message = planets [rand].GetComponent<planetMessaging>().GetIdleMessage();
+        if (!message)
+            StartCoroutine(UpdateIdleMessages());
+        
+        // play animation
+        phone.AddNewMessage(message);
+        
+        // remove planet from track list to not repeat it immidiately again
+        planetsTrack.RemoveAt(rand);
 
-		StartCoroutine( UpdateIdleMessages() );
-	}
+        StartCoroutine(UpdateIdleMessages());
+    }
 
     public void SendNewMessage(GameObject planet)
     {
         // set idle message text
         message = planet.GetComponent<planetMessaging>().GetDamageMessage();
-        if (message == "")
+        if (!message)
             return;
 
         // play animation
-        phoneAnimation.AddNewMessage(message);
+        phone.AddNewMessage(message);
     }
 }
