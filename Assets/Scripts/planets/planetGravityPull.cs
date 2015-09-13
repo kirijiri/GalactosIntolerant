@@ -38,7 +38,7 @@ public class planetGravityPull : MonoBehaviour
         // gravity beam
         gravityBeam = GameObject.Find("gravityBeam").GetComponent<gravityBeam>();
         anim = GetComponent<planetAnimation>();
-        scoring = GameObject.Find("Main Camera").GetComponent<scoring>();
+        scoring = GameObject.Find("setup").GetComponent<scoring>();
 
         // settings
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
@@ -111,7 +111,7 @@ public class planetGravityPull : MonoBehaviour
 
     private void gravityPull(Ray beam, Vector3 intersect)
     {
-        rigidbody2D.velocity = intersect - transform.position;
+        GetComponent<Rigidbody2D>().velocity = intersect - transform.position;
     }
 
     private static float DistanceToRay(Ray ray, Vector3 point)

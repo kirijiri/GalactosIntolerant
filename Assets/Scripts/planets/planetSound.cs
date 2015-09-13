@@ -21,26 +21,26 @@ public class planetSound : MonoBehaviour
     {
         curFlicked = flicked;
         curHeld = held;
-        defaultVolume = audio.volume;
+        defaultVolume = GetComponent<AudioSource>().volume;
     }
 
     public void AudioFlick()
     {
-        audio.Stop();
-        audio.volume = defaultVolume;
-        audio.PlayOneShot(flicked);
+        GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().volume = defaultVolume;
+        GetComponent<AudioSource>().PlayOneShot(flicked);
     }
 
     public void AudioHold()
     {
-		audio.Stop();
-        audio.volume = defaultVolume;
-		audio.PlayOneShot(held);
+		GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().volume = defaultVolume;
+		GetComponent<AudioSource>().PlayOneShot(held);
     }
 
     public void AudioHoldRelease()
     {
-        StartCoroutine(FadeAudio(audio, fadeTime, Fade.Out));
+        StartCoroutine(FadeAudio(GetComponent<AudioSource>(), fadeTime, Fade.Out));
     }
 
     public void AudioToDamageSounds()
