@@ -4,12 +4,14 @@ using System.Collections.Generic;
 
 public class queue : MonoBehaviour
 {
-    private List<GameObject> _queue = new List<GameObject>();
+    private List<GameObject> _queue = new List<GameObject>() {};
+    private List<GameObject> _to_delete_queue = new List<GameObject>() {};
     private float _spacing = 0.05f;
 
     // 
     void Update()
     {
+        _to_delete_queue = new List<GameObject>() {};;
         GameObject previous = null;
         foreach (GameObject go in _queue)
         {
@@ -23,12 +25,14 @@ public class queue : MonoBehaviour
 
                 bool oob = previous.GetComponent<message>().OutOfBounds();
                 if (oob)
-                {
-                    _queue.Remove(previous);
-                    Destroy(previous);
-                }
+                    _to_delete_queue.Add(previous);
             }
             previous = go;
+        }
+        foreach (GameObject go in _to_delete_queue)
+        {
+            _queue.Remove(go);
+            Destroy(go);
         }
     }
 
