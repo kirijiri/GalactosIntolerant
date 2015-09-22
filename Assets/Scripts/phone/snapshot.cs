@@ -12,7 +12,7 @@ public class snapshot : MonoBehaviour
     private float time;
     private float fadeSpeed;
     private tinker tinker;
-    private Animator phoneButtonAnim;
+    private Animator phoneAppAnim;
     private snapshotSound snapshotAudio;
 
     //-------------------------------------------------------------------
@@ -21,7 +21,7 @@ public class snapshot : MonoBehaviour
     {
         tinker = GameObject.Find("tinker").GetComponent<tinker>();
         gravityBeam = GameObject.Find("gravityBeam").GetComponent<gravityBeam>();
-        phoneButtonAnim = GameObject.Find("phone_button").GetComponent<Animator>();
+        phoneAppAnim = GameObject.Find("phone_app").GetComponent<Animator>();
         snapshotAudio = GameObject.Find("camera_sound").GetComponent<snapshotSound>();
 
         // make button invisible (gravity beam will make it visible)
@@ -45,7 +45,7 @@ public class snapshot : MonoBehaviour
         // animate flash
         doSnapshot = true;
         StartCoroutine(WaitAndScoreScreen());
-        phoneButtonAnim.SetBool("active", false);
+        phoneAppAnim.SetBool("active", false);
     }
 
     IEnumerator WaitAndScoreScreen()

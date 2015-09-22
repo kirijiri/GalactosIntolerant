@@ -1,0 +1,286 @@
+fileFormatVersion: 2
+guid: f533d81a79640e34e908acc6bcbc5f20
+timeCreated: 1442950557
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: phone_app_0
+    21300002: phone_app_1
+    21300004: phone_app_2
+    21300006: phone_app_3
+    21300008: phone_app_4
+    21300010: phone_app_5
+    21300012: phone_app_6
+    21300014: phone_app_7
+    21300016: phone_app_8
+    21300018: phone_app_9
+    21300020: phone_app_10
+    21300022: phone_app_11
+    21300024: phone_app_12
+    21300026: phone_app_13
+    21300028: phone_app_14
+    21300030: phone_app_15
+    21300032: phone_app_16
+    21300034: phone_app_17
+    21300036: phone_app_18
+    21300038: phone_app_19
+    21300040: phone_app_20
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: phone_app_0
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 846
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_1
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 846
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_2
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 846
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_3
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 846
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_4
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 846
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_5
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 846
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_6
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 846
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_7
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 846
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 668
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_9
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 668
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_10
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 668
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_11
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 668
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_12
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 668
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_13
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 668
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_14
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 668
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_15
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 668
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_16
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 668
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 490
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_18
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 490
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_19
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 490
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: phone_app_20
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 490
+        width: 106
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
