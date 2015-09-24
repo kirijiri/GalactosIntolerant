@@ -945,7 +945,7 @@ Prefab:
     - target: {fileID: 11457552, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: damaged
       value: 
-      objectReference: {fileID: 8300000, guid: 8f3f76076d4bb234a9833cdbdde843df, type: 3}
+      objectReference: {fileID: 8300000, guid: e2494349fef2eb54c98f5ad02be19646, type: 3}
     - target: {fileID: 8259456, guid: 53406b97a6edec64ba2e108d5b90b1b7, type: 2}
       propertyPath: m_Volume
       value: .400000006
