@@ -7,6 +7,7 @@ public class queue : MonoBehaviour
     private List<GameObject> _queue = new List<GameObject>() {};
     private List<GameObject> _to_delete_queue = new List<GameObject>() {};
     private float _spacing = 0.05f;
+    private int _max_number_messages = 3;
 
     // 
     void Update()
@@ -33,11 +34,23 @@ public class queue : MonoBehaviour
         {
             _queue.Remove(go);
             Destroy(go);
+            Resources.UnloadUnusedAssets();
         }
     }
 
     public void AddMessage(GameObject go)
     {
+        if (_queue.Count >= _max_number_messages)
+        {
+            GameObject prev_go = _queue[_queue.Count-1];
+            if (!prev_go.GetComponent<message>().IsMoving())
+            {
+                _queue.Remove(prev_go);
+                Destroy(prev_go);
+                Resources.UnloadUnusedAssets();
+            }
+        }
+        Debug.Log(_queue.Count);
         _queue.Add(go);
 
         float height = go.GetComponent<message>().getHeight() + _spacing;

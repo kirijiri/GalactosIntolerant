@@ -31,6 +31,12 @@ public class message : MonoBehaviour
         _do_move = true;
     }
 
+    public bool IsMoving()
+    {
+        return _do_move;
+    }
+
+
     public void MoveBy(float height)
     {
         _move_by += height;
