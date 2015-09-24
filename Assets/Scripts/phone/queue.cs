@@ -50,7 +50,6 @@ public class queue : MonoBehaviour
                 Resources.UnloadUnusedAssets();
             }
         }
-        Debug.Log(_queue.Count);
         _queue.Add(go);
 
         float height = go.GetComponent<message>().getHeight() + _spacing;

@@ -7,11 +7,11 @@ public class phoneMessages : MonoBehaviour
 {
     private GameObject[] planets;
     private float timer = 0;
-    private List<int> planetsTrack;
+    private List<GameObject> planetsTrack;
     private Texture2D message;
-    private float idleTimer;
     private phoneSetup phone;
     private tinker tinker;
+    private int _idleTimer = 6;
 
     void Start()
     {
@@ -26,24 +26,44 @@ public class phoneMessages : MonoBehaviour
 
     void ResetPlanetTrack()
     {
-        planetsTrack = new List<int>();
-        for (int i = 0; i < planets.Length; i++)
-            planetsTrack.Add(i);
+        planetsTrack = new List<GameObject>();
+        foreach (GameObject planet in planets)
+        {
+            if (planet.GetComponent<planetSettings>().population <= 0.0f) continue;
+            planetsTrack.Add(planet);
+        }
     }
+
+    void CheckPlanetTrack()
+    {
+        foreach (GameObject planet in planetsTrack)
+        {
+            if (planet.GetComponent<planetSettings>().population <= 0.0f) 
+            {
+                ResetPlanetTrack();
+                break;
+            }
+        }
+    }
+
 
     IEnumerator UpdateIdleMessages()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(_idleTimer);
+
+        CheckPlanetTrack();
 
         // get a random planet index that hasn't been used yet (if it runs out, fill up the list again)
         // TODO: figure out how many messages are in each planet, the planets might not have to change,
         // just the messages
         if (planetsTrack.Count == 0)
             ResetPlanetTrack();
+        if (planetsTrack.Count == 0)
+            yield break;
         int rand = Random.Range(0, planetsTrack.Count);
         
         // set idle message text
-        message = planets [rand].GetComponent<planetMessaging>().GetIdleMessage();
+        message = planetsTrack [rand].GetComponent<planetMessaging>().GetIdleMessage();
         if (!message)
             StartCoroutine(UpdateIdleMessages());
         
