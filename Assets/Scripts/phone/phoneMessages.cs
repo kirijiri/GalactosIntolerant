@@ -33,7 +33,7 @@ public class phoneMessages : MonoBehaviour
 
     IEnumerator UpdateIdleMessages()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(6);
 
         // get a random planet index that hasn't been used yet (if it runs out, fill up the list again)
         // TODO: figure out how many messages are in each planet, the planets might not have to change,
