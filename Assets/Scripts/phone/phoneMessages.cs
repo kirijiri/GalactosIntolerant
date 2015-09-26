@@ -12,6 +12,7 @@ public class phoneMessages : MonoBehaviour
     private phoneSetup phone;
     private tinker tinker;
     private int _idleTimer = 6;
+    private float criticalPopulationPercentage = 50.0f;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class phoneMessages : MonoBehaviour
         planetsTrack = new List<GameObject>();
         foreach (GameObject planet in planets)
         {
-            if (planet.GetComponent<planetSettings>().population <= 0.0f) continue;
+            if (planet.GetComponent<planetSettings>().population <= (planet.GetComponent<planetSettings>().maxPopulation / 100 * criticalPopulationPercentage)) continue;
             planetsTrack.Add(planet);
         }
     }
@@ -38,14 +39,13 @@ public class phoneMessages : MonoBehaviour
     {
         foreach (GameObject planet in planetsTrack)
         {
-            if (planet.GetComponent<planetSettings>().population <= 0.0f) 
+            if (planet.GetComponent<planetSettings>().population <= (planet.GetComponent<planetSettings>().maxPopulation / 100 * criticalPopulationPercentage)) continue;
             {
                 ResetPlanetTrack();
                 break;
             }
         }
     }
-
 
     IEnumerator UpdateIdleMessages()
     {
