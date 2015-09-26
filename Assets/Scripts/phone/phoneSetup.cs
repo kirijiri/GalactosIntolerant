@@ -7,11 +7,15 @@ public class phoneSetup : MonoBehaviour
     private GameObject _tweets_go;
     public Dictionary<string, Dictionary<string, List<Texture2D>>> _message_dict = new Dictionary<string, Dictionary<string, List<Texture2D>>>();
     private queue _queue;
+    private float _idle_timer = 5.0f;
+    private float _start_time;
+    private float _elapsed_time;
 
     void Start()
     {
         _tweets_go = GameObject.Find("tweets");
         _queue = GetComponent<queue>();
+        _start_time = Time.time;
     }
 
     // fill dictionary with message textures
@@ -32,8 +36,18 @@ public class phoneSetup : MonoBehaviour
         }
     }
 
+    public void AddNewIdleMessage(Texture2D tx2d)
+    {
+        _elapsed_time = Time.time - _start_time;
+        if (_elapsed_time < _idle_timer) return;
+
+        _start_time = Time.time;
+        StartCoroutine(CreateMessage(tx2d));
+    }
+
     public void AddNewMessage(Texture2D tx2d)
     {
+        _start_time = Time.time;
         StartCoroutine(CreateMessage(tx2d));
     }
     

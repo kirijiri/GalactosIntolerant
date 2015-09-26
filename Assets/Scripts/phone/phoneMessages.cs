@@ -68,7 +68,7 @@ public class phoneMessages : MonoBehaviour
             StartCoroutine(UpdateIdleMessages());
         
         // play animation
-        phone.AddNewMessage(message);
+        phone.AddNewIdleMessage(message);
         
         // remove planet from track list to not repeat it immidiately again
         planetsTrack.RemoveAt(rand);
